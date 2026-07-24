@@ -1,280 +1,338 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ВОСТОЧНЫЙ ТИМОР · Последняя Тишина — Валерий Латыпов</title>
   <meta name="description" content="Закрытая авторская экспедиция в Восточный Тимор. Древний остров, наги, остров Жако, 40-тысячелетние петроглифы и детокс от цивилизации." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#0B0F17',
+              surface: '#121824',
+              surfaceMuted: '#1A2234',
+              accent: '#D97706', // Warm amber / terracotta
+              accentHover: '#B45309',
+              textMuted: '#9CA3AF'
+            }
+          },
+          fontFamily: {
+            serif: ['PT Serif', 'Georgia', 'serif'],
+            sans: ['Manrope', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Google Fonts & Custom CSS -->
   <link rel="stylesheet" href="style.css" />
+  
   <!-- GSAP & ScrollTrigger -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="script.js" defer></script>
 </head>
-<body>
+<body class="bg-brand-bg text-slate-100 font-sans selection:bg-amber-500 selection:text-black overflow-x-hidden antialiased">
 
-  <!-- 1. NAV -->
-  <nav class="nav">
-    <div class="nav-logo">ВАЛЕРИЙ ЛАТЫПОВ</div>
-    <div class="nav-links">
-      <a href="#about" class="nav-link">Концепция</a>
-      <a href="#journey" class="nav-link">Места Силы</a>
-      <a href="#details" class="nav-link">Детали</a>
-      <a href="#contact" class="btn-secondary" style="padding: 10px 20px;">Запросить участие</a>
+  <!-- 1. FLOATING GLASS NAV -->
+  <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl bg-slate-900/70 backdrop-blur-xl border border-white/10 rounded-full px-6 py-4 flex items-center justify-between shadow-2xl transition-all duration-300">
+    <a href="#" class="font-serif text-lg tracking-wider text-amber-500 font-bold hover:opacity-90 transition">ВАЛЕРИЙ ЛАТЫПОВ</a>
+    <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+      <a href="#about" class="hover:text-amber-500 transition">Концепция</a>
+      <a href="#journey" class="hover:text-amber-500 transition">Места Силы</a>
+      <a href="#gallery" class="hover:text-amber-500 transition">Галерея</a>
+      <a href="#guide" class="hover:text-amber-500 transition">Проводник</a>
     </div>
-    <div class="nav-lang">
-      <a href="#" class="active">RU</a> | <a href="#">EN</a>
-    </div>
+    <a href="#contact" class="bg-amber-600 hover:bg-amber-500 text-slate-950 font-semibold px-5 py-2 rounded-full text-sm transition-all duration-300 transform hover:scale-105 shadow-lg shadow-amber-600/20">
+      Запросить участие
+    </a>
   </nav>
 
-  <!-- 2. HERO -->
-  <section class="section-hero">
-    <div class="hero-image-wrapper">
-      <img src="images/IMG_2144.jpg" alt="Восточный Тимор Океан" />
+  <!-- 2. HERO SECTION WITH GSAP PARALLAX & GLASS CARDS -->
+  <section class="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden">
+    <!-- Hero Background Image with Darkness Radial Overlay -->
+    <div class="hero-image-wrapper absolute inset-0 z-0">
+      <img src="images/IMG_2144.jpg" alt="Восточный Тимор Океан" class="w-full h-full object-cover filter brightness-[0.45] scale-105" />
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-bg via-transparent to-brand-bg/80"></div>
     </div>
-    <div class="container">
-      <div class="hero-content">
-        <span class="t-eyebrow">Эксклюзивная Экспедиция · Час от Бали</span>
-        <h1 class="t-display">Восточный <span class="accent-word">Тимор</span></h1>
-        <p class="t-quote hero-tagline">Спина Древнего Крокодила. За пределами цивилизации и толп туристов.</p>
-        
-        <div class="hero-actions">
-          <a href="#contact" class="btn-primary">Присоединиться</a>
-          <a href="#journey" class="btn-secondary">Исследовать путь</a>
-        </div>
-        
-        <div class="hero-specs">
-          <span>7–10 дней</span>
-          <span class="hero-spec-sep">·</span>
-          <span>Камерная группа / 1-на-1</span>
-          <span class="hero-spec-sep">·</span>
-          <span>4x4 Toyota Land Cruiser</span>
-        </div>
+
+    <div class="container mx-auto px-6 relative z-10 max-w-5xl text-center">
+      <span class="t-eyebrow inline-block bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 backdrop-blur-md">
+        Эксклюзивная Экспедиция · Час от Бали
+      </span>
+      <h1 class="t-display text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white tracking-tight leading-none mb-6">
+        Восточный <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500">Тимор</span>
+      </h1>
+      <p class="hero-tagline text-lg md:text-2xl text-slate-300 font-light max-w-3xl mx-auto leading-relaxed mb-10">
+        Спина Древнего Крокодила. Последнее сакральное побережье за пределами массовой цивилизации.
+      </p>
+      
+      <div class="hero-actions flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <a href="#contact" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold px-8 py-4 rounded-xl text-base transition-all duration-300 shadow-xl shadow-amber-500/25 hover:shadow-amber-400/40 transform hover:-translate-y-1">
+          Присоединиться к Экспедиции
+        </a>
+        <a href="#journey" class="w-full sm:w-auto bg-slate-900/80 hover:bg-slate-800 border border-white/15 text-white font-medium px-8 py-4 rounded-xl text-base backdrop-blur-md transition-all duration-300">
+          Исследовать Путь
+        </a>
+      </div>
+      
+      <div class="hero-specs inline-flex flex-wrap items-center justify-center gap-6 bg-slate-900/60 border border-white/10 backdrop-blur-xl px-8 py-4 rounded-2xl text-slate-300 text-sm font-medium">
+        <div class="flex items-center space-x-2"><span class="text-amber-500">◈</span> <span>7–10 Дней</span></div>
+        <span class="text-slate-600">|</span>
+        <div class="flex items-center space-x-2"><span class="text-amber-500">◈</span> <span>Формат 1-на-1 / Камерно</span></div>
+        <span class="text-slate-600">|</span>
+        <div class="flex items-center space-x-2"><span class="text-amber-500">◈</span> <span>4x4 Toyota Land Cruiser</span></div>
       </div>
     </div>
   </section>
 
-  <!-- 3. MANIFESTO -->
-  <section class="section bg-alt" id="about">
-    <div class="container">
+  <!-- 3. MANIFESTO / STATEMENT -->
+  <section class="py-24 bg-brand-surface border-y border-white/5 relative" id="about">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
       <div class="manifesto-section">
-        <p class="t-quote">
-          «Это страна, которая недавно отвоевала независимость. Здесь португальский язык, столица Дили и час полёта от Бали. Туристов нет вообще — только дипломаты в столице. Во время путешествия ты попадаешь в другую реальность без белых людей, погружаешься в быт местных и видишь их уникальные хижины.»
+        <p class="t-quote font-serif text-2xl md:text-4xl text-slate-200 leading-snug font-light italic">
+          «Это страна, отвоевавшая независимость. Португальский язык, столица Дили и час полёта от Бали. Туристов нет — вы попадаете в другую реальность без белых людей, погружаясь в первозданный быт и тишину.»
         </p>
       </div>
     </div>
   </section>
 
-  <!-- 4. MYTHOLOGY / CROCODILE LEGEND -->
-  <section class="section">
-    <div class="container grid-asym">
-      <div>
-        <span class="t-eyebrow">Мистицизм Земли</span>
-        <h2 class="t-h2">Мы ходим по спине древнего существа</h2>
-        <p class="t-body mt-24">
-          По древним поверьям местных жителей, сам остров Тимор — это огромный спящий крокодил, который превратился в сушу из чувства глубокой благодарности к человеку. 
-        </p>
-        <p class="t-body mt-16">
-          Здесь всё пропитано духом <strong>Lulik</strong> — сакральной тайной. Это не место для массового туризма, а территория для тех, чья душа ищет сборку своего паззла жизни через тишину, первозданность и чистые океанские потоки.
-        </p>
-      </div>
-      <div>
-        <img src="images/IMG_2176.jpg" alt="Наши экспедиционные внедорожники 4x4" class="image-portrait" />
+  <!-- 4. MYTHOLOGY / CROCODILE LEGEND (ASYMMETRIC BENTO GRID) -->
+  <section class="py-28 relative">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Мистицизм Земли</span>
+          <h2 class="text-3xl md:text-5xl font-serif font-bold text-white leading-tight">
+            Мы ходим по спине <br /><span class="text-amber-500">древнего существа</span>
+          </h2>
+          <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+            По преданиям местных жителей, сам остров Тимор — это огромный спящий крокодил, превратившийся в сушу из чувства глубокой благодарности к человеку. 
+          </p>
+          <p class="text-slate-400 text-base leading-relaxed">
+            Здесь всё пропитано духом <strong class="text-amber-400 font-semibold">Lulik</strong> — сакральным табу и тайной. Это не курортный отдых, а глубокое путешествие для тех, чья душа ищет сборку своего паззла жизни через тишину, дикую природу и чистые океанские потоки.
+          </p>
+        </div>
+        <div class="lg:col-span-5 relative group overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
+          <img src="images/IMG_2176.jpg" alt="Наши экспедиционные внедорожники 4x4" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+          <div class="absolute bottom-6 left-6 right-6 p-4 bg-slate-900/80 backdrop-blur-md rounded-2xl border border-white/10">
+            <span class="text-xs font-mono text-amber-400 uppercase">Экспедиционный Драйв</span>
+            <p class="text-sm text-slate-200 mt-1">Подготовленные 4x4 Toyota Land Cruiser для горных серпантинов</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. JOURNEY / PLACES OF POWER -->
-  <section class="section bg-alt" id="journey">
-    <div class="container">
-      <span class="t-eyebrow">Маршрут и Ключевые Точки</span>
-      <h2 class="t-h2 mt-16" style="margin-bottom: 64px;">Места Силы и Первозданный Детокс</h2>
-
-      <!-- Story 1: Dili & Nagas -->
-      <div class="story-block">
-        <div>
-          <span class="t-eyebrow">Столица и Горы</span>
-          <h3 class="t-h3 mt-8">Дили и Обитель Нагов</h3>
-          <p class="t-body mt-16">
-            Начинаем с Дили — портала португальской архитектуры, цветного стрит-арта и атмосферных рынков Тейс.
-          </p>
-          <p class="t-body mt-16">
-            Остров держат Наги. В горах скрыто главное сакральное место для глубокой медитации.
-          </p>
-          <div style="margin-top: 20px; padding: 20px; background: var(--bg); border-left: 3px solid var(--accent); border: 1px solid var(--line);">
-            <strong style="color: var(--ink); display: block; margin-bottom: 8px;">🧘 Энергетическая работа:</strong>
-            <p class="t-body" style="font-size: 15px;">
-              Контакт с мудрыми хранителями Земли (Нагами). Медитативная практика «Запрос Сердца» — прямое обращение к тонким сущностям острова для развязывания внутренних узлов, получения ответов на ключевые жизненные вопросы и проявления скрытого намерения.
-            </p>
-          </div>
-        </div>
-        <div class="story-img-group">
-          <img src="images/IMG_2163.jpg" alt="Уличная архитектура и стрит-арт в Дили" />
-          <img src="images/IMG_2288.jpg" alt="Готика в горах Тимора" />
-        </div>
+  <!-- 5. JOURNEY / PLACES OF POWER (STACKING GSAP CARDS) -->
+  <section class="py-28 bg-brand-surface/50 border-t border-white/5" id="journey">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Маршрут и Ключевые Точки</span>
+        <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mt-3">Места Силы & Энергетическая Работа</h2>
       </div>
 
-      <!-- Story 2: Natural Well & Water Spirit -->
-      <div class="story-block reverse">
-        <div>
-          <span class="t-eyebrow">Природная купель</span>
-          <h3 class="t-h3 mt-8">Естественный бассейн и Дух Воды</h3>
-          <p class="t-body mt-16">
-            Уникальное природное место, естественным образом образованное в слоистых известняковых скалах. Наверху обитает Дух Воды.
-          </p>
-          <p class="t-body mt-16">
-            Местные дети прыгают с крутых обрывов в прохладную бирюзовую чашу — место искренней первобытной радости.
-          </p>
-          <div style="margin-top: 20px; padding: 20px; background: var(--bg); border-left: 3px solid var(--accent); border: 1px solid var(--line);">
-            <strong style="color: var(--ink); display: block; margin-bottom: 8px;">🧘 Энергетическая работа:</strong>
-            <p class="t-body" style="font-size: 15px;">
-              Практика «Водное Омовение и Сброс Тяжести». Взаимодействие с Духом Воды через физическое погружение в артезианскую купель. Смывание ментального шума, накопленного бизнес-стресса и чужих ожиданий. Возвращение к состоянию чистой детской искренности и лёгкости.
+      <div class="space-y-16">
+        
+        <!-- Place 1: Dili & Nagas -->
+        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-amber-500/30 transition duration-500">
+          <div class="lg:col-span-6 space-y-5">
+            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">01 · Столица & Горы</span>
+            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Дили и Обитель Нагов</h3>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              Портал португальской колониальной архитектуры, яркого стрит-арта и рынков традиционного текстиля Tais. В горах скрыто ключевое сакральное место медитации.
             </p>
+            <div class="bg-slate-900/80 border-l-4 border-amber-500 p-5 rounded-r-2xl border-t border-r border-b border-white/5">
+              <span class="text-amber-400 font-semibold text-sm flex items-center gap-2 mb-1">
+                <span>🧘</span> Энергетическая работа
+              </span>
+              <p class="text-slate-300 text-xs md:text-sm leading-relaxed">
+                Практика «Запрос Сердца» и контакт с хранителями Земли (Нагами). Прямое обращение для развязывания внутренних узлов и прояснения личного намерения.
+              </p>
+            </div>
+          </div>
+          <div class="lg:col-span-6 grid grid-cols-2 gap-4 story-img-group">
+            <img src="images/IMG_2163.jpg" alt="Стрит-арт в Дили" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
+            <img src="images/IMG_2288.jpg" alt="Готика в горах Тимора" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
           </div>
         </div>
-        <div class="story-img-group">
-          <img src="images/IMG_3122.jpg" alt="Бассейн в Баукау с прыгающими детьми" />
-          <img src="images/IMG_3135.jpg" alt="Купель и Дух Воды" />
-        </div>
-      </div>
 
-      <!-- Story 3: Magical Rocks & Petrogliphs -->
-      <div class="story-block">
-        <div>
-          <span class="t-eyebrow">Артефакты 40 000 лет</span>
-          <h3 class="t-h3 mt-8">Волшебные Камни и Древняя Живопись</h3>
-          <p class="t-body mt-16">
-            В высокогорье у горы Татамайлау (округ Айнару) и в пещерах Lene Hara скрыта древнейшая наскальная живопись Юго-Восточной Азии (австронезийской культуры).
-          </p>
-          <p class="t-body mt-16">
-            На стенах из известняка красной охрой изображен <strong>«Всевидящий Предок»</strong> — концентрические солярные круги с уходящей вверх антенной-позвоночником, соединяющие мир людей с духами Lulik, а также ритуальные танцы вызова дождя и охотники с копьями.
-          </p>
-          <div style="margin-top: 20px; padding: 20px; background: var(--bg); border-left: 3px solid var(--accent); border: 1px solid var(--line);">
-            <strong style="color: var(--ink); display: block; margin-bottom: 8px;">🧘 Энергетическая работа:</strong>
-            <p class="t-body" style="font-size: 15px;">
-              Снастройка с Памятью Предков и «Картой Памяти» Древних. Работа в нетуристических святилищах Lulik у горы Татамайлау. Считывание энергии солярных символов Всевидящего Предка — активация вертикулирования сознания (связи Звездного Неба и Земли) и заземление личного ресурса.
+        <!-- Place 2: Natural Well & Water Spirit -->
+        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-amber-500/30 transition duration-500">
+          <div class="lg:col-span-6 lg:order-2 space-y-5">
+            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">02 · Природная Купель</span>
+            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Естественный Бассейн и Дух Воды</h3>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              Уникальная природная чаша в слоистых известняковых скалах Баукау. Наверху обитает Дух Воды, а в лазурную воду с обрывов прыгают местные дети.
             </p>
+            <div class="bg-slate-900/80 border-l-4 border-amber-500 p-5 rounded-r-2xl border-t border-r border-b border-white/5">
+              <span class="text-amber-400 font-semibold text-sm flex items-center gap-2 mb-1">
+                <span>🧘</span> Энергетическая работа
+              </span>
+              <p class="text-slate-300 text-xs md:text-sm leading-relaxed">
+                Практика «Водное Омовение и Сброс Тяжести». Взаимодействие с Духом Воды сквозь физическое погружение. Смывание накопленного бизнес-стресса и шума.
+              </p>
+            </div>
+          </div>
+          <div class="lg:col-span-6 lg:order-1 grid grid-cols-2 gap-4 story-img-group">
+            <img src="images/IMG_3122.jpg" alt="Бассейн в Баукау" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
+            <img src="images/IMG_3135.jpg" alt="Купель и Водопад" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
           </div>
         </div>
-        <div class="story-img-group">
-          <img src="images/IMG_3501.jpg" alt="Петроглифы и известняковые наплывы" />
-          <img src="images/IMG_2510 2.jpg" alt="Древняя живопись красной охрой" />
-        </div>
-      </div>
 
-      <!-- Story 4: Jaco Island & Whales -->
-      <div class="story-block reverse">
-        <div>
-          <span class="t-eyebrow">Восток Острова</span>
-          <h3 class="t-h3 mt-8">Остров Жако и Китовые Потоки</h3>
-          <p class="t-body mt-16">
-            На самом востоке расположен священный девственный остров Жако (Lulik), где дикие олени подходят на расстояние вытянутой руки, а вокруг — только бескрайний океан.
-          </p>
-          <p class="t-body mt-16">
-            Базируемся в крепости-отеле <strong>Pousada Tutuala</strong>. В проливах южнее — плавание в открытом океане с синими китами.
-          </p>
-          <div style="margin-top: 20px; padding: 20px; background: var(--bg); border-left: 3px solid var(--accent); border: 1px solid var(--line);">
-            <strong style="color: var(--ink); display: block; margin-bottom: 8px;">🧘 Энергетическая работа:</strong>
-            <p class="t-body" style="font-size: 15px;">
-              Практика «Тотального Океанического Денокса и Затвора». Соблюдение правил сакрального табу (Lulik) на Жако: тишина, медитация в абсолютном одиночестве на коралловом рифе. Соприкосновение с гигантской вибрацией Синих Китов — расширение объема сознания до размеров Океана.
+        <!-- Place 3: Petrogliphs & Tatamailau Rock Art -->
+        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-amber-500/30 transition duration-500">
+          <div class="lg:col-span-6 space-y-5">
+            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">03 · Артефакты 40 000 лет</span>
+            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Всевидящий Предок и Наскальная Живопись</h3>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              В высокогорье у горы Татамайлау (округ Айнару) и в пещерах Lene Hara скрыты сакральные рисунки охрой: «Всевидящий Предок» с солярными знаками и ритуальные танцы.
             </p>
+            <div class="bg-slate-900/80 border-l-4 border-amber-500 p-5 rounded-r-2xl border-t border-r border-b border-white/5">
+              <span class="text-amber-400 font-semibold text-sm flex items-center gap-2 mb-1">
+                <span>🧘</span> Энергетическая работа
+              </span>
+              <p class="text-slate-300 text-xs md:text-sm leading-relaxed">
+                Снастройка с Памятью Предков Lulik. Считывание солярных символов Всевидящего Предка — активация связи Звездного Неба и Земли.
+              </p>
+            </div>
+          </div>
+          <div class="lg:col-span-6 grid grid-cols-2 gap-4 story-img-group">
+            <img src="images/IMG_3501.jpg" alt="Известняковые гроты" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
+            <img src="images/IMG_2510 2.jpg" alt="Наскальные петроглифы" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
           </div>
         </div>
-        <div class="story-img-group">
-          <img src="images/IMG_2518.jpg" alt="Остров Жако — ослепительный пляж" />
-          <img src="images/IMG_2526.jpg" alt="Валерий Латыпов у пещеры в Тутуале" />
-        </div>
-      </div>
 
+        <!-- Place 4: Jaco Island & Whales -->
+        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-amber-500/30 transition duration-500">
+          <div class="lg:col-span-6 lg:order-2 space-y-5">
+            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">04 · Восток Острова</span>
+            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Остров Жако & Синие Киты</h3>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              Священный необитаемый остров Жако (Lulik) с дикими оленями на белоснежном песке. Базирование в португальской крепости-отеле Pousada Tutuala и плавание с синими китами.
+            </p>
+            <div class="bg-slate-900/80 border-l-4 border-amber-500 p-5 rounded-r-2xl border-t border-r border-b border-white/5">
+              <span class="text-amber-400 font-semibold text-sm flex items-center gap-2 mb-1">
+                <span>🧘</span> Энергетическая работа
+              </span>
+              <p class="text-slate-300 text-xs md:text-sm leading-relaxed">
+                Практика «Тотального Океанического Денокса». Медитация на нетронутом коралловом рифе и плавание в проливе с Синими Китами — расширение сознания до размеров Океана.
+              </p>
+            </div>
+          </div>
+          <div class="lg:col-span-6 lg:order-1 grid grid-cols-2 gap-4 story-img-group">
+            <img src="images/IMG_2518.jpg" alt="Остров Жако" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
+            <img src="images/IMG_2526.jpg" alt="Валерий Латыпов в Тутуале" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- 6. PHOTO GALLERY -->
-  <section class="section">
-    <div class="container">
-      <span class="t-eyebrow">Визуальный Архив</span>
-      <h2 class="t-h2">Кадры Первозданного Тимора</h2>
+  <!-- 6. PHOTO GALLERY GRID -->
+  <section class="py-28" id="gallery">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Визуальный Архив</span>
+        <h2 class="text-4xl font-serif font-bold text-white mt-2">Кадры Первозданного Тимора</h2>
+      </div>
 
-      <div class="photo-gallery-grid">
-        <div class="photo-card">
-          <img src="images/IMG_2144.jpg" alt="Побережье Дили" />
-          <div class="photo-caption">Океанический берег и мыс Кристо Рей</div>
+      <div class="photo-gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="photo-card group overflow-hidden rounded-2xl bg-brand-surface border border-white/10">
+          <div class="overflow-hidden">
+            <img src="images/IMG_2144.jpg" alt="Побережье Дили" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
+          </div>
+          <div class="photo-caption p-4 border-t border-white/5 text-xs text-slate-400 font-medium">Океанический берег и мыс Кристо Рей</div>
         </div>
-        <div class="photo-card">
-          <img src="images/IMG_2563.jpg" alt="Традиционные наряды" />
-          <div class="photo-caption">Колоритные национальные костюмы и корона Kaibauk</div>
+        <div class="photo-card group overflow-hidden rounded-2xl bg-brand-surface border border-white/10">
+          <div class="overflow-hidden">
+            <img src="images/IMG_2563.jpg" alt="Традиционные наряды" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
+          </div>
+          <div class="photo-caption p-4 border-t border-white/5 text-xs text-slate-400 font-medium">Колоритные национальные костюмы и корона Kaibauk</div>
         </div>
-        <div class="photo-card">
-          <img src="images/IMG_2176.jpg" alt="Экспедиционные Toyota Land Cruiser" />
-          <div class="photo-caption">Подготовленные 4x4 внедорожники для горных серпантинов</div>
+        <div class="photo-card group overflow-hidden rounded-2xl bg-brand-surface border border-white/10">
+          <div class="overflow-hidden">
+            <img src="images/IMG_2176.jpg" alt="Внедорожники 4x4" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
+          </div>
+          <div class="photo-caption p-4 border-t border-white/5 text-xs text-slate-400 font-medium">Подготовленные Toyota Land Cruiser для горных серпантинов</div>
         </div>
-        <div class="photo-card">
-          <img src="images/IMG_2244.jpg" alt="Уют горного отеля" />
-          <div class="photo-caption">Ночевки в горах Маубисе перед подъемом на Татамайлау</div>
+        <div class="photo-card group overflow-hidden rounded-2xl bg-brand-surface border border-white/10">
+          <div class="overflow-hidden">
+            <img src="images/IMG_2244.jpg" alt="Горный отель" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
+          </div>
+          <div class="photo-caption p-4 border-t border-white/5 text-xs text-slate-400 font-medium">Уют ночевки перед подъемом на вершину Татамайлау</div>
         </div>
-        <div class="photo-card">
-          <img src="images/IMG_3154.jpg" alt="Природный бассейн" />
-          <div class="photo-caption">Местные дети в чаше естественной купели</div>
+        <div class="photo-card group overflow-hidden rounded-2xl bg-brand-surface border border-white/10">
+          <div class="overflow-hidden">
+            <img src="images/IMG_3154.jpg" alt="Природный бассейн" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
+          </div>
+          <div class="photo-caption p-4 border-t border-white/5 text-xs text-slate-400 font-medium">Местные дети в чаше естественной купели</div>
         </div>
-        <div class="photo-card">
-          <img src="images/IMG_2524.jpg" alt="Формации скал" />
-          <div class="photo-caption">Природные скульптуры священных известняковых гротов</div>
+        <div class="photo-card group overflow-hidden rounded-2xl bg-brand-surface border border-white/10">
+          <div class="overflow-hidden">
+            <img src="images/IMG_2524.jpg" alt="Известняковые скалы" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
+          </div>
+          <div class="photo-caption p-4 border-t border-white/5 text-xs text-slate-400 font-medium">Природные скульптуры священных известиковых гротов</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 7. GUIDE / VALERY LATYPOV -->
-  <section class="section bg-alt" id="about-guide">
-    <div class="container grid-asym">
-      <div>
-        <span class="t-eyebrow">Автор и Проводник</span>
-        <h2 class="t-h2">Валерий Латыпов</h2>
-        <p class="t-quote mt-24">
-          «Незабываемые впечатления, работа в местах силы и полное отсутствие туристов — это уникальное место, пока еще сохранившее свою первозданную чистоту.»
-        </p>
-        <p class="t-body mt-24">
-          Валерий — исследователь духовных практик, места силы и архитектор индивидуальных трансформационных путешествий. Автор ретритов на Бали и эксклюзивных маршрутов по нетронутым уголкам Земли.
-        </p>
-      </div>
-      <div>
-        <img src="images/author_portrait.jpg" alt="Валерий Латыпов" class="image-portrait" />
+  <section class="py-28 bg-brand-surface border-y border-white/5" id="guide">
+    <div class="container mx-auto px-6 max-w-5xl">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+        <div class="md:col-span-7 space-y-6">
+          <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Автор и Проводник</span>
+          <h2 class="text-4xl font-serif font-bold text-white">Валерий Латыпов</h2>
+          <p class="font-serif italic text-xl text-amber-200/90 leading-relaxed border-l-2 border-amber-500 pl-4">
+            «Незабываемые впечатления, работа в местах силы и отсутствие туристов — это уникальное место, пока еще сохранившее свою первозданную чистоту.»
+          </p>
+          <p class="text-slate-300 text-base leading-relaxed">
+            Валерий — исследователь духовных практик, места силы и архитектор индивидуальных трансформационных путешествий. Автор ретритов на Бали и эксклюзивных экспедиций по нетронутым уголкам Земли.
+          </p>
+        </div>
+        <div class="md:col-span-5">
+          <img src="images/author_portrait.jpg" alt="Валерий Латыпов" class="w-full aspect-[3/4] object-cover rounded-3xl border border-white/10 shadow-2xl" />
+        </div>
       </div>
     </div>
   </section>
 
   <!-- 8. CALL TO ACTION / CONTACT -->
-  <section class="section bg-dark" id="contact">
-    <div class="container" style="text-align: center; max-width: 800px;">
-      <span class="t-eyebrow" style="color: var(--accent);">Закрытый Набор</span>
-      <h2 class="t-display" style="font-size: clamp(36px, 5vw, 72px); color: var(--bg);">Готовы ступить за предел?</h2>
-      <p class="t-body mt-24" style="color: var(--ink-ghost);">
+  <section class="py-32 relative overflow-hidden" id="contact">
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-bg via-slate-900 to-brand-bg"></div>
+    <div class="container mx-auto px-6 relative z-10 max-w-3xl text-center">
+      <span class="text-amber-500 font-mono text-xs uppercase tracking-widest mb-4 inline-block">Закрытый Набор</span>
+      <h2 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Готовы ступить за предел?</h2>
+      <p class="text-slate-400 text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
         Экспедиция формируется в строго индивидуальном формате (1-на-1 или малая закрытая группа). Даты согласуются персонально.
       </p>
-      <div class="mt-48">
-        <a href="https://t.me/valerylatypov" target="_blank" class="btn-primary" style="padding: 16px 40px; font-size: 18px;">Обсудить участие в Telegram</a>
-      </div>
+      <a href="https://t.me/valerylatypov" target="_blank" class="inline-block bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold px-10 py-5 rounded-2xl text-lg transition-all duration-300 shadow-2xl shadow-amber-500/30 transform hover:-translate-y-1">
+        Обсудить участие в Telegram
+      </a>
     </div>
   </section>
 
   <!-- 9. FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="nav-logo">ВАЛЕРИЙ ЛАТЫПОВ</div>
-          <p class="t-caption">Авторские экспедиции и места силы · 2026</p>
-        </div>
-        <div class="footer-nav">
-          <div class="footer-col">
-            <a href="index.html" class="nav-link">Бали: Огонь Духа</a>
-            <a href="timor.html" class="nav-link">Восточный Тимор</a>
-          </div>
-        </div>
+  <footer class="py-12 bg-slate-950 border-t border-white/5 text-xs text-slate-500">
+    <div class="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center space-x-6">
+        <span class="font-serif font-bold text-slate-300">ВАЛЕРИЙ ЛАТЫПОВ</span>
+        <span>© 2026 Все права защищены</span>
       </div>
-      <div class="footer-bottom">
-        <span class="t-caption">© 2026 Валерий Латыпов. Все права защищены.</span>
-        <span class="t-caption">Дили · Атауро · Жако · Бали</span>
+      <div class="flex space-x-6">
+        <a href="index.html" class="hover:text-amber-400 transition">Бали: Огонь Духа</a>
+        <a href="timor.html" class="hover:text-amber-400 transition">Восточный Тимор</a>
       </div>
     </div>
   </footer>
