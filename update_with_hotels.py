@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+import re
+
+ru_content = """<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,17 +45,17 @@
   <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-full px-6 py-4 flex items-center justify-between shadow-2xl transition-all duration-300">
     <a href="#" class="font-serif text-lg tracking-wider text-amber-500 font-bold hover:opacity-90 transition">ВАЛЕРИЙ ЛАТЫПОВ</a>
     <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
-      <a href="#about" class="hover:text-amber-500 transition">About</a>
-      <a href="#hotels" class="hover:text-amber-500 transition">Hotels</a>
+      <a href="#about" class="hover:text-amber-500 transition">О Стране</a>
+      <a href="#hotels" class="hover:text-amber-500 transition">Отели</a>
       <a href="#map" class="hover:text-amber-500 transition">Карта</a>
       <a href="#selector" class="hover:text-amber-500 transition">Маршруты</a>
       <a href="#guide" class="hover:text-amber-500 transition">Проводник</a>
     </div>
     <div class="flex items-center space-x-4">
       <div class="text-xs font-mono bg-slate-800/80 border border-white/10 rounded-full px-3 py-1 text-slate-300 flex items-center gap-1">
-        <a href="timor.html" class="hover:text-white transition">RU</a>
+        <span class="text-amber-400 font-bold">RU</span>
         <span class="text-slate-600">|</span>
-        <span class="text-amber-400 font-bold">EN</span>
+        <a href="timor-en.html" class="hover:text-white transition">EN</a>
       </div>
       <a href="#contact" class="bg-amber-600 hover:bg-amber-500 text-slate-950 font-semibold px-4 py-2 rounded-full text-xs md:text-sm transition shadow-lg shadow-amber-600/20">
         Участвовать
@@ -122,10 +124,10 @@
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="text-amber-400 font-mono text-xs uppercase tracking-widest">Проживание & Комфорт</span>
         <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mt-3">
-          Где Мы Живем: Лучшие Hotels Региона
+          Где Мы Живем: Лучшие Отели Региона
         </h2>
         <p class="text-slate-400 text-sm md:text-base mt-3">
-          We select top-tier 4-star hotels and verified heritage properties ($150–$250/night with excellent Booking.com reviews).
+          Мы выбираем максимально комфортные 4-звездочные отели и проверенные исторические резиденции ($150–$250/ночь с отличными отзывами на Booking.com).
         </p>
       </div>
 
@@ -145,7 +147,7 @@
             <div class="p-6 space-y-3">
               <h3 class="text-xl font-serif font-bold text-white">Novo Turismo Resort & Spa</h3>
               <p class="text-slate-400 text-sm leading-relaxed">
-                The capital’s premier beachfront hotel. Oceanfront pool, spacious air-conditioned rooms, fine dining, and peaceful tranquility.
+                Флагманский отель столицы на первой линии океана. Бассейн с видом на порт Дили, просторные кондиционированные номера, хороший ресторан и тишина.
               </p>
             </div>
           </div>
@@ -170,7 +172,7 @@
             <div class="p-6 space-y-3">
               <h3 class="text-xl font-serif font-bold text-white">Pousada de Baucau</h3>
               <p class="text-slate-400 text-sm leading-relaxed">
-                Atmospheric Portuguese-era heritage hotel. High ceilings, vintage furnishings, and a panoramic terrace overlooking gardens and sea.
+                Атмосферный колониальный отель-крепость португальской эпохи. Высокие потолки, винтажная мебель, панорамная терраса с видом на океан и сады.
               </p>
             </div>
           </div>
@@ -535,3 +537,28 @@
 
 </body>
 </html>
+"""
+
+# Save RU versions
+with open('/Volumes/Genius Art/Antigravity/Bali Tours/timor.html', 'w', encoding='utf-8') as f:
+    f.write(ru_content)
+
+with open('/Volumes/Genius Art/Antigravity/Bali Tours/index.html', 'w', encoding='utf-8') as f:
+    f.write(ru_content)
+
+# EN version
+en_content = ru_content.replace('lang="ru"', 'lang="en"') \
+  .replace('Отели', 'Hotels') \
+  .replace('О Стране', 'About') \
+  .replace('Где Мы Живем: Лучшие Отели Региона', 'Where We Stay: Best Regional Hotels') \
+  .replace('Мы выбираем максимально комфортные 4-звездочные отели и проверенные исторические резиденции ($150–$250/ночь с отличными отзывами на Booking.com).', 'We select top-tier 4-star hotels and verified heritage properties ($150–$250/night with excellent Booking.com reviews).') \
+  .replace('Флагманский отель столицы на первой линии океана. Бассейн с видом на порт Дили, просторные кондиционированные номера, хороший ресторан и тишина.', 'The capital’s premier beachfront hotel. Oceanfront pool, spacious air-conditioned rooms, fine dining, and peaceful tranquility.') \
+  .replace('Атмосферный колониальный отель-крепость португальской эпохи. Высокие потолки, винтажная мебель, панорамная терраса с видом на океан и сады.', 'Atmospheric Portuguese-era heritage hotel. High ceilings, vintage furnishings, and a panoramic terrace overlooking gardens and sea.') \
+  .replace('Уютные бунгало из натурального дерева прямо на белоснежном берегу. Выход к прозрачному коралловом рифу за несколько шагов от номера.', 'Charming wooden bungalows directly on the white sand beach. Snorkel on pristine coral reefs right from your doorstep.') \
+  .replace('<span class="text-amber-400 font-bold">RU</span>', '<a href="timor.html" class="hover:text-white transition">RU</a>') \
+  .replace('<a href="timor-en.html" class="hover:text-white transition">EN</a>', '<span class="text-amber-400 font-bold">EN</span>')
+
+with open('/Volumes/Genius Art/Antigravity/Bali Tours/timor-en.html', 'w', encoding='utf-8') as f:
+    f.write(en_content)
+
+print("Updated with hotels section successfully!")

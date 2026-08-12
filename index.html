@@ -39,11 +39,12 @@
 </head>
 <body class="bg-brand-bg text-slate-100 font-sans selection:bg-amber-500 selection:text-black overflow-x-hidden antialiased">
 
-  <!-- 1. FLOATING NAV WITH LANGUAGE SWITCHER -->
+  <!-- 1. FLOATING GLASS NAV WITH LANGUAGE SWITCHER -->
   <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-full px-6 py-4 flex items-center justify-between shadow-2xl transition-all duration-300">
     <a href="#" class="font-serif text-lg tracking-wider text-amber-500 font-bold hover:opacity-90 transition">ВАЛЕРИЙ ЛАТЫПОВ</a>
     <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
       <a href="#about" class="hover:text-amber-500 transition">О Стране</a>
+      <a href="#hotels" class="hover:text-amber-500 transition">Отели</a>
       <a href="#map" class="hover:text-amber-500 transition">Карта</a>
       <a href="#selector" class="hover:text-amber-500 transition">Маршруты</a>
       <a href="#guide" class="hover:text-amber-500 transition">Проводник</a>
@@ -60,7 +61,7 @@
     </div>
   </nav>
 
-  <!-- 2. HERO SECTION -->
+  <!-- 2. HERO SECTION WITH GLASS & WHITE TEXT -->
   <section class="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 overflow-hidden">
     <div class="hero-image-wrapper absolute inset-0 z-0 opacity-40">
       <img src="images/IMG_2176.jpg" alt="Тимор-Лесте" class="w-full h-full object-cover filter brightness-50" />
@@ -115,7 +116,99 @@
     </div>
   </section>
 
-  <!-- 4. MAP SECTION -->
+  <!-- 4. HOTELS & ACCOMMODATION SECTION (NEW) -->
+  <section class="py-24 bg-brand-surface/60 border-b border-white/5" id="hotels">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-400 font-mono text-xs uppercase tracking-widest">Проживание & Комфорт</span>
+        <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mt-3">
+          Где Мы Живем: Лучшие Отели Региона
+        </h2>
+        <p class="text-slate-400 text-sm md:text-base mt-3">
+          Мы выбираем максимально комфортные 4-звездочные отели и проверенные исторические резиденции ($150–$250/ночь с отличными отзывами на Booking.com).
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Hotel 1 -->
+        <div class="bg-slate-900/80 border border-white/10 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between group hover:border-amber-500/40 transition duration-500">
+          <div>
+            <div class="relative h-64 overflow-hidden">
+              <img src="images/IMG_2144.jpg" alt="Novo Turismo Resort Dili" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+              <div class="absolute top-4 left-4 bg-amber-500 text-slate-950 text-xs font-bold font-mono px-3 py-1 rounded-full uppercase">
+                4★ Премиум · Дили
+              </div>
+              <div class="absolute bottom-4 right-4 bg-slate-950/80 border border-white/20 text-white text-xs font-mono px-2.5 py-1 rounded-lg backdrop-blur-md">
+                ★ 8.3 / 10 Booking
+              </div>
+            </div>
+            <div class="p-6 space-y-3">
+              <h3 class="text-xl font-serif font-bold text-white">Novo Turismo Resort & Spa</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Флагманский отель столицы на первой линии океана. Бассейн с видом на порт Дили, просторные кондиционированные номера, хороший ресторан и тишина.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 border-t border-white/5 flex justify-between items-center text-xs font-mono text-slate-400">
+            <span>Категория: Superior Ocean</span>
+            <span class="text-amber-400 font-bold font-sans text-sm">~$180–$220 / ночь</span>
+          </div>
+        </div>
+
+        <!-- Hotel 2 -->
+        <div class="bg-slate-900/80 border border-white/10 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between group hover:border-amber-500/40 transition duration-500">
+          <div>
+            <div class="relative h-64 overflow-hidden">
+              <img src="images/IMG_3122.jpg" alt="Pousada de Baucau" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+              <div class="absolute top-4 left-4 bg-amber-500 text-slate-950 text-xs font-bold font-mono px-3 py-1 rounded-full uppercase">
+                Историческое Наследие · Баукау
+              </div>
+              <div class="absolute bottom-4 right-4 bg-slate-950/80 border border-white/20 text-white text-xs font-mono px-2.5 py-1 rounded-lg backdrop-blur-md">
+                Исторический Отель
+              </div>
+            </div>
+            <div class="p-6 space-y-3">
+              <h3 class="text-xl font-serif font-bold text-white">Pousada de Baucau</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Атмосферный колониальный отель-крепость португальской эпохи. Высокие потолки, винтажная мебель, панорамная терраса с видом на океан и сады.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 border-t border-white/5 flex justify-between items-center text-xs font-mono text-slate-400">
+            <span>Категория: Deluxe Heritage</span>
+            <span class="text-amber-400 font-bold font-sans text-sm">~$110–$150 / ночь</span>
+          </div>
+        </div>
+
+        <!-- Hotel 3 -->
+        <div class="bg-slate-900/80 border border-white/10 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between group hover:border-amber-500/40 transition duration-500">
+          <div>
+            <div class="relative h-64 overflow-hidden">
+              <img src="images/IMG_3281.jpg" alt="Waterfront Eco-Lodge Atauro" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+              <div class="absolute top-4 left-4 bg-amber-500 text-slate-950 text-xs font-bold font-mono px-3 py-1 rounded-full uppercase">
+                Эко-Бунгало · Остров Атауро
+              </div>
+              <div class="absolute bottom-4 right-4 bg-slate-950/80 border border-white/20 text-white text-xs font-mono px-2.5 py-1 rounded-lg backdrop-blur-md">
+                1-я Линия Океана
+              </div>
+            </div>
+            <div class="p-6 space-y-3">
+              <h3 class="text-xl font-serif font-bold text-white">Atauro Waterfront Eco Lodge</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Уютные бунгало из натурального дерева прямо на белоснежном берегу. Выход к прозрачному коралловому рифу за несколько шагов от номера.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 border-t border-white/5 flex justify-between items-center text-xs font-mono text-slate-400">
+            <span>Категория: Beachfront Bungalow</span>
+            <span class="text-amber-400 font-bold font-sans text-sm">~$100–$140 / ночь</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. MAP SECTION -->
   <section class="py-20 relative" id="map">
     <div class="container mx-auto px-6 max-w-6xl text-center">
       <div class="text-center max-w-3xl mx-auto mb-10">
@@ -130,7 +223,7 @@
     </div>
   </section>
 
-  <!-- 5. PROGRAM SELECTOR (4 TABS) -->
+  <!-- 6. PROGRAM SELECTOR (4 TABS) -->
   <section class="py-24 bg-brand-surface/50 border-t border-white/5" id="selector">
     <div class="container mx-auto px-6 max-w-6xl">
       <div class="text-center max-w-3xl mx-auto mb-12">
@@ -366,7 +459,7 @@
     </div>
   </section>
 
-  <!-- 6. AUTHOR & GUIDE SECTION -->
+  <!-- 7. AUTHOR & GUIDE SECTION -->
   <section class="py-28 bg-brand-surface border-y border-white/5" id="guide">
     <div class="container mx-auto px-6 max-w-5xl">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
@@ -392,7 +485,7 @@
     </div>
   </section>
 
-  <!-- 7. CONTACT / CTA -->
+  <!-- 8. CONTACT / CTA -->
   <section class="py-32 relative overflow-hidden" id="contact">
     <div class="container mx-auto px-6 relative z-10 max-w-3xl text-center">
       <span class="text-amber-500 font-mono text-xs uppercase tracking-widest mb-4 inline-block">Маленькие Камерные Группы</span>
@@ -407,7 +500,7 @@
     </div>
   </section>
 
-  <!-- 8. FOOTER -->
+  <!-- 9. FOOTER -->
   <footer class="py-12 bg-slate-950 border-t border-white/5 text-xs text-slate-500">
     <div class="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row justify-between items-center gap-6">
       <div class="flex items-center space-x-6">
