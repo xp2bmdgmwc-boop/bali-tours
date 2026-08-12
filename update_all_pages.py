@@ -1,4 +1,32 @@
-<!DOCTYPE html>
+import re
+
+# 1. UPDATE files/yang.html
+with open('/Volumes/Genius Art/Antigravity/Bali Tours/files/yang.html', 'r', encoding='utf-8') as f:
+    yang_html = f.read()
+
+yang_html = yang_html.replace('от €7 400', 'от €7 500')
+# Remove ticker section in yang.html
+yang_html = re.sub(r'<!-- TICKER -->\s*<div class="ticker-section">.*?</div>\s*', '', yang_html, flags=re.DOTALL)
+
+with open('/Volumes/Genius Art/Antigravity/Bali Tours/files/yang.html', 'w', encoding='utf-8') as f:
+    f.write(yang_html)
+
+# 2. UPDATE files/yang-en.html
+with open('/Volumes/Genius Art/Antigravity/Bali Tours/files/yang-en.html', 'r', encoding='utf-8') as f:
+    yang_en_html = f.read()
+
+yang_en_html = yang_en_html.replace('from €7,400', 'from €7,500')
+yang_en_html = yang_en_html.replace('€7,400', '€7,500')
+# Remove ticker section in yang-en.html
+yang_en_html = re.sub(r'<div class="ticker-section">.*?</div>\s*', '', yang_en_html, flags=re.DOTALL)
+
+with open('/Volumes/Genius Art/Antigravity/Bali Tours/files/yang-en.html', 'w', encoding='utf-8') as f:
+    f.write(yang_en_html)
+
+print("Updated yang.html and yang-en.html!")
+
+# 3. BUILD RUSSIAN TIMOR LANDING PAGE (Dark Editorial Style)
+ru_content = """<!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -442,3 +470,41 @@
 
 </body>
 </html>
+"""
+
+# Write RU versions
+with open('/Volumes/Genius Art/Antigravity/Bali Tours/timor.html', 'w', encoding='utf-8') as f:
+    f.write(ru_content)
+
+with open('/Volumes/Genius Art/Antigravity/Bali Tours/index.html', 'w', encoding='utf-8') as f:
+    f.write(ru_content)
+
+
+# 4. BUILD ENGLISH TIMOR LANDING PAGE (timor-en.html)
+en_content = ru_content.replace('lang="ru"', 'lang="en"') \
+  .replace('ВАЛЕРИЙ ЛАТЫПОВ · Авторские Экспедиции Валерия Латыпова', 'VALERIY LATYPOV · Author Expeditions') \
+  .replace('Тимор-Лесте:</span><br/> Путешествие на край земли', 'Timor-Leste:</span><br/> Journey to the Edge of the Earth') \
+  .replace('Последнее сакральное побережье за пределами массовой цивилизации. Маленькие камерные группы. Возможность индивидуального тура.', 'The last untouched coast beyond mass civilization. Small boutique groups. Individual tour options available.') \
+  .replace('Внедорожники 4x4 Toyota Land Cruiser', '4x4 Toyota Land Cruiser Vehicles') \
+  .replace('Персональный VIP-трансфер из аэропорта Дили', 'Personal VIP Transfer from Dili Airport') \
+  .replace('Редчайший изолированный уголок планеты', 'One of Earth’s Rarest Isolated Sanctuaries') \
+  .replace('Тимор-Лесте входит в ТОП-3 наименее посещаемых стран мира. За весь год в страну въезжает менее 10 000 досуговых туристов (это в среднем менее 30–50 туристов на всю страну одновременно!). В столице Дили постоянно проживает около 100 европейцев и иностранцев. Это редчайший изолированный уголок планеты, но лет через пять всё может измениться — успейте увидеть его первым.', 'Timor-Leste ranks among the top 3 least-visited countries in the world. Fewer than 10,000 leisure tourists enter the country annually—an average of under 30–50 tourists nation-wide at any given time. Only around 100 foreign expats reside in Dili. This is one of Earth’s rarest isolated sanctuaries, but in 5 years everything may change—experience it first.') \
+  .replace('Туристов на всю страну одновременно', 'Tourists in the nation at once') \
+  .replace('Европейцев-экспатов в Дили', 'Foreign expats in Dili') \
+  .replace('До появления массового туризма', 'Years before mass tourism') \
+  .replace('Карта Экспедиции по Тимору', 'Timor Expedition Route Map') \
+  .replace('Выберите Программу', 'Select Your Route') \
+  .replace('Маленькие камерные группы. Возможность полностью индивидуального тура.', 'Small boutique groups. Individual tour options available.') \
+  .replace('Тимор-Лесте: 8 Дней ($10,000)', 'Timor-Leste: 8 Days ($10,000)') \
+  .replace('Тимор-Лесте: 3 Дня ($4,000)', 'Timor-Leste: 3 Days ($4,000)') \
+  .replace('Бали: 5–7 Дней (От €7,500)', 'Bali: 5–7 Days (From €7,500)') \
+  .replace('✨ Комбо: Бали + Тимор (12 Дней)', '✨ Combo: Bali + Timor (12 Days)') \
+  .replace('Запросить Участие', 'Request Participation') \
+  .replace('Написать Валерию в Telegram', 'Contact Valeriy on Telegram') \
+  .replace('<span class="text-amber-400 font-bold">RU</span>', '<a href="timor.html" class="hover:text-white transition">RU</a>') \
+  .replace('<a href="timor-en.html" class="hover:text-white transition">EN</a>', '<span class="text-amber-400 font-bold">EN</span>')
+
+with open('/Volumes/Genius Art/Antigravity/Bali Tours/timor-en.html', 'w', encoding='utf-8') as f:
+    f.write(en_content)
+
+print("Generated timor-ru and timor-en successfully!")
