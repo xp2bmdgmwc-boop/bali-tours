@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+import re
+
+ru_content = """<!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -594,3 +596,28 @@
 
 </body>
 </html>
+"""
+
+# Write RU versions
+with open('/Volumes/Genius Art/Antigravity/Bali Tours/timor.html', 'w', encoding='utf-8') as f:
+    f.write(ru_content)
+
+with open('/Volumes/Genius Art/Antigravity/Bali Tours/index.html', 'w', encoding='utf-8') as f:
+    f.write(ru_content)
+
+# EN version
+en_content = ru_content.replace('lang="ru"', 'lang="en"') \
+  .replace('Отели', 'Hotels') \
+  .replace('О Стране', 'About') \
+  .replace('Где Мы Живем: Лучшие Отели Региона', 'Where We Stay: Best Regional Hotels') \
+  .replace('Мы выбираем максимально комфортные 4-звездочные отели и проверенные исторические резиденции ($150–$250/ночь с отличными отзывами на Booking.com).', 'We select top-tier 4-star hotels and verified heritage properties ($150–$250/night with excellent Booking.com reviews).') \
+  .replace('Флагманский отель столицы на первой линии океана. Бассейн с видом на порт Дили, просторные кондиционированные номера, хороший ресторан и тишина.', 'The capital’s premier beachfront hotel. Oceanfront pool, spacious air-conditioned rooms, fine dining, and peaceful tranquility.') \
+  .replace('Атмосферный колониальный отель-крепость португальской эпохи. Высокие потолки, винтажная мебель, панорамная терраса с видом на океан и сады.', 'Atmospheric Portuguese-era heritage hotel. High ceilings, vintage furnishings, and a panoramic terrace overlooking gardens and sea.') \
+  .replace('Уютные бунгало из натурального дерева прямо на белоснежном берегу. Выход к прозрачному коралловому рифу за несколько шагов от номера.', 'Charming wooden bungalows directly on the white sand beach. Snorkel on pristine coral reefs right from your doorstep.') \
+  .replace('<span style="color:var(--accent);font-weight:700;">RU</span>', '<a href="timor.html" style="color:var(--ink-mute);">RU</a>') \
+  .replace('<a href="timor-en.html" style="color:var(--ink-mute);">EN</a>', '<span style="color:var(--accent);font-weight:700;">EN</span>')
+
+with open('/Volumes/Genius Art/Antigravity/Bali Tours/timor-en.html', 'w', encoding='utf-8') as f:
+    f.write(en_content)
+
+print("Generated Ecru Light site for Timor successfully!")
