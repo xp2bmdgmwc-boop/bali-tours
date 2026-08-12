@@ -84,11 +84,11 @@
       </div>
       
       <div class="hero-specs inline-flex flex-wrap items-center justify-center gap-6 bg-slate-900/60 border border-white/10 backdrop-blur-xl px-8 py-4 rounded-2xl text-slate-300 text-sm font-medium">
-        <div class="flex items-center space-x-2"><span class="text-amber-500">◈</span> <span>7–10 Дней</span></div>
+        <div class="flex items-center space-x-2"><span class="text-amber-500">◈</span> <span>3 или 8 Дней</span></div>
         <span class="text-slate-600">|</span>
-        <div class="flex items-center space-x-2"><span class="text-amber-500">◈</span> <span>Формат 1-на-1 / Камерно</span></div>
+        <div class="flex items-center space-x-2"><span class="text-amber-500">◈</span> <span>От $4,000</span></div>
         <span class="text-slate-600">|</span>
-        <div class="flex items-center space-x-2"><span class="text-amber-500">◈</span> <span>4x4 Toyota Land Cruiser</span></div>
+        <div class="flex items-center space-x-2"><span class="text-amber-500">◈</span> <span>Формат 1-на-1</span></div>
       </div>
     </div>
   </section>
@@ -135,9 +135,21 @@
   <!-- 5. JOURNEY / PLACES OF POWER (STACKING GSAP CARDS) -->
   <section class="py-28 bg-brand-surface/50 border-t border-white/5" id="journey">
     <div class="container mx-auto px-6 max-w-6xl">
-      <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="text-center max-w-3xl mx-auto mb-12">
         <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Маршрут и Ключевые Точки</span>
         <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mt-3">Места Силы & Энергетическая Работа</h2>
+      </div>
+
+      <!-- Toggle 3 / 8 days -->
+      <div class="flex justify-center mb-16">
+        <div class="bg-slate-900/80 backdrop-blur-md p-1.5 rounded-2xl border border-white/10 flex items-center gap-2">
+          <button id="btn-3-days" class="px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 bg-transparent text-slate-400 hover:text-white" onclick="switchTour('3')">
+            3 Дня (Погружение)
+          </button>
+          <button id="btn-8-days" class="px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 bg-amber-500 text-slate-950 shadow-lg" onclick="switchTour('8')">
+            8 Дней (Экспедиция)
+          </button>
+        </div>
       </div>
 
       <!-- Map Block -->
@@ -147,7 +159,13 @@
         </div>
       </div>
 
-      <div class="space-y-16">
+      <div id="tour-8-days" class="space-y-16">
+        
+        <!-- Pricing 8 Days -->
+        <div class="bg-amber-500/10 border border-amber-500/20 rounded-2xl p-6 text-center max-w-2xl mx-auto mb-10">
+          <div class="text-amber-400 text-xl font-serif font-bold mb-2">Стоимость: $10,000 – $11,000</div>
+          <p class="text-slate-400 text-sm">Без учета авиабилетов и страховки (приобретаются самостоятельно).</p>
+        </div>
         
         <!-- Place 1: Dili & Nagas -->
         <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-amber-500/30 transition duration-500">
@@ -224,7 +242,8 @@
             <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">04 · Восток Острова</span>
             <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Остров Жако & Синие Киты</h3>
             <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-              Священный необитаемый остров Жако (Lulik) с дикими оленями на белоснежном песке. Базирование в португальской крепости-отеле Pousada Tutuala и плавание с синими китами.
+              Священный необитаемый остров Жако (Lulik) с дикими оленями на белоснежном песке. Базирование в португальской крепости-отеле Pousada Tutuala. 
+              <br/><br/><strong class="text-white">Плавание с синими китами:</strong> Уникальная возможность выхода в океан для наблюдения и снорклинга с гигантами в месте их сезонной миграции.
             </p>
             <div class="bg-slate-900/80 border-l-4 border-amber-500 p-5 rounded-r-2xl border-t border-r border-b border-white/5">
               <span class="text-amber-400 font-semibold text-sm flex items-center gap-2 mb-1">
@@ -241,7 +260,59 @@
           </div>
         </div>
 
-      </div>
+        <!-- Place 5: Uma Lulik (Aboriginals) -->
+        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-amber-500/30 transition duration-500">
+          <div class="lg:col-span-6 space-y-5">
+            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">05 · Племена Фаталуку</span>
+            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Ума Лулик (Священные Дома)</h3>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              Посещение деревень коренных аборигенов с их уникальными домами на сваях и высокими трапециевидными соломенными крышами (Uma Lulik). Контакт с первобытным укладом жизни, где время остановилось столетия назад, и знакомство с истинными хозяевами этой земли.
+            </p>
+          </div>
+          <div class="lg:col-span-6 grid grid-cols-2 gap-4 story-img-group">
+            <img src="images/IMG_2563.jpg" alt="Традиционные наряды аборигенов" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
+            <img src="images/IMG_2176.jpg" alt="Дорога к племенам" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
+          </div>
+        </div>
+
+      </div> <!-- /tour-8-days -->
+
+      <!-- 3 DAYS TOUR CONTENT -->
+      <div id="tour-3-days" class="space-y-16 hidden">
+        <!-- Pricing 3 Days -->
+        <div class="bg-amber-500/10 border border-amber-500/20 rounded-2xl p-6 text-center max-w-2xl mx-auto mb-10">
+          <div class="text-amber-400 text-xl font-serif font-bold mb-2">Стоимость: $4,000</div>
+          <p class="text-slate-400 text-sm">Без учета авиабилетов и страховки (приобретаются самостоятельно).</p>
+        </div>
+
+        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-6 space-y-5">
+            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">01 · Столица & Горы</span>
+            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Дили и Обитель Нагов</h3>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              Заезд в отель, замедление. В горах скрыто ключевое сакральное место медитации и работы с Нагами — хранителями Земли. Практика «Запрос Сердца».
+            </p>
+          </div>
+          <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+            <img src="images/IMG_2163.jpg" alt="Стрит-арт в Дили" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
+            <img src="images/IMG_2288.jpg" alt="Готика в горах" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
+          </div>
+        </div>
+
+        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-6 lg:order-2 space-y-5">
+            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">02 · Природная Купель</span>
+            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Дух Воды (Баукау)</h3>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              Уникальная природная чаша в слоистых известняковых скалах. Практика «Водное Омовение и Сброс Тяжести». Взаимодействие с Духом Воды и смывание накопленного бизнес-стресса перед вылетом.
+            </p>
+          </div>
+          <div class="lg:col-span-6 lg:order-1 grid grid-cols-2 gap-4">
+            <img src="images/IMG_3122.jpg" alt="Бассейн в Баукау" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
+            <img src="images/IMG_3135.jpg" alt="Купель" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
+          </div>
+        </div>
+      </div> <!-- /tour-3-days -->
     </div>
   </section>
 
@@ -293,6 +364,35 @@
       </div>
     </div>
   </section>
+  <!-- ACCOMMODATION / HOTELS -->
+  <section class="py-24 relative bg-brand-bg border-b border-white/5" id="hotels">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Проживание</span>
+        <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mt-3">Где мы живем</h2>
+        <p class="text-slate-400 mt-4 text-base">Инфраструктура Тимор-Лесте только развивается. Мы выбираем лучшие из доступных опций уровня 4-5 звезд (от $150-200 за ночь), чтобы обеспечить комфорт после дикой природы.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-brand-surface p-6 rounded-3xl border border-white/10 shadow-xl">
+          <div class="text-amber-500 text-xl mb-3">✦✦✦✦✦</div>
+          <h3 class="text-xl font-serif font-bold text-white mb-2">NOVO TURISMO Resort & Spa</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Дили. Один из лучших резорт-отелей страны с бассейном, спа и премиум-сервисом. Настоящий оазис цивилизации.</p>
+        </div>
+        <div class="bg-brand-surface p-6 rounded-3xl border border-white/10 shadow-xl">
+          <div class="text-amber-500 text-xl mb-3">✦✦✦✦</div>
+          <h3 class="text-xl font-serif font-bold text-white mb-2">Hotel Timor</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Дили. Классический португальский отель с историческим шармом. Традиции, отличный сервис и строгий стиль.</p>
+        </div>
+        <div class="bg-brand-surface p-6 rounded-3xl border border-white/10 shadow-xl">
+          <div class="text-amber-500 text-xl mb-3">✦✦✦✦</div>
+          <h3 class="text-xl font-serif font-bold text-white mb-2">Pousada de Baucau</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Баукау. Очаровательный колониальный отель-крепость на маршруте с видом на побережье, сохранивший дух времени.</p>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-slate-500 text-sm">На крайнем востоке (остров Жако / Тутуала) размещение проходит в уникальных эко-лоджах, где главная роскошь — это уединение и океан.</div>
+    </div>
+  </section>
 
   <!-- 7. GUIDE / VALERY LATYPOV -->
   <section class="py-28 bg-brand-surface border-y border-white/5" id="guide">
@@ -321,9 +421,16 @@
     <div class="container mx-auto px-6 relative z-10 max-w-3xl text-center">
       <span class="text-amber-500 font-mono text-xs uppercase tracking-widest mb-4 inline-block">Закрытый Набор</span>
       <h2 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Готовы ступить за предел?</h2>
-      <p class="text-slate-400 text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+      <p class="text-slate-400 text-base md:text-lg mb-6 max-w-xl mx-auto leading-relaxed">
         Экспедиция формируется в строго индивидуальном формате (1-на-1 или малая закрытая группа). Даты согласуются персонально.
       </p>
+      
+      <div class="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-6 mb-10 max-w-2xl mx-auto text-left">
+        <h4 class="text-amber-400 font-serif font-bold text-lg mb-2">✨ Комбо-Тур: Бали + Тимор</h4>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Возможно совмещение: сначала отдых и очищение на нетуристическом Бали (3-5 дней), а затем вылет за абсолютно дикой, первородной энергией на Тимор-Лесте (3-5 дней). Идеальный баланс.
+        </p>
+      </div>
       <a href="https://t.me/valerylatypov" target="_blank" class="inline-block bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold px-10 py-5 rounded-2xl text-lg transition-all duration-300 shadow-2xl shadow-amber-500/30 transform hover:-translate-y-1">
         Обсудить участие в Telegram
       </a>
@@ -345,4 +452,32 @@
   </footer>
 
 </body>
+<script>
+  function switchTour(days) {
+    const btn3 = document.getElementById('btn-3-days');
+    const btn8 = document.getElementById('btn-8-days');
+    const tour3 = document.getElementById('tour-3-days');
+    const tour8 = document.getElementById('tour-8-days');
+    
+    if(days === '3') {
+      btn3.classList.remove('bg-transparent', 'text-slate-400');
+      btn3.classList.add('bg-amber-500', 'text-slate-950', 'shadow-lg');
+      
+      btn8.classList.remove('bg-amber-500', 'text-slate-950', 'shadow-lg');
+      btn8.classList.add('bg-transparent', 'text-slate-400');
+      
+      tour8.classList.add('hidden');
+      tour3.classList.remove('hidden');
+    } else {
+      btn8.classList.remove('bg-transparent', 'text-slate-400');
+      btn8.classList.add('bg-amber-500', 'text-slate-950', 'shadow-lg');
+      
+      btn3.classList.remove('bg-amber-500', 'text-slate-950', 'shadow-lg');
+      btn3.classList.add('bg-transparent', 'text-slate-400');
+      
+      tour3.classList.add('hidden');
+      tour8.classList.remove('hidden');
+    }
+  }
+</script>
 </html>
