@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ВОСТОЧНЫЙ ТИМОР · Последняя Тишина — Валерий Латыпов</title>
-  <meta name="description" content="Закрытая авторская экспедиция в Восточный Тимор. Древний остров, наги, остров Жако, 40-тысячелетние петроглифы и детокс от цивилизации." />
+  <title>Валерий Латыпов · Авторские Экспедиции: Тимор-Лесте & Бали</title>
+  <meta name="description" content="Эксклюзивные авторские экспедиции на край Земли — Восточный Тимор и нетуристический Бали. Первозданная природа, 4x4 внедорожники, мамерные VIP-группы." />
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -14,12 +14,13 @@
         extend: {
           colors: {
             brand: {
-              bg: '#0B0F17',
-              surface: '#121824',
-              surfaceMuted: '#1A2234',
-              accent: '#D97706', // Warm amber / terracotta
-              accentHover: '#B45309',
-              textMuted: '#9CA3AF'
+              bg: '#FAF9F6',
+              surface: '#FFFFFF',
+              card: '#F4F2EC',
+              accent: '#C96E16',
+              accentHover: '#A3560F',
+              dark: '#1C1917',
+              muted: '#78716C'
             }
           },
           fontFamily: {
@@ -31,576 +32,448 @@
     }
   </script>
   
-  <!-- Google Fonts & Custom CSS -->
   <link rel="stylesheet" href="style.css" />
-  
   <!-- GSAP & ScrollTrigger -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="script.js" defer></script>
 </head>
-<body class="bg-brand-bg text-slate-100 font-sans selection:bg-amber-500 selection:text-black overflow-x-hidden antialiased">
+<body class="bg-brand-bg text-stone-900 font-sans selection:bg-amber-200 selection:text-stone-950 overflow-x-hidden antialiased">
 
-  <!-- 1. FLOATING GLASS NAV -->
-  <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl bg-slate-900/70 backdrop-blur-xl border border-white/10 rounded-full px-6 py-4 flex items-center justify-between shadow-2xl transition-all duration-300">
-    <a href="#" class="font-serif text-lg tracking-wider text-amber-500 font-bold hover:opacity-90 transition">ВАЛЕРИЙ ЛАТЫПОВ</a>
-    <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
-      <a href="#about" class="hover:text-amber-500 transition">Концепция</a>
-      <a href="#journey" class="hover:text-amber-500 transition">Места Силы</a>
-      <a href="#gallery" class="hover:text-amber-500 transition">Галерея</a>
-      <a href="#guide" class="hover:text-amber-500 transition">Проводник</a>
+  <!-- 1. NAVIGATION -->
+  <nav class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-6xl bg-white/90 backdrop-blur-md border border-stone-200/80 rounded-2xl px-6 py-4 flex items-center justify-between shadow-sm">
+    <a href="#" class="font-serif text-lg tracking-tight text-stone-900 font-bold hover:text-amber-700 transition">
+      ВАЛЕРИЙ ЛАТЫПОВ <span class="text-xs font-sans font-normal text-stone-500 ml-2 uppercase tracking-widest hidden sm:inline">· Экспедиции</span>
+    </a>
+    <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-700">
+      <a href="#map" class="hover:text-amber-700 transition">Карта</a>
+      <a href="#selector" class="hover:text-amber-700 transition">Программы</a>
+      <a href="#guide" class="hover:text-amber-700 transition">Проводник</a>
     </div>
-    <a href="#contact" class="bg-amber-600 hover:bg-amber-500 text-slate-950 font-semibold px-5 py-2 rounded-full text-sm transition-all duration-300 transform hover:scale-105 shadow-lg shadow-amber-600/20">
+    <a href="#contact" class="bg-stone-900 hover:bg-stone-800 text-white font-medium px-5 py-2.5 rounded-xl text-sm transition shadow-sm">
       Запросить участие
     </a>
   </nav>
 
-  <!-- 2. HERO SECTION WITH GSAP PARALLAX & GLASS CARDS -->
-  <section class="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden">
-    <!-- Hero Background Image with Darkness Radial Overlay -->
-    <div class="hero-image-wrapper absolute inset-0 z-0">
-      <img src="images/IMG_2144.jpg" alt="Восточный Тимор Океан" class="w-full h-full object-cover filter brightness-[0.45] scale-105" />
-      <div class="absolute inset-0 bg-gradient-to-t from-brand-bg via-transparent to-brand-bg/80"></div>
-    </div>
-
-    <div class="container mx-auto px-6 relative z-10 max-w-5xl text-center">
-      <span class="t-eyebrow inline-block bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 backdrop-blur-md">
-        Эксклюзивная Экспедиция · Час от Бали
+  <!-- 2. HERO SECTION -->
+  <section class="pt-32 pb-16 bg-white border-b border-stone-200">
+    <div class="container mx-auto px-6 max-w-5xl text-center">
+      <span class="inline-block bg-amber-100/70 border border-amber-300 text-amber-900 font-mono text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+        Авторские Путешествия · Час от Бали
       </span>
-      <h1 class="t-display text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-tight mb-6">
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500">Тимор-Лесте:</span><br/> Путешествие на край земли
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-stone-950 tracking-tight leading-tight mb-6">
+        Путешествие на Край Земли
       </h1>
-      <p class="hero-tagline text-lg md:text-2xl text-slate-300 font-light max-w-3xl mx-auto leading-relaxed mb-10">
-        Последнее сакральное побережье за пределами цивилизации. Успейте прикоснуться к первозданному, пока этот мир не открыли туристы.
+      <p class="text-lg md:text-2xl text-stone-600 font-light max-w-3xl mx-auto leading-relaxed mb-8">
+        Камерные экспедиции в <span class="text-stone-950 font-normal">Тимор-Лесте</span> и на <span class="text-stone-950 font-normal">Бали</span>. Первозданная природа, дикий океан и глубокое погружение в культуры без туристических толп.
       </p>
       
-      <div class="hero-actions flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-        <a href="#contact" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold px-8 py-4 rounded-xl text-base transition-all duration-300 shadow-xl shadow-amber-500/25 hover:shadow-amber-400/40 transform hover:-translate-y-1">
-          Присоединиться к Экспедиции
-        </a>
-        <a href="#journey" class="w-full sm:w-auto bg-slate-900/80 hover:bg-slate-800 border border-white/15 text-white font-medium px-8 py-4 rounded-xl text-base backdrop-blur-md transition-all duration-300">
-          Исследовать Путь
-        </a>
-      </div>
-      
-      <div class="hero-specs inline-flex flex-wrap items-center justify-center gap-6 bg-slate-900/60 border border-white/10 backdrop-blur-xl px-8 py-4 rounded-2xl text-slate-300 text-sm font-medium">
-        <div class="flex items-center space-x-2"><span class="text-amber-500">◈</span> <span>3 или 8 Дней</span></div>
-        <span class="text-slate-600">|</span>
-        <div class="flex items-center space-x-2"><span class="text-amber-500">◈</span> <span>От $4,000</span></div>
-        <span class="text-slate-600">|</span>
-        <div class="flex items-center space-x-2"><span class="text-amber-500">◈</span> <span>Формат 1-на-1</span></div>
+      <div class="flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-stone-600">
+        <div class="bg-stone-100 px-4 py-2 rounded-xl border border-stone-200">◈ Формат: Камерные группы (до 6 чел.)</div>
+        <div class="bg-stone-100 px-4 py-2 rounded-xl border border-stone-200">◈ Внедорожники 4x4 Toyota Land Cruiser</div>
+        <div class="bg-stone-100 px-4 py-2 rounded-xl border border-stone-200">◈ Персональный трансфер из аэропорта Дили</div>
       </div>
     </div>
   </section>
 
-  <!-- 3. MANIFESTO / STATEMENT -->
-  <section class="py-24 bg-brand-surface border-y border-white/5 relative" id="about">
-    <div class="container mx-auto px-6 max-w-4xl text-center">
-      <div class="manifesto-section">
-        <p class="t-quote font-serif text-2xl md:text-4xl text-slate-200 leading-snug font-light italic">
-          «Это страна, отвоевавшая независимость. Португальский язык, столица Дили и час полёта от Бали. Туристов нет — вы попадаете в другую реальность без белых людей, погружаясь в первозданный быт и тишину.»
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ROUTE MAP SECTION -->
-  <section class="py-20 relative bg-brand-surface/20">
-    <div class="container mx-auto px-6 max-w-6xl text-center">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">География Экспедиции</span>
-        <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mt-3 leading-tight mb-6">
-          Маршрут по Краю Земли
+  <!-- 3. MAP & EXPAT STATS SECTION -->
+  <section class="py-16 bg-brand-bg" id="map">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-amber-800 font-mono text-xs uppercase tracking-widest">География & Факты</span>
+        <h2 class="text-3xl md:text-5xl font-serif font-bold text-stone-950 mt-2">
+          Карта Маршрута и Абсолютная Изоляция
         </h2>
-        <p class="text-slate-300 text-lg md:text-xl leading-relaxed">
-          По статистике, в столице Дили живет около 100 европейцев, работающих по контрактам, а на весь восточный полуостров приходится <span class="text-amber-400 font-semibold">не более 50 туристов</span> единовременно. Это девственно чистая территория, совершенно не тронутая массовым туризмом. Вы будете одними из немногих, кто пройдет этот путь.
-        </p>
       </div>
-      <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative max-w-5xl mx-auto bg-slate-900/50 p-2 md:p-4">
+
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm text-center">
+          <div class="text-3xl md:text-4xl font-serif font-bold text-amber-700 mb-2">&lt; 50</div>
+          <p class="text-stone-600 text-sm leading-relaxed">Туристов во всей стране одновременно. Тимор-Лесте входит в топ-3 наименее посещаемых стран мира по данным UNWTO.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm text-center">
+          <div class="text-3xl md:text-4xl font-serif font-bold text-amber-700 mb-2">~100</div>
+          <p class="text-stone-600 text-sm leading-relaxed">Европейцев-контрактников проживают в столице Дили. Вы попадаете в мир без привычной массовки.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm text-center">
+          <div class="text-3xl md:text-4xl font-serif font-bold text-amber-700 mb-2">VIP 4x4</div>
+          <p class="text-stone-600 text-sm leading-relaxed">Никаких городских такси. Встреча с рейса прямо у трапа на подготовленном внедорожнике Toyota Land Cruiser.</p>
+        </div>
+      </div>
+
+      <!-- Map Display -->
+      <div class="bg-white p-4 rounded-3xl border border-stone-200 shadow-sm overflow-hidden">
         <img src="images/timor_loop_map.jpg" alt="Карта маршрута по Тимору" class="w-full h-auto object-cover rounded-2xl filter grayscale opacity-90 contrast-125" />
       </div>
     </div>
   </section>
 
-  <!-- FOR WHOM & WHAT YOU GET -->
-  <section class="py-24 bg-brand-surface/50 border-t border-white/5 relative" id="for-whom">
+  <!-- 4. FOR WHOM & WHAT YOU GET -->
+  <section class="py-16 bg-white border-y border-stone-200">
     <div class="container mx-auto px-6 max-w-6xl">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <!-- Для кого -->
-        <div class="space-y-6">
-          <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Профиль Участника</span>
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-white">Для кого это путешествие?</h2>
-          <ul class="space-y-4 text-slate-300">
-            <li class="flex items-start">
-              <span class="text-amber-500 mr-3 mt-1">◈</span>
-              <span class="leading-relaxed">Для тех, кто устал от заезженных туристических троп, «идеальных» курортов и фальшивых улыбок обслуживающего персонала.</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-amber-500 mr-3 mt-1">◈</span>
-              <span class="leading-relaxed">Для предпринимателей и лидеров, которым нужно радикально сменить обстановку и полностью отключиться от операционной матрицы.</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-amber-500 mr-3 mt-1">◈</span>
-              <span class="leading-relaxed">Для искателей аутентичного опыта: тех, кто хочет соприкоснуться с первобытной природой и настоящей «детской» цивилизацией.</span>
-            </li>
+        <div class="bg-stone-50 p-8 rounded-3xl border border-stone-200/80 space-y-4">
+          <span class="text-amber-800 font-mono text-xs uppercase tracking-widest">Профиль Участников</span>
+          <h3 class="text-2xl md:text-3xl font-serif font-bold text-stone-950">Для кого этот опыт?</h3>
+          <ul class="space-y-3 text-stone-700 text-sm md:text-base">
+            <li class="flex items-start"><span class="text-amber-700 mr-3">◈</span> Для предпринимателей и лидеров, которым требуется качественная перезагрузка и сброс операционной нагрузки.</li>
+            <li class="flex items-start"><span class="text-amber-700 mr-3">◈</span> Для искателей редкого аутентичного опыта вне привычных курортных стандартов.</li>
+            <li class="flex items-start"><span class="text-amber-700 mr-3">◈</span> Для тех, кто ценит общество равных по духу и статусных единомышленников.</li>
           </ul>
         </div>
-        
+
         <!-- Что вы получите -->
-        <div class="space-y-6">
-          <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Результат</span>
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-white">Что вы получите?</h2>
-          <ul class="space-y-4 text-slate-300">
-            <li class="flex items-start">
-              <span class="text-amber-500 mr-3 mt-1">◈</span>
-              <span class="leading-relaxed"><strong class="text-white">Тотальную перезагрузку:</strong> Первозданная природа и отсутствие людей обнуляют накопленный стресс лучше любой терапии.</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-amber-500 mr-3 mt-1">◈</span>
-              <span class="leading-relaxed"><strong class="text-white">Ощущение первооткрывателя:</strong> Вы побываете там, где не ступает нога массового туриста, и увидите мир таким, каким он был сотни лет назад.</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-amber-500 mr-3 mt-1">◈</span>
-              <span class="leading-relaxed"><strong class="text-white">Бескомпромиссный комфорт:</strong> Насколько это вообще возможно в диких условиях (лучшие отели страны, внедорожники 4x4, частные лодки и гибкий график).</span>
-            </li>
+        <div class="bg-stone-50 p-8 rounded-3xl border border-stone-200/80 space-y-4">
+          <span class="text-amber-800 font-mono text-xs uppercase tracking-widest">Результаты</span>
+          <h3 class="text-2xl md:text-3xl font-serif font-bold text-stone-950">Что вы получите?</h3>
+          <ul class="space-y-3 text-stone-700 text-sm md:text-base">
+            <li class="flex items-start"><span class="text-amber-700 mr-3">◈</span> <strong>Ощущение первооткрывателя:</strong> Соприкосновение с диким океаном, синими китами и древними деревнями.</li>
+            <li class="flex items-start"><span class="text-amber-700 mr-3">◈</span> <strong>Максимальный доступ:</strong> Прямой разговор с местными старейшинами и уникальными проектами без посредников.</li>
+            <li class="flex items-start"><span class="text-amber-700 mr-3">◈</span> <strong>Комфорт в диких условиях:</strong> Отели 4-5★, внедорожники, приватные катеры и гибкий график под ваш ритм.</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. MYTHOLOGY / CROCODILE LEGEND (ASYMMETRIC BENTO GRID) -->
-  <section class="py-28 relative">
+  <!-- 5. DYNAMIC ITINERARY SELECTOR -->
+  <section class="py-20 bg-brand-bg" id="selector">
     <div class="container mx-auto px-6 max-w-6xl">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7 space-y-6">
-          <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Мистицизм Земли</span>
-          <h2 class="text-3xl md:text-5xl font-serif font-bold text-white leading-tight">
-            Мы ходим по спине <br /><span class="text-amber-500">древнего существа</span>
-          </h2>
-          <p class="text-slate-300 text-base md:text-lg leading-relaxed">
-            По преданиям местных жителей, сам остров Тимор — это огромный спящий крокодил, превратившийся в сушу из чувства глубокой благодарности к человеку. 
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-amber-800 font-mono text-xs uppercase tracking-widest">Программы и Варианты</span>
+        <h2 class="text-3xl md:text-5xl font-serif font-bold text-stone-950 mt-2">
+          Выберите Маршрут
+        </h2>
+        <p class="text-stone-600 mt-2 text-sm md:text-base">Вы можете выбрать отдельную экспедицию по Тимору, путешествие по Бали или комбинированный 12-дневный тур.</p>
+      </div>
+
+      <!-- Tabs Switcher Buttons -->
+      <div class="flex flex-wrap justify-center gap-2 mb-12">
+        <button onclick="switchTab('timor-8')" id="tab-timor-8" class="px-5 py-3 rounded-xl font-medium text-sm transition-all duration-300 bg-stone-900 text-white shadow-sm">
+          Тимор-Лесте: 8 Дней ($10,000)
+        </button>
+        <button onclick="switchTab('timor-3')" id="tab-timor-3" class="px-5 py-3 rounded-xl font-medium text-sm transition-all duration-300 bg-white text-stone-700 hover:bg-stone-100 border border-stone-200">
+          Тимор-Лесте: 3 Дня ($4,000)
+        </button>
+        <button onclick="switchTab('bali-7')" id="tab-bali-7" class="px-5 py-3 rounded-xl font-medium text-sm transition-all duration-300 bg-white text-stone-700 hover:bg-stone-100 border border-stone-200">
+          Бали: 7 Дней (От $6,000)
+        </button>
+        <button onclick="switchTab('combo-12')" id="tab-combo-12" class="px-5 py-3 rounded-xl font-medium text-sm transition-all duration-300 bg-white text-stone-700 hover:bg-stone-100 border border-stone-200">
+          ✨ Комбо: Бали + Тимор (12 Дней)
+        </button>
+      </div>
+
+      <!-- PROGRAM 1: TIMOR 8 DAYS -->
+      <div id="prog-timor-8" class="prog-content space-y-8">
+        <div class="bg-amber-50 border border-amber-200 p-6 rounded-2xl text-stone-800 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
+          <div>
+            <strong class="text-amber-900 font-serif text-lg block">Тимор-Лесте: Полная Экспедиция (8 Дней)</strong>
+            <span>Все завтраки включены. Проживание в Novo Turismo 4* (Дили) и Pousada de Baucau. Трансферы на 4x4 Land Cruiser.</span>
+          </div>
+          <span class="text-amber-900 font-bold font-serif text-2xl whitespace-nowrap">$10,000</span>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-white p-6 md:p-8 rounded-3xl border border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-6 space-y-2">
+              <span class="text-amber-800 font-mono text-xs font-bold uppercase tracking-widest">ДЕНЬ 01</span>
+              <h3 class="text-xl md:text-2xl font-serif font-bold text-stone-950">Столица, Кофе и Персональный Трансфер</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Прилет в Дили. Персональный трансфер из аэропорта на внедорожнике Toyota Land Cruiser (без местных такси). Чек-ин в Novo Turismo Resort 4*. Знакомство со столицей, визит на фабрику масел Ascension Oil и дегустация премиального горного кофе.
+              </p>
+            </div>
+            <div class="lg:col-span-6 grid grid-cols-2 gap-3">
+              <img src="images/IMG_2163.jpg" alt="Дили" class="w-full aspect-[4/3] object-cover rounded-xl border border-stone-200" />
+              <img src="images/IMG_2288.jpg" alt="Колониальный Дили" class="w-full aspect-[4/3] object-cover rounded-xl border border-stone-200" />
+            </div>
+          </div>
+
+          <div class="bg-white p-6 md:p-8 rounded-3xl border border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-6 space-y-2">
+              <span class="text-amber-800 font-mono text-xs font-bold uppercase tracking-widest">ДЕНЬ 02</span>
+              <h3 class="text-xl md:text-2xl font-serif font-bold text-stone-950">Океан: Остров Атауро & Наблюдение за Китами</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Ранний выход на частном катере в пролив Омбай-Ветар для наблюдения за синими китами в их естественной среде. Высадка на остров Атауро, снорклинг на легендарном коралловом рифе Garden Reef с идеальной прозрачностью.
+              </p>
+            </div>
+            <div class="lg:col-span-6">
+              <img src="images/IMG_3281.jpg" alt="Океан и Киты" class="w-full aspect-video object-cover rounded-xl border border-stone-200" />
+            </div>
+          </div>
+
+          <div class="bg-white p-6 md:p-8 rounded-3xl border border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-6 space-y-2">
+              <span class="text-amber-800 font-mono text-xs font-bold uppercase tracking-widest">ДЕНЬ 03</span>
+              <h3 class="text-xl md:text-2xl font-serif font-bold text-stone-950">Горы: Seloi Kraik, Маубиссе и Водопад Докомали</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Выезд на 4x4 на юг. Остановка в горной деревне Seloi Kraik (округ Айлеу) с сочными рисовыми террасами и озером. Визит на кофейные плантации Маубиссе и треккинг к мощному гигантскому водопаду Dokomali (Bee Tudak).
+              </p>
+            </div>
+            <div class="lg:col-span-6 grid grid-cols-2 gap-3">
+              <img src="images/IMG_2244.jpg" alt="Маубиссе" class="w-full aspect-[4/3] object-cover rounded-xl border border-stone-200" />
+              <img src="images/IMG_3120.jpg" alt="Водопад Докомали" class="w-full aspect-[4/3] object-cover rounded-xl border border-stone-200" />
+            </div>
+          </div>
+
+          <div class="bg-white p-6 md:p-8 rounded-3xl border border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-6 space-y-2">
+              <span class="text-amber-800 font-mono text-xs font-bold uppercase tracking-widest">ДЕНЬ 04-05</span>
+              <h3 class="text-xl md:text-2xl font-serif font-bold text-stone-950">Курс на Восток: Колониальный Баукау</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Комфортный переезд на восток вдоль океана. Остановка и ночевка в исторической португальской крепости Pousada de Baucau. Купание в природной минеральной купели Баукау в слоистых известняковых скалах.
+              </p>
+            </div>
+            <div class="lg:col-span-6 grid grid-cols-2 gap-3">
+              <img src="images/IMG_3122.jpg" alt="Баукау" class="w-full aspect-[4/3] object-cover rounded-xl border border-stone-200" />
+              <img src="images/IMG_3135.jpg" alt="Купель Баукау" class="w-full aspect-[4/3] object-cover rounded-xl border border-stone-200" />
+            </div>
+          </div>
+
+          <div class="bg-white p-6 md:p-8 rounded-3xl border border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-6 space-y-2">
+              <span class="text-amber-800 font-mono text-xs font-bold uppercase tracking-widest">ДЕНЬ 06-07</span>
+              <h3 class="text-xl md:text-2xl font-serif font-bold text-stone-950">Священный Остров Жако и Дома на Сваях Uma Lulik</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Переправа на лодках на абсолютно необитаемый священный остров Жако. Белоснежный песок, дикие олени, выходящие к воде. Знакомство с традиционными трапециевидными домами на сваях Uma Lulik и культурой народа Фаталуку.
+              </p>
+            </div>
+            <div class="lg:col-span-6 grid grid-cols-2 gap-3">
+              <img src="images/IMG_2563.jpg" alt="Фаталуку" class="w-full aspect-[4/3] object-cover rounded-xl border border-stone-200" />
+              <img src="images/IMG_2506.jpg" alt="Uma Lulik" class="w-full aspect-[4/3] object-cover rounded-xl border border-stone-200" />
+            </div>
+          </div>
+
+          <div class="bg-white p-6 md:p-8 rounded-3xl border border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-6 space-y-2">
+              <span class="text-amber-800 font-mono text-xs font-bold uppercase tracking-widest">ДЕНЬ 08</span>
+              <h3 class="text-xl md:text-2xl font-serif font-bold text-stone-950">Завершение & Вылет</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Возвращение в столицу. Покупка лучшего премиального зернового кофе и текстиля Tais в подарок. Комфортный трансфер в аэропорт Дили на 4x4.
+              </p>
+            </div>
+            <div class="lg:col-span-6">
+              <img src="images/IMG_2144.jpg" alt="Побережье Дили" class="w-full aspect-video object-cover rounded-xl border border-stone-200" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROGRAM 2: TIMOR 3 DAYS -->
+      <div id="prog-timor-3" class="prog-content space-y-8 hidden">
+        <div class="bg-amber-50 border border-amber-200 p-6 rounded-2xl text-stone-800 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
+          <div>
+            <strong class="text-amber-900 font-serif text-lg block">Тимор-Лесте: Экспресс-Экспедиция (3 Дня)</strong>
+            <span>Короткий насыщенный маршрут: Киты, Остров Атауро, Горная деревня Seloi Kraik и Водопад Докомали.</span>
+          </div>
+          <span class="text-amber-900 font-bold font-serif text-2xl whitespace-nowrap">$4,000</span>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-white p-6 md:p-8 rounded-3xl border border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-6 space-y-2">
+              <span class="text-amber-800 font-mono text-xs font-bold uppercase tracking-widest">ДЕНЬ 01</span>
+              <h3 class="text-xl md:text-2xl font-serif font-bold text-stone-950">Дили: Кофе и Трансфер на 4x4</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Встреча у трапа самолета в Дили персональным внедорожником Toyota Land Cruiser. Заезд в Novo Turismo Resort, исследование колониального города, дегустация кофе и посещение производства Ascension Oil.
+              </p>
+            </div>
+            <div class="lg:col-span-6 grid grid-cols-2 gap-3">
+              <img src="images/IMG_2163.jpg" alt="Дили" class="w-full aspect-[4/3] object-cover rounded-xl border border-stone-200" />
+              <img src="images/IMG_2288.jpg" alt="Архитектура" class="w-full aspect-[4/3] object-cover rounded-xl border border-stone-200" />
+            </div>
+          </div>
+
+          <div class="bg-white p-6 md:p-8 rounded-3xl border border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-6 space-y-2">
+              <span class="text-amber-800 font-mono text-xs font-bold uppercase tracking-widest">ДЕНЬ 02</span>
+              <h3 class="text-xl md:text-2xl font-serif font-bold text-stone-950">Океан: Синие Киты & Риф Атауро</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Катерная прогулка в пролив для наблюдения за синими китами. Снорклинг на нетронутых коралловых садах острова Атауро (Garden Reef).
+              </p>
+            </div>
+            <div class="lg:col-span-6">
+              <img src="images/IMG_3281.jpg" alt="Океан" class="w-full aspect-video object-cover rounded-xl border border-stone-200" />
+            </div>
+          </div>
+
+          <div class="bg-white p-6 md:p-8 rounded-3xl border border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-6 space-y-2">
+              <span class="text-amber-800 font-mono text-xs font-bold uppercase tracking-widest">ДЕНЬ 03</span>
+              <h3 class="text-xl md:text-2xl font-serif font-bold text-stone-950">Горный выезд: Seloi Kraik, Маубиссе и Докомали</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Выезд на внедорожниках в горную деревню Seloi Kraik к рисовым террасам, посещение плантаций Маубиссе и треккинг к водопаду Докомали. Трансфер в аэропорт к вечернему рейсу.
+              </p>
+            </div>
+            <div class="lg:col-span-6 grid grid-cols-2 gap-3">
+              <img src="images/IMG_2244.jpg" alt="Маубиссе" class="w-full aspect-[4/3] object-cover rounded-xl border border-stone-200" />
+              <img src="images/IMG_3122.jpg" alt="Баукау" class="w-full aspect-[4/3] object-cover rounded-xl border border-stone-200" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROGRAM 3: BALI 7 DAYS -->
+      <div id="prog-bali-7" class="prog-content space-y-8 hidden">
+        <div class="bg-stone-900 text-white p-6 rounded-2xl text-sm flex flex-col md:flex-row justify-between items-center gap-4">
+          <div>
+            <strong class="text-amber-400 font-serif text-lg block">Аутентичный Бали (7 Дней)</strong>
+            <span>Сакральная культура Бали без туристической суеты. Закрытый доступ к хранителям традиций.</span>
+          </div>
+          <span class="text-amber-400 font-bold font-serif text-2xl whitespace-nowrap">От $6,000</span>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-white p-6 md:p-8 rounded-3xl border border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-6 space-y-2">
+              <span class="text-amber-800 font-mono text-xs font-bold uppercase tracking-widest">ДЕНЬ 01-02</span>
+              <h3 class="text-xl md:text-2xl font-serif font-bold text-stone-950">Погружение в культуру Убуда</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Размещение в премиальном бутик-отеле в Убуде. Частный визит в музей **Neka Art Museum**, где выставлены работы Валерия Латыпова. Знакомство с искусством и эстетикой острова.
+              </p>
+            </div>
+            <div class="lg:col-span-6 grid grid-cols-2 gap-3">
+              <img src="images/bali_hero.jpg" alt="Бали Убуд" class="w-full aspect-[4/3] object-cover rounded-xl border border-stone-200" />
+              <img src="images/bali_temple.jpg" alt="Храм Бали" class="w-full aspect-[4/3] object-cover rounded-xl border border-stone-200" />
+            </div>
+          </div>
+
+          <div class="bg-white p-6 md:p-8 rounded-3xl border border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-6 space-y-2">
+              <span class="text-amber-800 font-mono text-xs font-bold uppercase tracking-widest">ДЕНЬ 03-05</span>
+              <h3 class="text-xl md:text-2xl font-serif font-bold text-stone-950">Дикие святилища и Общение со Старейшинами</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Общение с балийскими хранителями древних традиций, не говорящими по-английски. Валерий свободно владеет индонезийским языком (BIPA-2) и проводит прямые беседы без посторонних переводчиков. Посещение скрытых водопадов и храмов.
+              </p>
+            </div>
+            <div class="lg:col-span-6 grid grid-cols-2 gap-3">
+              <img src="images/bali_water.jpg" alt="Водопад Бали" class="w-full aspect-[4/3] object-cover rounded-xl border border-stone-200" />
+              <img src="images/bali_ritual.jpg" alt="Традиции Бали" class="w-full aspect-[4/3] object-cover rounded-xl border border-stone-200" />
+            </div>
+          </div>
+
+          <div class="bg-white p-6 md:p-8 rounded-3xl border border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-6 space-y-2">
+              <span class="text-amber-800 font-mono text-xs font-bold uppercase tracking-widest">ДЕНЬ 06-07</span>
+              <h3 class="text-xl md:text-2xl font-serif font-bold text-stone-950">Тихий океан и Отдых</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Переезд на нетуристическое побережье Бали. Замедление, отдыхать на вилле у океана, интеграция полученного опыта перед вылетом домой.
+              </p>
+            </div>
+            <div class="lg:col-span-6">
+              <img src="images/bali_nature.jpg" alt="Природа Бали" class="w-full aspect-video object-cover rounded-xl border border-stone-200" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROGRAM 4: COMBO 12 DAYS -->
+      <div id="prog-combo-12" class="prog-content space-y-8 hidden">
+        <div class="bg-amber-100 border border-amber-300 p-6 rounded-2xl text-stone-900 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
+          <div>
+            <strong class="text-amber-950 font-serif text-xl block">✨ Комбо-Экспедиция: Бали (7 дней) + Тимор-Лесте (5 дней)</strong>
+            <span>Сначала эстетика и культура Бали, затем перелет на 1 час и погружение в дикий нетронутый Тимор.</span>
+          </div>
+          <span class="text-amber-900 font-bold font-serif text-xl whitespace-nowrap">Цена по запросу</span>
+        </div>
+
+        <div class="bg-white p-8 rounded-3xl border border-stone-200 space-y-6">
+          <h3 class="text-2xl font-serif font-bold text-stone-950">Идеальный Баланс Комфорта и Первозданности</h3>
+          <p class="text-stone-600 leading-relaxed">
+            Этот двойной маршрут создан для тех, кто хочет максимального размаха: 7 дней мягкого погружения в традиции и культуру Бали (с проживанием в премиальных виллах и общением со старейшинами), а затем 5 дней настоящей приключенческой автоэкспедиции на внедорожниках 4x4 по Тимору.
           </p>
-          <p class="text-slate-400 text-base leading-relaxed">
-            Здесь всё пропитано духом <strong class="text-amber-400 font-semibold">Lulik</strong> — сакральным табу и тайной. Это не курортный отдых, а глубокое путешествие для тех, чья душа ищет сборку своего паззла жизни через тишину, дикую природу и чистые океанские потоки.
-          </p>
-        </div>
-        <div class="lg:col-span-5 relative group overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
-          <img src="images/IMG_2176.jpg" alt="Наши экспедиционные внедорожники 4x4" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
-          <div class="absolute bottom-6 left-6 right-6 p-4 bg-slate-900/80 backdrop-blur-md rounded-2xl border border-white/10">
-            <span class="text-xs font-mono text-amber-400 uppercase">Экспедиционный Драйв</span>
-            <p class="text-sm text-slate-200 mt-1">Подготовленные 4x4 Toyota Land Cruiser для горных серпантинов</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+            <div class="bg-stone-50 p-6 rounded-2xl border border-stone-200">
+              <h4 class="font-serif font-bold text-stone-900 mb-2">Этап 1: Бали (7 Дней)</h4>
+              <p class="text-stone-600 text-sm">Убуд, музей Neka, закрытые локации, беседы с хранителями традиций на индонезийском языке, пляжный отдых.</p>
+            </div>
+            <div class="bg-stone-50 p-6 rounded-2xl border border-stone-200">
+              <h4 class="font-serif font-bold text-stone-900 mb-2">Этап 2: Тимор-Лесте (5 Дней)</h4>
+              <p class="text-stone-600 text-sm">Перелет 1 час. Дили, внедорожники 4x4, синие киты, риф Атауро, водопад Докомали и исторический Баукау.</p>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- 5. JOURNEY / PLACES OF POWER (STACKING GSAP CARDS) -->
-  <section class="py-28 bg-brand-surface/50 border-t border-white/5" id="journey">
-    <div class="container mx-auto px-6 max-w-6xl">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Маршрут и Ключевые Точки</span>
-        <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mt-3">Места Силы & Энергетическая Работа</h2>
-      </div>
-
-      <!-- Toggle 3 / 8 days -->
-      <div class="flex justify-center mb-16">
-        <div class="bg-slate-900/80 backdrop-blur-md p-1.5 rounded-2xl border border-white/10 flex items-center gap-2">
-          <button id="btn-3-days" class="px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 bg-transparent text-slate-400 hover:text-white" onclick="switchTour('3')">
-            3 Дня (Погружение)
-          </button>
-          <button id="btn-8-days" class="px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 bg-amber-500 text-slate-950 shadow-lg" onclick="switchTour('8')">
-            8 Дней (Экспедиция)
-          </button>
-        </div>
-      </div>
-
-      <!-- Map Block -->
-      <div class="mb-24 max-w-5xl mx-auto bg-slate-100 p-2 sm:p-4 rounded-[2rem] shadow-2xl shadow-black/50 transform -rotate-1 hover:rotate-0 transition duration-500">
-        <div class="rounded-[1.5rem] overflow-hidden border border-slate-200/50">
-          <img src="images/timor_loop_map.jpg" alt="Маршрут Экспедиции по Восточному Тимору" class="w-full h-auto object-contain" />
-        </div>
-      </div>
-
-      
-      <!-- Global Disclaimer -->
-      <div class="max-w-4xl mx-auto bg-slate-900/80 border-l-4 border-amber-500 rounded-2xl p-6 md:p-8 mb-16 shadow-2xl">
-        <h4 class="text-amber-400 font-serif font-bold text-lg mb-2">Гибкий тайминг и практики по запросу</h4>
-        <p class="text-slate-300 text-sm leading-relaxed mb-3">
-          Мы не ставим жестких армейских рамок. График экспедиции гибок: мы даем вам выспаться (даже если это 11 утра) и строим ритм так, чтобы вы успели насладиться каждым днем без суеты.
-        </p>
-        <p class="text-slate-400 text-sm leading-relaxed">
-          <strong class="text-white">Сопровождение Валерия:</strong> Вы получаете не просто гида, а опытного проводника в мир дикой, «детской» цивилизации. Валерий помогает раскрыть истинный потенциал этого первозданного места, делая акцент на глубоком внутреннем опыте и аутентичности, <span class="text-amber-400 underline decoration-amber-500/30 underline-offset-4">без навязывания эзотерики</span>. Вы сами выбираете глубину погружения.
-        </p>
-      </div>
-
-<div id="tour-8-days" class="space-y-16">
-        
-        <!-- Pricing 8 Days -->
-        <div class="bg-amber-500/10 border border-amber-500/20 rounded-2xl p-6 text-center max-w-2xl mx-auto mb-10">
-          <div class="text-amber-400 text-xl font-serif font-bold mb-2">Стоимость: от $10,000</div>
-          <p class="text-slate-400 text-sm mb-4">Базовая стоимость экспедиции (без учета авиабилетов и страховки).</p>
-          <p class="text-amber-500 text-sm font-semibold border-t border-amber-500/20 pt-4 mt-2">
-            VIP-Опция: Возможность организации закрытой встречи с сыном Президента (при участии Патрика). Требует согласования, стоимость рассчитывается индивидуально.
-          </p>
-        </div>
-
-        <ul class="card-list mb-24 max-w-3xl mx-auto">
-          <li>8 дней 1-на-1 с Валерием Латыповым</li>
-          <li>Премиальные внедорожники (Land Cruiser)</li>
-          <li>Отели 4-5 звезд и лучшие эко-лоджи</li>
-          <li>Завтраки в отелях включены</li>
-          <li>Фрахт лодки к синим китам и на Атауро</li>
-          <li>Полная конфиденциальность (NDA по запросу)</li>
-        </ul>
-        
-        <!-- Day 1 -->
-        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-amber-500/30 transition duration-500">
-          <div class="lg:col-span-6 space-y-4">
-            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">ДЕНЬ 01</span>
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Столица, Кофе и Наследие</h3>
-            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-              Прилет в Дили, чек-ин в Novo Turismo Resort. Погружение начинается со столицы: португальская архитектура, покупка традиционного текстиля (Tais) и дегустация премиального горного кофе. 
-              <br><br>Мы посетим фабрику масел Ascension Oil (Kukui nut oil), а также (по желанию) отправимся в горы к древним природным святилищам, где время буквально остановилось.
-            </p>
-          </div>
-          <div class="lg:col-span-6 grid grid-cols-2 gap-4 story-img-group">
-            <img src="images/IMG_2163.jpg" alt="Дили" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
-            <img src="images/IMG_2288.jpg" alt="Архитектура" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
-          </div>
-        </div>
-
-        <!-- Day 2 -->
-        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-amber-500/30 transition duration-500">
-          <div class="lg:col-span-6 lg:order-2 space-y-4">
-            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">ДЕНЬ 02</span>
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Атауро: Синие Киты и Garden Reef</h3>
-            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-              Фрахт частной лодки и выход в пролив Омбай-Ветар. Это один из главных путей миграции огромных Синих Китов. Наблюдение за гигантами в океане.
-              <br><br>Прибытие на остров Атауро. Снорклинг на знаменитом Garden Reef — рифе с высочайшим биоразнообразием в мире.
-            </p>
-          </div>
-          <div class="lg:col-span-6 lg:order-1">
-            <img src="images/IMG_3281.jpg" alt="Снорклинг и Океан" class="w-full aspect-video object-cover rounded-2xl border border-white/10 shadow-lg" />
-          </div>
-        </div>
-
-        <!-- Day 3 -->
-        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-amber-500/30 transition duration-500">
-          <div class="lg:col-span-6 space-y-4">
-            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">ДЕНЬ 03</span>
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Горы: Seloi Kraik, Маубиссе и Докомали</h3>
-            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-              Выезд на внедорожнике на юг. По пути мы заезжаем в живописную горную деревню Seloi Kraik (округ Айлеу) с ее безмятежным озером, зелеными рисовыми террасами и аутентичным укладом жизни. Далее — посещение традиционных кофейных ферм Маубиссе.
-              <br><br>Кульминация дня — живописный треккинг через джунгли к водопаду Dokomali (Bee Tudak). Мощь падающей воды и абсолютная первозданная природа.
-            </p>
-          </div>
-          <div class="lg:col-span-6 grid grid-cols-2 gap-4 story-img-group">
-            <img src="images/IMG_2244.jpg" alt="Горы Маубиссе" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
-            <img src="images/IMG_3301.jpg" alt="Джунгли" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
-          </div>
-        </div>
-
-        <!-- Day 4 -->
-        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-amber-500/30 transition duration-500">
-          <div class="lg:col-span-6 lg:order-2 space-y-4">
-            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">ДЕНЬ 04</span>
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Курс на Восток: Баукау</h3>
-            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-              Мы начинаем движение на восток острова. Чтобы не терпеть 9-часовую тряску за один день, мы прибываем в старинный колониальный город Баукау. 
-              <br><br>Посещение исторической природной купели с лазурной водой в слоистых скалах. Ночевка в атмосферной крепости <em>Pousada de Baucau</em>.
-            </p>
-          </div>
-          <div class="lg:col-span-6 lg:order-1 grid grid-cols-2 gap-4 story-img-group">
-            <img src="images/IMG_3122.jpg" alt="Купель в Баукау" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
-            <img src="images/IMG_3135.jpg" alt="Водопад Баукау" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
-          </div>
-        </div>
-
-        <!-- Day 5 -->
-        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-amber-500/30 transition duration-500">
-          <div class="lg:col-span-6 space-y-4">
-            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">ДЕНЬ 05</span>
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Край Света: Лоспалос и Тутуала</h3>
-            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-              Продолжение пути на крайний восток. Дорога становится более дикой, асфальт сменяется грунтовками — вот где Land Cruiser покажет себя. 
-              <br><br>Прибытие в район Тутуала (Национальный парк Нино Конис Сантана). Заселение в лучший из доступных эко-лоджей у самого края земли.
-            </p>
-          </div>
-          <div class="lg:col-span-6">
-            <img src="images/IMG_2176.jpg" alt="Дорога на восток" class="w-full aspect-video object-cover rounded-2xl border border-white/10 shadow-lg" />
-          </div>
-        </div>
-
-        <!-- Day 6 -->
-        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-amber-500/30 transition duration-500">
-          <div class="lg:col-span-6 lg:order-2 space-y-4">
-            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">ДЕНЬ 06</span>
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Необитаемый Жако</h3>
-            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-              Переправа на местных рыбацких лодках на священный (Lulik) необитаемый остров Жако. 
-              <br><br>Белоснежный коралловый песок, бирюзовый океан и дикие олени, выходящие к воде. Тотальная изоляция и океаническая тишина. Свободное время, купание, расслабление.
-            </p>
-          </div>
-          <div class="lg:col-span-6 lg:order-1 grid grid-cols-2 gap-4 story-img-group">
-            <img src="images/IMG_2518.jpg" alt="Жако Остров" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
-            <img src="images/IMG_2526.jpg" alt="Валерий Латыпов в Тутуале" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
-          </div>
-        </div>
-
-        <!-- Day 7 -->
-        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-amber-500/30 transition duration-500">
-          <div class="lg:col-span-6 space-y-4">
-            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">ДЕНЬ 07</span>
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Uma Lulik и Возвращение</h3>
-            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-              Посещение священных домов на сваях (Uma Lulik) племен Фаталуку. Знакомство с анимистическими верованиями аборигенов, передача традиционных подношений (ткани, бетель) старейшинам.
-              <br><br>Начало неспешного обратного переезда в сторону Дили с ночевкой в комфортной точке маршрута.
-            </p>
-          </div>
-          <div class="lg:col-span-6 grid grid-cols-2 gap-4 story-img-group">
-            <img src="images/IMG_2563.jpg" alt="Фаталуку" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
-            <img src="images/IMG_2506.jpg" alt="Uma Lulik" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
-          </div>
-        </div>
-
-        <!-- Day 8 -->
-        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-amber-500/30 transition duration-500">
-          <div class="lg:col-span-6 lg:order-2 space-y-4">
-            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">ДЕНЬ 08</span>
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Интеграция и Вылет</h3>
-            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-              Возвращение в столицу. Утренняя интеграция впечатлений. Покупка лучшего премиального кофе с собой. Трансфер в аэропорт и вылет домой.
-            </p>
-          </div>
-          <div class="lg:col-span-6 lg:order-1">
-            <img src="images/IMG_2144.jpg" alt="Побережье Дили" class="w-full aspect-video object-cover rounded-2xl border border-white/10 shadow-lg" />
-          </div>
-        </div>
-
-      </div> <!-- /tour-8-days -->
-
-
-      <!-- 3 DAYS TOUR CONTENT -->
-      <div id="tour-3-days" class="space-y-16 hidden">
-        <!-- Pricing 3 Days -->
-        <div class="bg-amber-500/10 border border-amber-500/20 rounded-2xl p-6 text-center max-w-2xl mx-auto mb-10">
-          <div class="text-amber-400 text-xl font-serif font-bold mb-2">Стоимость: $4,000</div>
-          <p class="text-slate-400 text-sm">Без учета авиабилетов и страховки (приобретаются самостоятельно).</p>
-        </div>
-
-        <!-- Day 1 -->
-        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div class="lg:col-span-6 space-y-4">
-            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">ДЕНЬ 01</span>
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Столица и Наследие (Дили)</h3>
-            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-              Заезд в отель Novo Turismo, замедление. Исследование колониальной архитектуры, визит на рынок традиционных тканей (Tais). Дегустация премиального горного кофе и визит на производство масел Ascension Oil. Опциональный вечерний выезд в горы к старинным святилищам.
-            </p>
-          </div>
-          <div class="lg:col-span-6 grid grid-cols-2 gap-4">
-            <img src="images/IMG_2163.jpg" alt="Дили" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
-            <img src="images/IMG_2288.jpg" alt="Архитектура" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
-          </div>
-        </div>
-
-        <!-- Day 2 -->
-        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div class="lg:col-span-6 lg:order-2 space-y-4">
-            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">ДЕНЬ 02</span>
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Океан (Атауро и Киты)</h3>
-            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-              Выход в пролив на лодке для наблюдения за синими китами в их естественной среде обитания. Высадка на остров Атауро, снорклинг на знаменитом Garden Reef с идеальной прозрачностью воды.
-            </p>
-          </div>
-          <div class="lg:col-span-6 lg:order-1">
-            <img src="images/IMG_3281.jpg" alt="Океан" class="w-full aspect-video object-cover rounded-2xl border border-white/10 shadow-lg" />
-          </div>
-        </div>
-
-        <!-- Day 3 -->
-        <div class="story-block bg-brand-surface border border-white/10 rounded-3xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div class="lg:col-span-6 space-y-4">
-            <span class="bg-amber-500/10 text-amber-400 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider">ДЕНЬ 03</span>
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Маубиссе или Баукау (На выбор)</h3>
-            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-              В зависимости от ваших предпочтений: поездка в горы к гигантскому водопаду Докомали и на кофейные фермы Маубиссе, ЛИБО комфортный выезд на восток к исторической природной Купели Баукау. Вечером — трансфер в аэропорт.
-            </p>
-          </div>
-          <div class="lg:col-span-6 grid grid-cols-2 gap-4">
-            <img src="images/IMG_2244.jpg" alt="Маубиссе" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
-            <img src="images/IMG_3122.jpg" alt="Баукау" class="w-full aspect-[4/3] object-cover rounded-2xl border border-white/10 shadow-lg" />
-          </div>
-        </div>
-
-      </div> <!-- /tour-3-days -->
-    </div>
-  </section>
-
-  <!-- 6. PHOTO GALLERY GRID -->
-  <section class="py-28" id="gallery">
-    <div class="container mx-auto px-6 max-w-6xl">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Визуальный Архив</span>
-        <h2 class="text-4xl font-serif font-bold text-white mt-2">Кадры Первозданного Тимора</h2>
-      </div>
-
-      <div class="photo-gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="photo-card group overflow-hidden rounded-2xl bg-brand-surface border border-white/10">
-          <div class="overflow-hidden">
-            <img src="images/IMG_2144.jpg" alt="Побережье Дили" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
-          </div>
-          <div class="photo-caption p-4 border-t border-white/5 text-xs text-slate-400 font-medium">Океанический берег и мыс Кристо Рей</div>
-        </div>
-        <div class="photo-card group overflow-hidden rounded-2xl bg-brand-surface border border-white/10">
-          <div class="overflow-hidden">
-            <img src="images/IMG_2563.jpg" alt="Традиционные наряды" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
-          </div>
-          <div class="photo-caption p-4 border-t border-white/5 text-xs text-slate-400 font-medium">Колоритные национальные костюмы и корона Kaibauk</div>
-        </div>
-        <div class="photo-card group overflow-hidden rounded-2xl bg-brand-surface border border-white/10">
-          <div class="overflow-hidden">
-            <img src="images/IMG_2176.jpg" alt="Внедорожники 4x4" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
-          </div>
-          <div class="photo-caption p-4 border-t border-white/5 text-xs text-slate-400 font-medium">Подготовленные Toyota Land Cruiser для горных серпантинов</div>
-        </div>
-        <div class="photo-card group overflow-hidden rounded-2xl bg-brand-surface border border-white/10">
-          <div class="overflow-hidden">
-            <img src="images/IMG_2244.jpg" alt="Горный отель" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
-          </div>
-          <div class="photo-caption p-4 border-t border-white/5 text-xs text-slate-400 font-medium">Уют ночевки перед подъемом на вершину Татамайлау</div>
-        </div>
-        <div class="photo-card group overflow-hidden rounded-2xl bg-brand-surface border border-white/10">
-          <div class="overflow-hidden">
-            <img src="images/IMG_3154.jpg" alt="Природный бассейн" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
-          </div>
-          <div class="photo-caption p-4 border-t border-white/5 text-xs text-slate-400 font-medium">Местные дети в чаше естественной купели</div>
-        </div>
-        <div class="photo-card group overflow-hidden rounded-2xl bg-brand-surface border border-white/10">
-          <div class="overflow-hidden">
-            <img src="images/IMG_2524.jpg" alt="Известняковые скалы" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" />
-          </div>
-          <div class="photo-caption p-4 border-t border-white/5 text-xs text-slate-400 font-medium">Природные скульптуры священных известиковых гротов</div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ACCOMMODATION / HOTELS -->
-  <section class="py-24 relative bg-brand-bg border-b border-white/5" id="hotels">
-    <div class="container mx-auto px-6 max-w-6xl">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Проживание</span>
-        <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mt-3">Где мы живем</h2>
-        <p class="text-slate-400 mt-4 text-base">Инфраструктура Тимор-Лесте только развивается. Мы выбираем лучшие из доступных опций уровня 4-5 звезд (от $150-200 за ночь), чтобы обеспечить комфорт после дикой природы.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-brand-surface p-6 rounded-3xl border border-white/10 shadow-xl">
-          <div class="text-amber-500 text-xl mb-3">✦✦✦✦✦</div>
-          <h3 class="text-xl font-serif font-bold text-white mb-2">NOVO TURISMO Resort & Spa</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">Дили. Один из лучших резорт-отелей страны с бассейном, спа и премиум-сервисом. Настоящий оазис цивилизации.</p>
-        </div>
-        <div class="bg-brand-surface p-6 rounded-3xl border border-white/10 shadow-xl">
-          <div class="text-amber-500 text-xl mb-3">✦✦✦✦</div>
-          <h3 class="text-xl font-serif font-bold text-white mb-2">Hotel Timor</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">Дили. Классический португальский отель с историческим шармом. Традиции, отличный сервис и строгий стиль.</p>
-        </div>
-        <div class="bg-brand-surface p-6 rounded-3xl border border-white/10 shadow-xl">
-          <div class="text-amber-500 text-xl mb-3">✦✦✦✦</div>
-          <h3 class="text-xl font-serif font-bold text-white mb-2">Pousada de Baucau</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">Баукау. Очаровательный колониальный отель-крепость на маршруте с видом на побережье, сохранивший дух времени.</p>
-        </div>
-      </div>
-      <div class="mt-8 text-center text-slate-500 text-sm">На крайнем востоке (остров Жако / Тутуала) размещение проходит в уникальных эко-лоджах, где главная роскошь — это уединение и океан.</div>
-    </div>
-  </section>
-
-  <!-- 7. GUIDE / VALERY LATYPOV -->
-  <section class="py-28 bg-brand-surface border-y border-white/5" id="guide">
+  <!-- 6. AUTHOR & GUIDE SECTION -->
+  <section class="py-20 bg-white border-t border-stone-200" id="guide">
     <div class="container mx-auto px-6 max-w-5xl">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-        <div class="md:col-span-7 space-y-6">
-          <span class="text-amber-500 font-mono text-xs uppercase tracking-widest">Автор и Проводник</span>
-          <h2 class="text-4xl font-serif font-bold text-white">Валерий Латыпов</h2>
-          <p class="font-serif italic text-xl text-amber-200/90 leading-relaxed border-l-2 border-amber-500 pl-4">
-            «Незабываемые впечатления, работа в местах силы и отсутствие туристов — это уникальное место, пока еще сохранившее свою первозданную чистоту.»
+        <div class="md:col-span-7 space-y-5">
+          <span class="text-amber-800 font-mono text-xs uppercase tracking-widest">Автор и Проводник</span>
+          <h2 class="text-4xl font-serif font-bold text-stone-950">Валерий Латыпов</h2>
+          <p class="font-serif italic text-xl text-stone-700 leading-relaxed border-l-2 border-amber-600 pl-4">
+            «Главное ценность сегодня — это настоящий, неискаженный опыт и чистая тишина, которую уже невозможно найти на массовых курортах.»
           </p>
-          <p class="text-slate-300 text-base leading-relaxed">
-            Валерий — проводник в миры «детских» цивилизаций, исследователь первозданных культур и архитектор эксклюзивных путешествий. Автор экспедиций по нетронутым уголкам Земли, где главным становится чистый, живой опыт взаимодействия с настоящей планетой.
-          </p>
+          <div class="space-y-3 text-stone-600 text-sm md:text-base leading-relaxed">
+            <p>
+              <strong>Прямой разговор без посредников:</strong> Валерий свободно владеет индонезийским языком (сертифицированный уровень BIPA-2). Это открывает возможность прямого общения с местными старейшинами, хранителемя традиций и жителями удаленных деревень без английских переводчиков.
+            </p>
+            <p>
+              <strong>Признание в искусстве:</strong> Живописные работы Валерия находятся в коллекции знаменитого национального музея <strong>Neka Art Museum</strong> в Убуде.
+            </p>
+            <p>
+              <strong>Опыт & Логистика:</strong> Многолетний опыт экспедиций в редкие регионы, прямые связи с локальными лидерами и безупречный уровень организации на месте.
+            </p>
+          </div>
         </div>
         <div class="md:col-span-5">
-          <img src="images/author_portrait.jpg" alt="Валерий Латыпов" class="w-full aspect-[3/4] object-cover rounded-3xl border border-white/10 shadow-2xl" />
+          <img src="images/author_portrait.jpg" alt="Валерий Латыпов" class="w-full aspect-[3/4] object-cover rounded-3xl border border-stone-200 shadow-md" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 8. CALL TO ACTION / CONTACT -->
-  <section class="py-32 relative overflow-hidden" id="contact">
-    <div class="absolute inset-0 bg-gradient-to-b from-brand-bg via-slate-900 to-brand-bg"></div>
-    <div class="container mx-auto px-6 relative z-10 max-w-3xl text-center">
-      <span class="text-amber-500 font-mono text-xs uppercase tracking-widest mb-4 inline-block">Закрытый Набор</span>
-      <h2 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Готовы ступить за предел?</h2>
-      <p class="text-slate-400 text-base md:text-lg mb-6 max-w-xl mx-auto leading-relaxed">
-        Экспедиция формируется в строго индивидуальном формате (1-на-1 или малая закрытая группа). Даты согласуются персонально.
+  <!-- 7. CONTACT / CTA SECTION -->
+  <section class="py-24 bg-stone-900 text-white relative" id="contact">
+    <div class="container mx-auto px-6 max-w-3xl text-center">
+      <span class="text-amber-400 font-mono text-xs uppercase tracking-widest mb-3 inline-block">Индивидуальный Формат</span>
+      <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4">Обсудить Экспедицию</h2>
+      <p class="text-stone-400 text-base md:text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+        Все программы адаптируются под ваши даты и пожелания. Мы формируем небольшие группы единомышленников или организуем закрытые выезды.
       </p>
       
-      <div class="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-6 mb-10 max-w-2xl mx-auto text-left">
-        <h4 class="text-amber-400 font-serif font-bold text-lg mb-2">✨ Комбо-Тур: Бали + Тимор</h4>
-        <p class="text-slate-300 text-sm leading-relaxed">
-          Возможно совмещение: сначала отдых и очищение на нетуристическом Бали (3-5 дней), а затем вылет за абсолютно дикой, первородной энергией на Тимор-Лесте (3-5 дней). Идеальный баланс.
-        </p>
-      </div>
-      <a href="https://t.me/valerylatypov" target="_blank" class="inline-block bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold px-10 py-5 rounded-2xl text-lg transition-all duration-300 shadow-2xl shadow-amber-500/30 transform hover:-translate-y-1">
-        Обсудить участие в Telegram
+      <a href="https://t.me/valerylatypov" target="_blank" class="inline-block bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold px-10 py-5 rounded-2xl text-lg transition shadow-xl transform hover:-translate-y-0.5">
+        Написать Валерию в Telegram
       </a>
     </div>
   </section>
 
-  <!-- 9. FOOTER -->
-  <footer class="py-12 bg-slate-950 border-t border-white/5 text-xs text-slate-500">
-    <div class="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="flex items-center space-x-6">
-        <span class="font-serif font-bold text-slate-300">ВАЛЕРИЙ ЛАТЫПОВ</span>
-        <span>© 2026 Все права защищены</span>
+  <!-- 8. FOOTER -->
+  <footer class="py-10 bg-stone-950 text-xs text-stone-500 border-t border-stone-800">
+    <div class="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        <span class="font-serif font-bold text-stone-300">ВАЛЕРИЙ ЛАТЫПОВ</span> · Авторские Экспедиции © 2026
       </div>
-      <div class="flex space-x-6">
-        <a href="index.html" class="hover:text-amber-400 transition">Бали: Огонь Духа</a>
-        <a href="timor.html" class="hover:text-amber-400 transition">Восточный Тимор</a>
+      <div class="flex space-x-6 text-stone-400">
+        <a href="#selector" class="hover:text-white transition">Тимор-Лесте</a>
+        <a href="#selector" class="hover:text-white transition">Бали</a>
+        <a href="#selector" class="hover:text-white transition">Комбо-тур</a>
       </div>
     </div>
   </footer>
 
-</body>
-<script>
-  function switchTour(days) {
-    const btn3 = document.getElementById('btn-3-days');
-    const btn8 = document.getElementById('btn-8-days');
-    const tour3 = document.getElementById('tour-3-days');
-    const tour8 = document.getElementById('tour-8-days');
-    
-    if(days === '3') {
-      btn3.classList.remove('bg-transparent', 'text-slate-400');
-      btn3.classList.add('bg-amber-500', 'text-slate-950', 'shadow-lg');
+  <script>
+    function switchTab(tabKey) {
+      const tabs = ['timor-8', 'timor-3', 'bali-7', 'combo-12'];
       
-      btn8.classList.remove('bg-amber-500', 'text-slate-950', 'shadow-lg');
-      btn8.classList.add('bg-transparent', 'text-slate-400');
-      
-      tour8.classList.add('hidden');
-      tour3.classList.remove('hidden');
-    } else {
-      btn8.classList.remove('bg-transparent', 'text-slate-400');
-      btn8.classList.add('bg-amber-500', 'text-slate-950', 'shadow-lg');
-      
-      btn3.classList.remove('bg-amber-500', 'text-slate-950', 'shadow-lg');
-      btn3.classList.add('bg-transparent', 'text-slate-400');
-      
-      tour3.classList.add('hidden');
-      tour8.classList.remove('hidden');
+      tabs.forEach(key => {
+        const btn = document.getElementById('tab-' + key);
+        const prog = document.getElementById('prog-' + key);
+        
+        if (key === tabKey) {
+          btn.className = "px-5 py-3 rounded-xl font-medium text-sm transition-all duration-300 bg-stone-900 text-white shadow-sm";
+          if (prog) prog.classList.remove('hidden');
+        } else {
+          btn.className = "px-5 py-3 rounded-xl font-medium text-sm transition-all duration-300 bg-white text-stone-700 hover:bg-stone-100 border border-stone-200";
+          if (prog) prog.classList.add('hidden');
+        }
+      });
     }
-  }
-</script>
+  </script>
+
+</body>
 </html>

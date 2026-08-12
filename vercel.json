@@ -1,3 +1,8 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/timor", "destination": "/timor.html" },
+    { "source": "/bali", "destination": "/index.html" },
+    { "source": "/", "destination": "/index.html" }
+  ]
 }

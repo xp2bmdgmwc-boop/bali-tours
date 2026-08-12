@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+import re
+
+html_content = """<!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -477,3 +479,12 @@
 
 </body>
 </html>
+"""
+
+with open('/Volumes/Genius Art/Antigravity/Bali Tours/timor.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+with open('/Volumes/Genius Art/Antigravity/Bali Tours/index.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("Updated both timor.html and index.html successfully!")
