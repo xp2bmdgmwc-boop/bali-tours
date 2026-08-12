@@ -4,7 +4,6 @@
     { "source": "/timor-en", "destination": "/timor-en.html" },
     { "source": "/timor", "destination": "/timor.html" },
     { "source": "/bali", "destination": "/files/yang.html" },
-    { "source": "/bali-en", "destination": "/files/yang-en.html" },
-    { "source": "/", "destination": "/timor.html" }
+    { "source": "/bali-en", "destination": "/files/yang-en.html" }
   ]
 }
