@@ -262,51 +262,87 @@
   <section class="section bg-alt" id="map">
     <div class="container" style="text-align:center;">
       <span style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px;">
-        Expedition Geography
+        Expedition Geography & Logistics
       </span>
-      <h2 style="font-family:var(--font-serif);font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--ink);margin-bottom:32px;">
-        Route Map & Travel Times
+      <h2 style="font-family:var(--font-serif);font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--ink);margin-bottom:16px;">
+        Path of the Sacred Ancestor Crocodile
       </h2>
-      <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:24px;padding:24px;max-width:960px;margin:0 auto;box-shadow:0 8px 32px rgba(14,14,12,0.04);">
-        <img src="images/timor_loop_map.jpg" alt="Timor Expedition Route Map" style="width:100%;border-radius:16px;margin-bottom:24px;filter:contrast(110%);" />
+      <p style="max-width:700px;margin:0 auto 32px;font-size:15px;color:var(--ink-soft);line-height:1.6;">
+        In Timorese cosmology, the island is the sacred ancestor Crocodile (<em>Lafaek</em>). Our journey traverses from the oceanic breath of the abyss (Atauro) through the misty spine (Maubisse) to the sacred crown of the East (Jaco Island).
+      </p>
+
+      <!-- Map Selector Grid -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;max-width:1100px;margin:0 auto 32px;">
         
-        <!-- Schematic Route Grid with Driving Hours -->
-        <div style="text-align:left;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+        <!-- Northern Route Map Card -->
+        <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:24px;padding:24px;box-shadow:0 8px 32px rgba(14,14,12,0.04);text-align:left;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);">Route 1 (Classic Luxury)</span>
+            <span style="font-size:12px;font-weight:700;color:var(--ink-soft);background:var(--bg-alt);padding:4px 10px;border-radius:999px;">North & Private Speedboat</span>
+          </div>
+          <h3 style="font-family:var(--font-serif);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:12px;">North Coast & Ocean Speedboat Cruise</h3>
+          <img src="images/timor_northern_route_map.jpg" alt="Northern Timor Expedition Route Map" style="width:100%;border-radius:16px;margin-bottom:16px;filter:contrast(105%);" />
+          <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;margin-bottom:0;">
+            2 full days on Atauro Island (whales + Acrema Beach), lakeside folk concert at Seloi Kraik, Ersalibuti waterfalls, Baucau fortress, 30,000-yr cave art and Jaco Island. Private speedboat cruise return in 3.5 hrs.
+          </p>
+        </div>
+
+        <!-- Southern Route Map Card -->
+        <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:24px;padding:24px;box-shadow:0 8px 32px rgba(14,14,12,0.04);text-align:left;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);">Route 2 (Grand Off-Road)</span>
+            <span style="font-size:12px;font-weight:700;color:var(--ink-soft);background:var(--bg-alt);padding:4px 10px;border-radius:999px;">Wild South & Eternal Gas Fires</span>
+          </div>
+          <h3 style="font-family:var(--font-serif);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:12px;">Grand 4x4 Loop & Aliambata Fires</h3>
+          <img src="images/timor_southern_route_map.jpg" alt="Southern Timor Expedition Route Map" style="width:100%;border-radius:16px;margin-bottom:16px;filter:contrast(105%);" />
+          <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;margin-bottom:0;">
+            Full island circuit: Lake Iralalaro crocodiles, Jaco Island, 4x4 river fording to wild south coast (Viqueque), ancient Aliambata methane fires ritual, and Same mountain pass.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Schematic Route Grid with Driving Hours -->
+      <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:24px;padding:24px;max-width:1100px;margin:0 auto;box-shadow:0 8px 32px rgba(14,14,12,0.04);">
+        <div style="font-family:var(--font-serif);font-size:20px;font-weight:700;color:var(--ink);text-align:left;margin-bottom:16px;">
+          ⏱️ Transit Durations Between Waypoints:
+        </div>
+        <div style="text-align:left;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));">
           
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:20px;">
-            <div style="font-size:12px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Stage 1 • Departure</div>
-            <h4 style="font-family:var(--font-serif);font-size:18px;color:var(--ink);margin-bottom:8px;">📍 Dili ➔ 🚤 Atauro Island</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;"><strong>Travel Time:</strong> ~1.5 hours by private boat across Ombai Strait (blue whale migration corridor).</p>
+          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
+            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 1 • Ocean Abyss</div>
+            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Dili ➔ 🚤 Atauro Island</h4>
+            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~1.5 hours</strong> by private speedboat across Ombai deep whale migration trench (3000 m).</p>
           </div>
 
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:20px;">
-            <div style="font-size:12px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Stage 2 • Highlands</div>
-            <h4 style="font-family:var(--font-serif);font-size:18px;color:var(--ink);margin-bottom:8px;">📍 Dili ➔ 🚘 Maubisse</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;"><strong>Travel Time:</strong> ~3.5–4 hours by 4x4. Mambai tribal village, Tatu Magic Rocks & Dokomali Waterfall.</p>
+          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
+            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 2 • Spine & Highlands</div>
+            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Dili ➔ 🚘 Aileu / Maubisse</h4>
+            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~3.5–4 hours</strong> by 4x4. Lake Seloi Kraik folk concert, Ersalibuti waterfall, Mambai village.</p>
           </div>
 
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:20px;">
-            <div style="font-size:12px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Stage 3 • Eastbound</div>
-            <h4 style="font-family:var(--font-serif);font-size:18px;color:var(--ink);margin-bottom:8px;">📍 Maubisse ➔ 🚘 Baucau</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;"><strong>Travel Time:</strong> ~3.5–4 hours by 4x4. Portuguese Pousada de Baucau fortress & sacred mineral cascades.</p>
+          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
+            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 3 • North Fortress</div>
+            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Maubisse ➔ 🚘 Baucau</h4>
+            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~3.5–4 hours</strong> by 4x4. Pousada de Baucau fortress, spring pools and Gruta de Nossa Senhora.</p>
           </div>
 
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:20px;">
-            <div style="font-size:12px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Stage 4 • National Park & Caves</div>
-            <h4 style="font-family:var(--font-serif);font-size:18px;color:var(--ink);margin-bottom:8px;">📍 Baucau ➔ 🚘 Tutuala / National Park</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;"><strong>Travel Time:</strong> ~4–4.5 hours by 4x4. Ancient Lene Hara cave rock art & Fataluku Uma Lulik stilt houses.</p>
+          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
+            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 4 • Sacred East & Shrines</div>
+            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Baucau ➔ 🚘 Tutuala / National Park</h4>
+            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~4–4.5 hours</strong> by 4x4. Lake Iralalaro crocodiles, 7 Princes Rock, 30,000-yr cave art.</p>
           </div>
 
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:20px;">
-            <div style="font-size:12px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Stage 5 • Sacred Island</div>
-            <h4 style="font-family:var(--font-serif);font-size:18px;color:var(--ink);margin-bottom:8px;">📍 Tutuala ➔ 🚣 Jaco Island</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;"><strong>Travel Time:</strong> ~15–20 mins by motorboat. Uninhabited sacred island with wild deer & pristine reefs.</p>
+          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
+            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 5 • Sacred Island</div>
+            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Valu Beach ➔ 🚣 Jaco Island</h4>
+            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~15–20 mins</strong> by wooden boat. Virgin white sands, wild deer, calm turquoise snorkeling.</p>
           </div>
 
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:20px;">
-            <div style="font-size:12px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Stage 6 • Return</div>
-            <h4 style="font-family:var(--font-serif);font-size:18px;color:var(--ink);margin-bottom:8px;">📍 East ➔ 🚘 Dili (Return)</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;"><strong>Travel Time:</strong> ~5.5–6 hours by 4x4 along coastal highway to Dili International Airport.</p>
+          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
+            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 6 • Grand Finale</div>
+            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 East ➔ 🚤/🚘 Dili Departure</h4>
+            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~3.5 hours</strong> by speedboat cruise OR ~5.5-6 hours by 4x4 via Fort Maubara 1756.</p>
           </div>
 
         </div>
@@ -333,34 +369,14 @@
           Тимор-Лесте: 8 Дней (€9,000)
         </button>
         <button onclick="switchTab('timor-3')" id="tab-timor-3" class="tab-btn">
-          Тимор-Лесте: 3 Дня (€3,500)
-        </button>
-        <button onclick="switchTab('bali-7')" id="tab-bali-7" class="tab-btn">
-          Бали: 5–7 Дней (От €7,500)
-        </button>
-        <button onclick="switchTab('combo-12')" id="tab-combo-12" class="tab-btn">
-          ✨ Комбо: Бали + Тимор (12 Дней)
-        </button>
-      </div>
-
-      <!-- PROGRAM 1: TIMOR 8 DAYS -->
-      <div id="prog-timor-8" class="prog-content">
-        <div style="background:var(--accent-soft);border:1px solid var(--accent);padding:20px 28px;border-radius:16px;margin-bottom:40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
-          <div>
-            <strong style="font-family:var(--font-serif);font-size:18px;color:var(--ink);display:block;">Тимор-Лесте: Полное Кольцо (8 Дней)</strong>
-            <span style="font-size:14px;color:var(--ink-soft);">Все завтраки включены. Проживание в Novo Turismo 4* (Дили) и Pousada de Baucau. 4x4 Land Cruiser.</span>
-          </div>
-          <span style="font-family:var(--font-serif);font-size:26px;font-weight:700;color:var(--accent);">€9,000</span>
-        </div>
-
-        <div style="display:grid;gap:32px;">
+                  <div style="display:grid;gap:32px;">
           <!-- Day 1 -->
           <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
             <div>
               <span class="day-badge">DAY 01</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Capital Dili, Coffee & VIP Transfer</h3>
+              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Ocean Gateway: Arrival in Dili, Areia Branca & Hamulak Blessing</h3>
               <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;">
-                Arrival in Dili. Private tarmac greeting by dedicated 4x4 Toyota Land Cruiser (no local taxis). Check-in at Novo Turismo Resort 4*. Explore the capital, visit the Cristo Rei landmark, Ascension Oil atelier, and specialty mountain coffee tasting.
+                Arrival in Dili. Private tarmac greeting by dedicated <strong>Toyota Land Cruiser 4x4</strong> (no city taxis). Check-in at Novo Turismo Resort 4*. Panoramic ascent to Cristo Rei, swimming on secluded Dolok Oan white beach, and sacred sunset Hamulak blessing ceremony with an elder guardian (<em>Lia Na'in</em>) on Areia Branca beach.
               </p>
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
@@ -369,22 +385,22 @@
             </div>
           </div>
 
-          <!-- Day 2 -->
+          <!-- Day 2-3 -->
           <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
             <div>
-              <span class="day-badge">DAY 02</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Ocean: Atauro Island & Pygmy Blue Whales</h3>
+              <span class="day-badge">DAY 02-03</span>
+              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Atauro Island (2 Days): Blue Whales, Acrema Beach & Garden Reef</h3>
               <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:14px;">
-                Private boat expedition into the Ombai-Wetar Strait to witness Pygmy Blue Whales in their natural migration corridor. Landing on Atauro Island with pristine snorkeling at the world-renowned Garden Reef.
+                Two-day meditative ocean immersion on Atauro Island without rush. Stay in beachfront private bungalows at <strong>Atauro Waterfront Eco Lodge</strong>. Two deep-water whale safaris to encounter Pygmy Blue Whales, world-record coral biodiversity snorkeling, and expedition to the turquoise paradise of <strong>Acrema Beach</strong>.
               </p>
               <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:14px;padding:14px 16px;font-size:13px;color:var(--ink);line-height:1.55;">
                 <div style="color:var(--accent);font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
-                  <span>🐋</span> Blue Whale Migration Schedule
+                  <span>🐋</span> Deep Ocean Whale Meditation & Wild Lagoons
                 </div>
-                <div style="margin-bottom:4px;">• <strong>Sept – Dec (Peak Season):</strong> Southward migration from Banda Sea to Australian coast.</div>
-                <div style="margin-bottom:6px;">• <strong>March – April:</strong> Northward migration from Australian coast back to Banda Sea.</div>
+                <div style="margin-bottom:4px;">• <strong>2 Days on Island:</strong> Calm, meditative pace with morning whale watching in Ombai Strait.</div>
+                <div style="margin-bottom:4px;">• <strong>Acrema Beach:</strong> Secluded northern turquoise lagoon with powder-soft white sand and wooden boats.</div>
                 <div style="font-size:12px;color:var(--ink-mute);border-top:1px dashed var(--line);padding-top:6px;">
-                  * Year-round: Resident spinner dolphin pods, pilot whales, and the planet's highest marine biodiversity reef.
+                  * Meet traditional Wawata Topu freediving fisherwomen and enjoy beach seafood dinners under the southern stars.
                 </div>
               </div>
             </div>
@@ -405,23 +421,22 @@
             </div>
           </div>
 
-          <!-- Day 3 -->
+          <!-- Day 4 -->
           <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
             <div>
-              <span class="day-badge">DAY 03</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Lake Seloi Kraik, Private Folk Concert, Waterfalls & Maubisse</h3>
+              <span class="day-badge">DAY 04</span>
+              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Crocodile's Spine: Lake Seloi Kraik, Folk Concert, Waterfalls & Mambai</h3>
               <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:12px;">
-                Ascend by 4x4 into the cool Aileu highlands. Stop by mountain lake <strong>Seloi Kraik</strong> for an exclusive private acoustic folk performance by traditional ensemble <strong>Grupu Muzika Seloi Kraik</strong> (folk violin <em>violina</em>, <em>babadok</em> drums, silver crescent moon crowns <em>Kaibauk</em>, and sun medallions <em>Belak</em>) paired with organic high-altitude coffee tasting.
+                Fast boat return to Dili and 4x4 ascent into the misty Aileu highlands. Private acoustic lakeside performance by traditional ensemble <strong>Grupu Muzika Seloi Kraik</strong> (folk violins, babadok drums, Kaibauk silver crowns) with organic coffee tasting. Plunge into <strong>Ersalibuti & Kilelo</strong> canyon waterfall pools, visit authentic Mambai mountain village, and overnight at colonial Pousada de Maubisse (1500 m).
               </p>
               <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:14px;padding:14px 16px;font-size:13px;color:var(--ink);line-height:1.55;">
                 <div style="color:var(--accent);font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
                   <span>🎶</span> Cultural Immersion & Jungle Swimming
                 </div>
-                <div style="margin-bottom:4px;">• <strong>Private Lakeside Concert:</strong> Hypnotic polyphonic chanting and ancestral melodies right on the tranquil lake shore.</div>
-                <div style="margin-bottom:4px;">• <strong>Mambai Village & Wild Market:</strong> Cultural portraits in <em>Tais</em> and visit to an untouched tribal market.</div>
-                <div style="margin-bottom:4px;">• <strong>Waterfall Swimming:</strong> Refreshing plunge into <strong>Ersalibuti</strong> canyon pool and <strong>Kilelo Waterfall</strong> cascades.</div>
+                <div style="margin-bottom:4px;">• <strong>Private Lakeside Concert:</strong> Hypnotic polyphonic chanting and ancestral melodies right on the lake shore.</div>
+                <div style="margin-bottom:4px;">• <strong>Waterfall Swimming:</strong> Deep canyon plunge pool at Ersalibuti and mountain cascades of Kilelo.</div>
                 <div style="font-size:12px;color:var(--ink-mute);border-top:1px dashed var(--line);padding-top:6px;margin-top:4px;">
-                  * Sacred Sites: Visit Tatu Magic Rocks, charcoal-brewed coffee tasting, and Dokomali Waterfall.
+                  * Portrait session in hand-woven Tais, untouched Maubisse highland market, and bamboo-cooked Tukir feast.
                 </div>
               </div>
             </div>
@@ -431,16 +446,16 @@
             </div>
           </div>
 
-          <!-- Day 4-5 -->
+          <!-- Day 5 -->
           <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
             <div>
-              <span class="day-badge">DAY 04-05</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Eastbound: Baucau & Sacred Cascades</h3>
+              <span class="day-badge">DAY 05</span>
+              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Baucau: Pink Colonial Fortress, Sacred Cascades & Gruta de Nossa Senhora</h3>
               <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:12px;">
-                Scenic coastal drive east. Rest at the historic Portuguese colonial fortress Pousada de Baucau. Refreshing swim in unique natural mineral spring pools and layered rock cascades where local kids love diving into crystal waters.
+                Scenic mountain descent to the northern coast. Check in to the iconic pink fortress <strong>Pousada de Baucau 4★</strong>. Swim in pristine tiered rock pools and natural mineral springs, visit mystical cave shrine <strong>Gruta de Nossa Senhora</strong> draped in sacred banyan roots, and explore colonial Old Baucau.
               </p>
               <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:14px;padding:12px 16px;font-size:13px;color:var(--ink);line-height:1.5;">
-                <strong>📍 Sacred Spring Swimming:</strong> Authentic cultural connection with local youth and refreshing mountain spring dip among terraced stone ledges.
+                <strong>📍 Sacred Spring Swimming:</strong> Crystal turquoise mountain water, mineral cascades, and dinner with Timorese feijoada and Portuguese wine.
               </div>
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
@@ -453,20 +468,16 @@
           <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
             <div>
               <span class="day-badge">DAY 06-07</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Nino Konis Santana National Park, 7 Princes Rock, 30,000-Yr Cave Art & Jaco Island</h3>
+              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Crocodile's Crown: Lake Iralalaro, 7 Princes Rock, 30k-Yr Cave Art & Jaco Island</h3>
               <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:12px;">
-                Explore premier national park <strong>Nino Konis Santana</strong>. Ancient sacred shrines, guardian sea rocks <em>Batu Tatu</em>, and wooden boat crossing to the uninhabited sacred island of Jaco.
+                Expedition into <strong>Nino Konis Santana National Park</strong>. Watch sacred crocodiles on Lake Iralalaro. Visit 7 Princes Rock (<em>Pati-Patinu Haliwana</em>), 30,000-year cave rock art (<em>Liman Estampado</em>), and cross to sacred uninhabited Jaco Island with wild beach deer.
               </p>
               <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:14px;padding:14px 16px;font-size:13px;color:var(--ink);line-height:1.55;">
                 <div style="color:var(--accent);font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
-                  <span>🏛️</span> Sacred History & UNESCO Heritage
+                  <span>🧭</span> Two Grand Finale Options:
                 </div>
-                <div style="margin-bottom:5px;">• <strong>Pati-Patinu Haliwana Rock:</strong> Sacred site where 7 ancient princes (<em>Nami fetu ratu fetu</em>) carved 7 sacred stone basins before departing to 7 cardinal directions, representing an eternal bond with the ancestors.</div>
-                <div style="margin-bottom:5px;">• <strong>Cave Art Lene Hara & Ile Kere Kere (30,000–40,000 yrs):</strong> Negative hand stencils <em>Liman Estampado</em> (blown ochre pigment), masked warrior figures <em>Funu Nain</em> with spears, and ancient ceremonial dances.</div>
-                <div style="margin-bottom:5px;">• <strong>Two Sacred Sea Rocks (Batu Tatu):</strong> Mystical guardian sea stacks rising from the ocean guarding the gateway of ancestral spirits.</div>
-                <div style="font-size:12px;color:var(--ink-mute);border-top:1px dashed var(--line);padding-top:6px;margin-top:4px;">
-                  * Jaco Island: Virgin white sands, wild deer walking onto the beach, world-class reef snorkeling, and sacred <em>Uma Lulik</em> stilt houses of the Fataluku people.
-                </div>
+                <div style="margin-bottom:5px;">• <strong>Option A (North):</strong> VIP private speedboat cruise directly to Dili along whale strait (3.5h) + luxury SPA and gala dinner.</div>
+                <div style="margin-bottom:5px;">• <strong>Option B (South):</strong> 4x4 expedition to Aliambata Eternal Gas Seeps (brewing coffee on earth fire with Shamans) & VIP beachfront Safari Glamping.</div>
               </div>
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
@@ -479,13 +490,14 @@
           <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
             <div>
               <span class="day-badge">DAY 08</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Departure</h3>
+              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Dutch Fort Maubara (1756), Artisan Shopping & Departure</h3>
               <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;">
-                Return to Dili, artisanal Tais textile shopping, and organic coffee beans. 4x4 airport transfer for flight departure.
+                Visit historic colonial <strong>Fort Maubara</strong> with 18th-century VOC cannons and panoramic turquoise bay views. Return to Dili, artisanal Tais textile and roasted single-origin coffee shopping. Private 4x4 VIP transfer to Dili Airport.
               </p>
             </div>
-            <div>
-              <img src="images/IMG_2144.jpg" alt="Dili" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px;" />
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+              <img src="images/cristo_rei_dili.jpg" alt="Fort Maubara and Dili Bay" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
+              <img src="images/gallery_dili_coffee.jpg" alt="Timor Coffee & Tais" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
             </div>
           </div>
         </div>

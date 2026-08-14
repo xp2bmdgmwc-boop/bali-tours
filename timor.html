@@ -262,51 +262,87 @@
   <section class="section bg-alt" id="map">
     <div class="container" style="text-align:center;">
       <span style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px;">
-        География Экспедиции
+        География и Логистика Экспедиции
       </span>
-      <h2 style="font-family:var(--font-serif);font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--ink);margin-bottom:32px;">
-        Схема Маршрута и Время в Пути
+      <h2 style="font-family:var(--font-serif);font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--ink);margin-bottom:16px;">
+        Путь по Телу Священного Крокодила
       </h2>
-      <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:24px;padding:24px;max-width:960px;margin:0 auto;box-shadow:0 8px 32px rgba(14,14,12,0.04);">
-        <img src="images/timor_loop_map.jpg" alt="Карта маршрута по Тимору" style="width:100%;border-radius:16px;margin-bottom:24px;filter:contrast(110%);" />
+      <p style="max-width:700px;margin:0 auto 32px;font-size:15px;color:var(--ink-soft);line-height:1.6;">
+        В тиморской мифологии остров — это священный прародитель Крокодил (<em>Lafaek</em>). Наш маршрут проходит от океанского дыхания глубин (Атауро) через горный хребет (Маубиссе) к короне востока (остров Жако).
+      </p>
+
+      <!-- Map Selector Grid -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;max-width:1100px;margin:0 auto 32px;">
         
-        <!-- Schematic Route Grid with Driving Hours -->
-        <div style="text-align:left;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+        <!-- Northern Route Map Card -->
+        <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:24px;padding:24px;box-shadow:0 8px 32px rgba(14,14,12,0.04);text-align:left;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);">Маршрут 1 (Классика Премиум)</span>
+            <span style="font-size:12px;font-weight:700;color:var(--ink-soft);background:var(--bg-alt);padding:4px 10px;border-radius:999px;">Север & Скоростной Катер</span>
+          </div>
+          <h3 style="font-family:var(--font-serif);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:12px;">Северное Побережье & Морской Круиз</h3>
+          <img src="images/timor_northern_route_map.jpg" alt="Северный маршрут экспедиции по Тимору" style="width:100%;border-radius:16px;margin-bottom:16px;filter:contrast(105%);" />
+          <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;margin-bottom:0;">
+            2 дня на о. Атауро (киты + пляж Acrema), фолк-концерт у озера Seloi Kraik, водопады Ersalibuti, Баукау, наскальная живопись и Жако. Возврат в Дили на частном скоростном катере за 3.5 часа по морю.
+          </p>
+        </div>
+
+        <!-- Southern Route Map Card -->
+        <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:24px;padding:24px;box-shadow:0 8px 32px rgba(14,14,12,0.04);text-align:left;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);">Маршрут 2 (Гранд Офф-роуд)</span>
+            <span style="font-size:12px;font-weight:700;color:var(--ink-soft);background:var(--bg-alt);padding:4px 10px;border-radius:999px;">Дикий Юг & Вечные Огни</span>
+          </div>
+          <h3 style="font-family:var(--font-serif);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:12px;">Большое Кольцо 4x4 & Огни Алиамбата</h3>
+          <img src="images/timor_southern_route_map.jpg" alt="Южный маршрут экспедиции по Тимору" style="width:100%;border-radius:16px;margin-bottom:16px;filter:contrast(105%);" />
+          <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;margin-bottom:0;">
+            Полное кольцо через весь остров: озеро крокодилов Иралаларо, Жако, спуск на дикий юг Викеке, ритуал у вечного огня метана в Алиамбата, форсирование рек и горный перевал Саме.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Schematic Route Grid with Driving Hours -->
+      <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:24px;padding:24px;max-width:1100px;margin:0 auto;box-shadow:0 8px 32px rgba(14,14,12,0.04);">
+        <div style="font-family:var(--font-serif);font-size:20px;font-weight:700;color:var(--ink);text-align:left;margin-bottom:16px;">
+          ⏱️ Времена Переходов Между Ключевыми Точками:
+        </div>
+        <div style="text-align:left;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));">
           
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:20px;">
-            <div style="font-size:12px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Этап 1 • Старт</div>
-            <h4 style="font-family:var(--font-serif);font-size:18px;color:var(--ink);margin-bottom:8px;">📍 Дили ➔ 🚤 Остров Атауро</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;"><strong>Время в пути:</strong> ~1.5 часа на частном катере через пролив Омбай-Ветар (наблюдение за синими китами).</p>
+          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
+            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Этап 1 • Океан</div>
+            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Дили ➔ 🚤 Остров Атауро</h4>
+            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~1.5 часа</strong> на скоростном катере через глубоководный пролив китов (3000 м).</p>
           </div>
 
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:20px;">
-            <div style="font-size:12px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Этап 2 • Горы</div>
-            <h4 style="font-family:var(--font-serif);font-size:18px;color:var(--ink);margin-bottom:8px;">📍 Дили ➔ 🚘 Маубиссе</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;"><strong>Время в пути:</strong> ~3.5–4 часа на 4x4. Деревня народа Мамбаи, камни Tatu Magic и водопад Dokomali.</p>
+          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
+            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Этап 2 • Горы & Озеро</div>
+            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Дили ➔ 🚘 Айлеу / Маубиссе</h4>
+            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~3.5–4 часа</strong> на 4x4. Концерт на озере Seloi Kraik, водопады Ersalibuti, деревня Мамбаи.</p>
           </div>
 
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:20px;">
-            <div style="font-size:12px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Этап 3 • Восток</div>
-            <h4 style="font-family:var(--font-serif);font-size:18px;color:var(--ink);margin-bottom:8px;">📍 Маубиссе ➔ 🚘 Баукау</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;"><strong>Время в пути:</strong> ~3.5–4 часа на 4x4. Португальская крепость Pousada de Baucau и священные природные каскады.</p>
+          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
+            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Этап 3 • Север & Цитадель</div>
+            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Маубиссе ➔ 🚘 Баукау</h4>
+            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~3.5–4 часа</strong> на 4x4. Крепость Pousada de Baucau, купель и пещера Gruta de Nossa Senhora.</p>
           </div>
 
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:20px;">
-            <div style="font-size:12px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Этап 4 • Нацпарк & Пещеры</div>
-            <h4 style="font-family:var(--font-serif);font-size:18px;color:var(--ink);margin-bottom:8px;">📍 Баукау ➔ 🚘 Тутвала / Нацпарк</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;"><strong>Время в пути:</strong> ~4–4.5 часа на 4x4. Пещеры Lene Hara (наскальная живопись) и священные дома Uma Lulik.</p>
+          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
+            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Этап 4 • Сакральный Восток</div>
+            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Баукау ➔ 🚘 Нацпарк Тутвала</h4>
+            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~4–4.5 часа</strong> на 4x4. Озеро Иралаларо, Скала 7 Принцев и пещеры 30 000 лет.</p>
           </div>
 
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:20px;">
-            <div style="font-size:12px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Этап 5 • Остров</div>
-            <h4 style="font-family:var(--font-serif);font-size:18px;color:var(--ink);margin-bottom:8px;">📍 Тутвала ➔ 🚣 Остров Жако</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;"><strong>Время в пути:</strong> ~15–20 минут на моторной лодке. Необитаемый остров с дикими оленями и рифами.</p>
+          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
+            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Этап 5 • Райский Остров</div>
+            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Пляж Валу ➔ 🚣 Остров Жако</h4>
+            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~15–20 минут</strong> на лодке. Белоснежный песок, дикие олени, снорклинг без волн.</p>
           </div>
 
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:20px;">
-            <div style="font-size:12px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Этап 6 • Финиш</div>
-            <h4 style="font-family:var(--font-serif);font-size:18px;color:var(--ink);margin-bottom:8px;">📍 Восток ➔ 🚘 Возврат в Дили</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.5;"><strong>Время в пути:</strong> ~5.5–6 часов на 4x4 вдоль побережья океана до аэропорта Дили.</p>
+          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
+            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Этап 6 • Финал</div>
+            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Восток ➔ 🚤/🚘 Возврат в Дили</h4>
+            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~3.5 часа</strong> на скоростном катере по морю ИЛИ ~5.5-6 часов на 4x4 через форт Маубара.</p>
           </div>
 
         </div>
@@ -358,9 +394,9 @@
           <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
             <div>
               <span class="day-badge">ДЕНЬ 01</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Столица, Кофе и VIP-встреча</h3>
+              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Врата Океана: Прилет в Дили, Пляж Areia Branca & Ритуал Знакомства</h3>
               <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;">
-                Прилет в Дили. Встреча у трапа персональным внедорожником Toyota Land Cruiser (без городских такси). Чек-ин в Novo Turismo Resort 4*. Знакомство со столицей, визит на производство масел Ascension Oil и дегустация премиального горного кофе.
+                Прилет в Дили. VIP-встреча у трапа персональным внедорожником <strong>Toyota Land Cruiser 4x4</strong>. Чек-ин в Novo Turismo Resort 4*. Панорамный подъем к Cristo Rei, купание на белоснежном пляже Dolok Oan и сакральный закатный ритуал благословения пути (<em>Hamulak</em>) со старейшиной на пляже Areia Branca.
               </p>
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
@@ -369,22 +405,22 @@
             </div>
           </div>
 
-          <!-- Day 2 -->
+          <!-- Day 2-3 -->
           <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
             <div>
-              <span class="day-badge">ДЕНЬ 02</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Океан: Остров Атауро & Синие Киты</h3>
+              <span class="day-badge">ДЕНЬ 02-03</span>
+              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Остров Атауро (2 Дня): Синие Киты, Пляж Acrema & Риф Garden Reef</h3>
               <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:14px;">
-                Выход в пролив Омбай-Ветар на частном катере для наблюдения за карликовыми синими китами (Pygmy Blue Whales). Высадка на остров Атауро, снорклинг на легендарном коралловом рифе Garden Reef.
+                Двухдневное медитативное погружение на острове Атауро без суеты. Проживание в приватных бунгало <strong>Atauro Waterfront Eco Lodge</strong>. Два глубоководных сафари к карликовым синим китам (Pygmy Blue Whales), снорклинг на рифе-рекордсмене биоразнообразия и экспедиция в бирюзовую лагуну <strong>Acrema Beach</strong>.
               </p>
               <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:14px;padding:14px 16px;font-size:13px;color:var(--ink);line-height:1.55;">
                 <div style="color:var(--accent);font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
-                  <span>🐋</span> Сезон Миграции Синих Китов
+                  <span>🐋</span> Медитация с Китами & Дикие Пляжи
                 </div>
-                <div style="margin-bottom:4px;">• <strong>Сентябрь – Декабрь (Пик):</strong> Южная миграция из моря Банда к берегам Австралии.</div>
-                <div style="margin-bottom:6px;">• <strong>Март – Апрель:</strong> Северная миграция от берегов Австралии обратно в море Банда.</div>
+                <div style="margin-bottom:4px;">• <strong>2 Дня на Острове:</strong> Глубокое погружение — утренние выходы к китам в пролив Омбай-Ветар.</div>
+                <div style="margin-bottom:4px;">• <strong>Acrema Beach:</strong> Уединенная северная бирюзовая лагуна с белым песком и деревянными лодками.</div>
                 <div style="font-size:12px;color:var(--ink-mute);border-top:1px dashed var(--line);padding-top:6px;">
-                  * Круглый год: резидентные стаи дельфинов-спиннеров, гринды и снорклинг на рифах с мировым рекордом биоразнообразия.
+                  * Знакомство с женщинами-ныряльщицами Wawata Topu и ужины со свежими морепродуктами под звездами.
                 </div>
               </div>
             </div>
@@ -405,23 +441,22 @@
             </div>
           </div>
 
-          <!-- Day 3 -->
+          <!-- Day 4 -->
           <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
             <div>
-              <span class="day-badge">ДЕНЬ 03</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Озеро Seloi Kraik, Приватный Фолк-Концерт, Водопады & Горы Маубиссе</h3>
+              <span class="day-badge">ДЕНЬ 04</span>
+              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Хребет Крокодила: Озеро Seloi Kraik, Фолк-Концерт, Водопады & Деревня Мамбаи</h3>
               <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:12px;">
-                Подъем на внедорожниках 4x4 в высокогорный округ Айлеу. Остановка у горного озера <strong>Seloi Kraik</strong>. Эксклюзивный приватный акустический концерт традиционного фолк-ансамбля <strong>Grupu Muzika Seloi Kraik</strong> (народная скрипка <em>violina</em>, барабаны <em>babadok</em>, серебряные лунные короны <em>Kaibauk</em> и нагрудные диски солнца <em>Belak</em>) с дегустацией свежесваренного органического горного кофе.
+                Возвращение на катере в Дили и подъем на 4x4 в высокогорный округ Айлеу. Приватный акустический концерт ансамбля <strong>Grupu Muzika Seloi Kraik</strong> (скрипки <em>violina</em>, барабаны <em>babadok</em>, серебряные короны <em>Kaibauk</em>) у горного озера с дегустацией органического кофе. Купание в глубоких чашах водопадов <strong>Ersalibuti & Kilelo</strong>, посещение традиционной деревни Мамбаи и ночевка в усадьбе Pousada de Maubisse (1500 м).
               </p>
               <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:14px;padding:14px 16px;font-size:13px;color:var(--ink);line-height:1.55;">
                 <div style="color:var(--accent);font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
                   <span>🎶</span> Этно-Погружение & Купание в Джунглях
                 </div>
-                <div style="margin-bottom:4px;">• <strong>Приватный концерт у озера:</strong> Гипнотическое многоголосие и аутентичные струнные мелодии прямо на озерном берегу.</div>
-                <div style="margin-bottom:4px;">• <strong>Деревня Мамбаи & Дикий Рынок:</strong> Портретная фотосессия с жителями в нарядах <em>Tais</em> и визит на не-туристический племенной рынок.</div>
-                <div style="margin-bottom:4px;">• <strong>Купание в водопадах:</strong> Спуск к скальной чаше водопада <strong>Ersalibuti</strong> и каскадам <strong>Kilelo Waterfall</strong>.</div>
+                <div style="margin-bottom:4px;">• <strong>Приватный концерт у озера:</strong> Живая аутентичная музыка народа Мамбаи прямо на озерном берегу.</div>
+                <div style="margin-bottom:4px;">• <strong>Купание в водопадах:</strong> Скальная чаша Ersalibuti и горные каскады Kilelo Waterfall.</div>
                 <div style="font-size:12px;color:var(--ink-mute);border-top:1px dashed var(--line);padding-top:6px;margin-top:4px;">
-                  * Сакральные места: Камни Tatu Magic Rocks, варка кофе на углях и треккинг к Dokomali Waterfall.
+                  * Портретные фото в Tais, дикий рынок Маубиссе и дегустация блюда Tukir в бамбуке.
                 </div>
               </div>
             </div>
@@ -431,16 +466,16 @@
             </div>
           </div>
 
-          <!-- Day 4-5 -->
+          <!-- Day 5 -->
           <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
             <div>
-              <span class="day-badge">ДЕНЬ 04-05</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Восток: Баукау & Священные Каскады</h3>
+              <span class="day-badge">ДЕНЬ 05</span>
+              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Баукау: Розовая Цитадель, Священные Каскады & Пещера Gruta de Nossa Senhora</h3>
               <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:12px;">
-                Переезд на восток вдоль океана. Отдых в исторической португальской крепости Pousada de Baucau. Купание в уникальной природной минеральной купели и слоистых скальных каскадах, где местная детвора весело прыгает в прозрачную воду.
+                Спуск по горным серпантинам на северное побережье. Заселение в историческую розовую крепость <strong>Pousada de Baucau 4★</strong>. Купание в природной минеральной купели со скальными каскадами, посещение мистической пещерной святыни <strong>Gruta de Nossa Senhora</strong>, оплетенной корнями священного баньяна, и колониального рынка 1932 года.
               </p>
               <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:14px;padding:12px 16px;font-size:13px;color:var(--ink);line-height:1.5;">
-                <strong>📍 Купание у священного источника:</strong> Живое общение с местными жителями, освежающее купание в горном природном бассейне среди ступенчатых скал.
+                <strong>📍 Купание у священного источника:</strong> Чистейшая бирюзовая вода, природные каскады и ужин с португальской фейжоадой и выдержанным вином.
               </div>
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
@@ -453,20 +488,16 @@
           <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
             <div>
               <span class="day-badge">ДЕНЬ 06-07</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Нацпарк Нину-Кониш-Сантана, Скала 7 Принцев, Живопись 30 000 Лет & Остров Жако</h3>
+              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Голова Крокодила: Озеро Иралаларо, Скала 7 Принцев, Живопись 30k Лет & Остров Жако</h3>
               <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:12px;">
-                Исследование главного национального парка <strong>Нину-Кониш-Сантана</strong>. Древнейшие святилища, сакральные скалы-стражи <em>Batu Tatu</em> в океане и переправа на необитаемый священный остров Жако.
+                Экспедиция в нацпарк <strong>Нину-Кониш-Сантана</strong>. Наблюдение за священными крокодилами на озере Иралаларо. Осмотр Скалы 7 Принцев (<em>Pati-Patinu Haliwana</em>), пещер с наскальной живописью возрастом 30 000 лет (<em>Liman Estampado</em>) и переправа на необитаемый остров Жако с дикими оленями.
               </p>
               <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:14px;padding:14px 16px;font-size:13px;color:var(--ink);line-height:1.55;">
                 <div style="color:var(--accent);font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
-                  <span>🏛️</span> Сакральная История & Наследие UNESCO
+                  <span>🧭</span> Два Варианта Финала:
                 </div>
-                <div style="margin-bottom:5px;">• <strong>Скала Pati-Patinu Haliwana:</strong> Священное место Тутвала, где 7 древних принцев (<em>Nami fetu ratu fetu</em>) перед разделением на 7 сторон света высекли 7 чаш в камне как символ вечной связи с предками.</div>
-                <div style="margin-bottom:5px;">• <strong>Пещерная живопись Lene Hara & Ile Kere Kere (30 000–40 000 лет):</strong> Уникальные трафареты рук <em>Liman Estampado</em> (выдувание охры из рта), фигуры воинов <em>Funu Nain</em> в масках с копьями и обрядовые танцы.</div>
-                <div style="margin-bottom:5px;">• <strong>Два Священных Камня в море (Batu Tatu):</strong> Мистические скалы-стражи у кромки океана, защищающие врата духов.</div>
-                <div style="font-size:12px;color:var(--ink-mute);border-top:1px dashed var(--line);padding-top:6px;margin-top:4px;">
-                  * Остров Жако: Белоснежный песок, дикие олени, выходящие к воде, снорклинг и священные дома <em>Uma Lulik</em> народа Фаталуку.
-                </div>
+                <div style="margin-bottom:5px;">• <strong>Вариант А (Север):</strong> Скоростной морской круиз на частном катере напрямую в Дили (3.5 ч) + SPA и гала-ужин.</div>
+                <div style="margin-bottom:5px;">• <strong>Вариант Б (Юг):</strong> 4x4 офф-роуд к Вечным Огням Алиамбата (варка кофе на огне земли с шаманами) и VIP Сафари-Глэмпинг на пляже.</div>
               </div>
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
@@ -479,13 +510,14 @@
           <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
             <div>
               <span class="day-badge">ДЕНЬ 08</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Вылет Домой</h3>
+              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Голландский Форт Маубара (1756 г.), Покупки & Вылет Домой</h3>
               <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;">
-                Возвращение в Дили, покупка кофейных зерен и текстиля Tais. Трансфер в аэропорт на 4x4.
+                Поездка к историческому колониальному форту <strong>Fort Maubara</strong> с чугунными пушками XVIII века и панорамой бирюзовой бухты. Возвращение в Дили, покупка свежеобжаренного кофе и редких тканей Tais. VIP-трансфер на 4x4 Land Cruiser в аэропорт.
               </p>
             </div>
-            <div>
-              <img src="images/IMG_2144.jpg" alt="Дили" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px;" />
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+              <img src="images/cristo_rei_dili.jpg" alt="Форт Маубара и залив Дили" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
+              <img src="images/gallery_dili_coffee.jpg" alt="Тиморский кофе и ткани Tais" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
             </div>
           </div>
         </div>
