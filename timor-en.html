@@ -17,10 +17,10 @@
   <title>TIMOR-LESTE · THE LAST SILENCE · Expeditions by Valery Latypov</title>
   <meta name="description" content="Private bespoke expedition to East Timor. Strictly up to 4 guests. Zero-friction architecture and an existential reset for visionary leaders." />
   
-  <!-- Google Fonts: Cormorant Garamond (Headlines) & Manrope (Body) -->
+  <!-- Google Fonts: Inter (Pure Architectural Sans-Serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- GSAP & ScrollTrigger -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -32,14 +32,13 @@
       --bg-alt:      #F2F0EA;
       --bg-dark:     #0E0E0C;
       --ink:         #0E0E0C;
-      --ink-soft:    #2E2E2A;
-      --ink-mute:    #6F6E66;
+      --ink-soft:    #3A3935;
+      --ink-mute:    #76756D;
       --line:        rgba(14, 14, 12, 0.08);
       --line-strong: rgba(14, 14, 12, 0.16);
       --accent:      #C9501E;
       --accent-soft: #F4E8E1;
-      --font-serif:  "Cormorant Garamond", Garamond, Georgia, serif;
-      --font-sans:   "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-sans:   "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
       --max-w:       1200px;
     }
 
@@ -57,9 +56,9 @@
 
     body {
       font-family: var(--font-sans);
-      font-size: 17px;
-      line-height: 1.8;
-      letter-spacing: 0.01em;
+      font-size: 16px;
+      line-height: 1.65;
+      letter-spacing: -0.01em;
       color: var(--ink-soft);
       background-color: var(--bg);
       -webkit-font-smoothing: antialiased;
@@ -93,7 +92,7 @@
       transform: translateX(-50%);
       z-index: 1000;
       width: min(92%, 1100px);
-      background: rgba(250, 250, 247, 0.9);
+      background: rgba(250, 250, 247, 0.92);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--line-strong);
@@ -102,15 +101,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 10px 30px rgba(14, 14, 12, 0.05);
+      box-shadow: 0 10px 30px rgba(14, 14, 12, 0.04);
       transition: all 0.3s ease;
     }
 
     .nav-brand {
-      font-family: var(--font-sans);
       font-weight: 800;
-      font-size: 13px;
-      letter-spacing: 0.18em;
+      font-size: 12px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--ink);
     }
@@ -124,8 +122,8 @@
 
     .nav-link {
       font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
+      font-weight: 500;
+      letter-spacing: -0.01em;
       color: var(--ink-mute);
     }
 
@@ -139,7 +137,7 @@
       gap: 6px;
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       padding: 5px 12px;
       border-radius: 9999px;
       background: var(--bg-alt);
@@ -163,13 +161,13 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 18px 38px;
+      padding: 16px 36px;
       background: var(--ink);
       color: var(--bg);
       font-family: var(--font-sans);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       border-radius: 9999px;
       border: 1px solid var(--ink);
@@ -181,7 +179,7 @@
       background: var(--accent);
       border-color: var(--accent);
       transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(201, 80, 30, 0.25);
+      box-shadow: 0 12px 24px rgba(201, 80, 30, 0.2);
     }
 
     .btn-nav {
@@ -191,7 +189,7 @@
 
     /* Typography & Sections */
     .section {
-      padding: clamp(90px, 12vw, 160px) 0;
+      padding: clamp(96px, 12vw, 160px) 0;
       position: relative;
     }
 
@@ -201,49 +199,46 @@
 
     .eyebrow {
       display: inline-block;
-      font-family: var(--font-sans);
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.25em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 24px;
     }
 
     .h-display {
-      font-family: var(--font-serif);
-      font-size: clamp(42px, 6.5vw, 76px);
+      font-size: clamp(38px, 5.5vw, 64px);
       line-height: 1.08;
-      font-weight: 400;
+      font-weight: 700;
       color: var(--ink);
-      letter-spacing: -0.01em;
+      letter-spacing: -0.03em;
       margin-bottom: 32px;
     }
 
     .h-sub {
-      font-family: var(--font-serif);
-      font-size: clamp(26px, 3.8vw, 38px);
+      font-size: clamp(22px, 3vw, 32px);
       line-height: 1.25;
-      font-weight: 400;
+      font-weight: 600;
       color: var(--ink);
-      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
     }
 
     .lead-text {
-      font-family: var(--font-serif);
-      font-size: clamp(22px, 2.8vw, 32px);
-      line-height: 1.55;
-      font-style: italic;
+      font-size: clamp(20px, 2.4vw, 28px);
+      line-height: 1.5;
+      font-weight: 400;
       color: var(--ink);
+      letter-spacing: -0.02em;
       margin-bottom: 32px;
-      letter-spacing: 0.01em;
     }
 
     .body-editorial {
-      font-size: clamp(16px, 1.2vw, 19px);
-      line-height: 1.85;
+      font-size: clamp(16px, 1.1vw, 18px);
+      line-height: 1.7;
       color: var(--ink-soft);
-      letter-spacing: 0.01em;
+      letter-spacing: -0.01em;
     }
 
     /* Hero Block (Dark Oceanic Luxury) */
@@ -265,7 +260,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.38;
+      opacity: 0.35;
       filter: saturate(0.85) contrast(1.1);
       z-index: 1;
     }
@@ -276,7 +271,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(180deg, rgba(14,14,12,0.6) 0%, rgba(14,14,12,0.85) 100%);
+      background: linear-gradient(180deg, rgba(14,14,12,0.65) 0%, rgba(14,14,12,0.9) 100%);
       z-index: 2;
     }
 
@@ -288,27 +283,26 @@
 
     .hero-eyebrow {
       color: #E29D7D;
-      letter-spacing: 0.28em;
+      letter-spacing: 0.18em;
     }
 
     .hero-title {
-      font-family: var(--font-serif);
-      font-size: clamp(48px, 8vw, 92px);
-      line-height: 1.0;
-      font-weight: 400;
-      letter-spacing: -0.01em;
+      font-size: clamp(44px, 7vw, 84px);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.035em;
       color: #FFFFFF;
       margin-bottom: 28px;
     }
 
     .hero-lead {
-      font-size: clamp(18px, 1.9vw, 23px);
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.85);
-      max-width: 800px;
-      margin-bottom: 44px;
+      font-size: clamp(17px, 1.7vw, 21px);
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 780px;
+      margin-bottom: 40px;
       font-weight: 300;
-      letter-spacing: 0.01em;
+      letter-spacing: -0.01em;
     }
 
     .hero-footer {
@@ -316,16 +310,16 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 36px;
-      padding-top: 36px;
-      border-top: 1px solid rgba(255, 255, 255, 0.14);
-      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      margin-top: 48px;
     }
 
     .hero-spec-item {
-      font-size: 12px;
-      letter-spacing: 0.14em;
+      font-size: 11px;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.55);
     }
 
     .hero-spec-item span {
@@ -334,7 +328,7 @@
       font-weight: 600;
       font-size: 13px;
       margin-top: 4px;
-      letter-spacing: 0.06em;
+      letter-spacing: -0.01em;
     }
 
     /* Diagnosis Block */
@@ -342,7 +336,7 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: clamp(40px, 6vw, 64px);
-      max-width: 980px;
+      max-width: 960px;
     }
 
     .stats-row {
@@ -355,17 +349,18 @@
     }
 
     .stat-num {
-      font-family: var(--font-serif);
-      font-size: clamp(40px, 4.5vw, 56px);
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 700;
       color: var(--accent);
       line-height: 1;
+      letter-spacing: -0.03em;
       margin-bottom: 8px;
     }
 
     .stat-desc {
       font-size: 13px;
       color: var(--ink-mute);
-      line-height: 1.55;
+      line-height: 1.5;
     }
 
     /* Experience Block (Zero-Friction) */
@@ -377,7 +372,7 @@
     .experience-list {
       display: flex;
       flex-direction: column;
-      gap: clamp(64px, 10vw, 120px);
+      gap: clamp(64px, 10vw, 112px);
     }
 
     .experience-item {
@@ -400,39 +395,40 @@
     }
 
     .experience-num {
-      font-family: var(--font-sans);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.22em;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
       color: var(--accent);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       display: block;
     }
 
     .experience-media {
       position: relative;
-      border-radius: 12px;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 16px 40px rgba(14, 14, 12, 0.08);
+      box-shadow: 0 16px 40px rgba(14, 14, 12, 0.06);
       background: var(--bg-alt);
     }
 
     .experience-media img {
       width: 100%;
-      height: 480px;
+      height: 460px;
       object-fit: cover;
       transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .experience-media:hover img {
-      transform: scale(1.03);
+      transform: scale(1.025);
     }
 
-    /* Editorial Landscape Placeholder (Ocean / Cliffs scale) */
+    /* Minimalist Architectural Landscape Placeholder */
     .landscape-placeholder {
       width: 100%;
-      height: 480px;
-      background: linear-gradient(135deg, #1C2430 0%, #0F141C 100%);
+      height: 460px;
+      background: #E8E6DF;
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -440,37 +436,22 @@
       text-align: center;
       padding: 40px;
       position: relative;
-      border: 1px solid var(--line-strong);
-      border-radius: 12px;
-    }
-
-    .landscape-placeholder::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, rgba(201, 80, 30, 0.08) 0%, transparent 70%);
     }
 
     .landscape-placeholder-tag {
-      font-family: var(--font-sans);
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #E29D7D;
+      color: var(--ink-mute);
       margin-bottom: 12px;
-      position: relative;
-      z-index: 2;
     }
 
     .landscape-placeholder-title {
-      font-family: var(--font-serif);
-      font-size: 24px;
-      color: #FAFAF7;
-      font-weight: 400;
-      font-style: italic;
-      position: relative;
-      z-index: 2;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.02em;
       max-width: 320px;
       line-height: 1.4;
     }
@@ -483,49 +464,47 @@
       align-items: center;
     }
 
-    /* Vertical Portrait Placeholder (For Classic B&W Portrait) */
+    /* Vertical Portrait Placeholder (For Classic B&W Founder Portrait) */
     .portrait-placeholder {
       width: 100%;
       height: 520px;
-      background: linear-gradient(180deg, #EAE7DF 0%, #DCD8CD 100%);
+      background: #E8E6DF;
       border: 1px solid var(--line-strong);
-      border-radius: 12px;
+      border-radius: 8px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 32px;
-      box-shadow: 0 16px 40px rgba(14, 14, 12, 0.06);
+      box-shadow: 0 16px 40px rgba(14, 14, 12, 0.05);
       position: relative;
-      overflow: hidden;
     }
 
     .portrait-placeholder-icon {
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       border: 1px solid var(--ink-mute);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--ink-mute);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .portrait-placeholder-title {
-      font-family: var(--font-serif);
-      font-size: 20px;
+      font-size: 18px;
       color: var(--ink);
       font-weight: 600;
-      margin-bottom: 6px;
-      letter-spacing: 0.02em;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
     }
 
     .portrait-placeholder-sub {
       font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
+      font-weight: 600;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--ink-mute);
     }
@@ -538,7 +517,7 @@
     .investment-card {
       background: var(--bg);
       border: 1px solid var(--line-strong);
-      border-radius: 20px;
+      border-radius: 12px;
       padding: clamp(40px, 6vw, 72px);
       max-width: 920px;
       margin: 0 auto;
@@ -546,43 +525,43 @@
     }
 
     .price-tag {
-      font-family: var(--font-serif);
-      font-size: clamp(42px, 5.5vw, 64px);
+      font-size: clamp(38px, 5vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
       color: var(--ink);
       line-height: 1.1;
       margin: 16px 0 28px;
     }
 
     .price-period {
-      font-family: var(--font-sans);
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 500;
       color: var(--ink-mute);
       display: block;
       margin-top: 8px;
-      letter-spacing: 0.02em;
+      letter-spacing: -0.01em;
     }
 
     .important-callout {
       margin-top: 40px;
-      padding: 28px 32px;
+      padding: 24px 28px;
       background: var(--accent-soft);
       border-left: 3px solid var(--accent);
-      border-radius: 0 12px 12px 0;
+      border-radius: 0 8px 8px 0;
     }
 
     .important-callout h4 {
-      font-size: 12px;
-      letter-spacing: 0.2em;
+      font-size: 11px;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--accent);
-      font-weight: 800;
-      margin-bottom: 10px;
+      font-weight: 700;
+      margin-bottom: 8px;
     }
 
     .important-callout p {
       font-size: 15px;
-      line-height: 1.7;
+      line-height: 1.6;
       color: var(--ink);
       font-weight: 500;
     }
@@ -612,28 +591,29 @@
 
     .concierge-info p {
       color: rgba(255, 255, 255, 0.78);
-      font-size: 18px;
-      line-height: 1.75;
+      font-size: 17px;
+      line-height: 1.65;
       margin-bottom: 40px;
     }
 
     .direct-contacts {
-      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
       padding-top: 32px;
     }
 
     .contact-line {
       margin-bottom: 16px;
-      font-size: 15px;
+      font-size: 14px;
       color: rgba(255, 255, 255, 0.65);
     }
 
     .contact-line strong {
       color: #FFFFFF;
       font-weight: 600;
-      font-size: 16px;
+      font-size: 15px;
       display: block;
       margin-top: 4px;
+      letter-spacing: -0.01em;
     }
 
     .contact-line a {
@@ -648,9 +628,9 @@
 
     /* Form */
     .concierge-form {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
       padding: clamp(32px, 5vw, 48px);
     }
 
@@ -661,33 +641,33 @@
     .form-label {
       display: block;
       font-size: 11px;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.55);
+      color: rgba(255, 255, 255, 0.5);
       margin-bottom: 8px;
       font-weight: 600;
     }
 
     .form-input {
       width: 100%;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 8px;
-      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 6px;
+      padding: 15px 18px;
       color: #FFFFFF;
       font-family: var(--font-sans);
-      font-size: 15px;
+      font-size: 14px;
       outline: none;
       transition: all 0.25s ease;
     }
 
     .form-input:focus {
       border-color: var(--accent);
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .form-input::placeholder {
-      color: rgba(255, 255, 255, 0.3);
+      color: rgba(255, 255, 255, 0.28);
     }
 
     .form-btn {
@@ -698,14 +678,14 @@
     .copyright-bar {
       margin-top: clamp(72px, 10vw, 120px);
       padding-top: 32px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 16px;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      color: rgba(255, 255, 255, 0.4);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.35);
       text-transform: uppercase;
     }
 
@@ -834,7 +814,7 @@
       <div class="experience-header">
         <span class="eyebrow">02 / EXPERIENCE</span>
         <h2 class="h-display">ZERO-FRICTION ARCHITECTURE.</h2>
-        <p class="body-editorial" style="font-size: 20px; color: var(--ink); font-weight: 600;">
+        <p class="body-editorial" style="font-size: 19px; color: var(--ink); font-weight: 600;">
           Private expedition. Strictly up to 4 guests. Absolute privacy.
         </p>
       </div>
@@ -894,7 +874,7 @@
       <div class="guide-card">
         <div class="portrait-placeholder">
           <div class="portrait-placeholder-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
           </div>
           <div class="portrait-placeholder-title">Valery Latypov</div>
           <div class="portrait-placeholder-sub">Architect of Visual Capital</div>
@@ -903,7 +883,7 @@
         <div class="guide-content">
           <span class="eyebrow">03 / GUIDE</span>
           <h2 class="h-display">ARCHITECT OF MEANING.</h2>
-          <p class="lead-text" style="font-size: 24px; margin-bottom: 24px;">
+          <p class="lead-text" style="font-size: 22px; font-weight: 500; margin-bottom: 24px;">
             Valery Latypov. 25 years of working with tier-one leaders and global cultural icons (Forbes, Depeche Mode, Rolling Stones).
           </p>
           <p class="body-editorial">
@@ -964,7 +944,7 @@
               <strong style="margin-top: 4px;"><a href="mailto:latypov.valery@yandex.ru">latypov.valery@yandex.ru</a></strong>
             </div>
             <div class="contact-line" style="margin-top: 24px; font-size: 14px; color: rgba(255, 255, 255, 0.5);">
-              <strong style="color: #E29D7D; font-size: 16px; font-family: var(--font-serif); font-style: italic; letter-spacing: 0.02em;">Valery Latypov. Architect of Visual Capital.</strong>
+              <strong style="color: #E29D7D; font-size: 15px; letter-spacing: -0.01em;">Valery Latypov. Architect of Visual Capital.</strong>
             </div>
           </div>
         </div>
