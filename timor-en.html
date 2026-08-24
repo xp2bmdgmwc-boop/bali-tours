@@ -10,880 +10,970 @@
       }
     } catch(e){}
   })();
-</script>
+  </script>
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ВОСТОЧНЫЙ ТИМОР & БАЛИ · Авторские Экспедиции Валерия Латыпова</title>
-  <meta name="description" content="Закрытая авторская экспедиция в Восточный Тимор и нетуристический Бали. Первозданный океан, синие киты, 4x4 Land Cruiser и маленькие камерные группы." />
+  <title>TIMOR-LESTE · THE LAST SILENCE · Expeditions by Valery Latypov</title>
+  <meta name="description" content="Private bespoke expedition to East Timor. 1–2 guests. Zero-friction architecture and an existential reset for visionary leaders." />
   
-  <!-- Google Fonts & Native CSS -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   
   <!-- GSAP & ScrollTrigger -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="script.js" defer></script>
   
   <style>
-    /* Custom tab styles matching ecru design */
-    .tab-btn {
-      padding: 12px 24px;
-      border-radius: 9999px;
+    :root {
+      --bg:          #FAFAF7;
+      --bg-alt:      #F2F0EA;
+      --bg-dark:     #0E0E0C;
+      --ink:         #0E0E0C;
+      --ink-soft:    #36352F;
+      --ink-mute:    #6F6E66;
+      --line:        rgba(14, 14, 12, 0.08);
+      --line-strong: rgba(14, 14, 12, 0.16);
+      --accent:      #C9501E;
+      --accent-soft: #F4E8E1;
+      --font-serif:  "PT Serif", Georgia, serif;
+      --font-sans:   "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+      --max-w:       1200px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg);
+      color: var(--ink);
+    }
+
+    body {
       font-family: var(--font-sans);
-      font-size: 14px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: 1px solid var(--line-strong);
-      background: var(--bg);
+      font-size: 17px;
+      line-height: 1.7;
       color: var(--ink-soft);
+      background-color: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
-    .tab-btn.active {
-      background: var(--ink);
-      color: var(--bg);
-      border-color: var(--ink);
-      box-shadow: 0 4px 12px rgba(14, 14, 12, 0.15);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.25s ease;
     }
-    .hotel-card {
-      background: var(--bg);
-      border: 1px solid var(--line-strong);
-      border-radius: 20px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    img, video {
+      display: block;
+      max-width: 100%;
+      height: auto;
     }
-    .hotel-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(14, 14, 12, 0.08);
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 clamp(24px, 5vw, 64px);
     }
-    .day-badge {
-      display: inline-block;
-      font-family: var(--font-sans);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: var(--accent-soft);
-      padding: 4px 12px;
-      border-radius: 9999px;
-      margin-bottom: 12px;
-    }
-    .nav-glass {
+
+    /* Floating Navigation */
+    .nav-bar {
       position: fixed;
       top: 24px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 500;
-      width: min(90%, 1100px);
-      background: rgba(250, 250, 247, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      z-index: 1000;
+      width: min(92%, 1100px);
+      background: rgba(250, 250, 247, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--line-strong);
       border-radius: 9999px;
       padding: 12px 28px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 8px 32px rgba(14, 14, 12, 0.06);
+      box-shadow: 0 10px 30px rgba(14, 14, 12, 0.05);
+      transition: all 0.3s ease;
     }
+
+    .nav-brand {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
     .nav-link {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--ink-soft);
-      transition: color 0.2s;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-mute);
     }
+
     .nav-link:hover {
       color: var(--accent);
     }
+
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      background: var(--bg-alt);
+      border: 1px solid var(--line);
+    }
+
+    .lang-toggle .active {
+      color: var(--accent);
+    }
+
+    .lang-toggle a:not(.active) {
+      color: var(--ink-mute);
+    }
+
+    .lang-toggle a:not(.active):hover {
+      color: var(--ink);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 36px;
+      background: var(--ink);
+      color: var(--bg);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 9999px;
+      border: 1px solid var(--ink);
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(201, 80, 30, 0.25);
+    }
+
+    .btn-nav {
+      padding: 8px 18px;
+      font-size: 12px;
+    }
+
+    /* Typography & Sections */
+    .section {
+      padding: clamp(90px, 12vw, 160px) 0;
+      position: relative;
+    }
+
+    .section-alt {
+      background-color: var(--bg-alt);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .h-display {
+      font-family: var(--font-serif);
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.1;
+      font-weight: 400;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      margin-bottom: 32px;
+    }
+
+    .h-sub {
+      font-family: var(--font-serif);
+      font-size: clamp(22px, 3.2vw, 32px);
+      line-height: 1.35;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .lead-text {
+      font-family: var(--font-serif);
+      font-size: clamp(20px, 2.5vw, 28px);
+      line-height: 1.55;
+      font-style: italic;
+      color: var(--ink);
+      margin-bottom: 32px;
+    }
+
+    .body-editorial {
+      font-size: clamp(16px, 1.2vw, 19px);
+      line-height: 1.8;
+      color: var(--ink-soft);
+    }
+
+    /* Hero Block (Dark Oceanic Luxury) */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: var(--bg-dark);
+      color: #FFFFFF;
+      padding: 160px 0 100px;
+      overflow: hidden;
+    }
+
+    .hero-video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.38;
+      filter: saturate(0.85) contrast(1.1);
+      z-index: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(14,14,12,0.6) 0%, rgba(14,14,12,0.85) 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 920px;
+    }
+
+    .hero-eyebrow {
+      color: #E29D7D;
+      letter-spacing: 0.28em;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(44px, 7.5vw, 84px);
+      line-height: 1.02;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: #FFFFFF;
+      margin-bottom: 28px;
+    }
+
+    .hero-lead {
+      font-size: clamp(17px, 1.8vw, 22px);
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 780px;
+      margin-bottom: 44px;
+      font-weight: 300;
+    }
+
+    .hero-footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 36px;
+      padding-top: 36px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      margin-top: 56px;
+    }
+
+    .hero-spec-item {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .hero-spec-item span {
+      display: block;
+      color: #FFFFFF;
+      font-weight: 600;
+      font-size: 13px;
+      margin-top: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    /* Diagnosis Block */
+    .diagnosis-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(40px, 6vw, 64px);
+      max-width: 980px;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+      padding-top: 48px;
+      border-top: 1px solid var(--line-strong);
+    }
+
+    .stat-num {
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 4vw, 48px);
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-desc {
+      font-size: 13px;
+      color: var(--ink-mute);
+      line-height: 1.5;
+    }
+
+    /* Experience Block (Zero-Friction) */
+    .experience-header {
+      max-width: 860px;
+      margin-bottom: clamp(56px, 8vw, 96px);
+    }
+
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(64px, 10vw, 120px);
+    }
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 7vw, 88px);
+      align-items: center;
+    }
+
+    .experience-item:nth-child(even) {
+      direction: rtl;
+    }
+
+    .experience-item:nth-child(even) .experience-text {
+      direction: ltr;
+    }
+
+    .experience-item:nth-child(even) .experience-media {
+      direction: ltr;
+    }
+
+    .experience-num {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .experience-media {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(14, 14, 12, 0.08);
+      background: var(--bg-alt);
+    }
+
+    .experience-media img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .experience-media:hover img {
+      transform: scale(1.03);
+    }
+
+    /* Guide Block (Architect of Meaning) */
+    .guide-card {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: clamp(40px, 6vw, 72px);
+      align-items: center;
+    }
+
+    .guide-portrait {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(14, 14, 12, 0.08);
+    }
+
+    .guide-portrait img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+    }
+
+    .guide-caption {
+      padding: 16px 0 0;
+      font-size: 12px;
+      color: var(--ink-mute);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .guide-content p {
+      margin-bottom: 20px;
+    }
+
+    /* Investment Block */
+    .investment-card {
+      background: var(--bg);
+      border: 1px solid var(--line-strong);
+      border-radius: 20px;
+      padding: clamp(40px, 6vw, 72px);
+      max-width: 920px;
+      margin: 0 auto;
+      box-shadow: 0 12px 36px rgba(14, 14, 12, 0.03);
+    }
+
+    .price-tag {
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 5vw, 56px);
+      color: var(--ink);
+      line-height: 1.1;
+      margin: 16px 0 28px;
+    }
+
+    .price-period {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink-mute);
+      display: block;
+      margin-top: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .important-callout {
+      margin-top: 40px;
+      padding: 28px 32px;
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+    }
+
+    .important-callout h4 {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .important-callout p {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* Concierge Footer */
+    .concierge-section {
+      background: var(--bg-dark);
+      color: #FFFFFF;
+      padding: clamp(100px, 14vw, 180px) 0 80px;
+      position: relative;
+    }
+
+    .concierge-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(48px, 8vw, 96px);
+      align-items: start;
+    }
+
+    .concierge-info .eyebrow {
+      color: #E29D7D;
+    }
+
+    .concierge-info .h-display {
+      color: #FFFFFF;
+    }
+
+    .concierge-info p {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .direct-contacts {
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding-top: 32px;
+    }
+
+    .contact-line {
+      margin-bottom: 16px;
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .contact-line strong {
+      color: #FFFFFF;
+      font-weight: 600;
+      font-size: 16px;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .contact-line a {
+      color: #FFFFFF;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .contact-line a:hover {
+      color: #E29D7D;
+    }
+
+    /* Form */
+    .concierge-form {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: clamp(32px, 5vw, 48px);
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .form-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 8px;
+      padding: 16px 20px;
+      color: #FFFFFF;
+      font-family: var(--font-sans);
+      font-size: 15px;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    .form-input:focus {
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .form-input::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .form-btn {
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    .copyright-bar {
+      margin-top: clamp(72px, 10vw, 120px);
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.4);
+      text-transform: uppercase;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .nav-links {
+        display: none;
+      }
+      .experience-item,
+      .experience-item:nth-child(even) {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 36px;
+      }
+      .experience-media img {
+        height: 340px;
+      }
+      .guide-card {
+        grid-template-columns: 1fr;
+      }
+      .guide-portrait img {
+        height: 400px;
+      }
+      .concierge-grid {
+        grid-template-columns: 1fr;
+        gap: 56px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-  <!-- 1. NAVIGATION -->
-  <nav class="nav-glass">
-    <a href="#" style="font-family:var(--font-serif);font-size:18px;font-weight:700;color:var(--ink);letter-spacing:-0.01em;">
-      ВАЛЕРИЙ ЛАТЫПОВ
-    </a>
-    <div style="display:flex;gap:24px;align-items:center;" class="nav-links">
-      <a href="#about" class="nav-link">About</a>
-      <a href="#hotels" class="nav-link">Hotels</a>
-      <a href="#map" class="nav-link">Карта</a>
-      <a href="#programme" class="nav-link">Маршруты</a>
-      <a href="#guide" class="nav-link">Проводник</a>
-    </div>
-    <div style="display:flex;align-items:center;gap:16px;">
-      <div style="font-size:12px;font-weight:600;letter-spacing:0.1em;display:flex;gap:6px;">
-        <a href="timor.html" style="color:var(--ink-mute);">RU</a>
-        <span style="color:var(--ink-ghost);">|</span>
-        <span style="color:var(--accent);font-weight:700;">EN</span>
+  <!-- Floating Navigation -->
+  <nav class="nav-bar">
+    <a href="timor-en.html" class="nav-brand">LATYPOV · EXPEDITIONS</a>
+    
+    <ul class="nav-links">
+      <li><a href="#diagnosis" class="nav-link">Diagnosis</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#guide" class="nav-link">Guide</a></li>
+      <li><a href="#investment" class="nav-link">Investment</a></li>
+    </ul>
+
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <div class="lang-toggle">
+        <a href="timor.html">RU</a>
+        <span style="color: var(--line-strong);">|</span>
+        <span class="active">EN</span>
       </div>
-      <a href="#contact" style="background:var(--accent);color:#fff;padding:8px 18px;border-radius:9999px;font-size:13px;font-weight:600;transition:background 0.2s;">
-        Запросить участие
-      </a>
+      <a href="#concierge" class="btn-primary btn-nav">Concierge</a>
     </div>
   </nav>
 
-  <!-- 2. HERO SECTION -->
-  <section class="section-hero">
-    <div class="container" style="text-align:center;">
-      <span style="display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:6px 16px;border-radius:9999px;margin-bottom:24px;">
-        Авторская Экспедиция · Час от Бали
-      </span>
-      <h1 style="font-family:var(--font-serif);font-size:clamp(40px,6vw,76px);font-weight:700;line-height:1.05;color:var(--ink);letter-spacing:-0.02em;margin-bottom:24px;">
-        Тимор-Лесте:<br/><span style="color:var(--accent);">Путешествие на край земли</span>
-      </h1>
-      <p style="font-size:clamp(18px,2.5vw,24px);font-weight:300;color:var(--ink-soft);max-width:760px;margin:0 auto 36px;line-height:1.5;">
-        Последнее сакральное побережье за пределами массовой цивилизации. Маленькие камерные группы. Возможность индивидуального тура.
-      </p>
-      
-      <div style="display:inline-flex;flex-wrap:wrap;gap:16px;justify-content:center;background:var(--bg-alt);padding:14px 28px;border-radius:16px;border:1px solid var(--line-strong);font-size:14px;color:var(--ink-soft);">
-        <div><strong>◈ Внедорожники 4x4</strong> Toyota Land Cruiser</div>
-        <div style="color:var(--ink-ghost);">|</div>
-        <div><strong>◈ VIP-трансфер</strong> из аэропорта Дили</div>
-      </div>
-    </div>
-  </section>
+  <!-- Block 1: Hero -->
+  <header class="hero-section">
+    <video autoplay muted loop playsinline poster="images/IMG_2279.jpg" class="hero-video-bg">
+      <source src="videos/pygmy_blue_whales_timor.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
 
-  <!-- 3. STATS & RARENESS BANNER -->
-  <section class="section bg-alt" id="about">
     <div class="container">
-      <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:28px;padding:clamp(32px,5vw,64px);">
-        <span style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px;">
-          Официальная Статистика UNWTO & World Bank
-        </span>
-        <h2 style="font-family:var(--font-serif);font-size:clamp(28px,4vw,44px);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:20px;">
-          Редчайший изолированный уголок планеты
-        </h2>
-        <p style="font-size:18px;line-height:1.65;color:var(--ink-soft);margin-bottom:32px;">
-          «Тимор-Лесте входит в ТОП-3 наименее посещаемых стран мира. За весь год в страну въезжает менее 10 000 досуговых туристов (это в среднем менее 30–50 туристов на всю страну одновременно!). В столице Дили постоянно проживает около 100 европейцев и иностранцев. Это редчайший изолированный уголок планеты, но лет через пять всё может измениться — успейте увидеть его первым.»
+      <div class="hero-content">
+        <span class="eyebrow hero-eyebrow">PRIVATE BESPOKE EXPEDITION · 1–2 GUESTS ONLY</span>
+        <h1 class="hero-title">TIMOR-LESTE.<br>THE LAST SILENCE.</h1>
+        <p class="hero-lead">
+          Expedition onto the Spine of the Ancient Crocodile. A secluded existential retreat in Asia's last untouched frontier. For those exhausted by the operational matrix and seeking a profound reset of the nervous system.
         </p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;padding-top:24px;border-top:1px solid var(--line);">
-          <div>
-            <div style="font-family:var(--font-serif);font-size:36px;font-weight:700;color:var(--accent);">&lt; 50</div>
-            <div style="font-size:13px;color:var(--ink-mute);">Туристов на всю страну одновременно</div>
+        <a href="#concierge" class="btn-primary">Initiate Expedition</a>
+
+        <div class="hero-footer">
+          <div class="hero-spec-item">
+            Location
+            <span>East Timor</span>
           </div>
-          <div>
-            <div style="font-family:var(--font-serif);font-size:36px;font-weight:700;color:var(--accent);">~100</div>
-            <div style="font-size:13px;color:var(--ink-mute);">Европейцев-экспатов в Дили</div>
+          <div class="hero-spec-item">
+            Format
+            <span>1–2 guests · 8 days</span>
           </div>
-          <div>
-            <div style="font-family:var(--font-serif);font-size:36px;font-weight:700;color:var(--accent);">5 Лет</div>
-            <div style="font-size:13px;color:var(--ink-mute);">До появления массового туризма</div>
+          <div class="hero-spec-item">
+            Status
+            <span>Private selection</span>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- 4. HOTELS SECTION -->
-  <section class="section" id="hotels">
+  <!-- Block 2: Diagnosis -->
+  <section id="diagnosis" class="section">
     <div class="container">
-      <div style="text-align:center;max-width:700px;margin:0 auto 48px;">
-        <span style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px;">
-          Проживание & Комфорт
-        </span>
-        <h2 style="font-family:var(--font-serif);font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--ink);line-height:1.1;">
-          Где Мы Живем: Лучшие Hotels Региона
-        </h2>
-        <p style="font-size:16px;color:var(--ink-mute);margin-top:12px;">
-          We select top-tier 4-star hotels and verified heritage properties with excellent reviews.
-        </p>
-      </div>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;">
-        <!-- Hotel 1 -->
-        <div class="hotel-card">
-          <div style="position:relative;height:240px;">
-            <img src="images/hotel_novo_turismo.jpg" alt="Novo Turismo Resort Dili" style="width:100%;height:100%;object-fit:cover;" />
-            <span style="position:absolute;top:16px;left:16px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:9999px;text-transform:uppercase;">
-              4★ Премиум · Дили
-            </span>
-            <span style="position:absolute;bottom:16px;right:16px;background:rgba(14,14,12,0.85);color:#fff;font-size:12px;font-weight:600;padding:4px 10px;border-radius:8px;">
-              ★ 8.3 Booking
-            </span>
-          </div>
-          <div style="padding:24px;">
-            <h3 style="font-family:var(--font-serif);font-size:22px;font-weight:700;color:var(--ink);margin-bottom:8px;">Novo Turismo Resort & Spa</h3>
-            <p style="font-size:14px;color:var(--ink-soft);line-height:1.6;">
-              The capital’s premier beachfront hotel. Oceanfront pool, spacious air-conditioned rooms, fine dining, and peaceful tranquility.
-            </p>
-          </div>
-          <div style="padding:16px 24px;border-top:1px solid var(--line);display:flex;justify-content:between;align-items:center;font-size:13px;">
-            <span style="color:var(--ink-mute);">Category: Superior Ocean</span>
-          </div>
+      <div class="diagnosis-grid">
+        <div>
+          <span class="eyebrow">01 / DIAGNOSIS</span>
+          <h2 class="h-display">THE ILLUSION OF CONTROL.</h2>
+          <p class="lead-text">
+            We understand what C-Level burnout looks like. You possess capital, status, and unrestricted access to the world's most elite resorts. Yet luxury hotels no longer shield you from the persistent background noise. Responsibility presses 24/7. The zest for the game is lost. You do not need another vacation. You need a return to yourself.
+          </p>
+          <p class="body-editorial">
+            East Timor is one of the three least-visited sovereign nations on Earth. There is no mass tourism, no clutter, and no need to wear social masks. Only primordial scale that restores thoughts to their true proportions.
+          </p>
         </div>
 
-        <!-- Hotel 2 -->
-        <div class="hotel-card">
-          <div style="position:relative;height:240px;">
-            <img src="images/hotel_pousada_baucau.jpg" alt="Pousada de Baucau" style="width:100%;height:100%;object-fit:cover;" />
-            <span style="position:absolute;top:16px;left:16px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:9999px;text-transform:uppercase;">
-              Историческое Наследие
-            </span>
+        <div class="stats-row">
+          <div>
+            <div class="stat-num">&lt; 10,000</div>
+            <div class="stat-desc">annual visitors nationwide according to official UNWTO data</div>
           </div>
-          <div style="padding:24px;">
-            <h3 style="font-family:var(--font-serif);font-size:22px;font-weight:700;color:var(--ink);margin-bottom:8px;">Pousada de Baucau</h3>
-            <p style="font-size:14px;color:var(--ink-soft);line-height:1.6;">
-              Atmospheric Portuguese-era heritage hotel. High ceilings, vintage furnishings, and a panoramic terrace overlooking gardens and sea.
-            </p>
+          <div>
+            <div class="stat-num">3,000 m</div>
+            <div class="stat-desc">depth of Ombai Strait & migration corridor for pygmy blue whales</div>
           </div>
-          <div style="padding:16px 24px;border-top:1px solid var(--line);display:flex;justify-content:between;align-items:center;font-size:13px;">
-            <span style="color:var(--ink-mute);">Category: Deluxe Heritage</span>
-          </div>
-        </div>
-
-        <!-- Hotel 3 -->
-        <div class="hotel-card">
-          <div style="position:relative;height:240px;">
-            <img src="images/hotel_atauro_lodge.jpg" alt="Atauro Eco Lodge" style="width:100%;height:100%;object-fit:cover;" />
-            <span style="position:absolute;top:16px;left:16px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:9999px;text-transform:uppercase;">
-              Эко-Бунгало · Остров Атауро
-            </span>
-          </div>
-          <div style="padding:24px;">
-            <h3 style="font-family:var(--font-serif);font-size:22px;font-weight:700;color:var(--ink);margin-bottom:8px;">Atauro Waterfront Eco Lodge</h3>
-            <p style="font-size:14px;color:var(--ink-soft);line-height:1.6;">
-              Charming wooden bungalows directly on the white sand beach. Snorkel on pristine coral reefs right from your doorstep.
-            </p>
-          </div>
-          <div style="padding:16px 24px;border-top:1px solid var(--line);display:flex;justify-content:between;align-items:center;font-size:13px;">
-            <span style="color:var(--ink-mute);">Category: Beachfront Bungalow</span>
+          <div>
+            <div class="stat-num">40,000 yrs</div>
+            <div class="stat-desc">age of untouched sacred rock sanctuaries and Lulik taboo zones</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4.5. GASTRONOMY & CULINARY MAP -->
-  <section class="section" id="gastronomy" style="border-top:1px solid var(--line);background:var(--bg);">
+  <!-- Block 3: Experience (Zero-Friction) -->
+  <section id="experience" class="section section-alt">
     <div class="container">
-      <div style="text-align:center;max-width:760px;margin:0 auto 48px;">
-        <span style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px;">
-          Authentic Gastronomy
-        </span>
-        <h2 style="font-family:var(--font-serif);font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--ink);margin-bottom:16px;">
-          Culinary Journey of Timor-Leste
-        </h2>
-        <p style="font-size:16px;color:var(--ink-soft);line-height:1.6;">
-          Fresh Indo-Pacific deep sea catches, ancestral highland bamboo slow-roasting, and rich Portuguese colonial epicurean heritage.
+      <div class="experience-header">
+        <span class="eyebrow">02 / EXPERIENCE</span>
+        <h2 class="h-display">ZERO-FRICTION ARCHITECTURE.</h2>
+        <p class="body-editorial" style="font-size: 20px; color: var(--ink);">
+          Format: 1–2 guests. Absolute privacy.
         </p>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
+      <div class="experience-list">
+        <!-- Item 1 -->
+        <article class="experience-item">
+          <div class="experience-text">
+            <span class="experience-num">01 / OCEAN</span>
+            <h3 class="h-sub">Oceanic Abyss.</h3>
+            <p class="body-editorial">
+              Offshore voyage by high-speed craft into a 3,000-meter deep strait. Pygmy blue whale safari. A direct encounter with nature where time stands completely still.
+            </p>
+          </div>
+          <div class="experience-media">
+            <img src="images/gallery_atauro_whales.jpg" alt="Blue whales in Ombai-Wetar Strait" loading="lazy">
+          </div>
+        </article>
+
+        <!-- Item 2 -->
+        <article class="experience-item">
+          <div class="experience-text">
+            <span class="experience-num">02 / SACRED</span>
+            <h3 class="h-sub">Spatial Therapy.</h3>
+            <p class="body-editorial">
+              The sacred uninhabited Jaco Island. Rock art dating back 40,000 years. Elder rituals. You step into a realm governed by entirely different laws.
+            </p>
+          </div>
+          <div class="experience-media">
+            <img src="images/gallery_jaco_beach.jpg" alt="Sacred uninhabited Jaco Island" loading="lazy">
+          </div>
+        </article>
+
+        <!-- Item 3 -->
+        <article class="experience-item">
+          <div class="experience-text">
+            <span class="experience-num">03 / EFFORTLESS</span>
+            <h3 class="h-sub">Complete Disconnection.</h3>
+            <p class="body-editorial">
+              From the moment of arrival, we handle everything: from daily comfort and safety to diplomatic access. Your sole duty is to power down your phone and allow silence to do its work.
+            </p>
+          </div>
+          <div class="experience-media">
+            <img src="images/IMG_2279.jpg" alt="Primordial scale of East Timor" loading="lazy">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Block 4: Guide -->
+  <section id="guide" class="section">
+    <div class="container">
+      <div class="guide-card">
+        <div class="guide-portrait">
+          <img src="images/author_portrait.jpg" alt="Valery Latypov" loading="lazy">
+          <div class="guide-caption">Valery Latypov · Architect of Meaning</div>
+        </div>
+
+        <div class="guide-content">
+          <span class="eyebrow">03 / GUIDE</span>
+          <h2 class="h-display">ARCHITECT OF MEANING.</h2>
+          <p class="lead-text" style="font-size: 22px; margin-bottom: 24px;">
+            Valery Latypov. 25 years of working with tier-one leaders and global cultural icons (Forbes, Depeche Mode, Rolling Stones).
+          </p>
+          <p class="body-editorial">
+            Valery is not a tour guide. He is an artist, visionary, and fluent Indonesian speaker. He communicates directly with tribal elders, opening doors that simply do not exist in guidebooks.
+          </p>
+          <p class="body-editorial">
+            He understands the anatomy of high achievement and the price paid for it. In his presence, there is nothing to prove. It is a peer-to-peer dialogue that restores crystal-clear mental focus.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Block 5: Investment -->
+  <section id="investment" class="section section-alt">
+    <div class="container">
+      <div class="investment-card">
+        <span class="eyebrow">04 / INVESTMENT</span>
+        <h2 class="h-display" style="margin-bottom: 8px;">THE PRICE OF CLARITY.</h2>
         
-        <!-- Dish 1 -->
-        <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:20px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
-          <div>
-            <div style="font-size:28px;margin-bottom:12px;">🐟</div>
-            <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px;">Atauro Island & Coast</span>
-            <h3 style="font-family:var(--font-serif);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:10px;">Ikan Saboko</h3>
-            <p style="font-size:14px;color:var(--ink-soft);line-height:1.6;">
-              Freshly speared oceanic fish (red snapper, tuna) marinated in wild lemongrass, kaffir lime leaves, fresh turmeric, and shallots, wrapped in fresh palm leaves and slow-grilled over coconut husk coals.
-            </p>
-          </div>
-          <div style="font-size:12px;color:var(--ink-mute);border-top:1px dashed var(--line);padding-top:10px;margin-top:14px;">
-            * Served with roasted sweet potatoes and fresh calamansi lime.
-          </div>
+        <div class="price-tag">
+          From €9,000 to €12,000
+          <span class="price-period">per person · 8 days of comprehensive expedition</span>
         </div>
 
-        <!-- Dish 2 -->
-        <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:20px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
-          <div>
-            <div style="font-size:28px;margin-bottom:12px;">🎋</div>
-            <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px;">Maubisse & Aileu Highlands</span>
-            <h3 style="font-family:var(--font-serif);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:10px;">Tukir Maubere (Green Bamboo Feast)</h3>
-            <p style="font-size:14px;color:var(--ink-soft);line-height:1.6;">
-              The signature highland culinary ritual of the Mambai people: premium meats or fish infused with mountain herbs sealed inside freshly felled green bamboo trunks (<em>Au-Metan</em>) and roasted 4 hours over wood embers.
-            </p>
-          </div>
-          <div style="font-size:12px;color:var(--ink-mute);border-top:1px dashed var(--line);padding-top:10px;margin-top:14px;">
-            * Imparts an extraordinarily tender texture with aromatic subtle woody flavors.
-          </div>
-        </div>
-
-        <!-- Dish 3 -->
-        <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:20px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
-          <div>
-            <div style="font-size:28px;margin-bottom:12px;">🥥</div>
-            <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px;">Tribal Ceremonial Staple</span>
-            <h3 style="font-family:var(--font-serif);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:10px;">Katupa & Ai-Manas Relish</h3>
-            <p style="font-size:14px;color:var(--ink-soft);line-height:1.6;">
-              Fragrant rice slow-simmered in rich coconut milk inside hand-woven palm leaf parcels. Paired with Timor's famous artisanal fermented chili relish <em>Ai-Manas</em>, pounded with wild birds-eye chili, garlic, and lime zest.
-            </p>
-          </div>
-          <div style="font-size:12px;color:var(--ink-mute);border-top:1px dashed var(--line);padding-top:10px;margin-top:14px;">
-            * Sacred feast offering shared during community blessings.
-          </div>
-        </div>
-
-        <!-- Dish 4 -->
-        <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:20px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
-          <div>
-            <div style="font-size:28px;margin-bottom:12px;">🥘</div>
-            <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px;">Baucau & Portuguese Heritage</span>
-            <h3 style="font-family:var(--font-serif);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:10px;">Feijoada Timorense & Paun Timor</h3>
-            <p style="font-size:14px;color:var(--ink-soft);line-height:1.6;">
-              Hearty Portuguese colonial black bean stew with smoked chorizo sausages, pork cuts, and cassava simmered in clay pots at Pousada de Baucau. Served with wood-fired crusty artisanal bread <em>Paun Timor</em> and vintage wine.
-            </p>
-          </div>
-          <div style="font-size:12px;color:var(--ink-mute);border-top:1px dashed var(--line);padding-top:10px;margin-top:14px;">
-            * The authentic flavors of 1950s colonial grand living overlooking the sea.
-          </div>
-        </div>
-
-        <!-- Dish 5 -->
-        <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:20px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
-          <div>
-            <div style="font-size:28px;margin-bottom:12px;">🥧</div>
-            <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px;">Capital Dili</span>
-            <h3 style="font-family:var(--font-serif);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:10px;">Pastel de Nata & Dili Cafes</h3>
-            <p style="font-size:14px;color:var(--ink-soft);line-height:1.6;">
-              Warm, flaky puff pastry cups filled with caramel-crusted egg custard crafted following Lisbon's 1837 recipe. Baked fresh every morning in Dili's top Portuguese patisseries (Páteo / Letefoho).
-            </p>
-          </div>
-          <div style="font-size:12px;color:var(--ink-mute);border-top:1px dashed var(--line);padding-top:10px;margin-top:14px;">
-            * The perfect morning match for a double shot of high-altitude Arabica.
-          </div>
-        </div>
-
-        <!-- Dish 6 -->
-        <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:20px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
-          <div>
-            <div style="font-size:28px;margin-bottom:12px;">🍯</div>
-            <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px;">Tutuala Jungles & Jaco Island</span>
-            <h3 style="font-family:var(--font-serif);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:10px;">Wild Honey Wani & Jaco Lobsters</h3>
-            <p style="font-size:14px;color:var(--ink-soft);line-height:1.6;">
-              Rare raw golden honey gathered by tribal honey hunters from giant cliff bees <em>Apis dorsata</em>, alongside fresh ocean lobsters and tiger prawns fire-grilled right on Valu Beach facing sacred Jaco Island.
-            </p>
-          </div>
-          <div style="font-size:12px;color:var(--ink-mute);border-top:1px dashed var(--line);padding-top:10px;margin-top:14px;">
-            * Pure unpasteurized organic abundance direct from nature.
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. MAP SECTION -->
-  <section class="section bg-alt" id="map">
-    <div class="container" style="text-align:center;">
-      <span style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px;">
-        Expedition Geography & Logistics
-      </span>
-      <h2 style="font-family:var(--font-serif);font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--ink);margin-bottom:16px;">
-        Path of the Sacred Ancestor Crocodile
-      </h2>
-      <p style="max-width:700px;margin:0 auto 32px;font-size:15px;color:var(--ink-soft);line-height:1.6;">
-        In Timorese cosmology, the island is the sacred ancestor Crocodile (<em>Lafaek</em>). Our journey traverses from the oceanic breath of the abyss (Atauro) through the misty spine (Maubisse) to the sacred crown of the East (Jaco Island).
-      </p>
-
-      <!-- Master Pure Northern Route Map Card -->
-      <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:24px;padding:28px;box-shadow:0 8px 32px rgba(14,14,12,0.06);max-width:1100px;margin:0 auto 32px;text-align:left;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px;">
-          <span style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);">👑 Master Northern Expedition Map (8 Days)</span>
-          <span style="font-size:12px;font-weight:700;color:var(--ink);background:var(--bg-alt);padding:4px 12px;border-radius:999px;border:1px solid var(--line);">North Coast • Mountain Spine • Com Bay & Hot Springs</span>
-        </div>
-        <h3 style="font-family:var(--font-serif);font-size:22px;font-weight:700;color:var(--ink);margin-bottom:14px;">The Sacred Crocodile Path (Lafaek Naran) — Pure Northern Route</h3>
-        <img src="images/timor_pure_northern_route_map.jpg" alt="Pure Northern Timor-Leste Expedition Master Route Map" style="width:100%;border-radius:16px;margin-bottom:16px;box-shadow:0 4px 20px rgba(0,0,0,0.08);" />
-        <p style="font-size:14px;color:var(--ink-soft);line-height:1.6;margin-bottom:0;">
-          A balanced, fatigue-free expedition: arrival in Dili (Day 1), pygmy blue whale safaris & coral reef on Atauro Island (Days 2–3), highland violin folk concert at Lake Seloi Kraik, canyon waterfalls & Maubisse pass (Day 4), pink colonial fortress of Baucau with natural rock pools (Day 5), sacred national park, Batu Tatu pillars & uninhabited Jaco Island (Day 6). <strong>The return journey (Day 7)</strong> is broken into scenic new discoveries: colonial Com Bay fishing harbor, Vemasse fort & salt lagoons, oceanfront fresh fish in Manatuto, and early 14:30 check-in at Novo Turismo 4* for spa massage and pool relaxation. Finale (Day 8): volcanic soaking in Marobo Hot Springs (38–40°C) and Dutch Fort Maubara 1756.
+        <p class="body-editorial" style="margin-bottom: 24px;">
+          This is not the cost of logistics. It is an investment in your most critical asset — psychological resilience. An exhausted leader makes decisions that cost organizations millions. You are securing the privilege to disappear from the world, only to return transformed.
         </p>
-      </div>
 
-      <!-- Schematic Route Grid with Driving Hours -->
-      <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:24px;padding:24px;max-width:1100px;margin:0 auto;box-shadow:0 8px 32px rgba(14,14,12,0.04);">
-        <div style="font-family:var(--font-serif);font-size:20px;font-weight:700;color:var(--ink);text-align:left;margin-bottom:16px;">
-          ⏱️ Northern Route Transit Durations:
-        </div>
-        <div style="text-align:left;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));">
-          
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
-            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 1 • Ocean Abyss</div>
-            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Dili ➔ 🚤 Atauro Island</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~1.5 hours</strong> by private speedboat across Ombai deep whale migration trench (3000 m).</p>
-          </div>
-
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
-            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 2 • Spine & Highlands</div>
-            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Dili ➔ 🚘 Aileu / Maubisse</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~2.5–3 hours</strong> on 4x4. Lake Seloi Kraik concert, Ersalibuti waterfall, Mambai village.</p>
-          </div>
-
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
-            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 3 • North & Fortress</div>
-            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Maubisse ➔ 🚘 Baucau</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~3.5 hours</strong> on 4x4. Pink Palace 1950s, natural mineral spring pools, wine cellar.</p>
-          </div>
-
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
-            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 4 • Sacred East</div>
-            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Baucau ➔ 🚘 Tutuala & Jaco</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~3.5 hours</strong>. Crocodile lake, 7 Princes rock, wooden boat to Jaco Island & lobster grill.</p>
-          </div>
-
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
-            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 5 • Relaxed Return West</div>
-            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Jaco ➔ 🚘 Com Bay ➔ Dili</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~4 hours</strong> leisurely coastal drive with Com Bay harbor, Vemasse fort & fresh fish lunch. 14:30 SPA check-in!</p>
-          </div>
-
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
-            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 6 • Thermal Spa Finale</div>
-            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Dili ➔ 🚘 Marobo Springs & Fort</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~2.5 hours</strong>. Hot volcanic mineral springs 38–40°C, Dutch Fort 1756, flight to Bali.</p>
-          </div>
-
-        </div>
-      </div>
-        <div style="text-align:left;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));">
-          
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
-            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 1 • Ocean Abyss</div>
-            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Dili ➔ 🚤 Atauro Island</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~1.5 hours</strong> by private speedboat across Ombai deep whale migration trench (3000 m).</p>
-          </div>
-
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
-            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 2 • Spine & Highlands</div>
-            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Dili ➔ 🚘 Aileu / Maubisse</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~3.5–4 hours</strong> by 4x4. Lake Seloi Kraik folk concert, Ersalibuti waterfall, Mambai village.</p>
-          </div>
-
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
-            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 3 • North Fortress</div>
-            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Maubisse ➔ 🚘 Baucau</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~3.5–4 hours</strong> by 4x4. Pousada de Baucau fortress, spring pools and Gruta de Nossa Senhora.</p>
-          </div>
-
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
-            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 4 • Sacred East & Shrines</div>
-            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Baucau ➔ 🚘 Tutuala / National Park</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~4–4.5 hours</strong> by 4x4. Lake Iralalaro crocodiles, 7 Princes Rock, 30,000-yr cave art.</p>
-          </div>
-
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
-            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 5 • Sacred Island</div>
-            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 Valu Beach ➔ 🚣 Jaco Island</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~15–20 mins</strong> by wooden boat. Virgin white sands, wild deer, calm turquoise snorkeling.</p>
-          </div>
-
-          <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:16px;">
-            <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Stage 6 • Grand Finale</div>
-            <h4 style="font-family:var(--font-serif);font-size:16px;color:var(--ink);margin-bottom:6px;">📍 East ➔ 🚤/🚘 Dili Departure</h4>
-            <p style="font-size:13px;color:var(--ink-soft);line-height:1.45;margin:0;"><strong>~3.5 hours</strong> by speedboat cruise OR ~5.5-6 hours by 4x4 via Fort Maubara 1756.</p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. PROGRAM SELECTOR (4 TABS) -->
-  <section class="section" id="programme">
-    <div class="container">
-      <div style="text-align:center;max-width:700px;margin:0 auto 40px;">
-        <span style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px;">
-          Варианты Участия
-        </span>
-        <h2 style="font-family:var(--font-serif);font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--ink);">
-          Выберите Программу
-        </h2>
-        <p style="font-size:15px;color:var(--ink-mute);margin-top:8px;">Маленькие камерные группы. Возможность индивидуального тура.</p>
-      </div>
-
-      <!-- Selector Buttons -->
-      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:48px;">
-        <button onclick="switchTab('timor-8')" id="tab-timor-8" class="tab-btn active">
-          Тимор-Лесте: 8 Дней (€9,000)
-        </button>
-        <button onclick="switchTab('timor-3')" id="tab-timor-3" class="tab-btn">
-                  <div style="display:grid;gap:32px;">
-          <!-- Day 1 -->
-          <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
-            <div>
-              <span class="day-badge">DAY 01</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Ocean Gateway: Arrival in Dili, Areia Branca & Hamulak Blessing</h3>
-              <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:12px;">
-                Arrival in Dili. Private tarmac greeting by dedicated <strong>Toyota Land Cruiser Prado 4x4</strong>. Check-in at Novo Turismo Resort 4*. Panoramic ascent to Cristo Rei, swimming on secluded Dolok Oan white beach, fresh <em>Pastel de Nata</em> tasting in a historic Portuguese cafe, and sacred sunset Hamulak blessing ceremony on Areia Branca beach.
-              </p>
-              <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:12px;padding:10px 14px;font-size:12px;color:var(--ink);line-height:1.5;">
-                <strong style="color:var(--accent);">👑 Exclusive VIP Insider (Optional):</strong> Private informal coffee & diplomatic briefing in Dili with Loro Horta, Son of Nobel Peace Laureate President José Ramos-Horta (arranged via Patrick).
-              </div>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-              <img src="images/cristo_rei_dili.jpg" alt="Dili — Cristo Rei Statue" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-              <img src="images/gallery_dili_coffee.jpg" alt="Timor Organic Coffee" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-            </div>
-          </div>
-
-          <!-- Day 2-3 -->
-          <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
-            <div>
-              <span class="day-badge">DAY 02-03</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Atauro Island (2 Days): Blue Whales, Acrema Beach & Garden Reef</h3>
-              <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:14px;">
-                Two-day meditative ocean immersion on Atauro Island without rush. Stay in beachfront private bungalows at <strong>Atauro Waterfront Eco Lodge</strong>. Two deep-water whale safaris to encounter Pygmy Blue Whales, world-record coral biodiversity snorkeling, and expedition to the turquoise paradise of <strong>Acrema Beach</strong>.
-              </p>
-              <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:14px;padding:14px 16px;font-size:13px;color:var(--ink);line-height:1.55;">
-                <div style="color:var(--accent);font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
-                  <span>🐋</span> Deep Ocean Whale Meditation & Wild Lagoons
-                </div>
-                <div style="margin-bottom:4px;">• <strong>2 Days on Island:</strong> Calm, meditative pace with morning whale watching in Ombai Strait.</div>
-                <div style="margin-bottom:4px;">• <strong>Acrema Beach:</strong> Secluded northern turquoise lagoon with powder-soft white sand and wooden boats.</div>
-                <div style="font-size:12px;color:var(--ink-mute);border-top:1px dashed var(--line);padding-top:6px;">
-                  * Meet traditional Wawata Topu freediving fisherwomen and enjoy beach seafood dinners under the southern stars.
-                </div>
-              </div>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center;">
-              <div style="position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line-strong);aspect-ratio:9/16;background:#000;">
-                <video controls playsinline preload="metadata" poster="images/gallery_atauro_whales.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-                  <source src="videos/pygmy_blue_whales_timor.mp4" type="video/mp4">
-                  Your browser does not support HTML5 video.
-                </video>
-                <div style="position:absolute;top:8px;left:8px;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:999px;letter-spacing:0.05em;pointer-events:none;">
-                  ▶ VIDEO: WHALE MIGRATION
-                </div>
-              </div>
-              <div style="display:grid;gap:12px;">
-                <img src="images/gallery_atauro_whales.jpg" alt="Blue Whales in Ombai Strait" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-                <img src="images/gallery_atauro_reef.jpg" alt="Atauro Island Coral Reef" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-              </div>
-            </div>
-          </div>
-
-          <!-- Day 4 -->
-          <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
-            <div>
-              <span class="day-badge">DAY 04</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Crocodile's Spine: Lake Seloi Kraik, Folk Concert, Waterfalls & Mambai</h3>
-              <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:12px;">
-                Fast boat return to Dili and 4x4 ascent into the misty Aileu highlands. Private acoustic lakeside performance by traditional ensemble <strong>Grupu Muzika Seloi Kraik</strong> (folk violins, babadok drums, Kaibauk silver crowns) with organic coffee tasting. Plunge into <strong>Ersalibuti & Kilelo</strong> canyon waterfall pools, visit authentic Mambai mountain village, and overnight at colonial Pousada de Maubisse (1500 m).
-              </p>
-              <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:14px;padding:14px 16px;font-size:13px;color:var(--ink);line-height:1.55;">
-                <div style="color:var(--accent);font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
-                  <span>🎶</span> Cultural Immersion & Jungle Swimming
-                </div>
-                <div style="margin-bottom:4px;">• <strong>Private Lakeside Concert:</strong> Hypnotic polyphonic chanting and ancestral melodies right on the lake shore.</div>
-                <div style="margin-bottom:4px;">• <strong>Waterfall Swimming:</strong> Deep canyon plunge pool at Ersalibuti and mountain cascades of Kilelo.</div>
-                <div style="font-size:12px;color:var(--ink-mute);border-top:1px dashed var(--line);padding-top:6px;margin-top:4px;">
-                  * Portrait session in hand-woven Tais, untouched Maubisse highland market, and bamboo-cooked Tukir feast.
-                </div>
-              </div>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-              <img src="images/gallery_maubisse_mountains.jpg" alt="Mambai Village in Maubisse Highlands" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-              <img src="images/gallery_dokomali_waterfall.jpg" alt="Dokomali Waterfall" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-            </div>
-          </div>
-
-          <!-- Day 5 -->
-          <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
-            <div>
-              <span class="day-badge">DAY 05</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Baucau: Pink Colonial Fortress, Sacred Cascades & Gruta de Nossa Senhora</h3>
-              <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:12px;">
-                Scenic mountain descent to the northern coast. Check in to the iconic pink fortress <strong>Pousada de Baucau 4★</strong>. Swim in pristine tiered rock pools and natural mineral springs, visit mystical cave shrine <strong>Gruta de Nossa Senhora</strong> draped in sacred banyan roots, and explore colonial Old Baucau.
-              </p>
-              <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:14px;padding:12px 16px;font-size:13px;color:var(--ink);line-height:1.5;">
-                <strong>📍 Sacred Spring Swimming:</strong> Crystal turquoise mountain water, mineral cascades, and dinner with Timorese feijoada and Portuguese wine.
-              </div>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-              <img src="images/hotel_pousada_baucau.jpg" alt="Pousada de Baucau Colonial Fortress" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-              <img src="images/gallery_baucau_pool.jpg" alt="Natural Rock Cascades & Mineral Pool with local children" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-            </div>
-          </div>
-
-          <!-- Day 6 -->
-          <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
-            <div>
-              <span class="day-badge">DAY 06</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Crocodile's Crown: Nino Konis Santana Park, Batu Tatu & Jaco Island</h3>
-              <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:12px;">
-                Expedition into <strong>Nino Konis Santana National Park</strong>. Watch sacred crocodiles on Lake Iralalaro. Visit 7 Princes Rock (<em>Pati-Patinu Haliwana</em>), 30,000-year cave rock art (<em>Liman Estampado</em>), wooden boat to the Two Sacred Mushroom Sea Stacks (<em>Batu Tatu</em>) and cross to sacred uninhabited Jaco Island with wild beach deer. Sunset grilled ocean lobster dinner on Valu Beach.
-              </p>
-              <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:14px;padding:14px 16px;font-size:13px;color:var(--ink);line-height:1.55;">
-                <div style="color:var(--accent);font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
-                  <span>🏝️</span> Sacred Edge of the World
-                </div>
-                <div style="margin-bottom:4px;">• <strong>Jaco Island:</strong> Pristine powder-white sands, untamed coral reef, and gentle beach deer.</div>
-                <div>• <strong>Oceanfront Bungalow Stay:</strong> Fall asleep to waves at Valu Beach Eco Resort (Lakumorre).</div>
-              </div>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-              <img src="images/gallery_jaco_beach.jpg" alt="Jaco Island Pristine Beach" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-              <img src="images/gallery_uma_lulik.jpg" alt="Uma Lulik Sacred Stilt Houses" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-            </div>
-          </div>
-
-          <!-- Day 7 -->
-          <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
-            <div>
-              <span class="day-badge">DAY 07</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Fatigue-Free Return West: Com Bay, Vemasse Fort & Dili SPA</h3>
-              <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:12px;">
-                A relaxed return journey west without exhausting multi-hour grinds. Departure in the morning from Valu Beach:
-              </p>
-              <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:14px;padding:14px 16px;font-size:13px;color:var(--ink);line-height:1.55;">
-                <div style="color:var(--accent);font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
-                  <span>🧭</span> Two Return Scenarios from the East:
-                </div>
-                <div style="margin-bottom:6px;">• <strong>Scenario A (4x4 Overland • €9,000):</strong> Smooth drive along the northern coastal highway with scenic stops: colonial <strong>Com Bay</strong> harbor, salt lagoons and 18th-century fort in <strong>Vemasse</strong>, oceanfront fresh fish in <strong>Manatuto</strong> ➔ arrive in Dili by 14:30 ➔ SPA massage and pool relaxation at Novo Turismo 4*.</div>
-                <div>• <strong>Scenario B (VIP Private Speedboat • €12,000):</strong> Board a private twin-engine speedboat right at Valu Beach — 3.5-hour ocean cruise along the whale coast directly to Dili Marina by 13:00 ➔ transfer to hotel SPA!</div>
-              </div>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-              <img src="images/novo_turismo_dili.jpg" alt="Pool & SPA at Novo Turismo Resort Dili" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-              <img src="images/pastel_de_nata.jpg" alt="Traditional Portuguese Pastel de Nata in Dili" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-            </div>
-          </div>
-
-          <!-- Day 8 -->
-          <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
-            <div>
-              <span class="day-badge">DAY 08</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Marobo Volcanic Hot Springs (38–40°C), Fort Maubara & Departure</h3>
-              <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:12px;">
-                Deep restorative soak in the natural emerald thermal pools of <strong>Marobo Hot Springs (Termas de Marobo)</strong>: 38–40°C mineral sulfur waters amidst lush palm terraces and volcanic mountain peaks. Visit Dutch colonial <strong>Fort Maubara (1756)</strong> with 18th-century cannons, coffee & Tais shopping, VIP Prado 4x4 airport transfer.
-              </p>
-              <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:12px;padding:10px 14px;font-size:12px;color:var(--ink);line-height:1.5;">
-                <strong style="color:var(--accent);">♨️ Thermal Spa Wellness:</strong> The ultimate post-expedition rejuvenation — soothing muscles in healing volcanic mineral waters before flying back to Bali.
-              </div>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-              <img src="images/marobo_hot_springs.jpg" alt="Marobo Volcanic Hot Springs" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-              <img src="images/gallery_dili_coffee.jpg" alt="Timor Coffee & Tais" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROGRAM 2: TIMOR 3 DAYS -->
-      <div id="prog-timor-3" class="prog-content" style="display:none;">
-        <div style="background:var(--accent-soft);border:1px solid var(--accent);padding:20px 28px;border-radius:16px;margin-bottom:40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
-          <div>
-            <strong style="font-family:var(--font-serif);font-size:18px;color:var(--ink);display:block;">Timor-Leste: Express Expedition (3 Days)</strong>
-            <span style="font-size:14px;color:var(--ink-soft);">Whales, Atauro Island Reef, Seloi Kraik Highland Village & Dokomali Waterfall.</span>
-          </div>
-          <span style="font-family:var(--font-serif);font-size:26px;font-weight:700;color:var(--accent);">€3,500</span>
-        </div>
-
-        <div style="display:grid;gap:32px;">
-          <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
-            <div>
-              <span class="day-badge">DAY 01</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Dili & 4x4 Land Cruiser Reception</h3>
-              <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;">
-                VIP arrival at Dili Airport on 4x4 Land Cruiser. Novo Turismo 4*, capital exploration, coffee and Ascension Oil atelier.
-              </p>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-              <img src="images/cristo_rei_dili.jpg" alt="Dili — Cristo Rei Statue" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-              <img src="images/gallery_dili_coffee.jpg" alt="Timor Organic Coffee" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-            </div>
-          </div>
-
-          <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
-            <div>
-              <span class="day-badge">DAY 02</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Pygmy Blue Whales & Atauro Reef</h3>
-              <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:14px;">
-                Speedboat excursion to encounter migrating blue whales in the Ombai Strait. World-class coral reef snorkeling at Atauro Island.
-              </p>
-              <div style="background:var(--bg);border:1px solid var(--line-strong);border-radius:14px;padding:14px 16px;font-size:13px;color:var(--ink);line-height:1.55;">
-                <div style="color:var(--accent);font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
-                  <span>🐋</span> Blue Whale Migration Schedule
-                </div>
-                <div style="margin-bottom:4px;">• <strong>Sept – Dec (Peak Season):</strong> Southward migration (Banda Sea → Australia).</div>
-                <div>• <strong>March – April:</strong> Northward migration (Australia → Banda Sea).</div>
-              </div>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center;">
-              <div style="position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line-strong);aspect-ratio:9/16;background:#000;">
-                <video controls playsinline preload="metadata" poster="images/gallery_atauro_whales.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-                  <source src="videos/pygmy_blue_whales_timor.mp4" type="video/mp4">
-                  Your browser does not support HTML5 video.
-                </video>
-                <div style="position:absolute;top:8px;left:8px;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:999px;letter-spacing:0.05em;pointer-events:none;">
-                  ▶ VIDEO: WHALE MIGRATION
-                </div>
-              </div>
-              <div style="display:grid;gap:12px;">
-                <img src="images/gallery_atauro_whales.jpg" alt="Blue Whales in Ombai Strait" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-                <img src="images/gallery_atauro_reef.jpg" alt="Atauro Island Coral Reef" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-              </div>
-            </div>
-          </div>
-
-          <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
-            <div>
-              <span class="day-badge">DAY 03</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Seloi Kraik, Maubisse & Dokomali</h3>
-              <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;">
-                Highland expedition to Seloi Kraik village, Maubisse plantations, and Dokomali waterfall. Transfer to airport for flight departure.
-              </p>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-              <img src="images/gallery_maubisse_mountains.jpg" alt="Maubisse Mountains" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-              <img src="images/gallery_dokomali_waterfall.jpg" alt="Dokomali Waterfall" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-            </div>
-          </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-              <img src="images/gallery_maubisse_mountains.jpg" alt="Maubisse Mountains" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-              <img src="images/gallery_dokomali_waterfall.jpg" alt="Dokomali Waterfall" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROGRAM 3: BALI 5-7 DAYS -->
-      <div id="prog-bali-7" class="prog-content" style="display:none;">
-        <div style="background:var(--accent-soft);border:1px solid var(--accent);padding:20px 28px;border-radius:16px;margin-bottom:40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
-          <div>
-            <strong style="font-family:var(--font-serif);font-size:18px;color:var(--ink);display:block;">Аутентичный Бали (5–7 Дней)</strong>
-            <span style="font-size:14px;color:var(--ink-soft);">Сакральный Бали без мишуры. Музей Neka Art Museum и прямой диалог со старейшинами.</span>
-          </div>
-          <span style="font-family:var(--font-serif);font-size:26px;font-weight:700;color:var(--accent);">От €7,500</span>
-        </div>
-
-        <div style="display:grid;gap:32px;">
-          <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
-            <div>
-              <span class="day-badge">ДЕНЬ 01-02</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Культура Убуда & Neka Art Museum</h3>
-              <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;">
-                Проживание в премиальном бутик-отеле. Частный визит в музей **Neka Art Museum**, где выставлены работы Валерия Латыпова.
-              </p>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-              <img src="images/bali_hero.jpg" alt="Бали" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-              <img src="images/bali_temple.jpg" alt="Храм" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-            </div>
-          </div>
-
-          <div style="background:var(--bg-alt);border:1px solid var(--line-strong);border-radius:24px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;">
-            <div>
-              <span class="day-badge">ДЕНЬ 03-05</span>
-              <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:700;color:var(--ink);margin-bottom:12px;">Диалог со Старейшинами без Переводчиков</h3>
-              <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;">
-                Валерий свободно владеет индонезийским языком (BIPA-2) и проводит живые встречи с неговорящими по-английски хранителями балийских традиций.
-              </p>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-              <img src="images/bali_water.jpg" alt="Водопад" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-              <img src="images/bali_ritual.jpg" alt="Ритуал" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROGRAM 4: COMBO 12 DAYS -->
-      <div id="prog-combo-12" class="prog-content" style="display:none;">
-        <div style="background:var(--accent-soft);border:1px solid var(--accent);padding:20px 28px;border-radius:16px;margin-bottom:40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
-          <div>
-            <strong style="font-family:var(--font-serif);font-size:18px;color:var(--ink);display:block;">✨ Комбо-Экспедиция: Бали (7 Дней) + Тимор-Лесте (5 Дней)</strong>
-            <span style="font-size:14px;color:var(--ink-soft);">7 дней погружения в сакральную культуру Бали + 5 дней автоэкспедиции по дикому Тимору.</span>
-          </div>
-          <span style="font-family:var(--font-serif);font-size:22px;font-weight:700;color:var(--accent);">Расчет по запросу</span>
-        </div>
-
-        <div style="background:var(--bg-alt);border:1px solid var(--line-strong);padding:40px;border-radius:24px;">
-          <h3 style="font-family:var(--font-serif);font-size:26px;font-weight:700;color:var(--ink);margin-bottom:16px;">Двойной Маршрут для Искателей</h3>
-          <p style="font-size:16px;color:var(--ink-soft);line-height:1.6;">
-            Сначала 7 дней эстетики, расслабления и встреч с хранителями традиций на Бали, затем часовой перелет в Дили и 5 дней настоящей экспедиции на внедорожниках по первозданному Тимору.
+        <div class="important-callout">
+          <h4>Critical Requirement (Important)</h4>
+          <p>
+            This expedition demands genuine psychological readiness to disconnect. We do not work with clinical depression (strict refusal). This journey is designed for healthy, yet deeply exhausted individuals.
           </p>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- 7. AUTHOR & GUIDE SECTION -->
-  <section class="section bg-alt" id="guide">
+  <!-- Block 6: Footer / Contacts -->
+  <footer id="concierge" class="concierge-section">
     <div class="container">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center;">
-        <div>
-          <span style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px;">
-            Автор и Проводник
-          </span>
-          <h2 style="font-family:var(--font-serif);font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--ink);margin-bottom:20px;">
-            Валерий Латыпов
-          </h2>
-          <p style="font-family:var(--font-serif);font-style:italic;font-size:20px;color:var(--ink-soft);line-height:1.5;border-left:3px solid var(--accent);padding-left:20px;margin-bottom:24px;">
-            «Главная ценность сегодня — настоящий, неискаженный опыт и чистая тишина, которую уже невозможно найти на массовых курортах.»
+      <div class="concierge-grid">
+        <div class="concierge-info">
+          <span class="eyebrow">05 / INITIATION</span>
+          <h2 class="h-display">CONCIERGE ACCESS</h2>
+          <p>
+            Submit an inquiry to schedule a confidential briefing and review our private security and logistical protocols.
           </p>
-          <div style="font-size:15px;color:var(--ink-soft);line-height:1.65;display:grid;gap:16px;">
-            <p>
-              <strong style="color:var(--ink);">Прямой разговор без переводчиков:</strong> Валерий свободно владеет индонезийским языком (сертифицированный уровень BIPA-2). Это обеспечивает прямой диалог со старейшинами и хранителями традиций.
-            </p>
-            <p>
-              <strong style="color:var(--ink);">Признание в искусстве:</strong> Живописные работы Валерия находятся в коллекции знаменитого национального музея <strong>Neka Art Museum</strong> в Убуде.
-            </p>
+
+          <div class="direct-contacts">
+            <div class="contact-line">
+              Desk for Family Offices & Wealth Managers:
+              <strong><a href="tel:+79852246789">+7 (985) 224-67-89</a></strong>
+            </div>
+            <div class="contact-line" style="margin-top: 20px;">
+              Email (RU / Global):
+              <strong><a href="mailto:latypov.valery@yandex.ru">latypov.valery@yandex.ru</a></strong>
+            </div>
+            <div class="contact-line" style="margin-top: 20px;">
+              Direct Contact:
+              <strong><a href="https://t.me/latypov_valery" target="_blank" rel="noopener">Telegram @latypov_valery</a></strong>
+            </div>
           </div>
         </div>
+
         <div>
-          <img src="images/author_portrait.jpg" alt="Валерий Латыпов" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:24px;border:1px solid var(--line-strong);" />
+          <form id="call-form" class="concierge-form">
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input type="text" class="form-input" placeholder="How to address you" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Phone / Telegram / WhatsApp</label>
+              <input type="text" class="form-input" placeholder="+1 / +44 / @handle" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Preferred window for private briefing</label>
+              <input type="text" class="form-input" placeholder="e.g. Weekdays after 18:00 UTC">
+            </div>
+
+            <button type="submit" class="btn-primary form-btn">Initiate Dialogue</button>
+          </form>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- 8. CONTACT / CTA SECTION -->
-  <section class="section bg-dark" id="contact" style="text-align:center;">
-    <div class="container" style="max-width:700px;">
-      <span style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px;">
-        Маленькие Камерные Группы
-      </span>
-      <h2 style="font-family:var(--font-serif);font-size:clamp(36px,5vw,56px);font-weight:700;color:var(--bg);margin-bottom:20px;">
-        Запросить Участие
-      </h2>
-      <p style="font-size:18px;color:var(--ink-ghost);margin-bottom:36px;line-height:1.6;">
-        Маленькие камерные группы. Возможность проведения полностью индивидуального тура под ваши даты.
-      </p>
-      
-      <a href="https://t.me/valerylatypov" target="_blank" style="display:inline-block;background:var(--accent);color:#fff;font-family:var(--font-sans);font-weight:700;font-size:18px;padding:18px 36px;border-radius:16px;transition:transform 0.2s, background 0.2s;box-shadow:0 8px 24px rgba(201,80,30,0.3);">
-        Написать Валерию в Telegram
-      </a>
-    </div>
-  </section>
-
-  <!-- 9. FOOTER -->
-  <footer style="padding:32px 0;background:var(--bg-dark);border-top:1px solid rgba(250,250,247,0.1);font-size:13px;color:var(--ink-ghost);">
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
-      <div>
-        <span style="font-family:var(--font-serif);font-weight:700;color:var(--bg);">ВАЛЕРИЙ ЛАТЫПОВ</span> · Авторские Экспедиции © 2026
-      </div>
-      <div style="display:flex;gap:16px;">
-        <a href="timor.html" style="color:var(--ink-mute);">RU</a>
-        <a href="timor-en.html" style="color:var(--ink-ghost);">EN</a>
+      <div class="copyright-bar">
+        <div>© 2026 VALERY LATYPOV · EXCLUSIVE EXPEDITIONS</div>
+        <div>CONFIDENTIAL & PRIVATE CLIENTS ONLY</div>
       </div>
     </div>
   </footer>
 
   <script>
-    function switchTab(tabKey) {
-      const tabs = ['timor-8', 'timor-3', 'bali-7', 'combo-12'];
-      
-      tabs.forEach(key => {
-        const btn = document.getElementById('tab-' + key);
-        const prog = document.getElementById('prog-' + key);
-        
-        if (key === tabKey) {
-          btn.classList.add('active');
-          if (prog) prog.style.display = 'block';
-        } else {
-          btn.classList.remove('active');
-          if (prog) prog.style.display = 'none';
-        }
+    document.addEventListener('DOMContentLoaded', () => {
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
       });
-    }
-  </script>
 
+      // Form submission mock
+      const form = document.getElementById('call-form');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const btn = form.querySelector('button[type="submit"]');
+          const oldText = btn.textContent;
+          btn.textContent = 'Inquiry Received by Concierge';
+          btn.style.background = '#C9501E';
+          form.reset();
+          setTimeout(() => {
+            btn.textContent = oldText;
+            btn.style.background = '';
+          }, 4000);
+        });
+      }
+
+      // GSAP Animations
+      if (typeof gsap !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from('.hero-content > *', {
+          opacity: 0,
+          y: 30,
+          duration: 1.2,
+          stagger: 0.18,
+          ease: 'power3.out'
+        });
+
+        gsap.utils.toArray('.section').forEach(section => {
+          gsap.from(section.querySelectorAll('.eyebrow, .h-display, .lead-text, .experience-item, .guide-card, .investment-card'), {
+            scrollTrigger: {
+              trigger: section,
+              start: 'top 82%',
+              toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            stagger: 0.15,
+            ease: 'power3.out'
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
