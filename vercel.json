@@ -1,9 +1,3 @@
 {
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/timor-en", "destination": "/timor-en" },
-    { "source": "/timor", "destination": "/timor" },
-    { "source": "/bali", "destination": "/files/yang" },
-    { "source": "/bali-en", "destination": "/files/yang-en" }
-  ]
+  "cleanUrls": true
 }

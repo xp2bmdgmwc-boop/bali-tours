@@ -1,31 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <script>
   (function() {
     try {
       var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '').toLowerCase();
       if (tz.indexOf('jakarta') !== -1 || tz.indexOf('makassar') !== -1 || tz.indexOf('jayapura') !== -1) {
-        document.documentElement.innerHTML = '<head><title>404 Not Found</title>
-  <!-- Yandex.Metrika counter (Placeholder) -->
-  <script type="text/javascript" >
-     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-     m[i].l=1*new Date();
-     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-     ym(00000000, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true });
-  </script>
-  <!-- Google Analytics (GA4 Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-
-</head><body style="background:#fff;color:#333;font-family:sans-serif;padding:40px;"><h1>404 Not Found</h1><p>The requested URL was not found on this server.</p></body>';
+        document.documentElement.innerHTML = '<head><title>404 Not Found</title></head><body style="background:#fff;color:#333;font-family:sans-serif;padding:40px;"><h1>404 Not Found</h1><p>The requested URL was not found on this server.</p></body>';
       }
     } catch(e){}
   })();
@@ -33,8 +14,8 @@
   
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Soft Power — Valeriy Latypov's Author Journey · Bali</title>
-<meta name="description" content="A private women's journey in Bali. 5 days. 1-on-1. Sacred places, feminine energy, alchemical portrait. From €7,400.">
+<title>Мягкая Сила — Авторский путь Валерия Латыпова · Бали</title>
+<meta name="description" content="Индивидуальный авторский путь на Бали для женщин. 5 дней. 1-на-1. Места силы, раскрытие женской энергии, алхимический портрет. От €7 400.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -55,7 +36,7 @@ img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}
 .nav-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;}
 .nav-logo{font-family:var(--serif);font-size:17px;letter-spacing:0.06em;display:flex;align-items:center;gap:8px;}
 .nav-logo .dot{color:var(--accent);}
-.nav-links{display:flex;gap:32px;}
+.nav-links{display:flex;gap:32px;align-items:center;}
 .nav-links a{font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-mute);transition:color 0.2s;}
 .nav-links a:hover{color:var(--accent);}
 .nav-right{display:flex;align-items:center;gap:20px;}
@@ -79,15 +60,15 @@ img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}
 .btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
 .btn-secondary{display:inline-flex;align-items:center;gap:10px;padding:15px 31px;background:transparent;color:var(--ink);font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:1px solid var(--line-strong);cursor:pointer;transition:all 0.25s;}
 .btn-secondary:hover{border-color:var(--accent);background:var(--accent);color:var(--bg);}
-.hero-specs{display:flex;border:1px solid var(--line);}
+.hero-specs{display:flex;gap:0;border:1px solid var(--line);}
 .hero-spec{padding:14px 20px;border-right:1px solid var(--line);flex:1;}
 .hero-spec:last-child{border-right:none;}
 .hero-spec-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mute);font-weight:500;margin-bottom:4px;}
 .hero-spec-val{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--ink);}
 .hero-spec-val.accent{color:var(--accent);}
 .hero-visual{position:relative;}
-.hero-img-wrap{position:relative;overflow:hidden;}
-.hero-img-wrap img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:grayscale(10%);transition:filter 0.4s;}
+.hero-img-wrap{position:relative;background:var(--bg-alt);overflow:hidden;}
+.hero-img-wrap img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:grayscale(10%) hue-rotate(10deg);transition:filter 0.4s;}
 .hero-img-wrap:hover img{filter:grayscale(0%);}
 .hero-img-caption{position:absolute;bottom:20px;left:20px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,250,247,0.7);font-weight:500;}
 .hero-credential{margin-top:16px;padding:16px 20px;background:var(--bg-alt);border:1px solid var(--line);display:flex;align-items:center;gap:14px;}
@@ -125,8 +106,10 @@ img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}
 @media(max-width:860px){.guide-grid{grid-template-columns:1fr;}}
 .guide-img-wrap img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:grayscale(10%);}
 .guide-badge{padding:20px 24px;background:var(--bg);border-top:1px solid var(--line);display:flex;gap:32px;}
+.guide-stat{display:flex;flex-direction:column;gap:2px;}
 .guide-stat-num{font-family:var(--serif);font-size:28px;font-weight:700;color:var(--accent);line-height:1;}
 .guide-stat-label{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-mute);font-weight:500;}
+.guide-content{padding-top:8px;}
 .guide-name{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.5vw,60px);line-height:1.0;letter-spacing:-0.02em;margin-bottom:6px;}
 .guide-title-line{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--ink-mute);margin-bottom:32px;}
 .guide-bio{font-size:16px;line-height:1.75;color:var(--ink-soft);margin-bottom:28px;}
@@ -145,14 +128,14 @@ img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}
 .ticker-item strong{color:var(--ink);font-weight:700;}
 .ticker-sep{color:var(--accent);font-size:14px;}
 @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-.days-grid{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);}
+.days-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--line);}
 @media(max-width:1100px){.days-grid{grid-template-columns:repeat(2,1fr);}.day-card:nth-child(5){grid-column:span 2;}}
 @media(max-width:600px){.days-grid{grid-template-columns:1fr;}.day-card:nth-child(5){grid-column:span 1;}}
 .day-card{padding:32px 28px;border-right:1px solid var(--line);transition:background 0.25s;}
 .day-card:last-child{border-right:none;}
 .day-card:hover{background:var(--bg-alt);}
 @media(max-width:1100px){.day-card{border-right:1px solid var(--line);border-bottom:1px solid var(--line);}.day-card:nth-child(2n){border-right:none;}}
-.day-num{font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--line);}
+.day-num{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--line);}
 .day-name{font-family:var(--serif);font-size:21px;font-weight:400;line-height:1.2;margin-bottom:6px;color:var(--ink);}
 .day-theme{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--accent);margin-bottom:16px;}
 .day-desc{font-size:14px;line-height:1.6;color:var(--ink-soft);margin-bottom:16px;}
@@ -180,17 +163,18 @@ img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}
 .invest-pullquote{margin-top:16px;padding:24px 28px;background:var(--bg);border-left:3px solid var(--accent);}
 .invest-pullquote p{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.6;color:var(--ink);margin-bottom:10px;}
 .invest-pullquote cite{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-mute);font-style:normal;font-weight:500;}
+.testimony-section{background:var(--bg);}
 .testimony-inner{max-width:860px;margin:0 auto;}
-.testimony-quote{font-family:var(--serif);font-size:clamp(19px,2.2vw,26px);line-height:1.55;color:var(--ink);font-style:italic;margin-bottom:32px;padding:0 0 32px;border-bottom:1px solid var(--line);}
+.testimony-quote{font-family:var(--serif);font-size:clamp(19px,2.2vw,26px);line-height:1.55;color:var(--ink);font-style:italic;margin-bottom:32px;padding:0 0 32px 0;border-bottom:1px solid var(--line);}
 .testimony-quote::before{content:"\201C";font-size:80px;line-height:0.6;color:var(--accent);display:block;margin-bottom:12px;font-family:var(--serif);}
 .testimony-author{display:flex;align-items:center;gap:16px;}
 .testimony-avatar{width:48px;height:48px;border-radius:50%;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:16px;font-weight:700;color:var(--accent);flex-shrink:0;}
-.testimony-name{font-size:15px;font-weight:600;color:var(--ink);}
+.testimony-name{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--ink);}
 .testimony-desc{font-size:13px;color:var(--ink-mute);margin-top:2px;}
 .call-section{background:var(--bg-dark);padding:clamp(72px,10vw,140px) var(--px);}
 .call-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,7vw,112px);align-items:start;}
 @media(max-width:860px){.call-inner{grid-template-columns:1fr;}}
-.call-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-mid);margin-bottom:20px;display:block;}
+.call-eyebrow{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-mid);margin-bottom:20px;display:block;}
 .call-title{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,72px);line-height:1.0;letter-spacing:-0.02em;color:#FAFAF7;margin-bottom:20px;}
 .call-title em{font-style:italic;color:var(--accent-mid);}
 .call-sub{font-size:17px;line-height:1.7;color:rgba(250,250,247,0.55);margin-bottom:36px;}
@@ -246,17 +230,16 @@ textarea.form-input{resize:none;min-height:80px;}
 
 </head>
 <body>
-
 <nav class="nav">
   <div class="nav-inner">
-    <div class="nav-logo">V <span class="dot">·</span> L</div>
+    <div class="nav-logo">В <span class="dot">·</span> Л</div>
     <div class="nav-links">
-      <a href="#format">Format</a><a href="#guide">Guide</a>
-      <a href="#programme">Programme</a><a href="#investment">Investment</a>
+      <a href="#format">Формат</a><a href="#guide">Проводник</a>
+      <a href="#programme">Программа</a><a href="#investment">Инвестиция</a>
     </div>
     <div class="nav-right">
-      <div class="nav-lang"><span>RU</span><span>|</span><span class="active">EN</span></div>
-      <button class="nav-cta" onclick="document.getElementById('call').scrollIntoView({behavior:'smooth'})">Private Call</button>
+      <div class="nav-lang"><span class="active">RU</span><span>|</span><span>EN</span></div>
+      <button class="nav-cta" onclick="document.getElementById('call').scrollIntoView({behavior:'smooth'})">Личный звонок</button>
     </div>
   </div>
 </nav>
@@ -264,34 +247,34 @@ textarea.form-input{resize:none;min-height:80px;}
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <div class="hero-eyebrow fade-up d1"><span class="eyebrow">Author's Journey · Bali</span><div class="eyebrow-line"></div></div>
-      <h1 class="fade-up d2">Soft<br><em>Power</em></h1>
-      <p class="hero-tagline fade-up d3">An individual journey to feminine power — through stillness, beauty and the living tradition of the island.</p>
+      <div class="hero-eyebrow fade-up d1"><span class="eyebrow">Авторский путь · Бали</span><div class="eyebrow-line"></div></div>
+      <h1 class="fade-up d2">Мягкая<br><em>Сила</em></h1>
+      <p class="hero-tagline fade-up d3">Индивидуальный путь к женской силе — через тишину, красоту и живую традицию острова.</p>
       <div class="hero-ctas fade-up d4">
-        <button class="btn-primary" onclick="document.getElementById('call').scrollIntoView({behavior:'smooth'})">Schedule Private Call</button>
-        <button class="btn-secondary" onclick="document.getElementById('programme').scrollIntoView({behavior:'smooth'})">View Programme</button>
+        <button class="btn-primary" onclick="document.getElementById('call').scrollIntoView({behavior:'smooth'})">Назначить Personal Call</button>
+        <button class="btn-secondary" onclick="document.getElementById('programme').scrollIntoView({behavior:'smooth'})">Смотреть программу</button>
       </div>
       <div class="hero-specs fade-up d5">
-        <div class="hero-spec"><div class="hero-spec-label">Format</div><div class="hero-spec-val">5 days</div></div>
-        <div class="hero-spec"><div class="hero-spec-label">Attendance</div><div class="hero-spec-val">1-on-1</div></div>
-        <div class="hero-spec"><div class="hero-spec-label">Investment</div><div class="hero-spec-val accent">from €7,400</div></div>
+        <div class="hero-spec"><div class="hero-spec-label">Формат</div><div class="hero-spec-val">5 дней</div></div>
+        <div class="hero-spec"><div class="hero-spec-label">Участие</div><div class="hero-spec-val">1-на-1</div></div>
+        <div class="hero-spec"><div class="hero-spec-label">Инвестиция</div><div class="hero-spec-val accent">от €7 400</div></div>
       </div>
     </div>
     <div class="hero-visual fade-up d3">
       <div class="hero-img-wrap">
-        <img src="https://static.tildacdn.com/tild3163-6135-4063-b239-323262636632/DSC00497.jpg" alt="Valeriy Latypov">
-        <div class="hero-img-caption">Bali · Sacred Places</div>
+        <img src="https://static.tildacdn.com/tild3163-6135-4063-b239-323262636632/DSC00497.jpg" alt="Валерий Латыпов">
+        <div class="hero-img-caption">Бали · Места силы</div>
       </div>
-      <div class="hero-credential"><div class="hero-cred-num">20+</div><div class="hero-cred-text">years of practice<br>in tradition</div></div>
+      <div class="hero-credential"><div class="hero-cred-num">20+</div><div class="hero-cred-text">лет практики<br>в традиции</div></div>
     </div>
   </div>
 </section>
 
 <section class="manifesto" id="format">
   <div class="manifesto-inner">
-    <p class="manifesto-line">This is not a retreat about becoming someone else.</p>
-    <p class="manifesto-line">It is a return to <em>yourself</em> — to your stillness, softness and power,<br>which awakens when you stop fighting the world.</p>
-    <p class="manifesto-line">Many women push through life — until they remember<br>that true power lies in feeling, loving and <em>simply being</em>.</p>
+    <p class="manifesto-line">Это не ретрит про то, чтобы стать другой.</p>
+    <p class="manifesto-line">Это возвращение к <em>себе</em> — к своей тишине, мягкости и силе,<br>которая просыпается, когда перестаёшь бороться с миром.</p>
+    <p class="manifesto-line">Многие женщины идут через напряжение — пока не вспоминают,<br>что настоящая сила — в умении чувствовать, любить и <em>просто быть</em>.</p>
   </div>
 </section>
 
@@ -299,18 +282,18 @@ textarea.form-input{resize:none;min-height:80px;}
   <div class="container">
     <div class="for-whom-grid">
       <div>
-        <span class="eyebrow" style="display:block;margin-bottom:20px;">For Whom</span>
-        <h2 class="for-whom-title">Tired of always<br>being <em>strong?</em></h2>
-        <p class="for-whom-body">You want to reclaim lightness, inspiration and warmth. To remember your true nature — the one that breathes beauty and stillness.</p>
-        <p class="for-whom-body">This journey is not about changing. It is about returning — to your true self.</p>
+        <span class="eyebrow" style="display:block;margin-bottom:20px;">Для кого</span>
+        <h2 class="for-whom-title">Чувствуешь усталость<br>быть всегда <em>сильной?</em></h2>
+        <p class="for-whom-body">Хочется вернуть лёгкость, вдохновение и тепло. Вспомнить свою истинную природу — ту, что дышит красотой и тишиной.</p>
+        <p class="for-whom-body">Этот путь не про изменение. Он про возвращение — к себе настоящей.</p>
       </div>
       <div>
         <ul class="signs-list">
-          <li><span class="sign-mark">01</span><span>You are exhausted from being strong for everyone — and you want to finally allow yourself just to be</span></li>
-          <li><span class="sign-mark">02</span><span>You feel disconnected from your own femininity, lightness and desire</span></li>
-          <li><span class="sign-mark">03</span><span>Behind external success — a sense of inner emptiness or a life lived "by plan" rather than by calling</span></li>
-          <li><span class="sign-mark">04</span><span>You sense subtle energies, see beauty more deeply than others — and want to develop this perception</span></li>
-          <li><span class="sign-mark">05</span><span>You want to enter the living tradition of the island — the places where guardians only open for those they trust</span></li>
+          <li><span class="sign-mark">01</span><span>Ты устала быть сильной для всех — и хочешь наконец разрешить себе быть собой</span></li>
+          <li><span class="sign-mark">02</span><span>Ты чувствуешь, что потеряла контакт с собственной женственностью, лёгкостью, желанием</span></li>
+          <li><span class="sign-mark">03</span><span>За внешним успехом — ощущение внутренней пустоты или жизни «по плану», а не по зову</span></li>
+          <li><span class="sign-mark">04</span><span>Ты чувствуешь тонкие энергии, видишь красоту глубже других — и хочешь развить это восприятие</span></li>
+          <li><span class="sign-mark">05</span><span>Ты хочешь войти в живую традицию острова — туда, куда пускают только тех, кому доверяют</span></li>
         </ul>
       </div>
     </div>
@@ -320,16 +303,16 @@ textarea.form-input{resize:none;min-height:80px;}
 <section class="not-section section">
   <div class="not-inner container">
     <div>
-      <span class="eyebrow" style="color:rgba(250,250,247,0.35);display:block;margin-bottom:20px;">Format</span>
-      <h2 class="not-title">No groups.<br>No programmes.<br><em>Only you.</em></h2>
-      <p class="not-sub">Three things that make this journey unlike anything you have experienced.</p>
+      <span class="eyebrow" style="color:rgba(250,250,247,0.35);display:block;margin-bottom:20px;">Формат</span>
+      <h2 class="not-title">Никаких групп.<br>Никаких программ.<br><em>Только ты.</em></h2>
+      <p class="not-sub">Три вещи, которые делают этот путь непохожим на всё, что ты видела.</p>
     </div>
     <div>
       <ul class="not-list">
-        <li><span class="not-x">01</span><div class="not-text"><strong>Individual Journey</strong><br>No groups, no schedules. Everything is built around your request, your rhythm, your state.</div></li>
-        <li><span class="not-x">02</span><div class="not-text"><strong>Closed Sacred Places</strong><br>Access to spaces you will not find online. The guardians of the island trust the guide — and through him, they open to you.</div></li>
-        <li><span class="not-x">03</span><div class="not-text"><strong>Living Tradition</strong><br>The yin energy of water, sacred springs, women's rituals of the island — alive here and now, not as a tour.</div></li>
-        <li><span class="not-x">04</span><div class="not-text"><strong>Selection Process</strong><br>A place is confirmed after a personal conversation with Valeriy. Not every application is accepted.</div></li>
+        <li><span class="not-x">01</span><div class="not-text"><strong>Индивидуальный путь</strong><br>Никаких групп, никакого расписания. Всё строится под твой запрос, твой ритм, твоё состояние.</div></li>
+        <li><span class="not-x">02</span><div class="not-text"><strong>Закрытые места</strong><br>Доступ к пространствам, которые не найти в интернете. Хранители острова доверяют проводнику — и через него открываются тебе.</div></li>
+        <li><span class="not-x">03</span><div class="not-text"><strong>Живая традиция</strong><br>Инь-энергия воды, священные источники, женские ритуалы острова — всё это живёт здесь и сейчас, не как экскурсия.</div></li>
+        <li><span class="not-x">04</span><div class="not-text"><strong>Формат отбора</strong><br>Место подтверждается после личного разговора с Валерием. Не каждая заявка принимается.</div></li>
       </ul>
     </div>
   </div>
@@ -339,25 +322,25 @@ textarea.form-input{resize:none;min-height:80px;}
   <div class="container">
     <div class="guide-grid">
       <div class="guide-img-wrap">
-        <img src="https://static.tildacdn.com/tild3163-6135-4063-b239-323262636632/DSC00497.jpg" alt="Valeriy Latypov">
+        <img src="https://static.tildacdn.com/tild3163-6135-4063-b239-323262636632/DSC00497.jpg" alt="Валерий Латыпов">
         <div class="guide-badge">
-          <div><div class="guide-stat-num">20+</div><div class="guide-stat-label">years practice</div></div>
-          <div><div class="guide-stat-num" style="font-size:22px;">CEO</div><div class="guide-stat-label">Fortune 500</div></div>
-          <div><div class="guide-stat-num" style="color:var(--ink);">∞</div><div class="guide-stat-label">access to tradition</div></div>
+          <div class="guide-stat"><span class="guide-stat-num">20+</span><span class="guide-stat-label">лет практики</span></div>
+          <div class="guide-stat"><span class="guide-stat-num" style="font-size:22px;">CEO</span><span class="guide-stat-label">Fortune 500</span></div>
+          <div class="guide-stat"><span class="guide-stat-num" style="color:var(--ink);">∞</span><span class="guide-stat-label">доступ к традиции</span></div>
         </div>
       </div>
-      <div>
-        <span class="eyebrow" style="display:block;margin-bottom:16px;">Your Guide</span>
-        <h2 class="guide-name">Valeriy<br>Latypov</h2>
-        <p class="guide-title-line">Quantum Radio Physicist. Architect of Visual Capital. Practitioner of Tradition.</p>
-        <p class="guide-bio">A life devoted to spiritual practices. Through the camera lens, he began to see in people the same depth that arises in meditation. Today he leads author's journeys for those who wish to return to themselves.</p>
-        <p class="guide-bio">Has photographed <strong>Depeche Mode, Peter Gabriel, Arnold Schwarzenegger, Yoko Ono</strong>. Published in Forbes Russia, Rolling Stone. Received blessings from <strong>Lama Ole Nydahl, Namkhai Norbu Rinpoche, the last King of Mustang</strong>.</p>
-        <div class="guide-quote"><p>"I create the space in which a woman hears herself again — her true self."</p></div>
+      <div class="guide-content">
+        <span class="eyebrow" style="display:block;margin-bottom:16px;">Твой проводник</span>
+        <h2 class="guide-name">Валерий<br>Латыпов</h2>
+        <p class="guide-title-line">Квантовый радиофизик. Архитектор визуального капитала. Практик традиции.</p>
+        <p class="guide-bio">Всю жизнь занимался духовными практиками. Через объектив камеры начал видеть в людях ту же глубину, которая открывается в медитации. Сегодня проводит авторские пути для тех, кто хочет вернуть себя.</p>
+        <p class="guide-bio">Снимал <strong>Depeche Mode, Peter Gabriel, Арнольда Шварценеггера, Йоко Оно</strong>. Публикации в Forbes Russia, Rolling Stone. Получал благословения от <strong>ламы Оле Нидала, Намкая Норбу Ринпоче, последнего Короля Мустанга</strong>.</p>
+        <div class="guide-quote"><p>«Я создаю пространство, в котором женщина снова слышит себя — настоящую.»</p></div>
         <div class="guide-credentials">
-          <div class="cred-item"><span class="cred-icon"></span><span class="cred-text">Quantum radio physicist — the ability to see the invisible, to explain the inexplicable</span></div>
-          <div class="cred-item"><span class="cred-icon"></span><span class="cred-text">Two decades with Bali. The guardians of the island trust him</span></div>
-          <div class="cred-item"><span class="cred-icon"></span><span class="cred-text">Works with yin energy places: water temples, sacred springs, feminine power sites of the island</span></div>
-          <div class="cred-item"><span class="cred-icon"></span><span class="cred-text">The Alchemical Portrait — a visual document of a new state. Not a photoshoot — an encounter with yourself</span></div>
+          <div class="cred-item"><span class="cred-icon"></span><span class="cred-text">Квантовый радиофизик — умение видеть невидимое, объяснять необъяснимое</span></div>
+          <div class="cred-item"><span class="cred-icon"></span><span class="cred-text">Два десятилетия работы с Бали. Хранители острова ему доверяют</span></div>
+          <div class="cred-item"><span class="cred-icon"></span><span class="cred-text">Работает с Инь-энергией мест: водные храмы, священные источники, места женской силы острова</span></div>
+          <div class="cred-item"><span class="cred-icon"></span><span class="cred-text">Алхимический портрет — визуальный документ нового состояния. Не фотосессия — встреча с собой</span></div>
         </div>
       </div>
     </div>
@@ -366,26 +349,28 @@ textarea.form-input{resize:none;min-height:80px;}
 
 <div class="ticker-section">
   <div class="ticker-track">
+    <span class="ticker-item"><strong>Ирина Хакамада</strong></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><strong>Анна Тихомирова</strong></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><strong>Сати Казанова</strong></span><span class="ticker-sep">·</span>
     <span class="ticker-item"><strong>Depeche Mode</strong></span><span class="ticker-sep">·</span>
     <span class="ticker-item"><strong>Peter Gabriel</strong></span><span class="ticker-sep">·</span>
-    <span class="ticker-item"><strong>Yoko Ono</strong></span><span class="ticker-sep">·</span>
-    <span class="ticker-item"><strong>Arnold Schwarzenegger</strong></span><span class="ticker-sep">·</span>
-    <span class="ticker-item"><strong>Carmina Burana</strong> Dubai Opera</span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><strong>Йоко Оно</strong></span><span class="ticker-sep">·</span>
     <span class="ticker-item"><strong>Forbes Russia</strong></span><span class="ticker-sep">·</span>
     <span class="ticker-item"><strong>Rolling Stone</strong></span><span class="ticker-sep">·</span>
-    <span class="ticker-item"><strong>Lama Ole Nydahl</strong></span><span class="ticker-sep">·</span>
-    <span class="ticker-item"><strong>Namkhai Norbu Rinpoche</strong></span><span class="ticker-sep">·</span>
-    <span class="ticker-item">Last <strong>King of Mustang</strong></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><strong>Борис Гребенщиков</strong></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><strong>Лама Оле Нидал</strong></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><strong>Намкай Норбу Ринпоче</strong></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Последний <strong>Король Мустанга</strong></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><strong>Ирина Хакамада</strong></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><strong>Анна Тихомирова</strong></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><strong>Сати Казанова</strong></span><span class="ticker-sep">·</span>
     <span class="ticker-item"><strong>Depeche Mode</strong></span><span class="ticker-sep">·</span>
     <span class="ticker-item"><strong>Peter Gabriel</strong></span><span class="ticker-sep">·</span>
-    <span class="ticker-item"><strong>Yoko Ono</strong></span><span class="ticker-sep">·</span>
-    <span class="ticker-item"><strong>Arnold Schwarzenegger</strong></span><span class="ticker-sep">·</span>
-    <span class="ticker-item"><strong>Carmina Burana</strong> Dubai Opera</span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><strong>Йоко Оно</strong></span><span class="ticker-sep">·</span>
     <span class="ticker-item"><strong>Forbes Russia</strong></span><span class="ticker-sep">·</span>
     <span class="ticker-item"><strong>Rolling Stone</strong></span><span class="ticker-sep">·</span>
-    <span class="ticker-item"><strong>Lama Ole Nydahl</strong></span><span class="ticker-sep">·</span>
-    <span class="ticker-item"><strong>Namkhai Norbu Rinpoche</strong></span><span class="ticker-sep">·</span>
-    <span class="ticker-item">Last <strong>King of Mustang</strong></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><strong>Борис Гребенщиков</strong></span><span class="ticker-sep">·</span>
+    <span class="ticker-item"><strong>Лама Оле Нидал</strong></span><span class="ticker-sep">·</span>
   </div>
 </div>
 
@@ -393,17 +378,17 @@ textarea.form-input{resize:none;min-height:80px;}
   <div class="container">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);margin-bottom:clamp(48px,6vw,80px);align-items:end;">
       <div>
-        <span class="eyebrow" style="display:block;margin-bottom:20px;">Journey Programme</span>
-        <h2 style="font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,64px);line-height:1.0;letter-spacing:-0.02em;">5 days.<br>5 stages of<br><em style="color:var(--accent);">opening.</em></h2>
+        <span class="eyebrow" style="display:block;margin-bottom:20px;">Программа пути</span>
+        <h2 style="font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,64px);line-height:1.0;letter-spacing:-0.02em;">5 дней.<br>5 этапов<br><em style="font-style:italic;color:var(--accent);">раскрытия.</em></h2>
       </div>
-      <p style="font-size:17px;line-height:1.7;color:var(--ink-soft);">Each day is a step from the surface to the depth. From tension to stillness. From the role you play to who you truly are.</p>
+      <p style="font-size:17px;line-height:1.7;color:var(--ink-soft);">Каждый день — шаг от поверхности к глубине. От напряжения — к тишине. От роли — к себе настоящей.</p>
     </div>
     <div class="days-grid">
-      <div class="day-card"><div class="day-num">Day One</div><div class="day-name">Cleansing</div><div class="day-theme">Attunement to the island</div><p class="day-desc">First contact with the energy of Bali. Pura Gunung Kawi Sebatu — a purification ceremony with a local monk. Night overlooking the volcano.</p><ul class="day-items"><li>Purification ritual in sacred waters</li><li>Setting the intention of the journey</li><li>Night at Kintamani volcano</li></ul></div>
-      <div class="day-card"><div class="day-num">Day Two</div><div class="day-name">Opening</div><div class="day-theme">The yin energy of water</div><p class="day-desc">NungNung Waterfall — the waterfall that opens the heart. Pura Ulun Danu Bratan water temple with feminine yin energies. Sunset at the ocean.</p><ul class="day-items"><li>Meditation at the waterfall</li><li>Yin practice at the water temple</li><li>Dinner on the coast</li></ul></div>
-      <div class="day-card"><div class="day-num">Day Three</div><div class="day-name">Power</div><div class="day-theme">Meeting the Guardian</div><p class="day-desc">Pura Agung Besakih — the place where questions are answered. Meeting the Shaman and the sacred Keris daggers. Ecstatic Dance.</p><ul class="day-items"><li>Ecstatic Dance practice</li><li>Meeting the Keris master</li><li>Access to the main temple of the island</li></ul></div>
-      <div class="day-card"><div class="day-num">Day Four</div><div class="day-name">Source</div><div class="day-theme">Feminine energy of the land</div><p class="day-desc">Women's power places of the island. Tirta Ganga temple, sacred springs. A day of stillness, presence and inner dialogue.</p><ul class="day-items"><li>Water meditations</li><li>Work at feminine power sites</li><li>Evening gratitude ritual</li></ul></div>
-      <div class="day-card"><div class="day-num">Day Five</div><div class="day-name">Fixation</div><div class="day-theme">The Alchemical Portrait</div><p class="day-desc">Photographic capture of the new state. The Alchemical Portrait is an encounter with your true self, recorded by a master.</p><ul class="day-items"><li>Shoot at sacred locations</li><li>Post-processing in Valeriy's signature technique</li><li>An artefact of state — for life</li></ul></div>
+      <div class="day-card"><div class="day-num">День первый</div><div class="day-name">Очищение</div><div class="day-theme">Сонастройка с островом</div><p class="day-desc">Первый контакт с энергией Бали. Храм Pura Gunung Kawi Sebatu — церемония очищения с местным монахом. Ночь с видом на вулкан.</p><ul class="day-items"><li>Ритуал очищения в священных водах</li><li>Работа с интенцией пути</li><li>Ночь у вулкана Кинтамани</li></ul></div>
+      <div class="day-card"><div class="day-num">День второй</div><div class="day-name">Раскрытие</div><div class="day-theme">Инь-энергия воды</div><p class="day-desc">Водопад NungNung — водопад, раскрывающий сердце. Водный храм Pura Ulun Danu Bratan с женскими Инь-энергиями. Закат у океана.</p><ul class="day-items"><li>Медитация у водопада</li><li>Инь-практика у водного храма</li><li>Ужин на побережье</li></ul></div>
+      <div class="day-card"><div class="day-num">День третий</div><div class="day-name">Сила</div><div class="day-theme">Встреча с Хранителем</div><p class="day-desc">Храм Pura Agung Besakih — место, где получают ответы. Встреча с Шаманом и сакральными кинжалами Крис. Ecstatic Dance.</p><ul class="day-items"><li>Практика Ecstatic Dance</li><li>Встреча с мастером Крисов</li><li>Доступ к главному храму острова</li></ul></div>
+      <div class="day-card"><div class="day-num">День четвёртый</div><div class="day-name">Источник</div><div class="day-theme">Женская энергия мест</div><p class="day-desc">Места женской силы острова. Храм Tirta Ganga, священные источники. День тишины, присутствия и внутреннего диалога.</p><ul class="day-items"><li>Водные медитации</li><li>Работа с женскими местами силы</li><li>Вечерний ритуал благодарности</li></ul></div>
+      <div class="day-card"><div class="day-num">День пятый</div><div class="day-name">Фиксация</div><div class="day-theme">Алхимический портрет</div><p class="day-desc">Фотографическая фиксация нового состояния. Алхимический портрет — это встреча с собой настоящей, зафиксированная мастером.</p><ul class="day-items"><li>Съёмка в священных локациях</li><li>Постобработка в авторской технике</li><li>Артефакт состояния — на всю жизнь</li></ul></div>
     </div>
   </div>
 </section>
@@ -411,49 +396,49 @@ textarea.form-input{resize:none;min-height:80px;}
 <section class="invest-section section" id="investment">
   <div class="container">
     <div style="margin-bottom:clamp(40px,5vw,64px);">
-      <span class="eyebrow" style="display:block;margin-bottom:16px;">Investment</span>
-      <h2 style="font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:400;line-height:1.1;letter-spacing:-0.018em;">Author's Journey.</h2>
+      <span class="eyebrow" style="display:block;margin-bottom:16px;">Инвестиция</span>
+      <h2 style="font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:400;line-height:1.1;letter-spacing:-0.018em;">Авторский путь.</h2>
     </div>
     <div class="invest-grid">
       <div class="invest-main">
-        <span class="invest-price-label">5-day author's journey</span>
-        <div class="invest-price">from €7,400</div>
-        <p class="invest-price-note">Final investment determined after Personal Call</p>
+        <span class="invest-price-label">5-дневный авторский путь</span>
+        <div class="invest-price">от €7 400</div>
+        <p class="invest-price-note">Финальная стоимость формируется по итогам Personal Call</p>
         <div class="invest-divider"></div>
-        <span class="invest-includes-label">Included in the journey:</span>
+        <span class="invest-includes-label">Включено в путь:</span>
         <ul class="invest-list">
-          <li><span class="invest-check">✓</span> Premium accommodation — VIP villas with private pool</li>
-          <li><span class="invest-check">✓</span> Individual transfers throughout</li>
-          <li><span class="invest-check">✓</span> Guide work 1-on-1 — all 5 days</li>
-          <li><span class="invest-check">✓</span> Access to closed rituals and feminine places of power</li>
-          <li><span class="invest-check">✓</span> Alchemical Portrait — original work by Valeriy Latypov</li>
-          <li><span class="invest-check">✓</span> Ecstatic Dance session in mini-group</li>
-          <li><span class="invest-check">✓</span> Work with the sacred Keris dagger with the tradition master</li>
+          <li><span class="invest-check">✓</span> Премиальное проживание — VIP виллы с приватным бассейном</li>
+          <li><span class="invest-check">✓</span> Индивидуальные трансферы на всём протяжении</li>
+          <li><span class="invest-check">✓</span> Работа проводника 1-на-1 — все 5 дней</li>
+          <li><span class="invest-check">✓</span> Доступ к закрытым ритуалам и местам женской силы</li>
+          <li><span class="invest-check">✓</span> Алхимический портрет — авторская работа Валерия Латыпова</li>
+          <li><span class="invest-check">✓</span> Ecstatic Dance в мини-группе участников пути</li>
+          <li><span class="invest-check">✓</span> Работа с сакральным кинжалом Крис у мастера традиции</li>
         </ul>
-        <button class="invest-cta" onclick="document.getElementById('call').scrollIntoView({behavior:'smooth'})">Schedule Personal Call →</button>
+        <button class="invest-cta" onclick="document.getElementById('call').scrollIntoView({behavior:'smooth'})">Назначить Personal Call →</button>
       </div>
       <div>
         <div class="invest-cards">
-          <div class="invest-card"><div class="invest-card-title">Confidentiality</div><div class="invest-card-text">Participant information is never disclosed. NDA available on request.</div></div>
-          <div class="invest-card"><div class="invest-card-title">Flexible Dates</div><div class="invest-card-text">The journey is planned around your calendar. Minimum 3 weeks lead time.</div></div>
-          <div class="invest-card"><div class="invest-card-title">Selection Process</div><div class="invest-card-text">A place is confirmed after a personal conversation with Valeriy. Not every application is accepted.</div></div>
+          <div class="invest-card"><div class="invest-card-title">Конфиденциальность</div><div class="invest-card-text">Информация об участниках не разглашается. NDA по запросу.</div></div>
+          <div class="invest-card"><div class="invest-card-title">Гибкие даты</div><div class="invest-card-text">Путь планируется под твой календарь. Минимальный горизонт — 3 недели до старта.</div></div>
+          <div class="invest-card"><div class="invest-card-title">Формат отбора</div><div class="invest-card-text">Место подтверждается после личного разговора с Валерием. Не каждая заявка принимается.</div></div>
         </div>
         <div class="invest-pullquote">
-          <p>"This is not an expense. It is a return to the woman who knows where she is going."</p>
-          <cite>— V. Latypov</cite>
+          <p>«Это не расход. Это возвращение к той себе, которая знает куда идти.»</p>
+          <cite>— В. Латыпов</cite>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" style="background:var(--bg);">
+<section class="testimony-section section">
   <div class="testimony-inner container">
-    <span class="eyebrow" style="display:block;margin-bottom:32px;">In Their Own Words</span>
-    <blockquote class="testimony-quote">Bright energy, warmth, and the expansion of inner strength — that is what you feel even from simply being around Valeriy. His powerful energy supports awakening and balance. In his field, I began to trust more in what I feel. I experienced fullness, calmness, and clarity — as if catching the flow of my own inner power and lightness, moving within it. He helped me hear my own purity and see what was preventing me from living it. There are many ways Valeriy supports you in the process — and I was once again reminded how much the energy of the guide truly matters.</blockquote>
+    <span class="eyebrow" style="display:block;margin-bottom:32px;">Прямая речь</span>
+    <blockquote class="testimony-quote">Светлая энергия, тепло и расширение внутренней силы — то, что ощущаешь даже при простом взаимодействии с Валерием. В его поле я начала больше доверять тому, что чувствую. Ощутила наполнение, спокойствие и ясность. Словно ловишь поток своей истинной силы и лёгкости. Он помог мне услышать собственную чистоту и увидеть, что мешает ей звучать. Есть множество способов поддержки в процессах изменений — и я ещё раз убедилась, как много значит энергия проводника.</blockquote>
     <div class="testimony-author">
-      <div class="testimony-avatar">IB</div>
-      <div><div class="testimony-name">Irina Borodina</div><div class="testimony-desc">Author's Journey participant · Bali</div></div>
+      <div class="testimony-avatar">ИБ</div>
+      <div><div class="testimony-name">Ирина Бородина</div><div class="testimony-desc">Участница авторского пути · Бали</div></div>
     </div>
   </div>
 </section>
@@ -461,23 +446,23 @@ textarea.form-input{resize:none;min-height:80px;}
 <section class="call-section" id="call">
   <div class="call-inner container">
     <div>
-      <span class="call-eyebrow">Next Step</span>
+      <span class="call-eyebrow">Следующий шаг</span>
       <h2 class="call-title">Personal<br><em>Consultation</em></h2>
-      <p class="call-sub">This is not an application form. It is the first point of contact. Tell us about yourself — and we will determine whether this journey is right for you.</p>
-      <p class="call-note"><strong>A place is confirmed</strong> after a personal conversation with Valeriy.<br>Not every application is accepted.<br><br>All information remains confidential.<br><strong>NDA available on request.</strong></p>
+      <p class="call-sub">Это не форма заявки. Это первая точка контакта. Расскажи о себе — и мы определим, подходит ли тебе этот путь.</p>
+      <p class="call-note"><strong>Место подтверждается</strong> после личного разговора с Валерием.<br>Не каждая заявка принимается.<br><br>Информация остаётся конфиденциальной.<br><strong>NDA по запросу.</strong></p>
     </div>
     <div>
       <form class="call-form" onsubmit="handleSubmit(event)">
         <div class="form-row">
-          <div class="form-group"><label class="form-label">Name</label><input class="form-input" type="text" placeholder="How to address you"></div>
-          <div class="form-group"><label class="form-label">Telegram / WhatsApp</label><input class="form-input" type="text" placeholder="@username or +..."></div>
+          <div class="form-group"><label class="form-label">Имя</label><input class="form-input" type="text" placeholder="Как к тебе обращаться"></div>
+          <div class="form-group"><label class="form-label">Telegram / WhatsApp</label><input class="form-input" type="text" placeholder="@username или +7..."></div>
         </div>
         <div class="form-group" style="padding-top:20px;border-top:1px solid rgba(250,250,247,0.1);">
-          <label class="form-label">Briefly about yourself and your request</label>
-          <textarea class="form-input" placeholder="What you do, what you are seeking, why now..." rows="4"></textarea>
+          <label class="form-label">Кратко о себе и запросе</label>
+          <textarea class="form-input" placeholder="Чем занимаешься, что ищешь, почему сейчас..." rows="4"></textarea>
         </div>
-        <button type="submit" class="form-submit">Send Request →</button>
-        <div class="form-or"><span>or contact directly</span></div>
+        <button type="submit" class="form-submit">Отправить запрос →</button>
+        <div class="form-or"><span>или свяжитесь напрямую</span></div>
         <div class="direct-contacts">
           <a href="https://wa.me/message/R7QE2AZQP34GD1" class="direct-btn">WhatsApp</a>
           <a href="https://t.me/latypovvalery" class="direct-btn">Telegram</a>
@@ -489,13 +474,13 @@ textarea.form-input{resize:none;min-height:80px;}
 
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-logo">V <span>·</span> L &nbsp;&nbsp;Valeriy Latypov</div>
-    <div class="footer-links"><a href="#format">Format</a><a href="#guide">Guide</a><a href="#programme">Programme</a><a href="#investment">Investment</a></div>
-    <div class="footer-copy">© 2026 Valeriy Latypov · Soft Power · Bali</div>
+    <div class="footer-logo">В <span>·</span> Л &nbsp;&nbsp;Валерий Латыпов</div>
+    <div class="footer-links"><a href="#format">Формат</a><a href="#guide">Проводник</a><a href="#programme">Программа</a><a href="#investment">Инвестиция</a></div>
+    <div class="footer-copy">© 2026 Валерий Латыпов · Мягкая Сила · Бали</div>
   </div>
 </footer>
 <script>
-function handleSubmit(e){e.preventDefault();const btn=e.target.querySelector('.form-submit');btn.textContent='Request sent. Valeriy will be in touch.';btn.style.background='#1E3325';btn.style.cursor='default';}
+function handleSubmit(e){e.preventDefault();const btn=e.target.querySelector('.form-submit');btn.textContent='Запрос отправлен. Валерий свяжется с тобой.';btn.style.background='#1E3325';btn.style.cursor='default';}
 const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)';observer.unobserve(entry.target);}});},{threshold:0.12});
 document.querySelectorAll('.day-card,.invest-card,.cred-item,.signs-list li,.not-list li').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.6s ease,transform 0.6s ease';observer.observe(el);});
 </script>

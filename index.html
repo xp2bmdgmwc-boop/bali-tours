@@ -6,471 +6,352 @@
     try {
       var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '').toLowerCase();
       if (tz.indexOf('jakarta') !== -1 || tz.indexOf('makassar') !== -1 || tz.indexOf('jayapura') !== -1) {
-        document.documentElement.innerHTML = '<head><title>404 Not Found</title>
-  <!-- Yandex.Metrika counter (Placeholder) -->
-  <script type="text/javascript" >
-     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-     m[i].l=1*new Date();
-     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-     ym(00000000, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true });
-  </script>
-  <!-- Google Analytics (GA4 Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-
-</head><body style="background:#fff;color:#333;font-family:sans-serif;padding:40px;"><h1>404 Not Found</h1><p>The requested URL was not found on this server.</p></body>';
+        document.documentElement.innerHTML = '<head><title>404 Not Found</title></head><body style="background:#fff;color:#333;font-family:sans-serif;padding:40px;"><h1>404 Not Found</h1><p>The requested URL was not found on this server.</p></body>';
       }
     } catch(e){}
   })();
 </script>
   
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Авторские Экспедиции · Валерий Латыпов</title>
-  <meta name="description" content="Закрытые авторские экспедиции на Бали и в Тимор-Лесте. Места силы, первозданный океан, приватная экспедиция. Валерий Латыпов — 25 лет визуального искусства." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Валерий Латыпов — Авторские пути на Бали</title>
+<meta name="description" content="Авторские индивидуальные пути на Бали с Валерием Латыповым. Огонь Духа — для мужчин. Мягкая Сила — для женщин.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --serif:"PT Serif",Georgia,serif;
+  --sans:"Manrope",-apple-system,sans-serif;
+  --yang:#C9501E;
+  --yang-h:#A8401A;
+  --yin:#2C4A35;
+  --yin-h:#1E3325;
+}
+html,body{height:100%;overflow:hidden;}
+body{
+  font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;
+  cursor:default;
+}
+@media(max-width:700px){
+  html,body{overflow:auto;}
+}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+/* LANG TOGGLE */
+.lang{
+  position:fixed;top:28px;left:50%;transform:translateX(-50%);
+  z-index:200;
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--sans);font-size:11px;font-weight:500;
+  letter-spacing:0.2em;text-transform:uppercase;
+}
+.lang-btn{
+  padding:7px 14px;
+  background:rgba(250,250,247,0.12);
+  border:1px solid rgba(250,250,247,0.2);
+  color:rgba(250,250,247,0.5);
+  cursor:pointer;transition:all 0.2s;
+  font-family:var(--sans);font-size:11px;font-weight:500;
+  letter-spacing:0.18em;text-transform:uppercase;
+}
+.lang-btn.active{
+  background:rgba(250,250,247,0.18);
+  border-color:rgba(250,250,247,0.5);
+  color:#FAFAF7;
+}
 
-  <style>
-    /* ═══════════════════════════════════════
-       DESIGN SYSTEM — Ecru Light
-       Exact match: style.css variables
-    ═══════════════════════════════════════ */
-    :root {
-      --bg:          #FAFAF7;
-      --bg-alt:      #F2F0EA;
-      --bg-dark:     #0E0E0C;
-      --ink:         #0E0E0C;
-      --ink-soft:    #36352F;
-      --ink-mute:    #6F6E66;
-      --ink-ghost:   #A8A79F;
-      --line:        rgba(14, 14, 12, 0.08);
-      --line-strong: rgba(14, 14, 12, 0.16);
-      --accent:      #C9501E;
-      --accent-hover:#A8401A;
-      --accent-soft: #F2E2D8;
-      --font-serif:  "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
-      --font-serif:  "Cormorant Garamond", serif;
-      --font-sans:   "Montserrat", sans-serif;
-    }
+/* LOGO */
+.logo{
+  position:fixed;top:28px;left:clamp(20px,4vw,52px);
+  z-index:200;
+  font-family:var(--serif);font-size:16px;
+  color:rgba(250,250,247,0.6);letter-spacing:0.08em;
+}
+.logo span{color:var(--yang);}
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+/* SPLIT */
+.split{
+  display:flex;height:100vh;
+  position:relative;
+}
+@media(max-width:700px){
+  .split{flex-direction:column;height:auto;min-height:100vh;}
+}
 
-    html, body {
-      height: 100%;
-      overflow: hidden;
-      background: var(--bg);
-      -webkit-font-smoothing: antialiased;
-    }
+.panel{
+  flex:1;position:relative;overflow:hidden;
+  cursor:pointer;
+  transition:flex 0.7s cubic-bezier(0.77,0,0.175,1);
+}
+.panel:hover{flex:1.35;}
+@media(max-width:700px){
+  .panel{flex:none;min-height:50vh;}
+  .panel:hover{flex:none;}
+}
 
-    body {
-      font-family: var(--font-sans);
-      color: var(--ink-soft);
-    }
+.panel-bg{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  transition:transform 0.7s cubic-bezier(0.77,0,0.175,1),filter 0.5s;
+  filter:brightness(0.45) saturate(0.8);
+}
+.panel:hover .panel-bg{
+  transform:scale(1.04);
+  filter:brightness(0.55) saturate(0.9);
+}
 
-    a { text-decoration: none; color: inherit; }
+/* Yang panel */
+.panel-yang .panel-bg{
+  background-image:
+    linear-gradient(to right, rgba(10,8,6,0.5) 0%, rgba(10,8,6,0.1) 100%),
+    url('https://static.tildacdn.com/tild3163-6135-4063-b239-323262636632/DSC00497.jpg');
+}
+/* Yin panel */
+.panel-yin .panel-bg{
+  background-image:
+    linear-gradient(to left, rgba(6,10,8,0.5) 0%, rgba(6,10,8,0.1) 100%),
+    url('https://static.tildacdn.com/tild3163-6135-4063-b239-323262636632/DSC00497.jpg');
+  filter:brightness(0.4) saturate(0.7) hue-rotate(30deg);
+}
+.panel-yin:hover .panel-bg{
+  filter:brightness(0.5) saturate(0.8) hue-rotate(20deg);
+}
 
-    /* ═══════════════════════════════════════
-       HEADER — Floating pill nav
-    ═══════════════════════════════════════ */
-    .header {
-      position: fixed;
-      top: 28px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 100;
-      background: rgba(250, 250, 247, 0.88);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--line-strong);
-      border-radius: 9999px;
-      padding: 14px 36px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 8px 32px rgba(14, 14, 12, 0.06);
-    }
+/* Vertical divider */
+.divider-v{
+  position:absolute;left:50%;top:0;bottom:0;
+  width:1px;
+  background:rgba(250,250,247,0.12);
+  z-index:10;
+  pointer-events:none;
+  transition:opacity 0.4s;
+}
+@media(max-width:700px){display:none;}
 
-    .header-name {
-      font-family: var(--font-serif);
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--ink);
-      letter-spacing: -0.01em;
-      white-space: nowrap;
-    }
+.panel-content{
+  position:relative;z-index:2;
+  height:100%;
+  display:flex;flex-direction:column;
+  justify-content:center;
+  padding:clamp(40px,6vw,80px) clamp(32px,5vw,72px);
+}
+@media(max-width:700px){
+  .panel-content{
+    justify-content:flex-end;
+    padding:40px 28px 52px;
+    min-height:50vh;
+  }
+}
 
-    .header-sep {
-      width: 1px;
-      height: 18px;
-      background: var(--line-strong);
-      margin: 0 8px;
-    }
+.panel-for{
+  font-size:10px;font-weight:500;letter-spacing:0.28em;
+  text-transform:uppercase;
+  margin-bottom:20px;
+  opacity:0.45;color:#FAFAF7;
+  transition:opacity 0.3s;
+}
+.panel:hover .panel-for{opacity:0.7;}
 
-    .header-tagline {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-      white-space: nowrap;
-    }
+.panel-name{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(44px,6.5vw,96px);
+  line-height:0.92;letter-spacing:-0.025em;
+  color:#FAFAF7;
+  margin-bottom:16px;
+}
+.panel-yang .panel-name em{
+  display:block;font-style:italic;color:var(--yang);
+}
+.panel-yin .panel-name em{
+  display:block;font-style:italic;
+  color:#7AB090;
+}
 
-    /* ═══════════════════════════════════════
-       SPLIT LAYOUT
-    ═══════════════════════════════════════ */
-    .split {
-      display: flex;
-      height: 100vh;
-      width: 100%;
-    }
+.panel-sub{
+  font-size:clamp(13px,1.2vw,16px);
+  color:rgba(250,250,247,0.5);
+  line-height:1.6;
+  max-width:320px;
+  margin-bottom:36px;
+  transition:color 0.3s;
+}
+.panel:hover .panel-sub{color:rgba(250,250,247,0.7);}
 
-    .panel {
-      position: relative;
-      flex: 1;
-      overflow: hidden;
-      cursor: pointer;
-      transition: flex 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+.panel-enter{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:600;letter-spacing:0.2em;
+  text-transform:uppercase;
+  padding:13px 24px;
+  border:1px solid rgba(250,250,247,0.2);
+  color:rgba(250,250,247,0.5);
+  transition:all 0.3s;
+  opacity:0;transform:translateY(8px);
+}
+.panel:hover .panel-enter{
+  opacity:1;transform:translateY(0);
+  border-color:rgba(250,250,247,0.5);
+  color:#FAFAF7;
+}
+.panel-yang:hover .panel-enter{
+  background:var(--yang);
+  border-color:var(--yang);
+}
+.panel-yin:hover .panel-enter{
+  background:var(--yin);
+  border-color:var(--yin);
+}
 
-    /* On hover: expand the hovered panel */
-    .split:hover .panel { flex: 0.85; }
-    .split .panel:hover { flex: 1.3; }
+.panel-specs{
+  position:absolute;bottom:clamp(24px,3vw,40px);
+  left:clamp(32px,5vw,72px);
+  display:flex;gap:28px;
+  opacity:0;transition:opacity 0.35s 0.1s;
+}
+.panel:hover .panel-specs{opacity:1;}
+.panel-spec{display:flex;flex-direction:column;gap:3px;}
+.panel-spec-val{
+  font-family:var(--serif);font-size:18px;font-weight:700;
+  color:#FAFAF7;
+}
+.panel-yang .panel-spec-val{color:var(--yang);}
+.panel-yin .panel-spec-val{color:#7AB090;}
+.panel-spec-label{
+  font-size:10px;letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(250,250,247,0.35);font-weight:500;
+}
 
-    /* Background image layer */
-    .panel-bg {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), filter 0.7s ease;
-    }
-
-    .panel:hover .panel-bg {
-      transform: scale(1.05);
-    }
-
-    /* Gradient overlay */
-    .panel-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.85) 0%,
-        rgba(0, 0, 0, 0.5) 50%,
-        rgba(0, 0, 0, 0.4) 100%
-      );
-      transition: background 0.5s ease;
-    }
-
-    .panel:hover .panel-overlay {
-      background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.9) 0%,
-        rgba(0, 0, 0, 0.65) 50%,
-        rgba(0, 0, 0, 0.5) 100%
-      );
-    }
-
-    /* Divider between panels */
-    .panel-left { border-right: 1px solid rgba(250, 250, 247, 0.12); }
-
-    /* Content at bottom of each panel */
-    .panel-content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 0 clamp(28px, 4vw, 56px) clamp(48px, 7vh, 80px);
-      color: #fff;
-      z-index: 10;
-    }
-
-    .panel-badge {
-      display: inline-block;
-      font-family: var(--font-sans);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent-soft);
-      background: rgba(201, 80, 30, 0.25);
-      border: 1px solid rgba(201, 80, 30, 0.35);
-      padding: 5px 14px;
-      border-radius: 9999px;
-      margin-bottom: 16px;
-      backdrop-filter: blur(8px);
-    }
-
-    .panel-title {
-      font-family: var(--font-serif);
-      font-size: clamp(32px, 4.5vw, 58px);
-      font-weight: 500;
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-      color: #FAFAF7;
-      margin-bottom: 12px;
-    }
-
-    .panel-subtitle {
-      font-family: var(--font-sans);
-      font-size: clamp(14px, 1.8vw, 18px);
-      font-weight: 300;
-      line-height: 1.5;
-      color: rgba(250, 250, 247, 0.75);
-      max-width: 420px;
-      margin-bottom: 24px;
-    }
-
-    .panel-price {
-      font-family: var(--font-sans);
-      font-size: 13px;
-      font-weight: 600;
-      color: rgba(250, 250, 247, 0.55);
-      letter-spacing: 0.04em;
-      margin-bottom: 20px;
-    }
-
-    .panel-price strong {
-      color: #FAFAF7;
-      font-size: 15px;
-    }
-
-    .panel-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-sans);
-      font-size: 14px;
-      font-weight: 600;
-      color: #FAFAF7;
-      background: var(--accent);
-      padding: 12px 28px;
-      border-radius: 9999px;
-      transition: background 0.3s, transform 0.3s;
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 0.4s 0.15s ease, transform 0.4s 0.15s ease, background 0.3s;
-    }
-
-    .panel:hover .panel-cta {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .panel-cta:hover {
-      background: var(--accent-hover);
-    }
-
-    .panel-cta svg {
-      width: 16px;
-      height: 16px;
-      transition: transform 0.3s;
-    }
-
-    .panel-cta:hover svg {
-      transform: translateX(3px);
-    }
-
-    /* ═══════════════════════════════════════
-       LANGUAGE SWITCHER — bottom corner
-    ═══════════════════════════════════════ */
-    .lang-switch {
-      position: fixed;
-      bottom: 28px;
-      right: 32px;
-      z-index: 100;
-      display: flex;
-      gap: 6px;
-      align-items: center;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      color: rgba(250, 250, 247, 0.6);
-    }
-
-    .lang-switch a {
-      color: rgba(250, 250, 247, 0.5);
-      transition: color 0.2s;
-    }
-    .lang-switch a:hover,
-    .lang-switch .active {
-      color: #FAFAF7;
-    }
-
-    /* ═══════════════════════════════════════
-       BOTTOM SIGNATURE
-    ═══════════════════════════════════════ */
-    .bottom-sig {
-      position: fixed;
-      bottom: 28px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 100;
-      font-family: var(--font-sans);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(250, 250, 247, 0.35);
-      white-space: nowrap;
-    }
-
-    /* ═══════════════════════════════════════
-       MOBILE — Stack vertically
-    ═══════════════════════════════════════ */
-    @media (max-width: 768px) {
-      html, body { overflow: auto; }
-
-      .header {
-        top: 16px;
-        padding: 10px 20px;
-      }
-      .header-tagline { display: none; }
-      .header-sep { display: none; }
-
-      .split {
-        flex-direction: column;
-        height: auto;
-        min-height: 100vh;
-      }
-
-      .panel {
-        flex: none !important;
-        height: 50vh;
-        min-height: 380px;
-      }
-
-      .split:hover .panel { flex: none !important; }
-      .split .panel:hover { flex: none !important; }
-
-      .panel-left { border-right: none; border-bottom: 1px solid rgba(250, 250, 247, 0.12); }
-
-      .panel-cta {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .panel-title {
-        font-size: clamp(28px, 7vw, 42px);
-      }
-
-      .bottom-sig { display: none; }
-    }
-
-    /* ═══════════════════════════════════════
-       ENTRANCE ANIMATION
-    ═══════════════════════════════════════ */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .panel-content {
-      animation: fadeUp 0.9s ease both;
-    }
-
-    .panel:nth-child(2) .panel-content {
-      animation-delay: 0.15s;
-    }
-
-    .header {
-      animation: fadeUp 0.7s 0.3s ease both;
-    }
-  </style>
-
-  <!-- Yandex.Metrika counter (Placeholder) -->
-  <script type="text/javascript" >
-     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-     m[i].l=1*new Date();
-     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-     ym(00000000, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true });
-  </script>
-  <!-- Google Analytics (GA4 Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-
+/* Center line text */
+.center-badge{
+  position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  z-index:20;pointer-events:none;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  transition:opacity 0.4s;
+}
+.center-badge-circle{
+  width:56px;height:56px;border-radius:50%;
+  border:1px solid rgba(250,250,247,0.2);
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(14,14,12,0.4);
+  backdrop-filter:blur(8px);
+}
+.center-badge-v{
+  font-family:var(--serif);font-size:18px;color:rgba(250,250,247,0.6);
+}
+.split:has(.panel:hover) .center-badge{opacity:0;}
+@media(max-width:700px){.center-badge{display:none;}}
+</style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <div class="header">
-    <span class="header-name">ВАЛЕРИЙ ЛАТЫПОВ</span>
-    <span class="header-sep"></span>
-    <span class="header-tagline">Авторские Экспедиции</span>
-  </div>
+<div class="logo">В <span>·</span> Л</div>
 
-  <!-- SPLIT SCREEN -->
-  <div class="split">
+<div class="lang" id="langToggle">
+  <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+</div>
 
-    <!-- ═══ LEFT PANEL — BALI ═══ -->
-    <a href="/bali" class="panel panel-left" id="panel-bali">
-      <div class="panel-bg" style="background-image: url('images/bali_nature.jpg');"></div>
-      <div class="panel-overlay"></div>
-      <div class="panel-content">
-        <span class="panel-badge">Бали · 5–7 дней</span>
-        <h2 class="panel-title">Огонь<br/>Духа</h2>
-        <p class="panel-subtitle">
-          Сакральные места силы, живые церемонии и нетуристический Бали. Перезагрузка в самом сердце острова богов.
-        </p>
-        <div class="panel-price">от <strong>€7 500</strong> · приватная экспедиция</div>
-        <span class="panel-cta">
-          Подробнее
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
+<div class="split">
+
+  <!-- YANG — MEN -->
+  <div class="panel panel-yang" id="yangPanel" onclick="goYang()">
+    <div class="panel-bg"></div>
+    <div class="panel-content">
+      <div class="panel-for" data-ru="Для мужчин" data-en="For Men">Для мужчин</div>
+      <h1 class="panel-name">
+        Огонь<br><em>Духа</em>
+      </h1>
+      <p class="panel-sub" data-ru="Закрытый авторский путь к местам силы Бали. Ритуалы, огонь, Крис." data-en="A private author's journey to Bali's places of power. Rituals, fire, Keris.">
+        Закрытый авторский путь к местам силы Бали. Ритуалы, огонь, Крис.
+      </p>
+      <div class="panel-enter" data-ru="Войти в путь →" data-en="Enter the path →">Войти в путь →</div>
+    </div>
+    <div class="panel-specs">
+      <div class="panel-spec">
+        <span class="panel-spec-val">5</span>
+        <span class="panel-spec-label">дней</span>
       </div>
-    </a>
-
-    <!-- ═══ RIGHT PANEL — TIMOR-LESTE ═══ -->
-    <a href="/timor" class="panel" id="panel-timor">
-      <div class="panel-bg" style="background-image: url('images/IMG_2279.jpg');"></div>
-      <div class="panel-overlay"></div>
-      <div class="panel-content">
-        <span class="panel-badge">Тимор-Лесте · До 4 гостей · 8 дней</span>
-        <h2 class="panel-title">Последняя<br/>Тишина</h2>
-        <p class="panel-subtitle">
-          Закрытый экзистенциальный ретрит в последнем нетронутом фронтире Азии. Синие киты, 40 000 лет святилищ и возврат к себе.
-        </p>
-        <div class="panel-price">от <strong>€9 000</strong> · час лёта от Бали</div>
-        <span class="panel-cta">
-          Подробнее
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
+      <div class="panel-spec">
+        <span class="panel-spec-val">1:1</span>
+        <span class="panel-spec-label">формат</span>
       </div>
-    </a>
-
+      <div class="panel-spec">
+        <span class="panel-spec-val">€7 400</span>
+        <span class="panel-spec-label">от</span>
+      </div>
+    </div>
   </div>
 
-  <!-- BOTTOM SIGNATURE -->
-  <div class="bottom-sig">Forbes · Esquire · Depeche Mode · Neka Art Museum · 25 лет визуального искусства</div>
-
-  <!-- LANGUAGE -->
-  <div class="lang-switch">
-    <span class="active">RU</span>
-    <span style="opacity:0.4;">|</span>
-    <a href="/timor-en">EN</a>
+  <!-- CENTER -->
+  <div class="divider-v"></div>
+  <div class="center-badge">
+    <div class="center-badge-circle">
+      <span class="center-badge-v">VL</span>
+    </div>
   </div>
 
+  <!-- YIN — WOMEN -->
+  <div class="panel panel-yin" id="yinPanel" onclick="goYin()">
+    <div class="panel-bg"></div>
+    <div class="panel-content">
+      <div class="panel-for" data-ru="Для женщин" data-en="For Women">Для женщин</div>
+      <h1 class="panel-name">
+        Мягкая<br><em>Сила</em>
+      </h1>
+      <p class="panel-sub" data-ru="Индивидуальный путь к женской силе через места силы острова Бали." data-en="An individual journey to feminine power through Bali's sacred island places.">
+        Индивидуальный путь к женской силе через места силы острова Бали.
+      </p>
+      <div class="panel-enter" data-ru="Войти в путь →" data-en="Enter the path →">Войти в путь →</div>
+    </div>
+    <div class="panel-specs">
+      <div class="panel-spec">
+        <span class="panel-spec-val">5</span>
+        <span class="panel-spec-label">дней</span>
+      </div>
+      <div class="panel-spec">
+        <span class="panel-spec-val">1:1</span>
+        <span class="panel-spec-label">формат</span>
+      </div>
+      <div class="panel-spec">
+        <span class="panel-spec-val">€7 400</span>
+        <span class="panel-spec-label">от</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+let lang = 'ru';
+
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.lang-btn')[l === 'ru' ? 0 : 1].classList.add('active');
+
+  // Update yang panel
+  if (l === 'en') {
+    document.querySelector('.panel-yang .panel-name').innerHTML = 'Spirit<br><em>Fire</em>';
+    document.querySelector('.panel-yin .panel-name').innerHTML = 'Soft<br><em>Power</em>';
+    document.querySelector('#yangPanel .panel-specs .panel-spec-label').textContent = 'days';
+  } else {
+    document.querySelector('.panel-yang .panel-name').innerHTML = 'Огонь<br><em>Духа</em>';
+    document.querySelector('.panel-yin .panel-name').innerHTML = 'Мягкая<br><em>Сила</em>';
+  }
+
+  document.querySelectorAll('[data-ru]').forEach(el => {
+    el.textContent = l === 'ru' ? el.dataset.ru : el.dataset.en;
+  });
+}
+
+function goYang() {
+  window.location.href = lang === 'ru' ? '/yang' : '/yang-en';
+}
+function goYin() {
+  window.location.href = lang === 'ru' ? '/yin' : '/yin-en';
+}
+</script>
 </body>
 </html>
