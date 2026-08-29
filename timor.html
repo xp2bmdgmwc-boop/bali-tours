@@ -14,8 +14,14 @@
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TIMOR-LESTE · ПОСЛЕДНЯЯ ТИШИНА · Экспедиции Валерия Латыпова</title>
-  <meta name="description" content="Приватная авторская экспедиция в Восточный Тимор. Строго до 4 гостей. Архитектура нулевого трения и экзистенциальная перезагрузка для лидеров." />
+  <title>Восточный Тимор. Последняя Тишина | Валерий Латыпов</title>
+  <meta name="description" content="Закрытый экзистенциальный ретрит на краю географии для руководителей высшего звена и фаундеров. Камерный формат, полная конфиденциальность." />
+  
+  <!-- OpenGraph / Social Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Восточный Тимор. Последняя Тишина | Валерий Латыпов" />
+  <meta property="og:description" content="Закрытый экзистенциальный ретрит на краю географии для руководителей высшего звена и фаундеров. Камерный формат, полная конфиденциальность." />
+  <meta property="og:locale" content="ru_RU" />
   
   <!-- Google Fonts: Inter (Pure Architectural Sans-Serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1054,7 +1060,33 @@
           });
         });
       }
+
+      // GDPR Cookie Banner Logic
+      if (!localStorage.getItem('gdpr_consent')) {
+        document.getElementById('gdpr-banner').style.transform = 'translateY(0)';
+      }
+      document.getElementById('btn-gdpr-accept')?.addEventListener('click', () => {
+        localStorage.setItem('gdpr_consent', 'all');
+        document.getElementById('gdpr-banner').style.transform = 'translateY(100%)';
+      });
+      document.getElementById('btn-gdpr-essential')?.addEventListener('click', () => {
+        localStorage.setItem('gdpr_consent', 'essential');
+        document.getElementById('gdpr-banner').style.transform = 'translateY(100%)';
+      });
     });
   </script>
+
+  <!-- Luxury GDPR Banner -->
+  <div id="gdpr-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #0E0E0C; border-top: 1px solid rgba(255,255,255,0.08); padding: 24px; z-index: 9999; color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 400; transform: translateY(100%); transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: row; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between;">
+      <div style="flex: 1; min-width: 280px; line-height: 1.5; letter-spacing: -0.01em;">
+        Мы используем файлы cookie для персонализации сервиса. Продолжая работу с сайтом, вы даете согласие на обработку данных.
+      </div>
+      <div style="display: flex; gap: 12px; flex-shrink: 0;">
+        <button id="btn-gdpr-essential" style="background: transparent; color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.15); padding: 10px 24px; border-radius: 9999px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; transition: all 0.3s ease;">Только необходимые</button>
+        <button id="btn-gdpr-accept" style="background: #C9501E; color: #fff; border: 1px solid #C9501E; padding: 10px 24px; border-radius: 9999px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; transition: all 0.3s ease;">Принять</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
