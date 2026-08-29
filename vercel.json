@@ -1,9 +1,9 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/timor-en", "destination": "/timor-en.html" },
-    { "source": "/timor", "destination": "/timor.html" },
-    { "source": "/bali", "destination": "/files/yang.html" },
-    { "source": "/bali-en", "destination": "/files/yang-en.html" }
+    { "source": "/timor-en", "destination": "/timor-en" },
+    { "source": "/timor", "destination": "/timor" },
+    { "source": "/bali", "destination": "/files/yang" },
+    { "source": "/bali-en", "destination": "/files/yang-en" }
   ]
 }
