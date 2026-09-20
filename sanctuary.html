@@ -1,0 +1,2079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bali Sanctuary: Private Journey — Switzerland VIP Guests</title>
+  <meta name="description" content="A private bespoke journey across Bali for distinguished guests from Switzerland. Sensual hedonism, quiet luxury, sacred rejuvenation, and authentic island depth. Directed by Valeriy Latypov.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FAF8F5;
+      --bg-card: #FFFFFF;
+      --bg-alt: #F3EFEA;
+      --bg-dark: #121714;
+      --bg-emerald: #1B2E23;
+      --ink: #181D19;
+      --ink-soft: #38403A;
+      --ink-muted: #6C756E;
+      --ink-faint: #A4ACA6;
+      --accent: #2A4736;
+      --accent-light: #527A62;
+      --accent-soft: #E5EDE8;
+      --gold: #C5A467;
+      --gold-soft: #F9F5EE;
+      --rose: #D98880;
+      --line: rgba(24, 29, 25, 0.08);
+      --line-strong: rgba(24, 29, 25, 0.16);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
+      --max: 1240px;
+      --radius: 16px;
+      --shadow-sm: 0 4px 20px rgba(0,0,0,0.03);
+      --shadow-md: 0 12px 40px rgba(0,0,0,0.06);
+    }
+    
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 400;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    
+    /* Top Floating Island Navigation */
+    .nav-wrap {
+      position: fixed;
+      top: 24px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      padding: 0 20px;
+      pointer-events: none;
+    }
+    .nav-island {
+      pointer-events: auto;
+      background: rgba(250, 248, 245, 0.85);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 10px 30px rgba(27, 46, 35, 0.08);
+      border-radius: 9999px;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      transition: all 0.3s ease;
+    }
+    .nav-brand {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-brand span { color: var(--gold); font-size: 14px; }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--ink-soft);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+    }
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--ink-muted);
+      padding: 4px 6px;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: inherit;
+      transition: all 0.2s;
+    }
+    .lang-btn.active {
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+    .btn-nav {
+      background: var(--accent);
+      color: #FFF;
+      text-decoration: none;
+      font-size: 10.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn-nav:hover {
+      background: var(--ink);
+      transform: translateY(-1px);
+    }
+    
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .nav-island { gap: 16px; padding: 8px 18px; }
+    }
+
+    /* Container */
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 140px;
+      padding-bottom: 80px;
+      background: linear-gradient(180deg, #F5F1EB 0%, #FAF8F5 100%);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -10%;
+      right: -5%;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(197, 164, 103, 0.12) 0%, rgba(250, 248, 245, 0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    }
+    .eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold-soft);
+      border: 1px solid rgba(197, 164, 103, 0.35);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #8C6A2E;
+      margin-bottom: 24px;
+    }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(48px, 6.5vw, 84px);
+      line-height: 1.02;
+      font-weight: 400;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 400;
+    }
+    .hero-subtitle {
+      font-size: clamp(16px, 1.8vw, 19px);
+      line-height: 1.7;
+      color: var(--ink-soft);
+      max-width: 580px;
+      margin-bottom: 36px;
+    }
+    .hero-meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding: 20px 24px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 36px;
+    }
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .meta-lbl {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--ink-muted);
+    }
+    .meta-val {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn-luxury {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--accent);
+      color: #FFF;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      padding: 18px 36px;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(42, 71, 54, 0.25);
+      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .btn-luxury:hover {
+      background: var(--ink);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(24, 29, 25, 0.3);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      padding: 17px 32px;
+      border-radius: 9999px;
+      border: 1px solid var(--line-strong);
+      transition: all 0.25s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(42, 71, 54, 0.04);
+    }
+
+    /* Hero Visual Card */
+    .hero-media-wrap {
+      position: relative;
+    }
+    .hero-card-double {
+      padding: 10px;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    }
+    .hero-img-inner {
+      border-radius: 18px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      position: relative;
+    }
+    .hero-img-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s ease;
+    }
+    .hero-img-inner:hover img {
+      transform: scale(1.03);
+    }
+    .hero-float-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      border-radius: 14px;
+      padding: 16px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .float-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .float-text h4 {
+      font-family: var(--serif);
+      font-size: 17px;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+    .float-text p {
+      font-size: 12px;
+      color: var(--ink-muted);
+    }
+
+    /* SECTION BASICS */
+    .section {
+      padding: clamp(80px, 10vw, 130px) 0;
+      position: relative;
+    }
+    .section-tag {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--accent-light);
+      margin-bottom: 14px;
+      display: block;
+    }
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(34px, 4.5vw, 56px);
+      line-height: 1.1;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 24px;
+      letter-spacing: -0.015em;
+    }
+    .section-heading em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .section-sub {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      max-width: 680px;
+    }
+
+    /* 50/50 PILLARS OF LUXURY */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 60px;
+    }
+    @media (max-width: 860px) {
+      .pillars-grid { grid-template-columns: 1fr; }
+    }
+    .pillar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 44px 40px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .pillar-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    }
+    .pillar-card.hedonism::before { background: linear-gradient(90deg, var(--gold), #E8BE78); }
+    .pillar-card.sacred::before { background: linear-gradient(90deg, var(--accent), var(--accent-light)); }
+    .pillar-num {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+    .pillar-title {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+    .pillar-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin-bottom: 28px;
+    }
+    .pillar-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+    }
+    .pillar-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+    .pillar-bullet {
+      color: var(--gold);
+      font-size: 16px;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    /* CURATED DAY-BY-DAY JOURNEY */
+    .itinerary-section {
+      background: #F4EFE9;
+    }
+    .day-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 60px;
+    }
+    .day-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 44px;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      align-items: start;
+      position: relative;
+    }
+    @media (max-width: 900px) {
+      .day-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 32px 24px;
+      }
+    }
+    .day-side {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .day-badge {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 4px 12px;
+      border-radius: 6px;
+      width: fit-content;
+    }
+    .day-number {
+      font-family: var(--serif);
+      font-size: 38px;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .day-aesthetic {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14.5px;
+      color: var(--gold);
+      line-height: 1.45;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+    }
+    .day-content h3 {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+    .day-content p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--ink-soft);
+      margin-bottom: 22px;
+    }
+    .day-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      background: var(--bg);
+      border-radius: 14px;
+      padding: 18px 22px;
+      border: 1px solid var(--line);
+    }
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--ink-soft);
+    }
+    .highlight-item span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* BESPOKE FREEDOM & CUSTOMIZATIONS SECTION (The user's key wish) */
+    .custom-section {
+      background: var(--bg-emerald);
+      color: #FAFAF7;
+      position: relative;
+      overflow: hidden;
+    }
+    .custom-section::after {
+      content: "";
+      position: absolute;
+      bottom: -20%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(197, 164, 103, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .custom-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 60px;
+    }
+    .custom-header .section-tag { color: var(--gold); }
+    .custom-header .section-heading { color: #FAFAF7; }
+    .custom-header .section-sub { color: rgba(250, 250, 247, 0.7); margin: 0 auto; }
+    
+    .custom-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    @media (max-width: 900px) {
+      .custom-grid { grid-template-columns: 1fr; }
+    }
+    .custom-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+    }
+    .custom-card:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(197, 164, 103, 0.4);
+      transform: translateY(-4px);
+    }
+    .custom-icon {
+      font-size: 28px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .custom-card h3 {
+      font-family: var(--serif);
+      font-size: 23px;
+      font-weight: 400;
+      color: #FAFAF7;
+      margin-bottom: 12px;
+    }
+    .custom-card p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: rgba(250, 250, 247, 0.7);
+      margin-bottom: 24px;
+    }
+    .custom-tag {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 6px 12px;
+      background: rgba(197, 164, 103, 0.12);
+      border-radius: 6px;
+      width: fit-content;
+    }
+
+    /* FLIGHT & LOGISTICS FROM SWITZERLAND */
+    .logistics-section {
+      background: var(--bg);
+    }
+    .flight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    @media (max-width: 860px) {
+      .flight-grid { grid-template-columns: 1fr; }
+    }
+    .flight-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 32px 28px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .flight-card.popular {
+      border-color: var(--gold);
+      box-shadow: 0 10px 30px rgba(197, 164, 103, 0.12);
+    }
+    .flight-class-badge {
+      font-size: 10.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+      width: fit-content;
+      margin-bottom: 14px;
+    }
+    .flight-card.popular .flight-class-badge {
+      color: #8C6A2E;
+      background: var(--gold-soft);
+    }
+    .flight-price {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .flight-price-note {
+      font-size: 12px;
+      color: var(--ink-muted);
+      margin-bottom: 20px;
+    }
+    .flight-details {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      font-size: 13.5px;
+      color: var(--ink-soft);
+    }
+    .flight-details li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* GUIDE & CREDENTIALS SECTION */
+    .guide-section {
+      background: #F6F3EE;
+    }
+    .guide-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 64px;
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .guide-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .guide-photo-box {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: #FFF;
+      padding: 10px;
+      border: 1px solid var(--line);
+    }
+    .guide-photo-box img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+    .guide-content h2 {
+      font-family: var(--serif);
+      font-size: clamp(34px, 4.5vw, 54px);
+      font-weight: 400;
+      line-height: 1.05;
+      margin-bottom: 8px;
+    }
+    .guide-credo {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 18px;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .guide-bio {
+      font-size: 15.5px;
+      line-height: 1.75;
+      color: var(--ink-soft);
+      margin-bottom: 28px;
+    }
+    .guide-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 20px 0;
+      margin-bottom: 28px;
+    }
+    .g-stat-num {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .g-stat-lbl {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--ink-muted);
+      font-weight: 500;
+    }
+
+    /* SANCTUARY ATLAS & PLACES OF POWER */
+    .atlas-section {
+      background: #FAF8F5;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .atlas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 28px;
+      margin-top: 40px;
+    }
+    @media (max-width: 600px) {
+      .atlas-grid { grid-template-columns: 1fr; }
+    }
+    .place-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: clamp(26px, 3.5vw, 36px);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .place-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(42, 71, 54, 0.25);
+    }
+    .place-card-top {
+      margin-bottom: 20px;
+    }
+    .place-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .place-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    .place-tag.sacred { background: #E8F0EC; color: #1E382B; }
+    .place-tag.hotel { background: #F6EFE6; color: #8A682D; }
+    .place-tag.nature { background: #E6EFF2; color: #2B596A; }
+    .place-altitude {
+      font-size: 11.5px;
+      color: var(--ink-muted);
+      font-weight: 500;
+    }
+    .place-title {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .place-subtitle {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 14px;
+      font-family: var(--serif);
+    }
+    .place-desc {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .place-curator-note {
+      background: #FDFBF7;
+      border-left: 3px solid var(--gold);
+      padding: 12px 16px;
+      border-radius: 0 10px 10px 0;
+      font-size: 12.5px;
+      color: var(--ink-soft);
+      line-height: 1.45;
+      margin-top: auto;
+    }
+    .place-curator-note strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* INVESTMENT & DUAL TIER SECTION */
+    .invest-section {
+      background: var(--bg);
+    }
+    .tier-comparison-wrap {
+      margin-bottom: 50px;
+    }
+    .tiers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 36px;
+    }
+    @media (max-width: 900px) {
+      .tiers-grid { grid-template-columns: 1fr; }
+    }
+    .tier-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: clamp(30px, 4vw, 44px);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .tier-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(42, 71, 54, 0.25);
+    }
+    .tier-card.featured {
+      border: 2px solid var(--gold);
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%);
+    }
+    .tier-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      margin-bottom: 20px;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    .tier-card.featured .tier-badge {
+      background: #F4E8D1;
+      color: #8C6A2E;
+    }
+    .tier-title {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .tier-duration {
+      font-size: 13.5px;
+      color: var(--ink-muted);
+      margin-bottom: 20px;
+    }
+    .tier-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .tier-price {
+      font-family: var(--serif);
+      font-size: clamp(40px, 5vw, 56px);
+      font-weight: 500;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .tier-price-note {
+      font-size: 13px;
+      color: var(--ink-muted);
+    }
+    .tier-highlights-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 28px 0;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+    .tier-highlights-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.45;
+    }
+    .tier-highlights-list li span.chk {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* TRANSPARENT COST LEDGER */
+    .ledger-wrap {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: clamp(32px, 4vw, 48px);
+      margin-bottom: 50px;
+      box-shadow: var(--shadow-sm);
+    }
+    .ledger-header {
+      margin-bottom: 28px;
+    }
+    .ledger-header h3 {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .ledger-header p {
+      font-size: 14px;
+      color: var(--ink-muted);
+    }
+    .ledger-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    .ledger-table th {
+      text-align: left;
+      padding: 14px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      border-bottom: 1px solid var(--line-strong);
+      background: var(--bg-alt);
+    }
+    .ledger-table th:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+    .ledger-table th:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+    .ledger-table td {
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink-soft);
+      vertical-align: top;
+    }
+    .ledger-item-title {
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+    .ledger-item-desc {
+      font-size: 12.5px;
+      color: var(--ink-muted);
+      line-height: 1.4;
+    }
+    .ledger-val {
+      font-weight: 600;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .ledger-table tr.total-row td {
+      border-bottom: none;
+      border-top: 2px solid var(--accent);
+      padding-top: 20px;
+      font-weight: 700;
+      color: var(--ink);
+      font-size: 15px;
+    }
+    .ledger-table tr.total-row .ledger-val {
+      font-size: 18px;
+      color: var(--accent);
+    }
+
+    /* PERSONAL QUOTE BOX */
+    .personal-quote-card {
+      background: #FDFBF7;
+      border: 1px solid rgba(197, 164, 103, 0.35);
+      border-left: 4px solid var(--gold);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin: 24px 0;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .quote-icon {
+      font-family: var(--serif);
+      font-size: 32px;
+      line-height: 1;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .quote-text {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-style: italic;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      margin-bottom: 8px;
+    }
+    .quote-author {
+      font-family: var(--sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    /* INQUIRY BOX */
+    .invest-card-main {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: clamp(36px, 5vw, 64px);
+      box-shadow: var(--shadow-md);
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .invest-card-main { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .inquiry-box {
+      background: #FAF8F5;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 36px 32px;
+    }
+    .inquiry-box h3 {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .inquiry-box p {
+      font-size: 13.5px;
+      color: var(--ink-muted);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .contact-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .btn-tg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #2AABEE;
+      color: #FFF;
+      text-decoration: none;
+      padding: 16px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: opacity 0.2s;
+    }
+    .btn-tg:hover { opacity: 0.9; }
+    .btn-wa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #25D366;
+      color: #FFF;
+      text-decoration: none;
+      padding: 16px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: opacity 0.2s;
+    }
+    .btn-wa:hover { opacity: 0.9; }
+    .direct-phone {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--ink-muted);
+    }
+    .direct-phone a {
+      color: var(--ink);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--bg-dark);
+      color: rgba(250, 250, 247, 0.6);
+      padding: 48px 0;
+      font-size: 13px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 18px;
+      color: #FAFAF7;
+      letter-spacing: 0.05em;
+    }
+    .footer-logo span { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Island Navigation -->
+  <div class="nav-wrap">
+    <nav class="nav-island">
+      <a href="#" class="nav-brand">BALI SANCTUARY <span>✦</span></a>
+      <ul class="nav-links">
+        <li><a href="#philosophy" data-ru="Концепция" data-en="Philosophy">Philosophy</a></li>
+        <li><a href="#journey" data-ru="Программа" data-en="Route">Route</a></li>
+        <li><a href="#sanctuaries" data-ru="Места и Отели" data-en="Sanctuaries">Sanctuaries</a></li>
+        <li><a href="#custom" data-ru="Варианты отдыха" data-en="Bespoke Options">Bespoke Options</a></li>
+        <li><a href="#logistics" data-ru="Перелет из Швейцарии" data-en="Flights">Flights</a></li>
+        <li><a href="#investment" data-ru="Тарифы" data-en="Pricing">Pricing</a></li>
+        <li><a href="#guide" data-ru="Проводник" data-en="Your Host">Your Host</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+          <span>/</span>
+          <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
+        </div>
+        <a href="#inquire" class="btn-nav" data-ru="Обсудить" data-en="Inquire">Inquire</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="eyebrow-pill" data-ru="Швейцария ⇄ Бали · Приватный формат для двоих" data-en="Switzerland ⇄ Bali · Bespoke Journey for Two">
+            Switzerland ⇄ Bali · Bespoke Journey for Two
+          </div>
+          <h1 class="hero-title">
+            <span data-ru="Красота, гедонизм и" data-en="Sensual luxury, quiet beauty, and">Sensual luxury, quiet beauty, and</span><br>
+            <em data-ru="глубокая тишина." data-en="sacred rejuvenation.">sacred rejuvenation.</em>
+          </h1>
+          <p class="hero-subtitle" data-ru="Приватное путешествие по Бали (на 5 или 7 дней) для гостей из Швейцарии. Архитектура замедления: камерные бутик-отели 4★+ и уединенные виллы в джунглях, термы у вулкана, королевские спа-ритуалы, авторская гастрономия и бережная сакральная глубина без показной эзотерики." data-en="A private bespoke sanctuary in Bali (5 or 7 days) for distinguished guests from Switzerland. The architecture of slow living: curated boutique 4★+ retreats, highland hot springs, royal rose petal spas, signature gastronomy, and gentle sacred depth.">
+            A private bespoke sanctuary in Bali (5 or 7 days) for distinguished guests from Switzerland. The architecture of slow living: curated boutique 4★+ retreats, highland hot springs, royal rose petal spas, signature gastronomy, and gentle sacred depth.
+          </p>
+
+          <div class="personal-quote-card">
+            <div class="quote-icon">“</div>
+            <div>
+              <div class="quote-text" data-ru="«Мы обязательно созвонимся и пообщаемся. Я подберу для вас лучшую программу, которая вам понравится и точно попадет в ваш запрос. Мне кажется, это будет идеально.»" data-en="“We will definitely connect on a personal call. I will sculpt the ideal journey tailored specifically to your rhythm, personal wishes, and inner inquiry. It will be effortless and unforgettable.”">
+                “We will definitely connect on a personal call. I will sculpt the ideal journey tailored specifically to your rhythm, personal wishes, and inner inquiry. It will be effortless and unforgettable.”
+              </div>
+              <div class="quote-author" data-ru="— Валерий Латыпов, ваш проводник" data-en="— Valeriy Latypov, your host">— Valeriy Latypov, your host</div>
+            </div>
+          </div>
+          
+          <div class="hero-meta-bar">
+            <div class="hero-meta-item">
+              <span class="meta-lbl" data-ru="Формат" data-en="Format">Format</span>
+              <span class="meta-val" data-ru="Приватно (2 гостя)" data-en="Private (2 guests)">Private (2 guests)</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="meta-lbl" data-ru="Длительность" data-en="Duration">Duration</span>
+              <span class="meta-val" data-ru="7 дней или 5 дней" data-en="7 Days or 5 Days">7 Days or 5 Days</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="meta-lbl" data-ru="Инвестиция" data-en="Investment">Investment</span>
+              <span class="meta-val" data-ru="21 000 € / 15 000 €" data-en="€21,000 / €15,000">€21,000 / €15,000</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="meta-lbl" data-ru="Проводник" data-en="Host">Host</span>
+              <span class="meta-val" data-ru="Валерий Латыпов" data-en="Valeriy Latypov">Valeriy Latypov</span>
+            </div>
+          </div>
+
+          <div class="hero-ctas">
+            <a href="#journey" class="btn-luxury" data-ru="Смотреть программу →" data-en="Explore Routes →">Explore Routes →</a>
+            <a href="#investment" class="btn-secondary" data-ru="Тарифы и расчеты" data-en="Pricing & Ledger">Pricing & Ledger</a>
+          </div>
+        </div>
+
+        <div class="hero-media-wrap">
+          <div class="hero-card-double">
+            <div class="hero-img-inner">
+              <img src="/images/portrait2.jpg" alt="Feminine Beauty and Ocean Serenity in Bali">
+              <div class="hero-float-badge">
+                <div class="float-icon">🌸</div>
+                <div class="float-text">
+                  <h4 data-ru="50/50 Гармония" data-en="50/50 Balance">50/50 Balance</h4>
+                  <p data-ru="Чувственный комфорт & сакральный покой" data-en="Sensual hedonism meets authentic stillness">Sensual hedonism meets authentic stillness</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: PHILOSOPHY 50/50 -->
+  <section class="section" id="philosophy">
+    <div class="container">
+      <span class="section-tag" data-ru="ДНК Путешествия" data-en="The Core Concept">The Core Concept</span>
+      <h2 class="section-heading">
+        <span data-ru="Гедонизм и сакральная глубина:" data-en="Hedonism and sacred depth:">Hedonism and sacred depth:</span><br>
+        <em data-ru="Никаких крайностей." data-en="Perfect equilibrium.">Perfect equilibrium.</em>
+      </h2>
+      <p class="section-sub" data-ru="Мы убрали все стереотипы о «тяжелой духовности», ранних аскетичных подъемах и искусственных ритуалах. Это путешествие построено на бережном диалоге с телом, визуальном наслаждении и настоящей магии острова." data-en="We have eliminated all stereotypes of austere spiritual bootcamps and commercialized tourist shows. This journey is sculpted around intuitive slow living, aesthetic pleasure, and genuine Balinese wisdom.">
+        We have eliminated all stereotypes of austere spiritual bootcamps and commercialized tourist shows. This journey is sculpted around intuitive slow living, aesthetic pleasure, and genuine Balinese wisdom.
+      </p>
+
+      <div class="pillars-grid">
+        <!-- Pillar 1 -->
+        <div class="pillar-card hedonism">
+          <div>
+            <div class="pillar-num">01 / QUIET LUXURY</div>
+            <h3 class="pillar-title" data-ru="Чувственный гедонизм и спа-эстетика" data-en="Sensory Hedonism & Spa Artistry">Sensory Hedonism & Spa Artistry</h3>
+            <p class="pillar-desc" data-ru="Роскошные уединенные виллы над каньонами рек и бирюзовым океаном. Цветочные ванны из сотен свежих роз, расслабляющие многочасовые балийские массажи, свежие мангостины и авторские ужины при свечах." data-en="Private luxury villas secluded in jungle canopies and on ocean cliffs. Elaborate flower baths of fresh rose petals, hours-long signature spa treatments, exotic tropical fruits, and candlelit dinners at award-winning culinary ateliers.">
+              Private luxury villas secluded in jungle canopies and on ocean cliffs. Elaborate flower baths of fresh rose petals, hours-long signature spa treatments, exotic tropical fruits, and candlelit dinners at award-winning culinary ateliers.
+            </p>
+          </div>
+          <ul class="pillar-list">
+            <li><span class="pillar-bullet">✦</span> <span data-ru="Уединенные инфинити-бассейны среди джунглей Убуда и скал Улувату" data-en="Private infinity pools secluded in Ubud jungles and Uluwatu cliffs">Private infinity pools secluded in Ubud jungles and Uluwatu cliffs</span></li>
+            <li><span class="pillar-bullet">✦</span> <span data-ru="Ванны с лепестками роз и фирменные травяные скрабы Lulur" data-en="Fresh rose petal baths and ancient herbal Lulur body rituals">Fresh rose petal baths and ancient herbal Lulur body rituals</span></li>
+            <li><span class="pillar-bullet">✦</span> <span data-ru="Гастрономия: отборные фермерские продукты и шеф-сеты (Mozaic / Locavore)" data-en="Fine gastronomy: organic island produce and chef tasting menus">Fine gastronomy: organic island produce and chef tasting menus</span></li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="pillar-card sacred">
+          <div>
+            <div class="pillar-num">02 / SACRED STILLNESS</div>
+            <h3 class="pillar-title" data-ru="Бережная глубина без фальши" data-en="Gentle Sacred Depth without Pretension">Gentle Sacred Depth without Pretension</h3>
+            <p class="pillar-desc" data-ru="Доступ к подлинной традиции, который невозможно купить на туристических сайтах. Валерий говорит на индонезийском и знаком с хранителями острова лично. Водное очищение Мелукат в скрытых храмах силы и звук поющих чаш." data-en="Direct access to authentic Balinese lineage that cannot be booked online. Valeriy speaks Indonesian and holds personal trust with hereditary island priests. Sacred Melukat water cleansing in untouched spring sanctuaries and singing bowl sound healing.">
+              Direct access to authentic Balinese lineage that cannot be booked online. Valeriy speaks Indonesian and holds personal trust with hereditary island priests. Sacred Melukat water cleansing in untouched spring sanctuaries and singing bowl sound healing.
+            </p>
+          </div>
+          <ul class="pillar-list">
+            <li><span class="pillar-bullet">✦</span> <span data-ru="Аутентичный Мелукат: смывание ментальной усталости в священных источниках" data-en="Authentic Melukat: washing away mental clutter in sacred spring waters">Authentic Melukat: washing away mental clutter in sacred spring waters</span></li>
+            <li><span class="pillar-bullet">✦</span> <span data-ru="Встреча с потомственными хранителями (Манку) и сакральными клинками Крис" data-en="Audience with traditional priests (Mangku) and ancestral Keris relics">Audience with traditional priests (Mangku) and ancestral Keris relics</span></li>
+            <li><span class="pillar-bullet">✦</span> <span data-ru="Индивидуальная звукотерапия тибетскими чашами у личного бассейна" data-en="Private Tibetan singing bowl acoustic therapy by your private pool">Private Tibetan singing bowl acoustic therapy by your private pool</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: 7-DAY ROUTE -->
+  <section class="section itinerary-section" id="journey">
+    <div class="container">
+      <span class="section-tag" data-ru="День за днём" data-en="The Narrative">The Narrative</span>
+      <h2 class="section-heading">
+        <span data-ru="7 дней преображения:" data-en="7 Days of Transformation:">7 Days of Transformation:</span><br>
+        <em data-ru="Кинематографичный маршрут." data-en="A cinematic immersion.">A cinematic immersion.</em>
+      </h2>
+      <p class="section-sub" data-ru="Каждый день выстроен как гармоничная глава: от выдоха после трансконтинентального рейса до сияния в закатных лучах океана." data-en="Each day unfolds as a seamless chapter: from the gentle unwinding after your Swiss flight to golden radiance by the Indian Ocean.">
+        Each day unfolds as a seamless chapter: from the gentle unwinding after your Swiss flight to golden radiance by the Indian Ocean.
+      </p>
+
+      <div class="day-timeline">
+        <!-- Day 1 -->
+        <div class="day-card">
+          <div class="day-side">
+            <span class="day-badge" data-ru="День 01" data-en="Day 01">Day 01</span>
+            <div class="day-number" data-ru="Прибытие" data-en="Arrival">Arrival</div>
+            <div class="day-aesthetic" data-ru="Аромат франжипани, прохладный кокос и первый глубокий выдох." data-en="Frangipani breeze, chilled coconut, and the first deep exhale.">
+              Frangipani breeze, chilled coconut, and the first deep exhale.
+            </div>
+          </div>
+          <div class="day-content">
+            <h3 data-ru="Шёпот джунглей и переход в режим замедления" data-en="Jungle Whispers & The Architecture of Slowing Down">Jungle Whispers & The Architecture of Slowing Down</h3>
+            <p data-ru="VIP Fast-Track встреча в аэропорту Денпасара без очередей. Индивидуальный трансфер в уединенную luxury-виллу в долине Убуда (эстетика Mandapa / Amandari). Приветственный массаж ног с натуральными маслами лотоса после долгого перелета. Ужин при свечах на террасе с тропическими фруктами." data-en="VIP Fast-Track greeting upon landing in Denpasar without queues. Private transfer to a secluded luxury villa in Ubud’s Ayung valley. Rejuvenating herbal foot and body massage with warm lotus oils to ease travel fatigue. Candlelit terrace welcome dinner with fresh tropical fruits.">
+              VIP Fast-Track greeting upon landing in Denpasar without queues. Private transfer to a secluded luxury villa in Ubud’s Ayung valley. Rejuvenating herbal foot and body massage with warm lotus oils to ease travel fatigue. Candlelit terrace welcome dinner with fresh tropical fruits.
+            </p>
+            <div class="day-highlights">
+              <div class="highlight-item"><span>✦</span> <span data-ru="Fast-Track паспортный контроль" data-en="VIP Fast-Track customs">VIP Fast-Track customs</span></div>
+              <div class="highlight-item"><span>✦</span> <span data-ru="Приватная вилла с бассейном" data-en="Private pool jungle villa">Private pool jungle villa</span></div>
+              <div class="highlight-item"><span>✦</span> <span data-ru="Спа-ритуал первого часа" data-en="Post-flight restorative spa">Post-flight restorative spa</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-card">
+          <div class="day-side">
+            <span class="day-badge" data-ru="День 02" data-en="Day 02">Day 02</span>
+            <div class="day-number" data-ru="Чувственность" data-en="Sensory">Sensory</div>
+            <div class="day-aesthetic" data-ru="Ванна из сотен роз, изумрудные террасы и авторский ужин." data-en="A bath of 500 fresh roses, emerald rice hills, and chef gastronomy.">
+              A bath of 500 fresh roses, emerald rice hills, and chef gastronomy.
+            </div>
+          </div>
+          <div class="day-content">
+            <h3 data-ru="Королевский цветочный спа-ритуал и скрытые террасы" data-en="Royal Flower Bath & Hidden Emerald Terraces">Royal Flower Bath & Hidden Emerald Terraces</h3>
+            <p data-ru="Медленное пробуждение с панорамным завтраком. 3-часовой спа-ритуал: балийский массаж, скраб Lulur и знаменитая ванна с лепестками роз и жасмина под открытым небом. Во второй половине дня — неспешная прогулка по закрытым тропам изумрудных террас без туристов. Ужин высокой кухни в Mozaic или Locavore." data-en="Lazy morning with terrace breakfast over the gorge. A 3-hour signature spa sequence: traditional bodywork, botanical herbal scrub, and an outdoor flower bath brimming with red and white rose petals. Afternoon private stroll through secluded rice terrace trails away from public routes. Fine dining dinner in Ubud.">
+              Lazy morning with terrace breakfast over the gorge. A 3-hour signature spa sequence: traditional bodywork, botanical herbal scrub, and an outdoor flower bath brimming with red and white rose petals. Afternoon private stroll through secluded rice terrace trails away from public routes. Fine dining dinner in Ubud.
+            </p>
+            <div class="day-highlights">
+              <div class="highlight-item"><span>✦</span> <span data-ru="3-часовой спа-ритуал с лепестками роз" data-en="3-hour royal rose petal spa">3-hour royal rose petal spa</span></div>
+              <div class="highlight-item"><span>✦</span> <span data-ru="Террасы Тегаллаланг без толп" data-en="Secluded rice terrace walk">Secluded rice terrace walk</span></div>
+              <div class="highlight-item"><span>✦</span> <span data-ru="Гастрономический сет от шефа" data-en="Chef tasting dinner">Chef tasting dinner</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-card">
+          <div class="day-side">
+            <span class="day-badge" data-ru="День 03" data-en="Day 03">Day 03</span>
+            <div class="day-number" data-ru="Очищение" data-en="Cleansing">Cleansing</div>
+            <div class="day-aesthetic" data-ru="Кристальные горные струи, белый саронг и звук поющих чаш." data-en="Crystal mountain springs, ceremonial sarong, and singing bowls.">
+              Crystal mountain springs, ceremonial sarong, and singing bowls.
+            </div>
+          </div>
+          <div class="day-content">
+            <h3 data-ru="Священное водное омовение Мелукат и тибетские чаши" data-en="Sacred Melukat Water Cleansing & Acoustic Sound Healing">Sacred Melukat Water Cleansing & Acoustic Sound Healing</h3>
+            <p data-ru="Поездка в изумрудную долину Себату: посещение уединенного водного храма Pura Gunung Kawi Sebatu с голубым прудом священных карпов кои и сакральное омовение Мелукат у скрытого в каньоне родникового водопада Genah Melukat. Личное благословение от балийского священника (Манку) в тишине ущелья без толп туристов. Вечером — частная звуковая терапия тибетскими чашами на вашей вилле." data-en="A journey into the emerald Sebatu valley: explore the tranquil Pura Gunung Kawi Sebatu water sanctuary with its turquoise koi pond, followed by a sacred Melukat purification at the secluded Genah Melukat canyon waterfall. Receive personal blessings from a traditional priest (Mangku) away from tourist routes. In the evening, private Tibetan singing bowl sound therapy on your villa terrace.">
+              A journey into the emerald Sebatu valley: explore the tranquil Pura Gunung Kawi Sebatu water sanctuary with its turquoise koi pond, followed by a sacred Melukat purification at the secluded Genah Melukat canyon waterfall. Receive personal blessings from a traditional priest (Mangku) away from tourist routes. In the evening, private Tibetan singing bowl sound therapy on your villa terrace.
+            </p>
+            <div class="day-highlights">
+              <div class="highlight-item"><span>✦</span> <span data-ru="Аутентичный ритуал Мелукат" data-en="Sacred Melukat spring ceremony">Sacred Melukat spring ceremony</span></div>
+              <div class="highlight-item"><span>✦</span> <span data-ru="Благословение священника (Манку)" data-en="Private Mangku priest blessing">Private Mangku priest blessing</span></div>
+              <div class="highlight-item"><span>✦</span> <span data-ru="Звукотерапия тибетскими чашами" data-en="Tibetan singing bowl session">Tibetan singing bowl session</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="day-card">
+          <div class="day-side">
+            <span class="day-badge" data-ru="День 04" data-en="Day 04">Day 04</span>
+            <div class="day-number" data-ru="Традиция" data-en="Tradition">Tradition</div>
+            <div class="day-aesthetic" data-ru="Плавающий завтрак, древние клинки Крис и целитель." data-en="Floating breakfast, ancestral Keris blades, and traditional healer.">
+              Floating breakfast, ancestral Keris blades, and traditional healer.
+            </div>
+          </div>
+          <div class="day-content">
+            <h3 data-ru="Мастера сакральных артефактов и восстановление ресурса" data-en="Living Heritage: Sacred Keris Masters & Subtle Energy">Living Heritage: Sacred Keris Masters & Subtle Energy</h3>
+            <p data-ru="Утренний Floating Breakfast прямо в инфинити-бассейне. Визит в закрытую усадьбу потомственного мастера священных клинков Крис (нематериальное наследие ЮНЕСКО) — прикосновение к предметам силы с вековой историей. Мягкая энерго-диагностика у традиционного балийского целителя для снятия телесных зажимов. Ужин со свежими морепродуктами на кокосовых углях." data-en="Morning floating breakfast in your private pool. Exclusive visit to the compound of a hereditary Keris dagger master (UNESCO Intangible Cultural Heritage) to experience century-old artifacts of island power. Private consultation with a respected Balinese healer (Balian) to align internal balance. Dinner featuring grilled ocean catch.">
+              Morning floating breakfast in your private pool. Exclusive visit to the compound of a hereditary Keris dagger master (UNESCO Intangible Cultural Heritage) to experience century-old artifacts of island power. Private consultation with a respected Balinese healer (Balian) to align internal balance. Dinner featuring grilled ocean catch.
+            </p>
+            <div class="day-highlights">
+              <div class="highlight-item"><span>✦</span> <span data-ru="Плавающий завтрак в бассейне" data-en="Signature floating breakfast">Signature floating breakfast</span></div>
+              <div class="highlight-item"><span>✦</span> <span data-ru="Закрытая усадьба мастера Крисов" data-en="Access to hereditary Keris master">Access to hereditary Keris master</span></div>
+              <div class="highlight-item"><span>✦</span> <span data-ru="Балийская энерго-диагностика" data-en="Subtle energy alignment">Subtle energy alignment</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="day-card">
+          <div class="day-side">
+            <span class="day-badge" data-ru="День 05" data-en="Day 05">Day 05</span>
+            <div class="day-number" data-ru="Океан" data-en="Ocean">Ocean</div>
+            <div class="day-aesthetic" data-ru="Утесы Улувату, бездна Индийского океана и шампанское." data-en="Uluwatu limestone cliffs, oceanic horizon, and sunset champagne.">
+              Uluwatu limestone cliffs, oceanic horizon, and sunset champagne.
+            </div>
+          </div>
+          <div class="day-content">
+            <h3 data-ru="Переезд на побережье Улувату: величие скал и лазурь" data-en="Journey to Uluwatu Cliffs: High Ocean Horizons">Journey to Uluwatu Cliffs: High Ocean Horizons</h3>
+            <p data-ru="Переезд из джунглей на скалистый южный полуостров Букит. Размещение в вилле класса ultra-luxury на вершине отвесной скалы (уровень Bulgari Resort / The Edge / Six Senses) с панорамой 180° на волны Индийского океана. Закатный коктейль на высоте птичьего полета над прибоем и ужин в панорамном ресторане Il Ristorante." data-en="Scenic private transfer from the central hills to the dramatic southern cliffs of Bukit. Check-in to an ultra-luxury cliffside villa (Bulgari / The Edge / Six Senses aesthetic) with 180-degree ocean views. Sunset champagne perched hundreds of feet above breaking waves and Italian fine dining at Il Ristorante.">
+              Scenic private transfer from the central hills to the dramatic southern cliffs of Bukit. Check-in to an ultra-luxury cliffside villa (Bulgari / The Edge / Six Senses aesthetic) with 180-degree ocean views. Sunset champagne perched hundreds of feet above breaking waves and Italian fine dining at Il Ristorante.
+            </p>
+            <div class="day-highlights">
+              <div class="highlight-item"><span>✦</span> <span data-ru="Вилла на вершине океанского утеса" data-en="Cliffside villa with 180° view">Cliffside villa with 180° view</span></div>
+              <div class="highlight-item"><span>✦</span> <span data-ru="Закат над Индийским океаном" data-en="Dramatic sunset overlook">Dramatic sunset overlook</span></div>
+              <div class="highlight-item"><span>✦</span> <span data-ru="Приватный отдых без суеты" data-en="Unmatched coastal privacy">Unmatched coastal privacy</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="day-card">
+          <div class="day-side">
+            <span class="day-badge" data-ru="День 06" data-en="Day 06">Day 06</span>
+            <div class="day-number" data-ru="Сияние" data-en="Radiance">Radiance</div>
+            <div class="day-aesthetic" data-ru="Летящие шелка, золотой предзакатный свет и новый взгляд." data-en="Flowing fabrics, golden coastal light, and effortless presence.">
+              Flowing fabrics, golden coastal light, and effortless presence.
+            </div>
+          </div>
+          <div class="day-content">
+            <h3 data-ru="Алхимический портрет: фиксация вашего преображения" data-en="The Alchemical Portrait: Capturing Your Radiance">The Alchemical Portrait: Capturing Your Radiance</h3>
+            <p data-ru="Спа-процедуры для лица и тела с морскими минералами. Вечером — авторская портретная съемка от Валерия Латыпова (снимавшего для Forbes, Depeche Mode и Peter Gabriel). Это не банальная туристическая фотосессия, а создание художественного портрета музейного уровня, запечатлевающего вашу внутреннюю мягкость, силу и сияние на фоне океана." data-en="Marine collagen spa therapies and ocean breeze relaxation. In the late afternoon, an intimate portrait session by Valeriy Latypov (whose portraits featured in Forbes, Depeche Mode, Peter Gabriel). This is an alchemical visual document capturing your transformed state — radiant, unburdened, and deeply present.">
+              Marine collagen spa therapies and ocean breeze relaxation. In the late afternoon, an intimate portrait session by Valeriy Latypov (whose portraits featured in Forbes, Depeche Mode, Peter Gabriel). This is an alchemical visual document capturing your transformed state — radiant, unburdened, and deeply present.
+            </p>
+            <div class="day-highlights">
+              <div class="highlight-item"><span>✦</span> <span data-ru="Океанский спа-уход с минералами" data-en="Ocean-view restorative spa">Ocean-view restorative spa</span></div>
+              <div class="highlight-item"><span>✦</span> <span data-ru="Алхимический портрет от Валерия" data-en="Fine-art editorial portrait session">Fine-art editorial portrait session</span></div>
+              <div class="highlight-item"><span>✦</span> <span data-ru="Праздничный ужин у океана" data-en="Celebration coastal gala dinner">Celebration coastal gala dinner</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 7 -->
+        <div class="day-card">
+          <div class="day-side">
+            <span class="day-badge" data-ru="День 07" data-en="Day 07">Day 07</span>
+            <div class="day-number" data-ru="Возврат" data-en="Return">Return</div>
+            <div class="day-aesthetic" data-ru="Легкость в теле, шелковые артефакты и спокойный полет домой." data-en="Lightness in the body, artisanal silks, and a peaceful flight home.">
+              Lightness in the body, artisanal silks, and a peaceful flight home.
+            </div>
+          </div>
+          <div class="day-content">
+            <h3 data-ru="Интеграция, редкие артефакты и комфортный вылет" data-en="Integration, Curated Artifacts & Effortless Departure">Integration, Curated Artifacts & Effortless Departure</h3>
+            <p data-ru="Неспешный утренний заплыв с видом на океан. Беседа-интеграция с Валерием: как сохранить состояние замедленности и наполненности в ритме Женевы и Цюриха. Поездка за редкими шелками ручной работы, балийским жемчугом и ароматическими эссенциями. Комфортабельный VIP-трансфер в аэропорт к вашему рейсу." data-en="Leisurely swim overlooking the azure horizon. Closing integration conversation with Valeriy on anchoring this state of centered ease into your Swiss routine. Private boutique shopping for handcrafted heirloom silks, South Sea pearls, and artisanal oils. VIP escort to Denpasar International Airport.">
+              Leisurely swim overlooking the azure horizon. Closing integration conversation with Valeriy on anchoring this state of centered ease into your Swiss routine. Private boutique shopping for handcrafted heirloom silks, South Sea pearls, and artisanal oils. VIP escort to Denpasar International Airport.
+            </p>
+            <div class="day-highlights">
+              <div class="highlight-item"><span>✦</span> <span data-ru="Беседа по интеграции состояния" data-en="Personal integration dialogue">Personal integration dialogue</span></div>
+              <div class="highlight-item"><span>✦</span> <span data-ru="Кураторский отбор артефактов" data-en="Curated artisanal acquisitions">Curated artisanal acquisitions</span></div>
+              <div class="highlight-item"><span>✦</span> <span data-ru="VIP трансфер в аэропорт" data-en="Private VIP airport departure">Private VIP airport departure</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: SANCTUARY ATLAS & PLACES OF POWER -->
+  <section class="section atlas-section" id="sanctuaries">
+    <div class="container">
+      <div style="text-align: center; max-width: 820px; margin: 0 auto 36px;">
+        <span class="section-tag" data-ru="Атлас Мест Силы & Отелей" data-en="Sanctuary Atlas & Retreats">Sanctuary Atlas & Retreats</span>
+        <h2 class="section-heading">
+          <span data-ru="Святилища, горные озера и" data-en="Sacred Springs, Highland Lakes &">Sacred Springs, Highland Lakes &</span><br>
+          <em data-ru="камерные ретриты Бали." data-en="Intimate Island Sanctuaries.">Intimate Island Sanctuaries.</em>
+        </h2>
+        <p class="section-sub" style="margin: 0 auto;" data-ru="Подробное описание ключевых пространств маршрута. Каждое место отобрано Валерием лично за его подлинную энергетическую чистоту, тишину и отсутствие туристической суеты." data-en="A curated guide to the transformative spaces on your journey. Each sanctuary is personally chosen by Valeriy for its energetic clarity, stillness, and seclusion from commercial tourism.">
+          A curated guide to the transformative spaces on your journey. Each sanctuary is personally chosen by Valeriy for its energetic clarity, stillness, and seclusion from commercial tourism.
+        </p>
+      </div>
+
+      <div class="atlas-grid">
+        <!-- Card 1: Sebatu -->
+        <div class="place-card">
+          <div class="place-card-top">
+            <div class="place-header-row">
+              <span class="place-tag sacred" data-ru="Сакральный источник" data-en="Sacred Water Sanctuary">Sacred Water Sanctuary</span>
+              <span class="place-altitude">Tegallalang · 650 m</span>
+            </div>
+            <h3 class="place-title">Pura Gunung Kawi Sebatu & Водный Каньон</h3>
+            <div class="place-subtitle" data-ru="Тайный водный храм XI века и скрытые минеральные ключи Мелукат" data-en="Hidden 11th-century water sanctuary & secluded canyon Melukat springs">Hidden 11th-century water sanctuary & secluded canyon Melukat springs</div>
+            <p class="place-desc" data-ru="В отличие от переполненного туристами Тирта Эмпул, Себату — это уединенный храмовый ансамбль XI века в джунглевом ущелье, посвященный богу Вишну и владычице вод Деви Дану. Центр комплекса — знаменитый Голубой пруд площадью свыше 800 м² с родниковой бирюзовой водой, где среди открытых павильонов Бале плавают сотни священных карпов кои. Чуть глубже в ущелье скрыт водопад Genah Melukat: здесь чистейшие подземные ключи пробиваются сквозь вулканический базальт. Омовение Мелукат у потомственного священника Манку проходит в глубокой тишине, бережно смывая накопленную усталость и возвращая ощущение чистой женской энергии." data-en="Unlike commercialized tourist sites, Sebatu is an intimate 11th-century sanctuary nestled in a verdant jungle gorge, dedicated to Lord Vishnu and Dewi Danu, guardian of freshwater. Its focal point is an 800 m² natural spring pool of luminescent turquoise water where sacred koi drift around ornate Bale pavilions. Tucked deeper down the river canyon is the secluded Genah Melukat waterfall, fed by subterranean volcanic springs. The private Melukat purification guided by a hereditary Mangku priest unfolds in serene stillness, effortlessly dissolving emotional tension and restoring vibrant inner vitality.">
+              Unlike commercialized tourist sites, Sebatu is an intimate 11th-century sanctuary nestled in a verdant jungle gorge, dedicated to Lord Vishnu and Dewi Danu, guardian of freshwater. Its focal point is an 800 m² natural spring pool of luminescent turquoise water where sacred koi drift around ornate Bale pavilions. Tucked deeper down the river canyon is the secluded Genah Melukat waterfall, fed by subterranean volcanic springs. The private Melukat purification guided by a hereditary Mangku priest unfolds in serene stillness, effortlessly dissolving emotional tension and restoring vibrant inner vitality.
+            </p>
+          </div>
+          <div class="place-curator-note">
+            <strong data-ru="Заметка Валерия:" data-en="Valeriy's Insight:">Valeriy's Insight:</strong> <span data-ru="«Вода в источниках Себату обладает удивительным свойством: она буквально стирает сенсорную перегрузку последних месяцев. Женщины после омовения отмечают невероятную ясность в мыслях и мягкую легкость в теле.»" data-en="“The spring water in Sebatu has an extraordinary tactile clarity: it washes away months of sensory overload. Guests emerge with effortless mental stillness and an inner glow.”">“The spring water in Sebatu has an extraordinary tactile clarity: it washes away months of sensory overload. Guests emerge with effortless mental stillness and an inner glow.”</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Besakih -->
+        <div class="place-card">
+          <div class="place-card-top">
+            <div class="place-header-row">
+              <span class="place-tag sacred" data-ru="Материнский Храм" data-en="The Mother Temple">The Mother Temple</span>
+              <span class="place-altitude">Mount Agung · 1 000 m</span>
+            </div>
+            <h3 class="place-title">Pura Agung Besakih</h3>
+            <div class="place-subtitle" data-ru="Сакральная «Ось мира» на склоне вулкана Агунг: 2 000 лет непрерывной традиции" data-en="The cosmic Axis Mundi on Mount Agung: 2,000 years of unbroken sacred lineage">The cosmic Axis Mundi on Mount Agung: 2,000 years of unbroken sacred lineage</div>
+            <p class="place-desc" data-ru="Главный храмовый комплекс Бали, раскинувшийся на площади 150 000 м² на склоне священного вулкана Агунг (3 142 м). Древнейшие мегалитические алтари и террасы здесь датируются более 2 000 лет — местом поклонения духам гор задолго до индуизма. Комплекс объединяет свыше 86 святынь. Парадная лестница из 52 ступеней ведет через расщепленные врата Чанди Бентар к центральному храму Агунг Панатаран с павильоном Бале Агунг на 24 резных колоннах и лотосовым троном Тримурти. Цвета несут сакральный смысл: белый цвет Шивы в центре, красный Брахмы на востоке (храм Дангин Кретег) и черный Вишну на западе (Бату Мадег). Черные 11-ярусные пагоды Меру из пальмового волокна устремлены в горное небо. Во время извержения 1963 года лавовые реки обошли стены Бесаких в нескольких метрах, не повредив ни одного алтаря." data-en="Bali’s supreme mother temple spanning over 150,000 m² at 1,000 meters altitude on the sacred stratovolcano Mount Agung (3,142 m). Megalithic stepped terraces here predate Hinduism by two millennia. The complex unites over 86 shrines across rising terraces. A ceremonial stairway of 52 stone steps ascends through split Candi Bentar gates to Pura Agung Penataran, home to an open 24-pillar pavilion and the Padmasana lotus throne of the Trimurti: Shiva (white), Brahma (red), and Vishnu (black), beneath the yellow canopy of supreme creation. Tiered Meru shrines thatched with black sugar-palm fiber silhouette against mountain mists. In 1963, during the once-a-century Eka Dasa Rudra ritual, catastrophic lava flows from Mount Agung miraculously parted around Besakih's walls, leaving the sanctum untouched.">
+              Bali’s supreme mother temple spanning over 150,000 m² at 1,000 meters altitude on the sacred stratovolcano Mount Agung (3,142 m). Megalithic stepped terraces here predate Hinduism by two millennia. The complex unites over 86 shrines across rising terraces. A ceremonial stairway of 52 stone steps ascends through split Candi Bentar gates to Pura Agung Penataran, home to an open 24-pillar pavilion and the Padmasana lotus throne of the Trimurti: Shiva (white), Brahma (red), and Vishnu (black), beneath the yellow canopy of supreme creation. Tiered Meru shrines thatched with black sugar-palm fiber silhouette against mountain mists. In 1963, during the once-a-century Eka Dasa Rudra ritual, catastrophic lava flows from Mount Agung miraculously parted around Besakih's walls, leaving the sanctum untouched.
+            </p>
+          </div>
+          <div class="place-curator-note">
+            <strong data-ru="Заметка Валерия:" data-en="Valeriy's Insight:">Valeriy's Insight:</strong> <span data-ru="«Балийцы считают Агунг источником чистой космической энергии и спят головой к его вершине. Мы поднимаемся в Бесаких перед закатом, когда дневные посетители уезжают, и комплекс наполняется прохладным туманом и абсолютным величием.»" data-en="“Balinese sleep with their heads toward Mount Agung to align with pure cosmic energy. We arrive late in the afternoon when day visitors disperse, watching cool mountain fog drift between ancient Meru pagodas.”">“Balinese sleep with their heads toward Mount Agung to align with pure cosmic energy. We arrive late in the afternoon when day visitors disperse, watching cool mountain fog drift between ancient Meru pagodas.”</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Batukaru -->
+        <div class="place-card">
+          <div class="place-card-top">
+            <div class="place-header-row">
+              <span class="place-tag sacred" data-ru="Реликтовый храм" data-en="Rainforest Sanctuary">Rainforest Sanctuary</span>
+              <span class="place-altitude">Tabanan · 820 m</span>
+            </div>
+            <h3 class="place-title">Pura Luhur Batukaru</h3>
+            <div class="place-subtitle" data-ru="Обитель Махадевы в первозданном дождевом лесу у потухшего вулкана" data-en="Sanctuary of Mahadewa deep in virgin mountain cloud forests">Sanctuary of Mahadewa deep in virgin mountain cloud forests</div>
+            <p class="place-desc" data-ru="Один из ключевых храмов-хранителей острова (Sad Kahyangan), защищающий Бали с запада. Расположен на склоне потухшего вулкана Батукару (2 276 м) в окружении нетронутых реликтовых джунглей. Здесь нет сувенирных палаток и толп туристов. Вековые деревья, обвитые мхом и дикими орхидеями, ведут к сакральному лотосовому водоему и древней 7-ярусной пагоде Меру, посвященной божеству Махадеве. Звуковое пространство храма наполнено шумом горного дождя, цикадами и ароматом сырого лесного мха и ладана." data-en="One of Bali’s six paramount directional protector sanctuaries (Sad Kahyangan), guarding the island from the west. Hidden on the misty flanks of Mount Batukaru (2,276 m) amidst ancient rainforest where velvet moss carpets towering hardwood trees and wild orchids. Completely devoid of commercial vendors, it centers around a sacred spring-fed lotus lake and a revered 7-tiered Meru honoring Mahadewa. The atmosphere breathes deep stillness, mountain rain, and cedar incense.">
+              One of Bali’s six paramount directional protector sanctuaries (Sad Kahyangan), guarding the island from the west. Hidden on the misty flanks of Mount Batukaru (2,276 m) amidst ancient rainforest where velvet moss carpets towering hardwood trees and wild orchids. Completely devoid of commercial vendors, it centers around a sacred spring-fed lotus lake and a revered 7-tiered Meru honoring Mahadewa. The atmosphere breathes deep stillness, mountain rain, and cedar incense.
+            </p>
+          </div>
+          <div class="place-curator-note">
+            <strong data-ru="Заметка Валерия:" data-en="Valeriy's Insight:">Valeriy's Insight:</strong> <span data-ru="«Батукару моментально переключает ритм мозга. Влажная тишина реликтового леса заземляет, снимает тревожность и возвращает чувство глубокой внутренней безопасности.»" data-en="“Batukaru gently recalibrates your nervous system. The cool silence of primary rainforest grounds and restores a profound sense of inner safety.”">“Batukaru gently recalibrates your nervous system. The cool silence of primary rainforest grounds and restores a profound sense of inner safety.”</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Lake Batur & Toteme Glamping -->
+        <div class="place-card">
+          <div class="place-card-top">
+            <div class="place-header-row">
+              <span class="place-tag nature" data-ru="Вулкан & Глэмпинг" data-en="Volcano & Glamping">Volcano & Glamping</span>
+              <span class="place-altitude">Kintamani · 1 050 m</span>
+            </div>
+            <h3 class="place-title">Вулкан Батур & Toteme Glamping</h3>
+            <div class="place-subtitle" data-ru="Кальдера на высоте 1 050 м, черная базальтовая лава и премиум-глэмпинг с термами" data-en="1,050 m volcanic caldera, ancient basalt lava fields & luxury hot spring glamping">1,050 m volcanic caldera, ancient basalt lava fields & luxury hot spring glamping</div>
+            <p class="place-desc" data-ru="Грандиозная высокогорная кальдера с панорамой действующего вулкана Батур и бирюзового озера. Здесь расположен второй по значимости водный храм Бали — Pura Ulun Danu Batur, управляющий сакральной ирригационной системой острова (Субак). Поразительный контраст черных полей застывшей лавы и премиального глэмпинга Toteme Glamping & Hot Springs с персональными купелями с природной геотермальной водой (38–40°C), обогащенной серой и кремнием прямо на вашей террасе. Уютные дизайнерские шатры с подогревом, костровой зоной и видом на звездное небо над кратером озера." data-en="A dramatic highland volcanic caldera at 1,050 meters altitude featuring panoramic vistas of Mount Batur and the sapphire crescent of Lake Batur. Home to Pura Ulun Danu Batur, governing Bali's sacred Subak water network. After exploring ancient black basalt lava fields, experience Toteme Glamping & Hot Springs — luxury heated glamping suites featuring private cedar hot spring tubs right on your personal deck, fed by natural geothermal mineral springs (38–40°C). Starlit evenings by the fire pit followed by sunrise directly over the volcanic rim.">
+              A dramatic highland volcanic caldera at 1,050 meters altitude featuring panoramic vistas of Mount Batur and the sapphire crescent of Lake Batur. Home to Pura Ulun Danu Batur, governing Bali's sacred Subak water network. After exploring ancient black basalt lava fields, experience Toteme Glamping & Hot Springs — luxury heated glamping suites featuring private cedar hot spring tubs right on your personal deck, fed by natural geothermal mineral springs (38–40°C). Starlit evenings by the fire pit followed by sunrise directly over the volcanic rim.
+            </p>
+          </div>
+          <div class="place-curator-note">
+            <strong data-ru="Заметка Валерия:" data-en="Valeriy's Insight:">Valeriy's Insight:</strong> <span data-ru="«Контраст бодрящей горной прохлады и горячей термальной купели прямо на вашей террасе моментально снимает спазмы и усталость быстрее любого классического массажа.»" data-en="“The contrast of crisp mountain air and your private geothermal hot spring bath under starlight melts tension faster than any conventional treatment.”">“The contrast of crisp mountain air and your private geothermal hot spring bath under starlight melts tension faster than any conventional treatment.”</span>
+          </div>
+        </div>
+
+        <!-- Card 5: Plataran & Suarapura Ubud -->
+        <div class="place-card">
+          <div class="place-card-top">
+            <div class="place-header-row">
+              <span class="place-tag hotel" data-ru="Бутик-уединение" data-en="Boutique Hospitality">Boutique Hospitality</span>
+              <span class="place-altitude">Ubud Valley</span>
+            </div>
+            <h3 class="place-title">Plataran Ubud & Suarapura Resort</h3>
+            <div class="place-subtitle" data-ru="Камерные бутик-виллы в тихих долинах Убуда и Себату" data-en="Artisanal boutique villas nestled in peaceful river valleys">Artisanal boutique villas nestled in peaceful river valleys</div>
+            <p class="place-desc" data-ru="Бутик-отели, построенные из массива тикового дерева и вулканического камня в согласии с канонами традиционной балийской архитектуры. Plataran Ubud укрыт среди нетронутых рисовых террас с аутентичным спа-комплексом Padma Spa. Suarapura Resort — скрытый среди ущелий Себату курорт, спроектированный специально для глубокого отдыха, акустической медитации поющими чашами и уединения. Здесь нет шума центра Убуда — только шепот бамбука, аромат франжипани и пение тропических птиц." data-en="Intimate boutique retreats constructed from solid teak and river stone following traditional Balinese spatial geometry. Plataran Ubud is set quietly beside emerald rice terraces with its renowned Padma Spa sanctuary. Suarapura Resort in the secluded Sebatu gorge is created specifically for deep rest, acoustic bowl sound therapy, and complete digital detox. Surrounded entirely by swaying bamboo and birdsong.">
+              Intimate boutique retreats constructed from solid teak and river stone following traditional Balinese spatial geometry. Plataran Ubud is set quietly beside emerald rice terraces with its renowned Padma Spa sanctuary. Suarapura Resort in the secluded Sebatu gorge is created specifically for deep rest, acoustic bowl sound therapy, and complete digital detox. Surrounded entirely by swaying bamboo and birdsong.
+            </p>
+          </div>
+          <div class="place-curator-note">
+            <strong data-ru="Заметка Валерия:" data-en="Valeriy's Insight:">Valeriy's Insight:</strong> <span data-ru="«Засыпать под шелест ночных джунглей и просыпаться с видом на туманные пальмовые кроны — лучшее лекарство от истощения нервной системы, проверенное годами.»" data-en="“Falling asleep to the rustle of jungle palms and waking to morning mist over river gorges is the most gentle reset for an overstimulated nervous system.”">“Falling asleep to the rustle of jungle palms and waking to morning mist over river gorges is the most gentle reset for an overstimulated nervous system.”</span>
+          </div>
+        </div>
+
+        <!-- Card 6: Uluwatu Ocean Cliffs -->
+        <div class="place-card">
+          <div class="place-card-top">
+            <div class="place-header-row">
+              <span class="place-tag hotel" data-ru="Океанский простор" data-en="Cliffside Luxury">Cliffside Luxury</span>
+              <span class="place-altitude">Bukit Peninsula · 150 m</span>
+            </div>
+            <h3 class="place-title">Утесы Улувату: Pura Luhur & Bulgari</h3>
+            <div class="place-subtitle" data-ru="70–150 метров отвесных скал над океаном, древний храм и закатный свет" data-en="70–150 meter limestone cliffs above the Indian Ocean & sunset temple">70–150 meter limestone cliffs above the Indian Ocean & sunset temple</div>
+            <p class="place-desc" data-ru="Завершающая глава путешествия — отвесные известняковые скалы Улувату на краю полуострова Букит. Священный морской храм Pura Luhur Uluwatu, заложенный в XI веке мудрецом Мпу Кутураном на вершине 70-метрового утеса, и место, где в XVI веке монах Нирартха обрел состояние высшего освобождения (Мокша). Вечером над волнами разворачивается полифонический танец Кечак в огненном круге. Виллы ультра-класса (уровень Bulgari Resort / Six Senses или Renaissance) с панорамой 180° на океан, где в мягких лучах предзакатного солнца проходит авторская портретная фотосессия." data-en="The coastal grand finale on the southernmost cliffs of the Bukit peninsula. Perched on a 70-meter limestone bluff dropping into crashing swells is Pura Luhur Uluwatu, established in the 11th century by sage Mpu Kuturan and where Dang Hyang Nirartha achieved spiritual moksha in the 16th century. At twilight, the hypnotic vocal choir of the Kecak dance rises against the ocean horizon. Clifftop luxury villas (Bulgari / Six Senses / Renaissance) provide sweeping ocean horizons and the backdrop for your personal fine-art portrait session.">
+              The coastal grand finale on the southernmost cliffs of the Bukit peninsula. Perched on a 70-meter limestone bluff dropping into crashing swells is Pura Luhur Uluwatu, established in the 11th century by sage Mpu Kuturan and where Dang Hyang Nirartha achieved spiritual moksha in the 16th century. At twilight, the hypnotic vocal choir of the Kecak dance rises against the ocean horizon. Clifftop luxury villas (Bulgari / Six Senses / Renaissance) provide sweeping ocean horizons and the backdrop for your personal fine-art portrait session.
+            </p>
+          </div>
+          <div class="place-curator-note">
+            <strong data-ru="Заметка Валерия:" data-en="Valeriy's Insight:">Valeriy's Insight:</strong> <span data-ru="«Закатный свет на скалах Улувату уникален: он теплый, кинематографичный и мягкий. Портреты, созданные здесь, показывают обновленную женщину — наполненную, спокойную и свободную.»" data-en="“Late afternoon coastal light here is cinematic and gentle. The portraits we craft reflect an authentic state of renewal — calm, radiant, and deeply centered.”">“Late afternoon coastal light here is cinematic and gentle. The portraits we craft reflect an authentic state of renewal — calm, radiant, and deeply centered.”</span>
+          </div>
+        </div>
+
+        <!-- Card 7: Bedugul Botanic Sanctuary -->
+        <div class="place-card">
+          <div class="place-card-top">
+            <div class="place-header-row">
+              <span class="place-tag nature" data-ru="Ботанический эдем" data-en="Highland Botanic Sanctuary">Highland Botanic Sanctuary</span>
+              <span class="place-altitude">Bedugul · 1 300 m</span>
+            </div>
+            <h3 class="place-title">Kebun Raya Bali в горах Бедугул</h3>
+            <div class="place-subtitle" data-ru="157 гектаров реликтовых папоротников, сосен и оранжереи диких орхидей" data-en="157 hectares of prehistoric tree ferns, pine avenues & wild orchids">157 hectares of prehistoric tree ferns, pine avenues & wild orchids</div>
+            <p class="place-desc" data-ru="Крупнейший высокогорный ботанический сад Индонезии, раскинувшийся на высоте 1 300–1 450 метров на склонах потухшего вулкана в кратере Бедугул. Прохладный хрустальный воздух (+18...+22°C), гигантские древовидные папоротники юрского периода, аллеи реликтовых хвойных деревьев и уникальная коллекция диких орхидей со всего Индонезийского архипелага. Пространство напоминает старинный английский пейзажный парк среди тропических облаков — идеальное место для созерцательной уединенной прогулки и глубокого дыхания." data-en="Indonesia’s premier highland botanical sanctuary encompassing 157 hectares at 1,300–1,450 meters altitude within the ancient Candikuning crater. Crisp mountain air (+18...+22°C), towering prehistoric Cyathea tree ferns, conifer groves, and a specialized conservatory housing rare wild orchids collected from across the Indonesian archipelago. It evokes the elegance of a classic landscape estate elevated into misty tropical mountains.">
+              Indonesia’s premier highland botanical sanctuary encompassing 157 hectares at 1,300–1,450 meters altitude within the ancient Candikuning crater. Crisp mountain air (+18...+22°C), towering prehistoric Cyathea tree ferns, conifer groves, and a specialized conservatory housing rare wild orchids collected from across the Indonesian archipelago. It evokes the elegance of a classic landscape estate elevated into misty tropical mountains.
+            </p>
+          </div>
+          <div class="place-curator-note">
+            <strong data-ru="Заметка Валерия:" data-en="Valeriy's Insight:">Valeriy's Insight:</strong> <span data-ru="«Бедугул дарит мгновенный глоток свежести после теплого побережья. Это ощущение английского парка в облаках, где приятно просто идти по тихим аллеям и слушать шелест сосен.»" data-en="“Bedugul offers an invigorating breath of mountain coolness. Walking along its quiet avenues beneath towering trees brings spontaneous clarity and deep rhythm.”">“Bedugul offers an invigorating breath of mountain coolness. Walking along its quiet avenues beneath towering trees brings spontaneous clarity and deep rhythm.”</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: BESPOKE OPTIONS & TAILORED FREEDOM -->
+  <section class="section custom-section" id="custom">
+    <div class="container">
+      <div class="custom-header">
+        <span class="section-tag" data-ru="Свобода выбора" data-en="Tailored Flexibility">Tailored Flexibility</span>
+        <h2 class="section-heading">
+          <span data-ru="Насыщенность программы —" data-en="The Rhythm of Your Journey —">The Rhythm of Your Journey —</span><br>
+          <em data-ru="Строго под ваши желания." data-en="Entirely at your command.">Entirely at your command.</em>
+        </h2>
+        <p class="section-sub" data-ru="Вам не нужно подстраиваться под жесткие рамки. Мы можем сделать упор на безмятежный спа-отдых, усилить природную эстетику или добавить ярких впечатлений по вашему настроению прямо на месте." data-en="You are never confined to rigid schedules. We can lean deeper into serene spa quietude, explore lush botanical beauty, or add thrilling landscapes depending on your mood.">
+          You are never confined to rigid schedules. We can lean deeper into serene spa quietude, explore lush botanical beauty, or add thrilling landscapes depending on your mood.
+        </p>
+      </div>
+
+      <div class="custom-grid">
+        <!-- Option 1 -->
+        <div class="custom-card">
+          <div>
+            <div class="custom-icon">🌿</div>
+            <h3 data-ru="Ботанический сад в горах Бедугул" data-en="Bedugul Highland Botanic Sanctuary">Bedugul Highland Botanic Sanctuary</h3>
+            <p data-ru="Прогулка среди гигантских папоротников, реликтовых деревьев и коллекции редких диких орхидей в высокогорном саду (1300 м над уровнем моря). Прохладный хрустальный воздух, тишина и эстетика английского парка в сердце тропиков." data-en="A serene walk among giant tree ferns, ancient mosses, and a world-class wild orchid sanctuary in the cool highlands of Bedugul (1,300m altitude). Crisp mountain air, silence, and romantic garden pathways.">
+              A serene walk among giant tree ferns, ancient mosses, and a world-class wild orchid sanctuary in the cool highlands of Bedugul (1,300m altitude). Crisp mountain air, silence, and romantic garden pathways.
+            </p>
+          </div>
+          <span class="custom-tag" data-ru="Легкая эстетика · Релакс" data-en="Serene & Refreshing">Serene & Refreshing</span>
+        </div>
+
+        <!-- Option 2 -->
+        <div class="custom-card">
+          <div>
+            <div class="custom-icon">🌋</div>
+            <h3 data-ru="Вулкан Иджен и голубые огни (Ява)" data-en="Mount Ijen & Blue Fire Expedition">Mount Ijen & Blue Fire Expedition</h3>
+            <p data-ru="Для тех, кто хочет кинематографичного контраста: приватный перелет на вертолете или скоростном катере на соседний остров Ява к бирюзовому кислотному озеру вулкана Иджен. Фантастические марсианские пейзажи." data-en="For those desiring a dramatic cinematic adventure: a helicopter or private boat crossing to neighboring East Java to witness Mount Ijen's turquoise crater lake and cosmic landscapes.">
+              For those desiring a dramatic cinematic adventure: a helicopter or private boat crossing to neighboring East Java to witness Mount Ijen's turquoise crater lake and cosmic landscapes.
+            </p>
+          </div>
+          <span class="custom-tag" data-ru="Опция · Контраст" data-en="Optional · High Adventure">Optional · High Adventure</span>
+        </div>
+
+        <!-- Option 3 -->
+        <div class="custom-card">
+          <div>
+            <div class="custom-icon">✨</div>
+            <h3 data-ru="Калибровка духовности: только по желанию" data-en="Sacred Depth: On Your Terms Only">Sacred Depth: On Your Terms Only</h3>
+            <p data-ru="Если хочется больше уединения, спа, шампанского и отдыха у бассейна — мы мягко снижаем число церемоний. Если, наоборот, возникнет зов к глубоким медитациям и общению со старейшинами — Валерий откроет закрытые святилища." data-en="If you simply desire more private pool relaxation, champagne sunsets, and body treatments, we dial down rituals. If you feel called to deeper meditation and elder dialogues, Valeriy unlocks sacred temples.">
+              If you simply desire more private pool relaxation, champagne sunsets, and body treatments, we dial down rituals. If you feel called to deeper meditation and elder dialogues, Valeriy unlocks sacred temples.
+            </p>
+          </div>
+          <span class="custom-tag" data-ru="100% Адаптивность" data-en="100% Intuitive Calibration">100% Intuitive Calibration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: FLIGHTS & LOGISTICS FROM SWITZERLAND -->
+  <section class="section logistics-section" id="logistics">
+    <div class="container">
+      <span class="section-tag" data-ru="Швейцария ⇄ Бали" data-en="Aviation Logistics">Aviation Logistics</span>
+      <h2 class="section-heading">
+        <span data-ru="Удобный перелет из Цюриха и Женевы:" data-en="Effortless Flights from Zurich & Geneva:">Effortless Flights from Zurich & Geneva:</span><br>
+        <em data-ru="Бизнес, комфорт или эконом." data-en="Business, Premium or Economy.">Business, Premium or Economy.</em>
+      </h2>
+      <p class="section-sub" data-ru="Мы полностью берем на себя подбор и координацию ваших рейсов. Все цены указаны ориентировочно за билет туда-обратно (Round-Trip) на 1 пассажира." data-en="We personally curate and assist with booking optimal Swiss flight connections. Approximate round-trip airfares per passenger:">
+        We personally curate and assist with booking optimal Swiss flight connections. Approximate round-trip airfares per passenger:
+      </p>
+
+      <div class="flight-grid">
+        <!-- Business -->
+        <div class="flight-card popular">
+          <div>
+            <span class="flight-class-badge" data-ru="Рекомендуемый комфорт" data-en="Recommended Luxury">Recommended Luxury</span>
+            <h3 data-ru="Бизнес-класс" data-en="Business Class" style="font-family:var(--serif); font-size: 24px; margin-bottom: 6px;">Business Class</h3>
+            <div class="flight-price">~3 800 – 5 200 €</div>
+            <div class="flight-price-note" data-ru="В обе стороны (Round-Trip)" data-en="Round-Trip per passenger">Round-Trip per passenger</div>
+          </div>
+          <ul class="flight-details">
+            <li><span>✦</span> <span data-ru="Singapore Airlines: ZRH → SIN → DPS (эталонный сервис)" data-en="Singapore Airlines: ZRH → SIN → DPS (top-tier service)">Singapore Airlines: ZRH → SIN → DPS (top-tier service)</span></li>
+            <li><span>✦</span> <span data-ru="Qatar Airways: ZRH/GVA → DOH → DPS (Qsuite приватность)" data-en="Qatar Airways: ZRH/GVA → DOH → DPS (Qsuite privacy)">Qatar Airways: ZRH/GVA → DOH → DPS (Qsuite privacy)</span></li>
+            <li><span>✦</span> <span data-ru="Emirates: GVA/ZRH → DXB → DPS (A380 комфорт)" data-en="Emirates: GVA/ZRH → DXB → DPS (A380 comfort)">Emirates: GVA/ZRH → DXB → DPS (A380 comfort)</span></li>
+            <li><span>✦</span> <span data-ru="Полноценная кровать Lie-flat, лаунжи и отдых в пути" data-en="Full Lie-flat bed, luxury lounges, seamless sleep">Full Lie-flat bed, luxury lounges, seamless sleep</span></li>
+          </ul>
+        </div>
+
+        <!-- Premium Economy -->
+        <div class="flight-card">
+          <div>
+            <span class="flight-class-badge" data-ru="Оптимальный баланс" data-en="Balanced Space">Balanced Space</span>
+            <h3 data-ru="Премиум-эконом" data-en="Premium Economy" style="font-family:var(--serif); font-size: 24px; margin-bottom: 6px;">Premium Economy</h3>
+            <div class="flight-price">~1 900 – 2 400 €</div>
+            <div class="flight-price-note" data-ru="В обе стороны (Round-Trip)" data-en="Round-Trip per passenger">Round-Trip per passenger</div>
+          </div>
+          <ul class="flight-details">
+            <li><span>✦</span> <span data-ru="Увеличенное пространство для ног и откидывание кресел" data-en="Generous legroom and deeper recline">Generous legroom and deeper recline</span></li>
+            <li><span>✦</span> <span data-ru="Приоритетная посадка и увеличенный багаж" data-en="Priority boarding and increased baggage allowance">Priority boarding and increased baggage allowance</span></li>
+            <li><span>✦</span> <span data-ru="Доступно у Singapore Airlines и Emirates" data-en="Available on Singapore Airlines and Emirates">Available on Singapore Airlines and Emirates</span></li>
+            <li><span>✦</span> <span data-ru="Комфортный сон на дальнемагистральных плечах" data-en="Restful sleep on long-haul sectors">Restful sleep on long-haul sectors</span></li>
+          </ul>
+        </div>
+
+        <!-- Economy -->
+        <div class="flight-card">
+          <div>
+            <span class="flight-class-badge" data-ru="Стандарт" data-en="Classic">Classic</span>
+            <h3 data-ru="Эконом-класс" data-en="Economy Class" style="font-family:var(--serif); font-size: 24px; margin-bottom: 6px;">Economy Class</h3>
+            <div class="flight-price">~950 – 1 400 €</div>
+            <div class="flight-price-note" data-ru="В обе стороны (Round-Trip)" data-en="Round-Trip per passenger">Round-Trip per passenger</div>
+          </div>
+          <ul class="flight-details">
+            <li><span>✦</span> <span data-ru="Qatar Airways / Turkish Airlines / Emirates" data-en="Qatar Airways / Turkish Airlines / Emirates">Qatar Airways / Turkish Airlines / Emirates</span></li>
+            <li><span>✦</span> <span data-ru="Удобные стыковки в Дохе, Стамбуле или Дубае" data-en="Convenient connections in Doha, Istanbul, or Dubai">Convenient connections in Doha, Istanbul, or Dubai</span></li>
+            <li><span>✦</span> <span data-ru="Полное сопровождение нашими консьержами" data-en="Full booking assistance by our team">Full booking assistance by our team</span></li>
+            <li><span>✦</span> <span data-ru="Встреча VIP Fast-Track прямо у трапа на Бали" data-en="VIP Fast-Track greeting directly at Bali arrival gate">VIP Fast-Track greeting directly at Bali arrival gate</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: YOUR HOST -->
+  <section class="section guide-section" id="guide">
+    <div class="container">
+      <div class="guide-grid">
+        <div class="guide-photo-box">
+          <img src="/images/bali_hero.jpg" alt="Валерий Латыпов — Проводник">
+        </div>
+        <div class="guide-content">
+          <span class="section-tag" data-ru="Ваш проводник" data-en="Your Host & Guide">Your Host & Guide</span>
+          <h2>Валерий Латыпов</h2>
+          <div class="guide-credo" data-ru="«Я создаю бережное пространство, где возвращается вкус к жизни, сияние и глубокий покой.»" data-en="“I curate an effortless sanctuary where feminine radiance, joy, and deep stillness return naturally.”">
+            “I curate an effortless sanctuary where feminine radiance, joy, and deep stillness return naturally.”
+          </div>
+          <p class="guide-bio" data-ru="Квантовый радиофизик (МИФИ), визуальный архитектор и мастер традиции с 20-летним опытом практик. Жил на Бали более 2 лет, говорит на индонезийском и пользуется личным доверием хранителей острова. Создавал визуальные проекты для Forbes, снимал Depeche Mode, Peter Gabriel и мировых лидеров. Сочетает швейцарскую точность логистики с чутким пониманием женской природы." data-en="Quantum radiophysicist (MEPhI), visual architect, and dedicated practitioner with 20 years of inner discipline. Having lived in Bali for over 2 years and speaking Indonesian fluently, he holds personal trust with hereditary island priests. Having photographed Depeche Mode, Peter Gabriel, and Forbes leaders, Valeriy unites European organizational rigor with profound sensitivity to feminine energy.">
+            Quantum radiophysicist (MEPhI), visual architect, and dedicated practitioner with 20 years of inner discipline. Having lived in Bali for over 2 years and speaking Indonesian fluently, he holds personal trust with hereditary island priests. Having photographed Depeche Mode, Peter Gabriel, and Forbes leaders, Valeriy unites European organizational rigor with profound sensitivity to feminine energy.
+          </p>
+
+          <div class="guide-stats">
+            <div>
+              <div class="g-stat-num">2+ года</div>
+              <div class="g-stat-lbl" data-ru="Жизни на Бали" data-en="Living in Bali">Living in Bali</div>
+            </div>
+            <div>
+              <div class="g-stat-num">Bahasa</div>
+              <div class="g-stat-lbl" data-ru="Индонезийский язык" data-en="Fluent Indonesian">Fluent Indonesian</div>
+            </div>
+            <div>
+              <div class="g-stat-num">1:1</div>
+              <div class="g-stat-lbl" data-ru="Приватный фокус" data-en="Exclusive Focus">Exclusive Focus</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: INVESTMENT & CONTACT -->
+  <section class="section invest-section" id="investment">
+    <div class="container">
+      <div class="tier-comparison-wrap">
+        <div style="text-align: center; max-width: 760px; margin: 0 auto 40px;">
+          <span class="section-tag" data-ru="Инвестиция и Форматы" data-en="Investment & Formats">Investment & Formats</span>
+          <h2 class="section-heading">
+            <span data-ru="Два формата приватного отдыха:" data-en="Two Curated Private Formats:">Two Curated Private Formats:</span><br>
+            <em data-ru="7 дней или 5 дней." data-en="7 Days or 5 Days.">7 Days or 5 Days.</em>
+          </h2>
+          <p class="section-sub" style="margin: 0 auto;" data-ru="Выберите глубину вашего путешествия. Все цены зафиксированы за поездку «под ключ» для двоих гостей (без учета международных авиабилетов)." data-en="Select the ideal duration for your journey. Fixed turnkey pricing for two guests (excluding international airfares).">
+            Select the ideal duration for your journey. Fixed turnkey pricing for two guests (excluding international airfares).
+          </p>
+        </div>
+
+        <div class="tiers-grid">
+          <!-- 7-Day Tier (Featured) -->
+          <div class="tier-card featured">
+            <div>
+              <span class="tier-badge" data-ru="Золотой стандарт · 4★+ Бутик & Глэмпинг" data-en="Sanctuary 4★+ Boutique · 7 Days">Sanctuary 4★+ Boutique · 7 Days</span>
+              <h3 class="tier-title" data-ru="7 Дней / 6 Ночей" data-en="7 Days / 6 Nights">7 Days / 6 Nights</h3>
+              <div class="tier-duration" data-ru="Убуд (3 ночи) + Toteme Glamping Кинтамани (1 ночь) + Улувату (2 ночи)" data-en="Ubud (3 nights) + Toteme Glamping Kintamani (1 night) + Uluwatu (2 nights)">Ubud (3 nights) + Toteme Glamping Kintamani (1 night) + Uluwatu (2 nights)</div>
+              <div class="tier-price-row">
+                <div class="tier-price">12 000 €</div>
+                <div class="tier-price-note" data-ru="за двоих гостей" data-en="for two guests">for two guests</div>
+              </div>
+              <p style="font-size:13.5px; color:var(--ink-soft); line-height:1.5;" data-ru="Камерный отдых без лишней помпезности: проверенные бутик-отели 4★+ (300–400 €/ночь), термы у вулкана, сакральные мастера и океанская тишина." data-en="Intimate boutique comfort: vetted 4★+ artisanal retreats (300–400 €/night), volcano hot springs, sacred temple masters, and oceanic silence.">
+                Intimate boutique comfort: vetted 4★+ artisanal retreats (300–400 €/night), volcano hot springs, sacred temple masters, and oceanic silence.
+              </p>
+            </div>
+
+            <ul class="tier-highlights-list">
+              <li><span class="chk">✓</span> <span data-ru="6 ночей: Plataran/Suarapura 4★+ + Toteme Glamping с термами + Renaissance Uluwatu" data-en="6 nights: Plataran/Suarapura 4★+ + Toteme Hot Spring Glamping + Renaissance Uluwatu">6 nights: Plataran/Suarapura 4★+ + Toteme Hot Spring Glamping + Renaissance Uluwatu</span></li>
+              <li><span class="chk">✓</span> <span data-ru="Личный водитель Путу и представительский SUV 24/7 (Innova Zenix)" data-en="Dedicated driver Putu & executive SUV 24/7 (Innova Zenix)">Dedicated driver Putu & executive SUV 24/7 (Innova Zenix)</span></li>
+              <li><span class="chk">✓</span> <span data-ru="3-часовой ритуал с ванной из сотен роз и массажи для двоих" data-en="3-hour royal rose petal bath ceremony & restorative bodywork for two">3-hour royal rose petal bath ceremony & restorative bodywork for two</span></li>
+              <li><span class="chk">✓</span> <span data-ru="Приватное омовение Мелукат и благословение священника Манку" data-en="Private Melukat sacred water cleansing & Mangku priest blessing">Private Melukat sacred water cleansing & Mangku priest blessing</span></li>
+              <li><span class="chk">✓</span> <span data-ru="Аудиенция у потомственного мастера клинков Крис и балийского целителя" data-en="Audience with hereditary Keris master and traditional Balinese healer">Audience with hereditary Keris master and traditional Balinese healer</span></li>
+              <li><span class="chk">✓</span> <span data-ru="Звукотерапия тибетскими чашами от Валерия на вилле" data-en="Private acoustic Tibetan singing bowl sound healing by Valeriy">Private acoustic Tibetan singing bowl sound healing by Valeriy</span></li>
+              <li><span class="chk">✓</span> <span data-ru="Авторская портретная фотосъемка от Валерия Латыпова" data-en="Fine-art editorial portrait session by Valeriy Latypov">Fine-art editorial portrait session by Valeriy Latypov</span></li>
+              <li><span class="chk">✓</span> <span data-ru="Гастрономия: ужины от шефа и дегустационные сеты" data-en="Fine gastronomy: chef tasting dinners and ocean cliff sunset">Fine gastronomy: chef tasting dinners and ocean cliff sunset</span></li>
+              <li><span class="chk">✓</span> <span data-ru="VIP Fast-Track встреча в аэропорту Денпасара без очередей" data-en="Airport VIP Fast-Track customs and luggage concierge">Airport VIP Fast-Track customs and luggage concierge</span></li>
+            </ul>
+
+            <a href="#inquire" class="btn-luxury" style="text-align:center; width:100%; margin-top:12px;" data-ru="Выбрать 7-дневный путь →" data-en="Select 7-Day Journey →">Select 7-Day Journey →</a>
+          </div>
+
+          <!-- 5-Day Tier -->
+          <div class="tier-card">
+            <div>
+              <span class="tier-badge" data-ru="Экспресс · 4★+ Бутик" data-en="Intensive Boutique · 5 Days">Intensive Boutique · 5 Days</span>
+              <h3 class="tier-title" data-ru="5 Дней / 4 Ночи" data-en="5 Days / 4 Nights">5 Days / 4 Nights</h3>
+              <div class="tier-duration" data-ru="2 ночи в Убуде (Plataran / Suarapura) + 2 ночи в Улувату (Renaissance)" data-en="2 nights Ubud (Plataran / Suarapura) + 2 nights Uluwatu (Renaissance)">2 nights Ubud (Plataran / Suarapura) + 2 nights Uluwatu (Renaissance)</div>
+              <div class="tier-price-row">
+                <div class="tier-price">8 500 €</div>
+                <div class="tier-price-note" data-ru="за двоих гостей" data-en="for two guests">for two guests</div>
+              </div>
+              <p style="font-size:13.5px; color:var(--ink-soft); line-height:1.5;" data-ru="Насыщенный концентрированный формат: перезагрузка в сердце джунглей Убуда, сакральное омовение в Себату и закатная эстетика Улувату." data-en="A distilled, high-impact escape: sensory unwinding in Ubud, sacred spring renewal in Sebatu, and sunset cliffside aesthetics.">
+                A distilled, high-impact escape: sensory unwinding in Ubud, sacred spring renewal in Sebatu, and sunset cliffside aesthetics.
+              </p>
+            </div>
+
+            <ul class="tier-highlights-list">
+              <li><span class="chk">✓</span> <span data-ru="4 ночи в бутик-отелях 4★+ (2 Убуд + 2 Улувату)" data-en="4 nights in curated 4★+ boutique hotels (2 Ubud + 2 Uluwatu)">4 nights in curated 4★+ boutique hotels (2 Ubud + 2 Uluwatu)</span></li>
+              <li><span class="chk">✓</span> <span data-ru="Личный водитель Путу и SUV на все 5 дней" data-en="Dedicated driver Putu & executive vehicle throughout">Dedicated driver Putu & executive vehicle throughout</span></li>
+              <li><span class="chk">✓</span> <span data-ru="Королевская ванна с лепестками роз и спа-ритуалы для двоих" data-en="Royal rose petal bath sequence & signature spa bodywork">Royal rose petal bath sequence & signature spa bodywork</span></li>
+              <li><span class="chk">✓</span> <span data-ru="Сакральная водная церемония Мелукат в храме Себату" data-en="Sacred Melukat spring cleansing ritual in Sebatu sanctuary">Sacred Melukat spring cleansing ritual in Sebatu sanctuary</span></li>
+              <li><span class="chk">✓</span> <span data-ru="Звуковая медитация тибетскими чашами от Валерия на вилле" data-en="Private acoustic Tibetan singing bowl sound healing by Valeriy">Private acoustic Tibetan singing bowl sound healing by Valeriy</span></li>
+              <li><span class="chk">✓</span> <span data-ru="Авторская портретная фотосъемка от Валерия Латыпова" data-en="Fine-art editorial portrait session by Valeriy Latypov">Fine-art editorial portrait session by Valeriy Latypov</span></li>
+              <li><span class="chk">✓</span> <span data-ru="Приветственный и праздничный ужины от шефа" data-en="Welcome terrace dinner & celebration coastal gastronomy">Welcome terrace dinner & celebration coastal gastronomy</span></li>
+              <li><span class="chk">✓</span> <span data-ru="VIP Fast-Track встреча в аэропорту Денпасара без очередей" data-en="Airport VIP Fast-Track customs and luggage concierge">Airport VIP Fast-Track customs and luggage concierge</span></li>
+            </ul>
+
+            <a href="#inquire" class="btn-luxury" style="text-align:center; width:100%; margin-top:12px; background:var(--ink-soft);" data-ru="Выбрать 5-дневный путь →" data-en="Select 5-Day Journey →">Select 5-Day Journey →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRANSPARENT FINANCIAL ARCHITECTURE -->
+      <div class="ledger-wrap">
+        <div class="ledger-header">
+          <span class="section-tag" data-ru="Прозрачность инвестиций" data-en="Financial Clarity">Financial Clarity</span>
+          <h3 data-ru="Прозрачная архитектура бюджета: куда направляются средства" data-en="Transparent Financial Architecture: Where Resources Go">Transparent Financial Architecture: Where Resources Go</h3>
+          <p data-ru="Мы разделяем европейские стандарты абсолютной финансовой прозрачности. Ниже приведен детальный расчет операционных расходов на организацию путешествия высшего класса для 2 гостей на базе проверенных 4★+ отелей и премиум-глэмпинга (300–400 € / ночь)." data-en="We uphold Swiss standards of total financial clarity. Below is the itemized operational breakdown for orchestrating a world-class journey for two guests with boutique 4★+ hotels and luxury hot spring glamping (300–400 € / night).">
+            We uphold Swiss standards of total financial clarity. Below is the itemized operational breakdown for orchestrating a world-class journey for two guests with boutique 4★+ hotels and luxury hot spring glamping (300–400 € / night).
+          </p>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="ledger-table">
+            <thead>
+              <tr>
+                <th style="width: 46%;" data-ru="Статья расходов" data-en="Operational Item">Operational Item</th>
+                <th style="width: 27%;" data-ru="7 Дней / 6 Ночей" data-en="7 Days / 6 Nights">7 Days / 6 Nights</th>
+                <th style="width: 27%;" data-ru="5 Дней / 4 Ночи" data-en="5 Days / 4 Nights">5 Days / 4 Nights</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="ledger-item-title" data-ru="Проживание в бутик-отелях 4★+ и глэмпинге" data-en="4★+ Boutique Hotels & Luxury Glamping">4★+ Boutique Hotels & Luxury Glamping</div>
+                  <div class="ledger-item-desc" data-ru="Plataran Ubud / Suarapura Sebatu + Toteme Glamping & Hot Springs Kintamani + Renaissance Uluwatu (300–400 €/ночь). Просторные номера с видом на джунгли, термальные купальни и океан." data-en="Plataran Ubud / Suarapura Sebatu + Toteme Glamping Kintamani + Renaissance Uluwatu (300–400 €/night). Boutique suites with jungle, hot spring, and ocean views.">Plataran Ubud / Suarapura Sebatu + Toteme Glamping Kintamani + Renaissance Uluwatu (300–400 €/night). Boutique suites with jungle, hot spring, and ocean views.</div>
+                </td>
+                <td><span class="ledger-val">~2 300 €</span><br><small style="color:var(--ink-muted); font-size:11px;" data-ru="(6 ночей для 2 гостей)" data-en="(6 nights for 2 guests)">(6 nights for 2 guests)</small></td>
+                <td><span class="ledger-val">~1 500 €</span><br><small style="color:var(--ink-muted); font-size:11px;" data-ru="(4 ночи для 2 гостей)" data-en="(4 nights for 2 guests)">(4 nights for 2 guests)</small></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="ledger-item-title" data-ru="Услуги Путу & Представительский SUV 24/7" data-en="Putu's Services & Executive Vehicle 24/7">Putu's Services & Executive Vehicle 24/7</div>
+                  <div class="ledger-item-desc" data-ru="Toyota Innova Zenix / Reborn. Личный проверенный водитель-координатор Путу, бензин, парковки, разрешения в закрытые храмы, круглосуточная поддержка." data-en="Toyota Innova Zenix / executive SUV. Trusted personal driver Putu, fuel, temple permits, 24/7 standby availability.">Toyota Innova Zenix / executive SUV. Trusted personal driver Putu, fuel, temple permits, 24/7 standby availability.</div>
+                </td>
+                <td><span class="ledger-val">~600 €</span><br><small style="color:var(--ink-muted); font-size:11px;" data-ru="(7 дней аренды с водителем)" data-en="(7 days dedicated service)">(7 days dedicated service)</small></td>
+                <td><span class="ledger-val">~450 €</span><br><small style="color:var(--ink-muted); font-size:11px;" data-ru="(5 дней аренды с водителем)" data-en="(5 days dedicated service)">(5 days dedicated service)</small></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="ledger-item-title" data-ru="Спа-ритуалы и королевские ванны с лепестками роз" data-en="Royal Spas & Rose Petal Baths">Royal Spas & Rose Petal Baths</div>
+                  <div class="ledger-item-desc" data-ru="3-часовой цветочный ритуал (ванна из сотен свежих роз), скрабы Lulur, восстанавливающие массажи для двоих гостей." data-en="3-hour royal flower bath with hundreds of roses, traditional Lulur botanical scrubs, restorative massages for two.">3-hour royal flower bath with hundreds of roses, traditional Lulur botanical scrubs, restorative massages for two.</div>
+                </td>
+                <td><span class="ledger-val">~450 €</span><br><small style="color:var(--ink-muted); font-size:11px;" data-ru="(комплекс на 7 дней)" data-en="(full 7-day wellness package)">(full 7-day wellness package)</small></td>
+                <td><span class="ledger-val">~350 €</span><br><small style="color:var(--ink-muted); font-size:11px;" data-ru="(комплекс на 5 дней)" data-en="(full 5-day wellness package)">(full 5-day wellness package)</small></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="ledger-item-title" data-ru="Сакральные церемонии, мастера и храмы" data-en="Sacred Ceremonies & Masters">Sacred Ceremonies & Masters</div>
+                  <div class="ledger-item-desc" data-ru="Персональное омовение Мелукат, пожертвования священникам Манку, церемониальные саронги, подношения кананг-сари, доступ к мастеру сакральных клинков Крис." data-en="Private Melukat spring cleansing, donations to hereditary Mangku priests, ritual offerings, and access to UNESCO Keris master compound.">Private Melukat spring cleansing, donations to hereditary Mangku priests, ritual offerings, and access to UNESCO Keris master compound.</div>
+                </td>
+                <td><span class="ledger-val">~350 €</span></td>
+                <td><span class="ledger-val">~300 €</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="ledger-item-title" data-ru="Авторская гастрономия и тропические фрукты" data-en="Curated Gastronomy & Refreshments">Curated Gastronomy & Refreshments</div>
+                  <div class="ledger-item-desc" data-ru="Приветственный ужин на вилле, авторский дегустационный сет (Mozaic / Locavore), панорамный ужин на утесе, свежие мангостины и кокосы." data-en="Welcome dinner, fine dining tasting menus (Mozaic / Locavore), cliffside dining, daily exotic fruits & fresh young coconuts.">Welcome dinner, fine dining tasting menus (Mozaic / Locavore), cliffside dining, daily exotic fruits & fresh young coconuts.</div>
+                </td>
+                <td><span class="ledger-val">~920 €</span></td>
+                <td><span class="ledger-val">~620 €</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="ledger-item-title" data-ru="VIP Fast-Track (Meet & Greet, портье, VIP Lounge), визы e-VoA и налог Love Bali" data-en="Airport VIP Fast-Track (Meet & Greet, Porter, VIP Lounge), e-VoA & Tourist Levy">Airport VIP Fast-Track (Meet & Greet, Porter, VIP Lounge), e-VoA & Tourist Levy</div>
+                  <div class="ledger-item-desc" data-ru="Встреча у трапа с именной табличкой, дип-коридор без очередей, багажный портье, отдых в VIP Lounge (Concordia), 2 электронные визы e-VOA и сбор Love Bali «под ключ»." data-en="Airbridge meet & greet with personalized sign, diplomatic expedited lane, dedicated baggage porter, Concordia VIP Lounge access, 2 e-VoA visas & Bali tourist levy handled seamlessly.">Airbridge meet & greet with personalized sign, diplomatic expedited lane, dedicated baggage porter, Concordia VIP Lounge access, 2 e-VoA visas & Bali tourist levy handled seamlessly.</div>
+                </td>
+                <td><span class="ledger-val">~240 €</span></td>
+                <td><span class="ledger-val">~240 €</span></td>
+              </tr>
+              <tr style="background: rgba(42, 71, 54, 0.04);">
+                <td>
+                  <div class="ledger-item-title" data-ru="Прямые операционные расходы (40%)" data-en="Direct Operational Expenses (40%)">Direct Operational Expenses (40%)</div>
+                  <div class="ledger-item-desc" data-ru="Отели 4★+ и глэмпинг, SUV с водителем, спа-процедуры, подношения храмам, ужины от шефа, Fast-Track и визы." data-en="4★+ hotels & glamping, SUV with driver, spa therapies, temple offerings, fine dining, Fast-Track & visas.">4★+ hotels & glamping, SUV with driver, spa therapies, temple offerings, fine dining, Fast-Track & visas.</div>
+                </td>
+                <td><span class="ledger-val">~4 800 €</span></td>
+                <td><span class="ledger-val">~3 400 €</span></td>
+              </tr>
+              <tr style="background: rgba(197, 164, 103, 0.08);">
+                <td>
+                  <div class="ledger-item-title" style="color:var(--accent);" data-ru="Кураторский гонорар Валерия Латыпова (60%)" data-en="Valeriy Latypov Master Fee (60%)">Valeriy Latypov Master Fee (60%)</div>
+                  <div class="ledger-item-desc" data-ru="Личное ведение 24/7 (индонезийский и английский языки), авторская программа, закрытые сакральные доступы, приватная звукотерапия тибетскими чашами, алхимическая арт-съемка." data-en="24/7 personal curation (Indonesian & English), sacred temple access, private acoustic Tibetan singing bowl sound healing, fine-art editorial portraiture session.">24/7 personal curation (Indonesian & English), sacred temple access, private acoustic Tibetan singing bowl sound healing, fine-art editorial portraiture session.</div>
+                </td>
+                <td><span class="ledger-val" style="color:var(--gold); font-size:16px;">7 200 €</span></td>
+                <td><span class="ledger-val" style="color:var(--gold); font-size:16px;">5 100 €</span></td>
+              </tr>
+              <tr class="total-row">
+                <td data-ru="Итоговый фиксированный пакет (за 2 гостей):" data-en="Total All-Inclusive Investment (for 2 guests):">Total All-Inclusive Investment (for 2 guests):</td>
+                <td><span class="ledger-val">12 000 €</span></td>
+                <td><span class="ledger-val">8 500 €</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- INQUIRY / CONTACT BOX -->
+      <div class="invest-card-main" id="inquire">
+        <div class="invest-left">
+          <span class="section-tag" data-ru="Личный диалог" data-en="Personal Connection">Personal Connection</span>
+          <h2 class="section-heading" style="margin-bottom: 16px;" data-ru="Индивидуальная калибровка программы" data-en="Bespoke Route Calibration">Bespoke Route Calibration</h2>
+
+          <div class="personal-quote-card" style="margin: 0 0 24px 0;">
+            <div class="quote-icon">“</div>
+            <div>
+              <div class="quote-text" data-ru="«Мы обязательно созвонимся и пообщаемся. Я подберу для вас лучшую программу, которая вам понравится и точно попадет в ваш запрос. Мне кажется, это будет идеально.»" data-en="“We will definitely connect on a personal call. I will sculpt the ideal journey tailored specifically to your rhythm, personal wishes, and inner inquiry. It will be seamless and unforgettable.”">
+                “We will definitely connect on a personal call. I will sculpt the ideal journey tailored specifically to your rhythm, personal wishes, and inner inquiry. It will be seamless and unforgettable.”
+              </div>
+              <div class="quote-author" data-ru="— Валерий Латыпов" data-en="— Valeriy Latypov">— Valeriy Latypov</div>
+            </div>
+          </div>
+
+          <p style="font-size: 14.5px; color: var(--ink-soft); line-height: 1.6;" data-ru="Вы можете выбрать любые удобные даты в течение сезона. В ходе приватного видеозвонка или переписки мы согласуем желаемый баланс между отдыхом у бассейна, спа-процедурами, прогулками по садам и сакральными ритуалами, а также согласуем бронирование оптимальных швейцарских рейсов." data-en="Choose any convenient dates throughout the season. During our private dialogue, we will balance your personal mix of pool quietude, spa rituals, botanical trails, and sacred ceremonies, along with Swiss flight arrangements.">
+            Choose any convenient dates throughout the season. During our private dialogue, we will balance your personal mix of pool quietude, spa rituals, botanical trails, and sacred ceremonies, along with Swiss flight arrangements.
+          </p>
+        </div>
+
+        <div class="inquiry-box">
+          <h3 data-ru="Связаться с Валерием" data-en="Connect with Valeriy">Connect with Valeriy</h3>
+          <p data-ru="Напишите в Telegram или WhatsApp для выбора дат и обсуждения нюансов путешествия." data-en="Reach out via Telegram or WhatsApp to discuss dates and customize your journey.">
+            Reach out via Telegram or WhatsApp to discuss dates and customize your journey.
+          </p>
+
+          <div class="contact-btns">
+            <a href="https://t.me/latypov_valery" target="_blank" class="btn-tg">
+              <span>✈</span> <span data-ru="Написать в Telegram" data-en="Message on Telegram">Message on Telegram</span>
+            </a>
+            <a href="https://wa.me/79852246789" target="_blank" class="btn-wa">
+              <span>💬</span> <span data-ru="Написать в WhatsApp" data-en="Message on WhatsApp">Message on WhatsApp</span>
+            </a>
+          </div>
+
+          <div class="direct-phone">
+            <span data-ru="Прямой телефон:" data-en="Direct:">Direct:</span> <a href="tel:+79852246789">+7 (985) 224-67-89</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">VALERIY LATYPOV <span>✦</span> BALI SANCTUARY</div>
+      <div>Zurich · Geneva · Denpasar</div>
+      <div>&copy; 2026. Private Journeys. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    let currentLang = 'en';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+
+      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+    }
+  </script>
+</body>
+</html>
