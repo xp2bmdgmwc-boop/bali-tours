@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bali Sanctuary — Поэзия Красоты & Чувственный Гедонизм</title>
+  <meta name="description" content="Приватное эстетическое путешествие на Бали. Роскошь покоя, сакральные воды, спа-ритуалы, алхимические портреты и возвращение к себе. Проводник — Валерий Латыпов.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0d1a14;
+      --bg-dark-accent: #13241c;
+      --bg-sand: #fbf9f5;
+      --bg-sand-card: #f4efe7;
+      --gold: #d4af37;
+      --gold-soft: #c8a35e;
+      --gold-light: #e8d7b5;
+      --ink: #17211d;
+      --ink-soft: #4a5750;
+      --ink-light: #7e8c84;
+      --sand-light: #f5eedf;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-dark);
+      color: var(--sand-light);
+      line-height: 1.8;
+      font-weight: 300;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      line-height: 1.2;
+      color: #fff;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.85;
+    }
+
+    .light-theme p {
+      color: var(--ink-soft);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .container-narrow {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 24px 0;
+      background: linear-gradient(180deg, rgba(13, 26, 20, 0.92) 0%, rgba(13, 26, 20, 0) 100%);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: var(--transition);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .logo span {
+      color: var(--gold-soft);
+      font-style: italic;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .lang-toggle {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 4px 12px;
+      display: flex;
+      gap: 8px;
+      cursor: pointer;
+      font-size: 12px;
+      color: #fff;
+      letter-spacing: 0.08em;
+    }
+
+    .lang-toggle span.active {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .btn-header {
+      color: var(--sand-light);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 10px 24px;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 30px;
+      transition: var(--transition);
+    }
+
+    .btn-header:hover {
+      background: var(--gold);
+      color: var(--bg-dark);
+      border-color: var(--gold);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 24px 80px;
+      background: radial-gradient(circle at center, rgba(19, 36, 28, 0.6) 0%, rgba(13, 26, 20, 0.95) 100%),
+                  url('/images/bali_hero.jpg') center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 160px;
+      background: linear-gradient(0deg, var(--bg-dark) 0%, transparent 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+    .hero-tag {
+      font-size: 13px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      display: inline-block;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.2rem, 7vw, 5.8rem);
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      margin-bottom: 28px;
+      line-height: 1.08;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 720px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .hero-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 36px;
+      opacity: 0.6;
+    }
+
+    .hero-credo {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 620px;
+      margin: 0 auto 48px;
+      line-height: 1.8;
+    }
+
+    .scroll-hint {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      text-decoration: none;
+      opacity: 0.8;
+      transition: var(--transition);
+    }
+
+    .scroll-hint:hover {
+      opacity: 1;
+      transform: translateY(4px);
+    }
+
+    .scroll-hint::after {
+      content: '';
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(180deg, var(--gold) 0%, transparent 100%);
+    }
+
+    /* CHAPTER SECTIONS */
+    .chapter {
+      padding: 130px 0;
+      position: relative;
+    }
+
+    .chapter.light-theme {
+      background-color: var(--bg-sand);
+      color: var(--ink);
+    }
+
+    .chapter.light-theme h2,
+    .chapter.light-theme h3 {
+      color: var(--ink);
+    }
+
+    .chapter.light-theme .chapter-num {
+      color: var(--gold-soft);
+    }
+
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .chapter-grid.reverse {
+      direction: rtl;
+    }
+
+    .chapter-grid.reverse > * {
+      direction: ltr;
+    }
+
+    .chapter-img-box {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    }
+
+    .chapter.light-theme .chapter-img-box {
+      box-shadow: 0 24px 60px rgba(23, 33, 29, 0.12);
+    }
+
+    .chapter-img-box img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      max-height: 640px;
+      object-fit: cover;
+      display: block;
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .chapter-img-box:hover img {
+      transform: scale(1.03);
+    }
+
+    .chapter-img-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(13, 26, 20, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .chapter-num {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .chapter h2 {
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+
+    .chapter h2 em {
+      font-style: italic;
+      color: var(--gold-soft);
+    }
+
+    .chapter-lead {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .chapter.light-theme .chapter-lead {
+      color: var(--ink);
+    }
+
+    .sensory-list {
+      list-style: none;
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .sensory-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      font-size: 1.05rem;
+    }
+
+    .sensory-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      margin-top: 10px;
+      flex-shrink: 0;
+    }
+
+    /* FULL BLEED QUOTE */
+    .sanctuary-quote {
+      padding: 140px 0;
+      text-align: center;
+      background: radial-gradient(circle at center, rgba(19, 36, 28, 0.8) 0%, rgba(13, 26, 20, 1) 100%),
+                  url('/images/bali_water.jpg') center/cover fixed;
+      position: relative;
+    }
+
+    .quote-mark {
+      font-family: var(--font-serif);
+      font-size: 80px;
+      color: var(--gold);
+      line-height: 1;
+      opacity: 0.4;
+      margin-bottom: -20px;
+    }
+
+    .quote-text {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
+      font-weight: 300;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.4;
+      max-width: 920px;
+      margin: 0 auto 32px;
+    }
+
+    .quote-author-name {
+      font-size: 13px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    /* GALLERY MOSAIC */
+    .mosaic-section {
+      padding: 120px 0;
+      background-color: var(--bg-dark-accent);
+    }
+
+    .section-header-center {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 70px;
+    }
+
+    .mosaic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .mosaic-card {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      height: 440px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+
+    .mosaic-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .mosaic-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .mosaic-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(13, 26, 20, 0.9) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 32px;
+    }
+
+    .mosaic-tag {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .mosaic-title {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      color: #fff;
+      line-height: 1.25;
+    }
+
+    /* GUIDE SECTION */
+    .guide-chapter {
+      padding: 140px 0;
+      background: var(--bg-sand);
+      color: var(--ink);
+    }
+
+    .guide-layout {
+      display: grid;
+      grid-template-columns: 460px 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .guide-portrait {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(23, 33, 29, 0.15);
+    }
+
+    .guide-portrait img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .guide-credo-box {
+      border-left: 2px solid var(--gold);
+      padding-left: 24px;
+      margin: 28px 0;
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    .guide-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .guide-pill {
+      background: rgba(23, 33, 29, 0.05);
+      border: 1px solid rgba(23, 33, 29, 0.12);
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* INVITATION & CALL */
+    .invitation {
+      padding: 150px 0;
+      text-align: center;
+      position: relative;
+      background: radial-gradient(circle at center, rgba(19, 36, 28, 0.92) 0%, rgba(13, 26, 20, 1) 100%),
+                  url('/images/bali_nature.jpg') center/cover;
+    }
+
+    .invitation h2 {
+      font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+      margin-bottom: 28px;
+    }
+
+    .invitation p {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-style: italic;
+      max-width: 680px;
+      margin: 0 auto 48px;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+    }
+
+    .btn-main {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--bg-dark);
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 20px 48px;
+      border-radius: 40px;
+      transition: var(--transition);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-main:hover {
+      background: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(255, 255, 255, 0.25);
+    }
+
+    .program-link {
+      display: inline-block;
+      margin-top: 28px;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      transition: var(--transition);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 4px;
+    }
+
+    .program-link:hover {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 60px 0 40px;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .chapter-grid,
+      .chapter-grid.reverse,
+      .guide-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        direction: ltr !important;
+      }
+      .mosaic-grid {
+        grid-template-columns: 1fr;
+      }
+      .chapter-img-box img {
+        min-height: 400px;
+      }
+      .guide-portrait {
+        max-width: 420px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+      <a href="/journey" class="logo">Bali <span>Sanctuary</span></a>
+      <div class="header-nav">
+        <div class="lang-toggle" onclick="toggleLanguage()">
+          <span id="lang-ru" class="active">RU</span>
+          <span>/</span>
+          <span id="lang-en">EN</span>
+        </div>
+        <a href="https://wa.me/79166160000" target="_blank" class="btn-header" data-ru="Связаться с Валерием" data-en="Connect with Valeriy">Связаться с Валерием</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-tag" data-ru="Приватное путешествие в сердце острова" data-en="A Private Sanctuary in the Heart of Bali">Приватное путешествие в сердце острова</span>
+      <h1>
+        <span data-ru="Тишина, красота и" data-en="Silence, beauty and">Тишина, красота и</span><br>
+        <em data-ru="возвращение к себе." data-en="returning to yourself.">возвращение к себе.</em>
+      </h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub" data-ru="«Тонкий баланс чувственного гедонизма, целебных вод и сакральной глубины острова, сотканный без малейшей суеты.»" data-en="“A refined harmony of sensual hedonism, healing waters, and sacred island depth, curated without a single rushed moment.”">
+        «Тонкий баланс чувственного гедонизма, целебных вод и сакральной глубины острова, сотканный без малейшей суеты.»
+      </p>
+      <p class="hero-credo" data-ru="Это путешествие создано для тех, кто устал от шума и графиков. Здесь нет перегруза информацией и бесконечных списков. Только живое присутствие, шелест джунглей, прикосновение к священным водам и глубокая женская перезагрузка." data-en="Crafted for those yearning to step away from noise, deadlines, and information overload. No rushed itineraries. Only living presence, the whisper of rainforest canopies, sacred waters, and pure feminine rejuvenation.">
+        Это путешествие создано для тех, кто устал от шума и графиков. Здесь нет перегруза информацией и бесконечных списков. Только живое присутствие, шелест джунглей, прикосновение к священным водам и глубокая женская перезагрузка.
+      </p>
+      <a href="#awakening" class="scroll-hint">
+        <span data-ru="Погрузиться в историю" data-en="Begin the Journey">Погрузиться в историю</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CHAPTER I: UBUD -->
+  <section class="chapter" id="awakening">
+    <div class="container">
+      <div class="chapter-grid">
+        <div class="chapter-content">
+          <span class="chapter-num" data-ru="Глава I · Пробуждение" data-en="Chapter I · Awakening">Глава I · Пробуждение</span>
+          <h2>
+            <span data-ru="Утро в изумрудных" data-en="Morning in Emerald">Утро в изумрудных</span><br>
+            <em data-ru="садах Убуда." data-en="Ubud Gardens.">садах Убуда.</em>
+          </h2>
+          <p class="chapter-lead" data-ru="Вы просыпаетесь под пение тропических птиц и мягкий шум священной горной реки." data-en="You awaken to melodic tropical birdsong and the gentle murmur of a sacred river flowing below.">
+            Вы просыпаетесь под пение тропических птиц и мягкий шум священной горной реки.
+          </p>
+          <p data-ru="Ваш сьют открывается навстречу вековым джунглям. На террасе — чайник свежезаваренного травяного настоя, спелая папайя, мангостины и маракуйя. Здесь время замедляет свой бег: нет ни звонков, ни спешки. Тело начинает отпускать напряжение перелета в первые же часы." data-en="Your suite opens seamlessly onto lush jungle canopies. On the terrace awaits freshly brewed herbal tea, ripe papaya, mangosteens, and passionfruit. Here, time eases into stillness: no calls, no rush. Your body begins releasing months of urban fatigue from the very first morning.">
+            Ваш сьют открывается навстречу вековым джунглям. На террасе — чайник свежезаваренного травяного настоя, спелая папайя, мангостины и маракуйя. Здесь время замедляет свой бег: нет ни звонков, ни спешки. Тело начинает отпускать напряжение перелета в первые же часы.
+          </p>
+          <ul class="sensory-list">
+            <li class="sensory-item">
+              <span class="sensory-dot"></span>
+              <span data-ru="Шелест пальмовых ветвей и аромат цветущего франжипани" data-en="Whispering palm fronds and the scent of blossoming frangipani">Шелест пальмовых ветвей и аромат цветущего франжипани</span>
+            </li>
+            <li class="sensory-item">
+              <span class="sensory-dot"></span>
+              <span data-ru="Просторный сьют с панорамной садовой террасой" data-en="Spacious private suite with a panoramic jungle veranda">Просторный сьют с панорамной садовой террасой</span>
+            </li>
+            <li class="sensory-item">
+              <span class="sensory-dot"></span>
+              <span data-ru="Приветственный спа-массаж с натуральными теплыми маслами" data-en="Welcome massage with warm botanical oils">Приветственный спа-массаж с натуральными теплыми маслами</span>
+            </li>
+          </ul>
+        </div>
+        <div class="chapter-img-box">
+          <img src="/images/bali_scene1.jpg" alt="Сады и утренний Убуд">
+          <div class="chapter-img-badge" data-ru="Убуд · Камерная Резиденция" data-en="Ubud · Garden Residence">Убуд · Камерная Резиденция</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER II: SACRED WATERS (LIGHT THEME) -->
+  <section class="chapter light-theme">
+    <div class="container">
+      <div class="chapter-grid reverse">
+        <div class="chapter-content">
+          <span class="chapter-num" data-ru="Глава II · Очищение" data-en="Chapter II · Purification">Глава II · Очищение</span>
+          <h2>
+            <span data-ru="Хрустальные воды" data-en="Crystal Springs of">Хрустальные воды</span><br>
+            <em data-ru="каньона Себату." data-en="Sebatu Canyon.">каньона Себату.</em>
+          </h2>
+          <p class="chapter-lead" data-ru="Древнее таинство омовения Мелукат под струями скрытых водопадов." data-en="The ancient rite of Melukat under the secluded cascading waters.">
+            Древнее таинство омовения Мелукат под струями скрытых водопадов.
+          </p>
+          <p data-ru="Вдали от туристических толп, в прохладном тенистом ущелье, бьют целебные священные ключи. Местный священник Вайян мягко проведет обряд подношения цветов. Стоя под прохладным хрустальным водопадом, вы физически ощущаете, как вода смывает ментальный груз, оставляя кристальную ясность, чистоту и радость." data-en="Far from commercial tourist trails, nestled in a cool rainforest ravine, flow the sacred springs of Sebatu. Priest Wayan gently prepares flower offerings. Standing beneath the crystal waterfall, you tangibly feel the heavy mental fog wash away, replaced by pure lightness, clarity, and ease.">
+            Вдали от туристических толп, в прохладном тенистом ущелье, бьют целебные священные ключи. Местный священник Вайян мягко проведет обряд подношения цветов. Стоя под прохладным хрустальным водопадом, вы физически ощущаете, как вода смывает ментальный груз, оставляя кристальную ясность, чистоту и радость.
+          </p>
+          <ul class="sensory-list">
+            <li class="sensory-item">
+              <span class="sensory-dot"></span>
+              <span data-ru="Приватный доступ в скрытый каньон без очередей и суеты" data-en="Private secluded canyon access without crowds">Приватный доступ в скрытый каньон без очередей и суеты</span>
+            </li>
+            <li class="sensory-item">
+              <span class="sensory-dot"></span>
+              <span data-ru="Подношения кананг-сари из лепестков роз, жасмина и сандала" data-en="Canang sari offerings of rose, jasmine, and sandalwood petals">Подношения кананг-сари из лепестков роз, жасмина и сандала</span>
+            </li>
+            <li class="sensory-item">
+              <span class="sensory-dot"></span>
+              <span data-ru="Мгновенное чувство легкости и глубокого обновления" data-en="Instant sense of profound lightness and inner renewal">Мгновенное чувство легкости и глубокого обновления</span>
+            </li>
+          </ul>
+        </div>
+        <div class="chapter-img-box">
+          <img src="/images/bali_water.jpg" alt="Священные воды Себату">
+          <div class="chapter-img-badge" data-ru="Себату · Сакральный Мелукат" data-en="Sebatu · Sacred Melukat">Себату · Сакральный Мелукат</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL BLEED QUOTE -->
+  <section class="sanctuary-quote">
+    <div class="container-narrow">
+      <div class="quote-mark">“</div>
+      <div class="quote-text" data-ru="«Красота этого острова раскрывается только в тишине. Когда вы перестаете спешить, Бали начинает говорить с вами напрямую.»" data-en="“The beauty of this island unveils itself only in stillness. When you cease rushing, Bali begins speaking directly to your heart.”">
+        «Красота этого острова раскрывается только в тишине. Когда вы перестаете спешить, Бали начинает говорить с вами напрямую.»
+      </div>
+      <div class="quote-author-name" data-ru="— Валерий Латыпов" data-en="— Valeriy Latypov">— Валерий Латыпов</div>
+    </div>
+  </section>
+
+  <!-- CHAPTER III: SACRED ROOTS & VOLCANO -->
+  <section class="chapter">
+    <div class="container">
+      <div class="chapter-grid">
+        <div class="chapter-content">
+          <span class="chapter-num" data-ru="Глава III · Огонь и Земля" data-en="Chapter III · Fire & Earth">Глава III · Огонь и Земля</span>
+          <h2>
+            <span data-ru="Термальный лодж и" data-en="Thermal Lodge and">Термальный лодж и</span><br>
+            <em data-ru="величие Кинтамани." data-en="Majestic Kintamani.">величие Кинтамани.</em>
+          </h2>
+          <p class="chapter-lead" data-ru="Теплая геотермальная купель на террасе вашего номера прямо над зеркалом озера Батур." data-en="A private mineral thermal bath on your veranda overlooking Lake Batur.">
+            Теплая геотермальная купель на террасе вашего номера прямо над зеркалом озера Батур.
+          </p>
+          <p data-ru="Мы поднимаемся в высокогорный Кинтамани, где воздух свеж и чист. Никаких ночных изнурительных подъемов на вулкан — рассвет вы встретите в мягком халате с чашкой ароматного кофе, наблюдая, как первые лучи солнца озаряют облачное море над кальдерой. А вечером — расслабление в целебных минеральных водах, прогревающих каждую клеточку тела." data-en="We ascend into the mountain serenity of Kintamani. No exhausting pre-dawn trekking — you meet the sunrise in a plush robe with fresh Balinese coffee, watching dawn illuminate a sea of clouds across the volcanic caldera. In the evening, soothe into warm geothermal springs heating your body into deep ease.">
+            Мы поднимаемся в высокогорный Кинтамани, где воздух свеж и чист. Никаких ночных изнурительных подъемов на вулкан — рассвет вы встретите в мягком халате с чашкой ароматного кофе, наблюдая, как первые лучи солнца озаряют облачное море над кальдерой. А вечером — расслабление в целебных минеральных водах, прогревающих каждую клеточку тела.
+          </p>
+          <ul class="sensory-list">
+            <li class="sensory-item">
+              <span class="sensory-dot"></span>
+              <span data-ru="Персональная термальная купель с природной минеральной водой" data-en="Private natural mineral thermal tub on your suite veranda">Персональная термальная купель с природной минеральной водой</span>
+            </li>
+            <li class="sensory-item">
+              <span class="sensory-dot"></span>
+              <span data-ru="Рассвет над кальдерой без треккинга прямо с террасы лоджа" data-en="Sunrise across the caldera directly from your veranda">Рассвет над кальдерой без треккинга прямо с террасы лоджа</span>
+            </li>
+            <li class="sensory-item">
+              <span class="sensory-dot"></span>
+              <span data-ru="Прохладный хрустальный горный воздух и ужин озерной рыбы" data-en="Crisp mountain air and fresh lake fish grilled over embers">Прохладный хрустальный горный воздух и ужин озерной рыбы</span>
+            </li>
+          </ul>
+        </div>
+        <div class="chapter-img-box">
+          <img src="/images/bali_volcano.jpg" alt="Вулкан и озеро Батур">
+          <div class="chapter-img-badge" data-ru="Кинтамани · Озеро Батур" data-en="Kintamani · Lake Batur">Кинтамани · Озеро Батур</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER IV: LIVING ARTS & HEALING SOUNDS (LIGHT THEME) -->
+  <section class="chapter light-theme">
+    <div class="container">
+      <div class="chapter-grid reverse">
+        <div class="chapter-content">
+          <span class="chapter-num" data-ru="Глава IV · Живые Искусства" data-en="Chapter IV · Living Arts">Глава IV · Живые Искусства</span>
+          <h2>
+            <span data-ru="Звук, воск и тепло" data-en="Sound, Beeswax and">Звук, воск и тепло</span><br>
+            <em data-ru="благородного дерева." data-en="Sacred Wood.">благородного дерева.</em>
+          </h2>
+          <p class="chapter-lead" data-ru="Медитативное прикосновение к подлинным ремеслам острова." data-en="Meditative immersion into authentic ancestral master crafts.">
+            Медитативное прикосновение к подлинным ремеслам острова.
+          </p>
+          <p data-ru="В камерном ателье батика вы берете в руки медный инструмент кантинг и наносите растопленный воск на струящийся шелк. В мастерской потомственных резчиков деревни Мас вдыхаете теплый аромат сандала и эбена. А в Пирамидах Чи ложитесь на теплую водную кровать, где вибрации тибетских чаш и гонгов мягко растворяют остатки любых тревог." data-en="In an intimate textile atelier, you hold the copper canting tool, tracing melted beeswax onto delicate silk. In the woodcarvers' guild of Mas village, you breathe in the sacred warmth of sandalwood. And within the Pyramids of Chi, you recline upon a warm acoustic waterbed as Tibetan bowls and gongs gently dissolve the last remnants of mental tension.">
+            В камерном ателье батика вы берете в руки медный инструмент кантинг и наносите растопленный воск на струящийся шелк. В мастерской потомственных резчиков деревни Мас вдыхаете теплый аромат сандала и эбена. А в Пирамидах Чи ложитесь на теплую водную кровать, где вибрации тибетских чаш и гонгов мягко растворяют остатки любых тревог.
+          </p>
+          <ul class="sensory-list">
+            <li class="sensory-item">
+              <span class="sensory-dot"></span>
+              <span data-ru="Мастер-класс Батика Тулис: создание вашего шелкового платка" data-en="Batik Tulis masterclass: creating your bespoke silk scarf">Мастер-класс Батика Тулис: создание вашего шелкового платка</span>
+            </li>
+            <li class="sensory-item">
+              <span class="sensory-dot"></span>
+              <span data-ru="Звуковая сессия Light Sound Vibration на водных кроватях" data-en="Light Sound Vibration acoustic session on waterbeds">Звуковая сессия Light Sound Vibration на водных кроватях</span>
+            </li>
+            <li class="sensory-item">
+              <span class="sensory-dot"></span>
+              <span data-ru="Прикосновение к сакральным крисам (ЮНЕСКО) и легендам клинков" data-en="Feeling the living vibration of UNESCO sacred kris blades">Прикосновение к сакральным крисам (ЮНЕСКО) и легендам клинков</span>
+            </li>
+          </ul>
+        </div>
+        <div class="chapter-img-box">
+          <img src="/images/bali_ritual.jpg" alt="Живые ремесла и ритуалы">
+          <div class="chapter-img-badge" data-ru="Убуд · Ателье & Пирамиды Чи" data-en="Ubud · Ateliers & Sound">Убуд · Ателье & Пирамиды Чи</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER V: THE OCEAN & ALCHEMICAL PORTRAIT -->
+  <section class="chapter">
+    <div class="container">
+      <div class="chapter-grid">
+        <div class="chapter-content">
+          <span class="chapter-num" data-ru="Глава V · Океан и Свет" data-en="Chapter V · The Ocean">Глава V · Океан и Свет</span>
+          <h2>
+            <span data-ru="Лазурная лагуна и" data-en="Azure Lagoon and">Лазурная лагуна и</span><br>
+            <em data-ru="алхимический портрет." data-en="Alchemical Portrait.">алхимический портрет.</em>
+          </h2>
+          <p class="chapter-lead" data-ru="Приватная океанская вилла на первой линии у спокойной воды без волн." data-en="A private oceanfront villa set beside a calm, wave-free turquoise lagoon.">
+            Приватная океанская вилла на первой линии у спокойной воды без волн.
+          </p>
+          <p data-ru="Тихий Санур дарит ощущение абсолютного покоя: здесь океан ласков и безмятежен, идеален для купания. В предзакатные часы, когда свет становится медовым, Валерий проведет авторскую сессию алхимического портрета. Через объектив фиксируется ваше истинное состояние — наполненность, сияние, мягкость и королевское достоинство." data-en="Serene Sanur offers absolute tranquility: a sheltered lagoon where the sea is calm, gentle, and perfect for unhurried swimming. In the golden pre-sunset hour, Valeriy crafts your bespoke alchemical portrait session: capturing your centered radiance, effortless grace, and renewed luminescence.">
+            Тихий Санур дарит ощущение абсолютного покоя: здесь океан ласков и безмятежен, идеален для купания. В предзакатные часы, когда свет становится медовым, Валерий проведет авторскую сессию алхимического портрета. Через объектив фиксируется ваше истинное состояние — наполненность, сияние, мягкость и королевское достоинство.
+          </p>
+          <ul class="sensory-list">
+            <li class="sensory-item">
+              <span class="sensory-dot"></span>
+              <span data-ru="Первая линия океана: купание в теплой лагуне без опасных волн" data-en="First oceanfront line: swimming in a calm, wave-free lagoon">Первая линия океана: купание в теплой лагуне без опасных волн</span>
+            </li>
+            <li class="sensory-item">
+              <span class="sensory-dot"></span>
+              <span data-ru="Авторская портретная фотосессия от мастера в закатном свете" data-en="Editorial alchemical portrait session during golden sunset light">Авторская портретная фотосессия от мастера в закатном свете</span>
+            </li>
+            <li class="sensory-item">
+              <span class="sensory-dot"></span>
+              <span data-ru="Праздничный ужин из свежайшего улова у самой кромки прибоя" data-en="Candlelit seafood dinner right at the edge of the lapping tide">Праздничный ужин из свежайшего улова у самой кромки прибоя</span>
+            </li>
+          </ul>
+        </div>
+        <div class="chapter-img-box">
+          <img src="/images/bali_landscape.jpg" alt="Океан и побережье">
+          <div class="chapter-img-badge" data-ru="Санур · Океанская Лагуна" data-en="Sanur · Ocean Lagoon">Санур · Океанская Лагуна</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SENSORY MOSAIC -->
+  <section class="mosaic-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="chapter-num" data-ru="Штрихи Ретрита" data-en="Sensory Highlights">Штрихи Ретрита</span>
+        <h2 data-ru="Атмосфера чистого гедонизма" data-en="The Texture of Pure Serenity">Атмосфера чистого гедонизма</h2>
+        <p data-ru="Каждая деталь продумана так, чтобы вы чувствовали только заботу, простор и вдохновение." data-en="Every detail is curated so you feel only ease, expansive space, and beauty.">
+          Каждая деталь продумана так, чтобы вы чувствовали только заботу, простор и вдохновение.
+        </p>
+      </div>
+
+      <div class="mosaic-grid">
+        <div class="mosaic-card">
+          <img src="/images/bali_scene2.jpg" alt="Цветочная ванна">
+          <div class="mosaic-overlay">
+            <span class="mosaic-tag" data-ru="Телесный уход" data-en="Body Sanctuary">Телесный уход</span>
+            <div class="mosaic-title" data-ru="Ванна из сотен свежих роз и травяной скраб Лулур" data-en="Fresh rose petal bath and traditional Lulur herbal scrub">Ванна из сотен свежих роз и травяной скраб Лулур</div>
+          </div>
+        </div>
+        <div class="mosaic-card">
+          <img src="/images/bali_temple.jpg" alt="Храм Бесаких">
+          <div class="mosaic-overlay">
+            <span class="mosaic-tag" data-ru="Сакральная глубина" data-en="Sacred Origins">Сакральная глубина</span>
+            <div class="mosaic-title" data-ru="Материнский храм Бесаких — «Ось мира» на склоне вулкана Агунг" data-en="Besakih Mother Temple — the world's axis on Mount Agung">Материнский храм Бесаких — «Ось мира» на склоне вулкана Агунг</div>
+          </div>
+        </div>
+        <div class="mosaic-card">
+          <img src="/images/keris_dagger.jpg" alt="Сакральный крис">
+          <div class="mosaic-overlay">
+            <span class="mosaic-tag" data-ru="Живая традиция" data-en="Living Heritage">Живая традиция</span>
+            <div class="mosaic-title" data-ru="Священные кинжалы-крисы (ЮНЕСКО) и благословение Манку" data-en="Sacred UNESCO kris blades and ancestral Mangku blessings">Священные кинжалы-крисы (ЮНЕСКО) и благословение Манку</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDE CHAPTER (LIGHT THEME) -->
+  <section class="guide-chapter">
+    <div class="container">
+      <div class="guide-layout">
+        <div class="guide-portrait">
+          <img src="/images/valery_latypov_kris.png" alt="Валерий Латыпов">
+        </div>
+        <div class="guide-bio-wrap">
+          <span class="chapter-num" data-ru="Ваш Проводник & Автор Ретрита" data-en="Your Host & Curator">Ваш Проводник & Автор Ретрита</span>
+          <h2>Валерий Латыпов</h2>
+          
+          <div class="guide-credo-box" data-ru="«Через объектив я стал видеть в людях ту же глубину и ясность, которые открываются в медитации. Помогаю вспомнить свою природу и вернуть себя.»" data-en="“Through the lens, I began to perceive in people the very same depth and clarity revealed in meditation. I help you remember your true nature and return to yourself.”">
+            «Через объектив я стал видеть в людях ту же глубину и ясность, которые открываются в медитации. Помогаю вспомнить свою природу и вернуть себя.»
+          </div>
+
+          <p data-ru="Более 20 лет я практикую йогу, тай-чи, медитации, даосские и буддийские пути. Мне выпала честь встречать и фотографировать великих учителей — Чёгьяла Намкая Норбу Ринпоче, Ламу Оле Нидала, Затрула Джигме Ринпоче, а также получить благословение от последнего короля Мустанга — Джигме Дорже Палбара Бисты." data-en="For over 20 years, my life has been rooted in spiritual disciplines — yoga, tai-chi, meditation, Daoist and Buddhist traditions. I had the honor of receiving teachings and photographing great masters — Chögyal Namkhai Norbu Rinpoche, Lama Ole Nydahl, Zatul Jigme Rinpoche, and receiving the personal blessing of the Last King of Mustang, Jigme Dorje Palbar Bista.">
+            Более 20 лет я практикую йогу, тай-чи, медитации, даосские и буддийские пути. Мне выпала честь встречать и фотографировать великих учителей — Чёгьяла Намкая Норбу Ринпоче, Ламу Оле Нидала, Затрула Джигме Ринпоче, а также получить благословение от последнего короля Мустанга — Джигме Дорже Палбара Бисты.
+          </p>
+
+          <p data-ru="Я снимал Peter Gabriel, Depeche Mode, Carmina Burana в Dubai Opera и десятки международных проектов. Сегодня я работаю со священными индонезийскими крисами, создаю алхимические портреты и делюсь этим опытом. Прожив на Бали более 2 лет и свободно владея индонезийским (Bahasa Indonesia), я открываю для вас закрытые двери острова без посредников, суеты и очередей." data-en="Having photographed Peter Gabriel, Depeche Mode, and Carmina Burana at Dubai Opera, I view photography as an extension of meditation. Today, I create alchemical portraits and work with sacred UNESCO kris blades. Having lived in Bali for over 2 years and speaking fluent Indonesian, I open the island's most intimate sanctums for you with absolute ease.">
+            Я снимал Peter Gabriel, Depeche Mode, Carmina Burana в Dubai Opera и десятки международных проектов. Сегодня я работаю со священными индонезийскими крисами, создаю алхимические портреты и делюсь этим опытом. Прожив на Бали более 2 лет и свободно владея индонезийским (Bahasa Indonesia), я открываю для вас закрытые двери острова без посредников, суеты и очередей.
+          </p>
+
+          <div class="guide-pills">
+            <span class="guide-pill" data-ru="20+ лет духовных практик" data-en="20+ Years Inner Discipline">20+ лет духовных практик</span>
+            <span class="guide-pill" data-ru="Благословение короля Мустанга" data-en="King of Mustang Blessing">Благословение короля Мустанга</span>
+            <span class="guide-pill" data-ru="Свободный Bahasa Indonesia" data-en="Fluent Bahasa Indonesia">Свободный Bahasa Indonesia</span>
+            <span class="guide-pill" data-ru="Алхимический портрет" data-en="Alchemical Portraiture">Алхимический портрет</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVITATION -->
+  <section class="invitation">
+    <div class="container-narrow">
+      <span class="hero-tag" data-ru="Личный Диалог" data-en="Private Conversation">Личный Диалог</span>
+      <h2>
+        <span data-ru="Ваш оазис ждет" data-en="Your Sanctuary Awaits">Ваш оазис ждет</span><br>
+        <em data-ru="прикосновения." data-en="Your Presence.">прикосновения.</em>
+      </h2>
+      <p data-ru="Каждое путешествие создается индивидуально под ритм и состояние участниц. Давайте созвонимся или пообщаемся в WhatsApp, чтобы почувствовать ваш запрос и бережно соткать ваш ретрит." data-en="Every journey is crafted intimately around your personal rhythm and desires. Let us connect via call or WhatsApp to understand your vision and gently weave your sanctuary on the Island of the Gods.">
+        Каждое путешествие создается индивидуально под ритм и состояние участниц. Давайте созвонимся или пообщаемся в WhatsApp, чтобы почувствовать ваш запрос и бережно соткать ваш ретрит.
+      </p>
+      <div>
+        <a href="https://wa.me/79166160000" target="_blank" class="btn-main" data-ru="Написать Валерию в WhatsApp" data-en="Message Valeriy on WhatsApp">Написать Валерию в WhatsApp</a>
+      </div>
+      <div>
+        <a href="/sanctuary" class="program-link" data-ru="Посмотреть подробную программу по дням и смету →" data-en="View Detailed Itinerary & Financial Ledger →">Посмотреть подробную программу по дням и смету →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p style="font-size: 13px; color: rgba(255,255,255,0.4);" data-ru="© 2026 Bali Sanctuary: Private Journey. Режиссура и ведение — Валерий Латыпов. Все права защищены." data-en="© 2026 Bali Sanctuary: Private Journey. Directed & Hosted by Valeriy Latypov. All rights reserved.">
+        © 2026 Bali Sanctuary: Private Journey. Режиссура и ведение — Валерий Латыпов. Все права защищены.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    let currentLang = 'ru';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'ru' ? 'en' : 'ru';
+      document.getElementById('lang-ru').classList.toggle('active', currentLang === 'ru');
+      document.getElementById('lang-en').classList.toggle('active', currentLang === 'en');
+      document.documentElement.lang = currentLang;
+
+      const elements = document.querySelectorAll('[data-ru]');
+      elements.forEach(el => {
+        const text = el.getAttribute('data-' + currentLang);
+        if (text) {
+          el.innerHTML = text;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
