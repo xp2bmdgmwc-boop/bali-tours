@@ -1,0 +1,21 @@
+# InDesign and print files
+*.indd
+*.ai
+*.psd
+*.pdf
+figma_assets/
+
+# Scripts and scratch tools
+*.jsx
+*.py
+scripts/
+*.xlsx
+*.csv
+
+# Temporary test previews
+preview_*.jpg
+timor_current_*.jpg
+
+# Editor and OS
+.DS_Store
+*.log
