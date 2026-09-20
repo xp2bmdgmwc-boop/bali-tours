@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bali Sanctuary | Presentation</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --serif: 'Cormorant Garamond', serif;
+      --sans: 'Montserrat', sans-serif;
+      
+      --bg-dark: #0f1110;
+      --bg-light: #f9f8f6;
+      --bg-sand: #f0ede6;
+      
+      --text-light: #f4f4f4;
+      --text-muted-light: rgba(255, 255, 255, 0.6);
+      
+      --text-dark: #1a1a1a;
+      --text-muted-dark: rgba(0, 0, 0, 0.6);
+      
+      --gold: #d4af37;
+      --accent: #8b7355;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html {
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Top Nav */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      mix-blend-mode: difference;
+      color: #fff;
+    }
+    .nav-logo {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .lang-switch {
+      display: flex;
+      gap: 16px;
+    }
+    .lang-btn {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.4);
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+    .lang-btn.active {
+      color: #fff;
+    }
+
+    /* Slide Container */
+    .slide {
+      scroll-snap-align: start;
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 5%;
+      position: relative;
+    }
+
+    /* Slide Themes */
+    .theme-dark { background-color: var(--bg-dark); color: var(--text-light); }
+    .theme-light { background-color: var(--bg-light); color: var(--text-dark); }
+    .theme-sand { background-color: var(--bg-sand); color: var(--text-dark); }
+
+    .slide-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .slide-split {
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+      }
+      .slide-split.rev {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+    }
+
+    /* Typography */
+    .slide-num {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      margin-bottom: 24px;
+      display: block;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+    .theme-dark .slide-num { color: var(--gold); }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 32px;
+    }
+    h2 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .theme-dark h2 em { color: var(--gold); }
+
+    p.lead {
+      font-size: clamp(16px, 2vw, 20px);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+    .theme-dark p.lead { color: var(--text-muted-light); }
+    .theme-light p.lead, .theme-sand p.lead { color: var(--text-muted-dark); }
+
+    /* Visuals */
+    .slide-img {
+      width: 100%;
+      height: 60vh;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    /* Lists */
+    .perk-list {
+      list-style: none;
+      margin-top: 32px;
+    }
+    .perk-list li {
+      font-family: var(--sans);
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+    }
+    .theme-light .perk-list li { border-bottom-color: rgba(0,0,0,0.1); }
+
+    /* CTA Button */
+    .btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 18px 40px;
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 1px solid;
+    }
+    .theme-dark .btn {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.3);
+    }
+    .theme-dark .btn:hover { background: #fff; color: #000; }
+    
+    .theme-light .btn {
+      background: var(--text-dark);
+      color: #fff;
+      border-color: var(--text-dark);
+    }
+    .theme-light .btn:hover { background: transparent; color: var(--text-dark); }
+
+    /* Price Box */
+    .price-box {
+      border: 1px solid rgba(0,0,0,0.1);
+      padding: 40px;
+      text-align: center;
+      background: #fff;
+    }
+    .price-val {
+      font-family: var(--serif);
+      font-size: 48px;
+      margin: 16px 0;
+    }
+    
+    /* Scroll Indicator */
+    .scroll-down {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.3; transform: translate(-50%, 0); }
+      50% { opacity: 1; transform: translate(-50%, 5px); }
+      100% { opacity: 0.3; transform: translate(-50%, 0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-logo">Bali Sanctuary PDF Deck</div>
+    <div class="lang-switch">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('ru')">RU</button>
+    </div>
+  </nav>
+
+  <!-- Slide 1: Hook -->
+  <section class="slide theme-dark">
+    <div class="slide-inner">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <span class="slide-num">01 / The Vision</span>
+        <h2 style="font-size: clamp(48px, 8vw, 90px);" data-en="Beyond 5 Stars." data-ru="Больше, чем 5 звезд.">Beyond 5 Stars.</h2>
+        <p class="lead" data-en="A private immersion into the true magic of Bali for those seeking aesthetics, absolute peace, and deep inspiration. Not just another luxury vacation—a curated return to yourself." data-ru="Камерное погружение в настоящую магию острова для тех, кто ищет эстетику, абсолютный покой и вдохновение. Не просто роскошный отпуск, а возвращение к себе.">A private immersion into the true magic of Bali for those seeking aesthetics, absolute peace, and deep inspiration. Not just another luxury vacation—a curated return to yourself.</p>
+      </div>
+    </div>
+    <div class="scroll-down">Scroll</div>
+  </section>
+
+  <!-- Slide 2: The Problem -->
+  <section class="slide theme-sand">
+    <div class="slide-inner slide-split">
+      <div>
+        <span class="slide-num">02 / The Status Quo</span>
+        <h2 data-en="Tired of standard luxury?" data-ru="Устали от стандартного люкса?">Tired of standard luxury?</h2>
+        <p class="lead" data-en="You know what a 5-star hotel looks like. It is comfortable, predictable, and ultimately—empty. True luxury today is not just high-thread-count sheets. It is access. It is silence. It is an experience that awakens the senses and shifts your perspective." data-ru="Вы знаете, как выглядит 5-звездочный отель. Он комфортный, предсказуемый и, в конечном счете, пустой. Настоящая роскошь сегодня — это не просто дорогие простыни. Это доступ. Это тишина. Это опыт, который меняет перспективу.">You know what a 5-star hotel looks like. It is comfortable, predictable, and ultimately—empty. True luxury today is not just high-thread-count sheets. It is access. It is silence. It is an experience that awakens the senses and shifts your perspective.</p>
+      </div>
+      <div>
+        <img src="/images/bali_scene1.jpg" alt="Bali Aesthetics" class="slide-img" onerror="this.src='https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80'">
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 3: The Guide -->
+  <section class="slide theme-dark">
+    <div class="slide-inner slide-split rev">
+      <div>
+        <img src="/images/valery_latypov_kris.png" alt="Valeriy Latypov" class="slide-img" style="border-radius: 100px 100px 0 0;">
+      </div>
+      <div>
+        <span class="slide-num">03 / The Guide</span>
+        <h2 data-en="Trust is the ultimate currency." data-ru="Доверие — главная валюта.">Trust is the ultimate currency.</h2>
+        <p class="lead" data-en="I am Valeriy Latypov. I don't run a travel agency; I open closed doors. With 20+ years of inner practice, fluent Indonesian, and the profound trust of hereditary priests, I curate journeys you cannot buy on a booking site." data-ru="Я — Валерий Латыпов. У меня нет тур-агентства; я открываю закрытые двери. 20 лет практик, свободный индонезийский и личное доверие балийских священников позволяют мне создавать то, что нельзя купить в интернете.">I am Valeriy Latypov. I don't run a travel agency; I open closed doors. With 20+ years of inner practice, fluent Indonesian, and the profound trust of hereditary priests, I curate journeys you cannot buy on a booking site.</p>
+        <ul class="perk-list" style="border-top: 1px solid rgba(255,255,255,0.1);">
+          <li><span data-en="Fluent Bahasa Indonesia" data-ru="Свободный индонезийский язык">Fluent Bahasa Indonesia</span> <span>✦</span></li>
+          <li><span data-en="Dubai Opera & Global Projects" data-ru="Съемки для Dubai Opera">Dubai Opera & Global Projects</span> <span>✦</span></li>
+          <li><span data-en="20+ Years Practice" data-ru="20+ лет духовных практик">20+ Years Practice</span> <span>✦</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 4: Unfair Advantage -->
+  <section class="slide theme-light">
+    <div class="slide-inner">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <span class="slide-num">04 / The Unfair Advantage</span>
+        <h2 data-en="The Inner Circle Access." data-ru="Доступ в закрытый круг.">The Inner Circle Access.</h2>
+        <p class="lead" data-en="Meet the legends. A private salon evening with Dr. Lawrence Blair (BBC's Ring of Fire). An audience with Bruce Carpenter, Christie's leading expert on Indonesian tribal art. Sacred cleansing with a hereditary Mangku priest in a temple closed to tourists." data-ru="Салонный вечер с д-ром Лоуренсом Блэром (BBC). Аудиенция у Брюса Карпентера, главного эксперта Christie's по искусству Индонезии. Сакральное очищение с потомственным священником в закрытом храме.">Meet the legends. A private salon evening with Dr. Lawrence Blair (BBC's Ring of Fire). An audience with Bruce Carpenter, Christie's leading expert on Indonesian tribal art. Sacred cleansing with a hereditary Mangku priest in a temple closed to tourists.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 5: The Container -->
+  <section class="slide theme-sand">
+    <div class="slide-inner slide-split">
+      <div>
+        <span class="slide-num">05 / The Container</span>
+        <h2 data-en="Impeccable 5★ Comfort." data-ru="Безупречный 5★ Комфорт.">Impeccable 5★ Comfort.</h2>
+        <p class="lead" data-en="We eliminate all friction. You reside in hand-picked Premium 5★ Boutique Retreats (e.g., Alila, Maya Ubud, The Purist). We navigate the island in an executive SUV. VIP airport fast-track ensures you never stand in line." data-ru="Мы убрали весь стресс. Вы живете в проверенных Premium 5★ бутик-резиденциях (уровня Alila, Maya Ubud, The Purist). Мы передвигаемся на премиальном внедорожнике. VIP Fast-track в аэропорту без очередей.">We eliminate all friction. You reside in hand-picked Premium 5★ Boutique Retreats (e.g., Alila, Maya Ubud, The Purist). We navigate the island in an executive SUV. VIP airport fast-track ensures you never stand in line.</p>
+        <ul class="perk-list">
+          <li><span data-en="Premium 5★ Boutique Villas" data-ru="Премиальные 5★ бутик-виллы">Premium 5★ Boutique Villas</span></li>
+          <li><span data-en="Executive SUV & Driver 24/7" data-ru="Премиальный внедорожник 24/7">Executive SUV & Driver 24/7</span></li>
+          <li><span data-en="VIP Fast-Track Customs" data-ru="VIP Fast-Track в аэропорту">VIP Fast-Track Customs</span></li>
+        </ul>
+      </div>
+      <div>
+        <img src="/images/bali_water.jpg" alt="Bali Water" class="slide-img" onerror="this.src='https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80'">
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 6: The Offer -->
+  <section class="slide theme-light">
+    <div class="slide-inner slide-split">
+      <div>
+        <span class="slide-num">06 / The Investment</span>
+        <h2 data-en="Transparent Architecture." data-ru="Прозрачная архитектура.">Transparent Architecture.</h2>
+        <p class="lead" data-en="Swiss standards of total financial clarity. A turnkey fixed investment for two guests, covering 5-star accommodations, transport, fine dining, VIP visas, and my 24/7 master curation fee." data-ru="Европейские стандарты прозрачности. Фиксированная стоимость под ключ для двоих: 5★ отели, логистика, визы, ужины и мой личный кураторский гонорар.">Swiss standards of total financial clarity. A turnkey fixed investment for two guests, covering 5-star accommodations, transport, fine dining, VIP visas, and my 24/7 master curation fee.</p>
+      </div>
+      <div>
+        <div class="price-box">
+          <div style="text-transform:uppercase; letter-spacing:0.1em; font-size:12px;" data-en="7 Days / 6 Nights" data-ru="7 Дней / 6 Ночей">7 Days / 6 Nights</div>
+          <div class="price-val">12 000 €</div>
+          <div style="color:var(--text-muted-dark); font-size:13px;" data-en="Turnkey for Two Guests" data-ru="Под ключ для двоих гостей">Turnkey for Two Guests</div>
+        </div>
+        <div class="price-box" style="margin-top:20px; background:var(--bg-sand);">
+          <div style="text-transform:uppercase; letter-spacing:0.1em; font-size:12px;" data-en="5 Days / 4 Nights" data-ru="5 Дней / 4 Ночи">5 Days / 4 Nights</div>
+          <div class="price-val" style="font-size:36px;">8 500 €</div>
+          <div style="color:var(--text-muted-dark); font-size:13px;" data-en="Turnkey for Two Guests" data-ru="Под ключ для двоих гостей">Turnkey for Two Guests</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 7: CTA -->
+  <section class="slide theme-dark">
+    <div class="slide-inner">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <span class="slide-num">07 / The Invitation</span>
+        <h2 data-en="Bespoke Route Calibration" data-ru="Индивидуальная калибровка">Bespoke Route Calibration</h2>
+        <p class="lead" data-en="I do not sell pre-packaged tours. I build bespoke sanctuaries. Let us connect on a brief call. Tell me your vision of the perfect escape, and I will orchestrate it flawlessly." data-ru="Я не продаю шаблонные туры. Я создаю уникальный опыт. Давайте созвонимся: вы расскажете о своем идеальном отдыхе, а я соберу программу специально под вас.">I do not sell pre-packaged tours. I build bespoke sanctuaries. Let us connect on a brief call. Tell me your vision of the perfect escape, and I will orchestrate it flawlessly.</p>
+        
+        <div style="margin-top: 40px; display:flex; gap:20px; justify-content:center;">
+          <a href="https://t.me/latypov_valery" target="_blank" class="btn" style="background:#fff; color:#000;">
+            <span data-en="Message on Telegram" data-ru="Написать в Telegram">Message on Telegram</span>
+          </a>
+          <a href="https://wa.me/79852246789" target="_blank" class="btn">
+            <span data-en="WhatsApp Call" data-ru="Звонок в WhatsApp">WhatsApp Call</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.innerText.toLowerCase() === lang);
+      });
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+    }
+    // Initialize
+    setLang('en');
+  </script>
+</body>
+</html>
