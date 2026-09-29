@@ -16,6 +16,18 @@ scripts/
 preview_*.jpg
 timor_current_*.jpg
 
+# Timor raw photo bank (52MB) — only ship the 9 files timor-tours.html actually uses
+images/timor/*
+!images/timor/gallery_atauro_whales.jpg
+!images/timor/gallery_dokomali_waterfall.jpg
+!images/timor/gallery_jaco_beach.jpg
+!images/timor/timor_disconnection.jpg
+!images/timor/timor_ocean_boat.jpg
+!images/timor/timor_rock_art.jpg
+!images/timor/timor_sacred_stone.jpg
+!images/timor/timor_vast_space.jpg
+!images/timor/valery_latypov_portrait.jpg
+
 # Editor and OS
 .DS_Store
 *.log
