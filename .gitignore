@@ -1,3 +1,6 @@
 .vercel
 mcp_config.json
 scripts/logs/
+.env
+.env.*
+!.env.example
