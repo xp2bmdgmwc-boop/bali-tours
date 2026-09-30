@@ -28,6 +28,9 @@ images/timor/*
 !images/timor/timor_vast_space.jpg
 !images/timor/valery_latypov_portrait.jpg
 
+# Originals and videos for the Bali decks (183 MB) live here only for selection, never on Vercel
+Photos Bali/
+
 # Editor and OS
 .DS_Store
 *.log

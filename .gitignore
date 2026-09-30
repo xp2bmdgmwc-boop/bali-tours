@@ -1,6 +1,7 @@
 .vercel
 mcp_config.json
 scripts/logs/
+Photos Bali/
 .env
 .env.*
 !.env.example
