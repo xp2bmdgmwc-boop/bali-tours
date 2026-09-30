@@ -32,7 +32,9 @@ GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta"
 DEFAULT_OPENAI_MODEL = "gpt-image-2.5-sunburst"
 DEFAULT_GEMINI_MODEL = "gemini-3.1-flash-image"
 OPENAI_EST = {"low": 0.005, "medium": 0.041, "high": 0.165}
-GEMINI_EST = 0.067
+GEMINI_EST = 0.095
+GEMINI_OUT_PER_M = 60.0
+GEMINI_IN_PER_M = 0.5
 
 
 class ApiError(Exception):
@@ -242,9 +244,16 @@ def cmd_gemini(a):
         for blob in blobs:
             print("saved " + save_image(blob, a.out, a.name, "gemini"))
             got += 1
-            spent += a.est if a.est is not None else GEMINI_EST
         u = res.get("usageMetadata", {})
-        print("tokens: prompt %s, output %s" % (u.get("promptTokenCount"), u.get("candidatesTokenCount")))
+        out_tok, in_tok = u.get("candidatesTokenCount") or 0, u.get("promptTokenCount") or 0
+        if a.est is not None:
+            cost = a.est
+        elif out_tok:
+            cost = out_tok * GEMINI_OUT_PER_M / 1e6 + in_tok * GEMINI_IN_PER_M / 1e6
+        else:
+            cost = GEMINI_EST
+        spent += cost
+        print("tokens: prompt %s, output %s, about $%.4f" % (in_tok, out_tok, cost))
     if spent:
         ledger_add("gemini", spent, "%s x%d" % (a.name, got))
     print("done: %d image(s), recorded about $%.3f" % (got, spent))
