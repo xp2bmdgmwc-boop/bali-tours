@@ -1,36 +1,62 @@
 #target indesign
-// Builds the 6-page Bali deck (7-day sample route) for the Swiss guests from scratch and exports the PDF.
+// Builds the Bali deck (7-day sample route, two places per slide) for the Swiss guests and exports the PDF.
+// A file named ai_*.jpg in the photo folder replaces its fallback photo (see AI_SLOTS.md there).
 
-var DOC_NAME = "Bali_7_Days_Switzerland.indd";
-var OLD_DOCS = ["Bali_5_Days_Switzerland.indd"];
-var PDF_NAME = "Бали 7 дней - Валерий Латыпов.pdf";
+var DOC_NAME = "Bali_7_Days_Switzerland_v2.indd";
+var PDF_NAME = "Бали 7 дней - Валерий Латыпов v2.pdf";
 var PH = "/Volumes/Genius Art/Авторские Туры/_Bali/Swiss_Deck_Photos/";
+var BACKUP_DIR = "/Volumes/Genius Art/Antigravity/archives/Bali_Tours_Print_and_Design/backups";
 var LOG_PATH = "/Volumes/Genius Art/Antigravity/Bali Tours/scripts/logs/build_swiss_deck_log.txt";
 var W = 1920, H = 1080;
 var logLines = [];
 function log(s) { logLines.push(s); }
 
+function pad2(n) { return (n < 10 ? "0" : "") + n; }
+function stamp() {
+    var d = new Date();
+    return d.getFullYear() + pad2(d.getMonth() + 1) + pad2(d.getDate()) + "_" + pad2(d.getHours()) + pad2(d.getMinutes());
+}
+function backupName(name) {
+    var m = name.match(/^(.*)(\.[^.]+)$/);
+    return BACKUP_DIR + "/" + m[1] + "_" + stamp() + m[2];
+}
+function haveFile(name) { return new File(PH + name).exists; }
+function pick(aiName, fallbackName) {
+    if (haveFile(aiName)) { log("AI image used: " + aiName); return aiName; }
+    log("AI image missing, fallback: " + fallbackName + " (wanted " + aiName + ")");
+    return fallbackName;
+}
+
 function nb(s) {
     var w = "в|во|и|к|ко|с|со|у|о|об|а|я|на|по|до|за|из|от|не|но|для|без|при|про|над|под|В|Во|И|К|Ко|С|Со|У|О|Об|А|Я|На|По|До|За|Из|От|Не|Но|Для|Без|При|Про|Над|Под";
-    var re = new RegExp("(^|[\\s«( ])(" + w + ") ", "g");
-    s = s.replace(re, "$1$2 ");
-    s = s.replace(re, "$1$2 ");
-    s = s.replace(/(\d) (?=\S)/g, "$1 ");
+    var re = new RegExp("(^|[\\s«( ])(" + w + ") ", "g");
+    s = s.replace(re, "$1$2 ");
+    s = s.replace(re, "$1$2 ");
+    s = s.replace(/(\d) (?=\S)/g, "$1 ");
     return s;
 }
 
 function main() {
+    var bdir = new Folder(BACKUP_DIR);
+    if (!bdir.exists) bdir.create();
     for (var i = app.documents.length - 1; i >= 0; i--) {
-        var dn = app.documents[i].name;
-        if (dn == DOC_NAME || OLD_DOCS.join("|").indexOf(dn) >= 0) app.documents[i].close(SaveOptions.NO);
+        var od = app.documents[i];
+        if (od.name == DOC_NAME) {
+            if (od.modified) { od.saveACopy(new File(backupName(DOC_NAME))); log("Open unsaved copy of " + DOC_NAME + " backed up"); }
+            od.close(SaveOptions.NO);
+        }
     }
+    var target = new File(Folder.desktop.fsName + "/" + DOC_NAME);
+    if (target.exists) { target.copy(backupName(DOC_NAME)); log("Previous " + DOC_NAME + " backed up"); }
+
+    var haveInvite = haveFile("ai_invite_ladies.jpg");
     var doc = app.documents.add(true);
     with (doc.documentPreferences) {
         intent = DocumentIntentOptions.WEB_INTENT;
         facingPages = false;
         pageWidth = W;
         pageHeight = H;
-        pagesPerDocument = 6;
+        pagesPerDocument = haveInvite ? 10 : 9;
     }
     doc.viewPreferences.horizontalMeasurementUnits = MeasurementUnits.POINTS;
     doc.viewPreferences.verticalMeasurementUnits = MeasurementUnits.POINTS;
@@ -52,6 +78,7 @@ function main() {
     var cChar = color("CharcoalSoft", [68, 74, 71]);
     var cGold = color("GoldAccent", [180, 145, 95]);
     var cHair = color("HairlineRule", [220, 218, 212]);
+    var cMuted = color("MutedText", [150, 154, 151]);
     var cNone = doc.swatches.itemByName("None");
 
     function font(name, style) {
@@ -68,23 +95,28 @@ function main() {
     var M_BOLD = font("Manrope", "Bold");
 
     var ST = {
-        kicker:   {f: M_BOLD, size: 15, lead: 20, track: 220, color: cGold},
-        label:    {f: M_BOLD, size: 14, lead: 19, track: 200, color: cGold},
-        labelInk: {f: M_BOLD, size: 14, lead: 19, track: 200, color: cInk},
+        kicker:   {f: M_BOLD, size: 16, lead: 21, track: 220, color: cGold},
+        label:    {f: M_BOLD, size: 16, lead: 21, track: 200, color: cGold},
+        labelInk: {f: M_BOLD, size: 16, lead: 21, track: 200, color: cInk},
         title:    {f: TENOR, size: 200, lead: 200, track: -10, color: cInk},
         subtitle: {f: TENOR, size: 40, lead: 50, track: 0, color: cInk},
         lead:     {f: M_REG, size: 21, lead: 34, track: 0, color: cChar},
         h1:       {f: TENOR, size: 62, lead: 70, track: -5, color: cInk},
         body:     {f: M_REG, size: 23, lead: 38, track: 0, color: cChar, after: 16},
-        small:    {f: M_REG, size: 18.5, lead: 29, track: 0, color: cChar},
-        dayTitle: {f: TENOR, size: 30, lead: 36, track: 0, color: cInk},
+        small:    {f: M_REG, size: 20, lead: 31, track: 0, color: cChar},
         name:     {f: TENOR, size: 30, lead: 36, track: 0, color: cInk},
-        care:     {f: M_MED, size: 17, lead: 25, track: 0, color: cInk},
+        care:     {f: M_MED, size: 19, lead: 27, track: 0, color: cInk},
         quote:    {f: TENOR, size: 30, lead: 40, track: 0, color: cInk},
         cta:      {f: TENOR, size: 44, lead: 52, track: 0, color: cInk},
         ctaBody:  {f: M_REG, size: 19, lead: 30, track: 0, color: cChar},
         contact:  {f: M_MED, size: 22, lead: 28, track: 0, color: cInk},
-        footer:   {f: M_MED, size: 12.5, lead: 16, track: 200, color: cChar}
+        footer:   {f: M_MED, size: 13.5, lead: 17, track: 200, color: cChar},
+        placeTitle: {f: TENOR, size: 46, lead: 54, track: 0, color: cInk},
+        placeBody:  {f: M_REG, size: 23, lead: 37, track: 0, color: cChar},
+        step:     {f: M_BOLD, size: 15, lead: 20, track: 0, color: cInk},
+        stepOff:  {f: M_BOLD, size: 15, lead: 20, track: 0, color: cMuted},
+        inviteH:  {f: TENOR, size: 56, lead: 64, track: -5, color: cInk},
+        inviteB:  {f: M_REG, size: 22, lead: 35, track: 0, color: cChar}
     };
 
     function tf(page, gb, text, st, align) {
@@ -133,15 +165,19 @@ function main() {
         return page.graphicLines.add({geometricBounds: [y, x1, y, x2], strokeWeight: wgt || 1, strokeColor: c || cHair});
     }
 
+    function vrule(page, x, y1, y2, c, wgt) {
+        return page.graphicLines.add({geometricBounds: [y1, x, y2, x], strokeWeight: wgt || 1, strokeColor: c || cHair});
+    }
+
     function bg(page) {
         var r = page.rectangles.add({geometricBounds: [0, 0, H, W], fillColor: cWhite, strokeWeight: 0, strokeColor: cNone});
         r.sendToBack();
         r.locked = true;
     }
 
-    function footer(page, x1, x2) {
-        tf(page, [1032, x1, 1050, x1 + 520], "БАЛИ · ЧАСТНОЕ ПУТЕШЕСТВИЕ", ST.footer);
-        tf(page, [1032, x2 - 420, 1050, x2], "VALERYLATYPOV.COM", ST.footer, Justification.RIGHT_ALIGN);
+    function footer(page, x1, x2, leftText, leftW) {
+        tf(page, [1032, x1, 1052, x1 + (leftW || 700)], leftText || "БАЛИ · ЧАСТНОЕ ПУТЕШЕСТВИЕ", ST.footer);
+        tf(page, [1032, x2 - 420, 1052, x2], "VALERYLATYPOV.COM", ST.footer, Justification.RIGHT_ALIGN);
     }
 
     function link(textObj, url, name) {
@@ -151,13 +187,43 @@ function main() {
         h.visible = false;
     }
 
+    // Header of every two-place slide: kicker, hairline, optional 7-day tracker, footer.
+    function header(page, kicker, activeDays, footerNote) {
+        tf(page, [66, 100, 88, 1300], kicker, ST.kicker);
+        rule(page, 112, 100, 1820);
+        if (activeDays) {
+            for (var n = 1; n <= 7; n++) {
+                var on = false;
+                for (var a = 0; a < activeDays.length; a++) if (activeDays[a] == n) on = true;
+                var sx = 1540 + (n - 1) * 40;
+                tf(page, [62, sx, 84, sx + 30], String(n), on ? ST.step : ST.stepOff, Justification.CENTER_ALIGN);
+                rule(page, 96, sx + 3, sx + 27, on ? cGold : cHair, on ? 2 : 1);
+            }
+        }
+        vrule(page, 960, 150, 1000);
+        footer(page, 100, 1820, footerNote, 900);
+    }
+
+    // One place: photo plus label, title and body. side "L": photo on top; side "R": text on top.
+    function place(page, side, spec) {
+        var x1 = side == "L" ? 100 : 1020;
+        var x2 = side == "L" ? 900 : 1820;
+        var photoTop = side == "L" ? 150 : 550;
+        var textTop = side == "L" ? 630 : 150;
+        img(page, [photoTop, x1, photoTop + 450, x2], spec.photo[0], spec.photo[1], spec.photo[2]);
+        tf(page, [textTop, x1, textTop + 22, x2], spec.label, ST.label);
+        tf(page, [textTop + 32, x1, textTop + 88, x2], spec.title, ST.placeTitle);
+        tf(page, [textTop + 104, x1, textTop + 374, x2], spec.body, ST.placeBody);
+    }
+
     var p = doc.pages;
     for (var pi = 0; pi < p.length; pi++) {
         p[pi].marginPreferences.properties = {top: 0, left: 0, bottom: 0, right: 0};
         bg(p[pi]);
     }
+    var ROUTE_NOTE = "ПРИМЕРНЫЙ МАРШРУТ · СОБЕРУ ПОД ВАШИ ЖЕЛАНИЯ";
 
-    // PAGE 1 — cover
+    // SLIDE 1 — cover
     var p1 = p[0];
     img(p1, [0, 700, H, W], "cover_ulun_danu_dawn.jpg", 0.3, 0.5);
     tf(p1, [150, 110, 172, 650], "ЧАСТНОЕ ПУТЕШЕСТВИЕ · 7 ДНЕЙ", ST.kicker);
@@ -166,9 +232,9 @@ function main() {
     rule(p1, 655, 112, 172, cGold, 1.5);
     tf(p1, [690, 110, 890, 600], "Храмы и королевские сады на воде, горное озеро и океан, люди, к которым не водят туристов. Всё в спокойном ритме и с комфортом, о котором не нужно думать.", ST.lead);
     rule(p1, 945, 110, 600);
-    tf(p1, [968, 110, 988, 650], "ВАЛЕРИЙ ЛАТЫПОВ · АВТОР И ПРОВОДНИК", ST.labelInk);
+    tf(p1, [968, 110, 990, 650], "ВАЛЕРИЙ ЛАТЫПОВ · АВТОР И ПРОВОДНИК", ST.labelInk);
 
-    // PAGE 2 — the island
+    // SLIDE 2 — the island
     var p2 = p[1];
     img(p2, [0, 0, H, 780], "p2_woman_prayer_incense.jpg", 0.5, 0.45);
     tf(p2, [120, 880, 142, 1780], "ОСТРОВ", ST.label);
@@ -184,109 +250,103 @@ function main() {
     ];
     for (var k = 0; k < 3; k++) {
         var px = 880 + k * 313;
-        tf(p2, [790, px, 810, px + 274], promises[k][0], ST.labelInk);
-        tf(p2, [828, px, 1000, px + 274], promises[k][1], ST.small);
+        tf(p2, [790, px, 812, px + 274], promises[k][0], ST.labelInk);
+        tf(p2, [832, px, 1005, px + 280], promises[k][1], ST.small);
     }
     footer(p2, 880, 1780);
 
-    // PAGE 3 — 7-day sample route
-    var p3 = p[2];
-    tf(p3, [95, 100, 117, 900], "МАРШРУТ", ST.label);
-    tf(p3, [140, 100, 215, 1150], "Семь дней, семь разных Бали", ST.h1);
-    tf(p3, [140, 1250, 240, 1820], "Это набросок. После нашего разговора я соберу маршрут под ваши желания: что-то уберём, что-то добавим.", ST.small, Justification.RIGHT_ALIGN);
-    var days = [
-        [["d1_ubud_jungle_pool.jpg", 0.5, 0.55], ["d1_massage_spa.jpg", 0.5, 0.5], "Сады Убуда",
-         "Встреча у трапа без очередей. Отель в джунглях над рекой, массаж после перелёта, тихий ужин."],
-        [["d2_sebatu_shrine_valery.jpg", 0.5, 0.42], ["d2_sebatu_pavilion.jpg", 0.55, 0.5], "Храм у источника",
-         "Себату, храм Вишну в джунглях. Мой друг Манку благословит вас и покажет свои крисы. Вечером ужин с Лоуренсом Блэром."],
-        [["d3_neka_museum.jpg", 0.5, 0.5], ["d3_legong_ubud_palace.jpg", 0.4, 0.55], "Искусство Убуда",
-         "Музей Нека и чай в доме Брюса Карпентера. Вечером танец Легонг во дворце Убуда."],
-        [["d4_ulun_danu_flowers.jpg", 0.42, 0.5], ["d4_botanic_garden_gate.jpg", 0.5, 0.5], "Горы и озеро",
-         "Ботанический сад Бедугула и храм Улун Дану, который будто плывёт по озеру. Обед с видом на воду."],
-        [["d5_tirta_gangga.jpg", 0.5, 0.5], ["d5_taman_ujung.jpg", 0.5, 0.55], "Водные дворцы",
-         "Тирта Ганга и Таман Уджунг, королевские сады с фонтанами и золотыми карпами. Вечером отель у океана."],
-        [["d5_sanur_sunrise_agung.jpg", 0.45, 0.5], ["spa_flower_bath.jpg", 0.5, 0.5], "Океан",
-         "Утро у тихой лагуны, спа с цветочной ванной. В золотой час снимаю вас в мягком свете заката."],
-        [["d7_masks_crafts.jpg", 0.5, 0.5], ["d7_carving_relief.jpg", 0.5, 0.35], "Прощание",
-         "Неспешный завтрак, подарки на память прямо у мастеров, проводы в аэропорту без очередей."]
-    ];
-    for (var d = 0; d < 7; d++) {
-        var x = 100 + d * 249;
-        img(p3, [255, x, 489, x + 225], days[d][0][0], days[d][0][1], days[d][0][2]);
-        img(p3, [495, x, 645, x + 225], days[d][1][0], days[d][1][1], days[d][1][2]);
-        tf(p3, [676, x, 694, x + 225], "ДЕНЬ " + (d + 1), ST.label);
-        tf(p3, [710, x, 778, x + 225], days[d][2], {f: TENOR, size: 26, lead: 32, track: 0, color: cInk});
-        tf(p3, [794, x, 1005, x + 225], days[d][3], {f: M_REG, size: 16.5, lead: 25.5, track: 0, color: cChar});
-    }
-    footer(p3, 100, 1820);
+    // SLIDES 3-6 — the route, two days per slide
+    var d1photo = pick("ai_d1_villa.jpg", "d1_villa_fallback.jpg");
+    var bathPhoto = pick("ai_flower_bath.jpg", "spa_flower_bath.jpg");
+    var s3 = p[2], s4 = p[3], s5 = p[4], s6 = p[5];
 
-    // PAGE 4 — places to add
-    var p4 = p[3];
-    tf(p4, [95, 100, 117, 900], "ПО ЖЕЛАНИЮ", ST.label);
-    tf(p4, [140, 100, 215, 1150], "Что ещё можно добавить", ST.h1);
-    tf(p4, [140, 1250, 240, 1820], "Всё это можно вплести в ваш маршрут. Выберем вместе, когда поговорим.", ST.small, Justification.RIGHT_ALIGN);
-    var places = [
-        [["w1_zoo_tiger.jpg", 1.0, 0.15], ["w1_zoo_bird.jpg", 0.22, 0.4], "Бали Зоо",
-         "Двенадцать гектаров тропического парка недалеко от Убуда. Суматранские тигры, слоны, редкие птицы и орангутаны, рядом с которыми можно устроить завтрак. Спокойный и радостный день."],
-        [["w2_ulun_danu_lake.jpg", 0.5, 0.79], ["w2_botanic_garden.jpg", 0.5, 0.75], "Храм Улун Дану и сад",
-         "Храм построен в 1633 году и посвящён Деви Дану, богине вод. Он стоит на берегу озера Братан на высоте больше тысячи двухсот метров. Рядом ухоженный ботанический сад и прохладный горный воздух."],
-        [["w3_tirta_gangga_fountain.jpg", 0.5, 0.5], ["d4_taman_ujung.jpg", 0.6, 0.5], "Водные дворцы",
-         "Тирта Ганга в 1940-х построил последний король Карангасема, это лабиринт из прудов, фонтанов и мостов. В Таман Уджунг есть двенадцатиярусный фонтан в форме лотоса. Многие сравнивают эти сады с Петергофом."],
-        [["w4_uluwatu_sunset.jpg", 0.5, 0.4], ["w4_kecak.jpg", 0.5, 0.55], "Улувату и Кечак",
-         "Храм на скале над океаном. На закате там танцуют Кечак, огненный танец по мотивам Рамаяны, который поют хором десятки мужчин. Самое известное представление острова, туристическое, но по-настоящему красивое."]
-    ];
-    for (var pl = 0; pl < 4; pl++) {
-        var px4 = 100 + pl * 440;
-        img(p4, [265, px4, 455, px4 + 400], places[pl][0][0], places[pl][0][1], places[pl][0][2]);
-        img(p4, [461, px4, 635, px4 + 400], places[pl][1][0], places[pl][1][1], places[pl][1][2]);
-        tf(p4, [668, px4, 708, px4 + 400], places[pl][2], ST.name);
-        rule(p4, 730, px4, px4 + 48, cGold, 1.5);
-        tf(p4, [752, px4, 1005, px4 + 400], places[pl][3], ST.small);
-    }
-    footer(p4, 100, 1820);
+    header(s3, "МАРШРУТ · ДНИ 1 И 2", [1, 2], ROUTE_NOTE);
+    place(s3, "L", {photo: [d1photo, 0.5, 0.5], label: "ДЕНЬ 1", title: "Сады Убуда",
+        body: "Вас встретят у трапа самолёта и проведут через паспортный контроль без очередей. До Убуда около часа дороги. Отель стоит в джунглях над рекой, с террасой и бассейном. После долгого перелёта сначала массаж, потом ужин без спешки. Вечером никаких планов, только отдых."});
+    place(s3, "R", {photo: ["d2_sebatu_pavilion.jpg", 0.55, 0.5], label: "ДЕНЬ 2", title: "Храм у источника",
+        body: "Храм Гунунг Кави в Себату спрятан в джунглях среди рисовых террас. Он посвящён Вишну, а воды вокруг столько, что место похоже на сад с прудами и карпами. По преданию, Вишну создал здесь источник для деревни, оставшейся без воды. Мой друг Манку, священник из Себату, проведёт мягкий обряд благословения и покажет коллекцию крисов."});
 
-    // PAGE 5 — people and care
-    var p5 = p[4];
-    img(p5, [0, 1240, H, W], "p4_elder_keris_valery.jpg", 0.5, 0.4);
-    tf(p5, [90, 100, 112, 1150], "ЛЮДИ", ST.label);
-    tf(p5, [135, 100, 205, 1160], "Двери, которые откроются для вас", ST.h1);
+    header(s4, "МАРШРУТ · ДНИ 3 И 4", [3, 4], ROUTE_NOTE);
+    place(s4, "L", {photo: ["d3_legong_ubud_palace.jpg", 0.4, 0.5], label: "ДЕНЬ 3", title: "Искусство Убуда",
+        body: "Убуд называют культурным сердцем Бали. Утром музей Нека, одно из лучших собраний балийской живописи и старинных крисов. В постоянной экспозиции есть и мои фотографии, по залам я вас проведу сам. Днём чай у Брюса Карпентера среди старинных масок. Вечером танец Легонг, гамелан и золотые костюмы в стенах старого дворца."});
+    place(s4, "R", {photo: ["d4_ulun_danu_flowers.jpg", 0.45, 0.5], label: "ДЕНЬ 4", title: "Горы и озеро",
+        body: "Утром едем в горы, к озеру Братан, на высоту больше тысячи двухсот метров. Храм Улун Дану построен в 1633 году и посвящён богине воды Деви Дану. Он стоит у самой кромки озера и в тихую погоду словно плывёт по воде. Рядом ботанический сад на 157 гектаров, с аллеями, папоротниками и орхидеями. Обед с видом на озеро."});
+
+    header(s5, "МАРШРУТ · ДНИ 5 И 6", [5, 6], ROUTE_NOTE);
+    place(s5, "L", {photo: ["d5_tirta_gangga.jpg", 0.5, 0.5], label: "ДЕНЬ 5", title: "Водные дворцы",
+        body: "Восток острова, земли бывшего королевства Карангасем. Тирта Ганга построил в 1940-х последний правитель этих мест. Там пруды, фонтаны, мостики и каменные фигуры, между которыми плавают золотые карпы. Название значит «священная вода Ганга». Рядом Таман Уджунг, королевская резиденция с павильонами на воде и видом на вулкан Агунг. Для меня это балийский Петергоф. Вечером отель у океана."});
+    place(s5, "R", {photo: ["d5_sanur_sunrise_agung.jpg", 0.45, 0.5], label: "ДЕНЬ 6", title: "Океан",
+        body: "Санур, восточный берег. Риф далеко от берега гасит волны, поэтому вода в лагуне спокойная, а вдоль пляжа тянется тенистая набережная для неспешных прогулок. Днём спа с цветочной ванной. В мягком вечернем свете я сниму ваши портреты, а на ужин будет свежая рыба у самой воды."});
+
+    header(s6, "МАРШРУТ · ДЕНЬ 7 И ТЕЛО", [7], ROUTE_NOTE);
+    place(s6, "L", {photo: ["d7_masks_crafts.jpg", 0.5, 0.5], label: "ДЕНЬ 7", title: "Прощание",
+        body: "Последнее утро без спешки. После завтрака заедем к мастерам по дороге в аэропорт. Подарки на память вы возьмёте прямо у тех, кто их делает. Резные маски, батик, местный кофе. В аэропорту вас проведут без очередей до самой посадки."});
+    place(s6, "R", {photo: [bathPhoto, 0.5, 0.5], label: "ТЕЛО И ПОКОЙ · ПО ЖЕЛАНИЮ", title: "I Ketut Ibek",
+        body: "Хиропрактик. Ставит косточки на место и делает массаж. Прийти к нему можно в любой день поездки, например после долгого перелёта или в последнее утро, перед дорогой домой. Всё решаем по самочувствию, без спешки. К такому визиту хорошо добавить спа с цветочной ванной."});
+
+    // SLIDE 7 — extras
+    var s7 = p[6];
+    header(s7, "ПО ЖЕЛАНИЮ · ДОБАВИТЬ К МАРШРУТУ", null, "БАЛИ · ЧАСТНОЕ ПУТЕШЕСТВИЕ");
+    place(s7, "L", {photo: ["w1_zoo_bird.jpg", 0.3, 0.4], label: "ДОБАВИТЬ К МАРШРУТУ", title: "Бали Зоо",
+        body: "Двенадцать гектаров тропического парка недалеко от Убуда. Тигры, слоны, гиббоны, орангутаны, редкие птицы. Можно устроить завтрак рядом с орангутанами. Спокойный, лёгкий день без храмов и обрядов, просто радость от живой природы."});
+    place(s7, "R", {photo: ["w4_kecak.jpg", 0.5, 0.55], label: "ДОБАВИТЬ К МАРШРУТУ", title: "Улувату и Кечак",
+        body: "Храм на скале примерно в семидесяти метрах над океаном, на самом юге острова. На закате там танцуют Кечак, огненный танец по мотивам «Рамаяны», который поёт хор из нескольких десятков мужчин. Место туристическое, но красота настоящая. Обрыв, закат, огонь и хор голосов."});
+
+    // SLIDE 8 — people and care
+    var s8 = p[7];
+    img(s8, [0, 1240, H, W], "p4_elder_keris_valery.jpg", 0.5, 0.4);
+    tf(s8, [90, 100, 112, 1150], "ЛЮДИ", ST.label);
+    tf(s8, [135, 100, 205, 1160], "Двери, которые откроются для вас", ST.h1);
     var people = [
-        ["Манку из Себату", "Хранитель храма и мой близкий друг, его семья давно стала мне родной. Проведёт мягкий обряд благословения, покажет свою коллекцию крисов, а если захотите, сделает традиционный массаж по точкам."],
+        ["Манку из Себату", "Священник из Себату и мой близкий друг, его семья давно стала мне родной. Проведёт мягкий обряд благословения, покажет свою коллекцию крисов, а если захотите, сделает традиционный массаж по точкам."],
         ["Брюс Карпентер", "Знаток балийского искусства. Примет нас у себя дома, среди старинных масок и крисов, и расскажет об острове то, чего нет в путеводителях."],
         ["Лоуренс Блэр", "Автор документального сериала Ring of Fire об Индонезии, который десятилетиями путешествует по её островам. С ним хорошо говорить за ужином."],
         ["Музей Нека", "Одно из лучших собраний балийской живописи и старинных крисов. В постоянной экспозиции есть и мои фотографии, по залам я проведу вас сам."]
     ];
     for (var q = 0; q < 4; q++) {
         var qx = 100 + (q % 2) * 550;
-        var qy = 250 + Math.floor(q / 2) * 235;
-        tf(p5, [qy, qx, qy + 38, qx + 500], people[q][0], ST.name);
-        tf(p5, [qy + 55, qx, qy + 215, qx + 500], people[q][1], ST.small);
+        var qy = 250 + Math.floor(q / 2) * 240;
+        tf(s8, [qy, qx, qy + 38, qx + 500], people[q][0], ST.name);
+        tf(s8, [qy + 55, qx, qy + 225, qx + 500], people[q][1], ST.small);
     }
-    rule(p5, 770, 100, 1150);
-    tf(p5, [795, 100, 815, 1150], "О ЧЁМ НЕ НУЖНО ДУМАТЬ", ST.label);
+    rule(s8, 780, 100, 1150);
+    tf(s8, [805, 100, 827, 1150], "О ЧЁМ НЕ НУЖНО ДУМАТЬ", ST.label);
     var care = ["Визы, страховка и связь заранее", "Личный автомобиль с водителем", "Спа с цветочными ваннами",
                 "Хиропрактик и массаж по желанию", "Я на связи днём и ночью", "Альбом ваших портретов в подарок"];
     for (var c = 0; c < 6; c++) {
         var cx = 100 + (c % 3) * 363;
-        var cy = 850 + Math.floor(c / 3) * 62;
-        rule(p5, cy - 8, cx, cx + 24, cGold, 1.5);
-        tf(p5, [cy, cx, cy + 40, cx + 340], care[c], ST.care);
+        var cy = 860 + Math.floor(c / 3) * 62;
+        rule(s8, cy - 8, cx, cx + 24, cGold, 1.5);
+        tf(s8, [cy, cx, cy + 50, cx + 345], care[c], ST.care);
     }
-    footer(p5, 100, 1150);
+    footer(s8, 100, 1150);
 
-    // PAGE 6 — about + call
-    var p6 = p[5];
-    img(p6, [0, 0, H, 720], "p5_valery_portrait.jpg", 0.5, 0.3);
-    tf(p6, [95, 820, 117, 1800], "КТО ВАС ВСТРЕТИТ", ST.label);
-    tf(p6, [138, 820, 208, 1800], "Валерий Латыпов", ST.h1);
-    tf(p6, [245, 820, 560, 1660],
+    // SLIDE 9 (optional) — invitation, only when the generated image exists
+    var next = 8;
+    if (haveInvite) {
+        var sv = p[next]; next++;
+        img(sv, [0, 0, H, 1240], "ai_invite_ladies.jpg", 0.5, 0.5);
+        tf(sv, [120, 1310, 142, 1820], "ПРЕДСТАВЬТЕ", ST.label);
+        tf(sv, [170, 1310, 400, 1820], "Утро, в которое некуда спешить", ST.inviteH);
+        tf(sv, [430, 1310, 770, 1820], "Тёплый воздух, рисовые террасы, подруга рядом. Никаких экскурсионных автобусов, очередей и ранних подъёмов. Вы идёте в своём темпе, а всё остальное устроено заранее.", ST.inviteB);
+        rule(sv, 800, 1310, 1820);
+        tf(sv, [830, 1310, 960, 1820], "Расскажите, каким должен быть ваш Бали. Остальное соберу я.", ST.quote);
+        footer(sv, 1310, 1820, "ИЛЛЮСТРАЦИЯ", 260);
+    }
+
+    // LAST SLIDE — about + call
+    var s9 = p[next];
+    img(s9, [0, 0, H, 720], "p5_valery_portrait.jpg", 0.5, 0.3);
+    tf(s9, [95, 820, 117, 1800], "КТО ВАС ВСТРЕТИТ", ST.label);
+    tf(s9, [138, 820, 208, 1800], "Валерий Латыпов", ST.h1);
+    tf(s9, [245, 820, 560, 1660],
         "Фотохудожник. Двадцать лет снимаю музыкантов, артистов и людей культуры. Был официальным фотографом фестиваля WOMAD Питера Гэбриэла, снимал премьеры Большого театра и «Кармину Бурану» в Dubai Opera. Мои работы хранятся в постоянной экспозиции музея Нека на Бали.\r" +
         "На острове я подолгу живу, говорю по-индонезийски и дружу с семьями, которые хранят храмы. Много лет учусь у мастеров разных традиций, среди них тибетский учитель Чёгьял Намкай Норбу, а в 2011 году получил благословение последнего короля Мустанга. Из этого в поездках остаются спокойствие, внимание и умение слушать. Ничего навязывать я не буду.",
         {f: M_REG, size: 19.5, lead: 31, track: 0, color: cChar, after: 12});
-    tf(p6, [585, 820, 665, 1720], "Мне важно, чтобы вам было спокойно, красиво и интересно. Остальное я беру на себя.", ST.quote);
-    rule(p6, 705, 820, 1800);
-    tf(p6, [735, 820, 790, 1320], "Давайте поговорим", ST.cta);
-    tf(p6, [815, 820, 980, 1330], "Двадцать минут по видеосвязи в удобное для вас время. Вы расскажете о своих желаниях, а я соберу маршрут под них и отвечу на вопросы о комфорте и безопасности.", ST.ctaBody);
+    tf(s9, [585, 820, 665, 1720], "Мне важно, чтобы вам было спокойно, красиво и интересно. Остальное я беру на себя.", ST.quote);
+    rule(s9, 705, 820, 1800);
+    tf(s9, [735, 820, 790, 1320], "Давайте поговорим", ST.cta);
+    tf(s9, [815, 820, 980, 1330], "Двадцать минут по видеосвязи в удобное для вас время. Вы расскажете о своих желаниях, а я соберу маршрут под них и отвечу на вопросы о комфорте и безопасности.", ST.ctaBody);
     var contacts = [
         ["WHATSAPP", "+7 985 224-67-89", "https://wa.me/79852246789"],
         ["TELEGRAM", "@latypovvalery", "https://t.me/latypovvalery"],
@@ -294,11 +354,11 @@ function main() {
     ];
     for (var ci = 0; ci < 3; ci++) {
         var y = 740 + ci * 88;
-        tf(p6, [y, 1420, y + 18, 1800], contacts[ci][0], ST.label);
-        var v = tf(p6, [y + 30, 1420, y + 60, 1820], contacts[ci][1], ST.contact);
+        tf(s9, [y, 1420, y + 20, 1800], contacts[ci][0], ST.label);
+        var v = tf(s9, [y + 32, 1420, y + 62, 1820], contacts[ci][1], ST.contact);
         link(v.texts[0], contacts[ci][2], "contact_" + ci);
     }
-    footer(p6, 820, 1800);
+    footer(s9, 820, 1800);
 
     // QA
     var over = 0, outside = 0;
@@ -319,7 +379,7 @@ function main() {
     for (var fi = 0; fi < doc.fonts.length; fi++) if (doc.fonts[fi].status != FontStatus.INSTALLED) { badFonts++; log("BAD FONT " + doc.fonts[fi].name); }
     log("QA: pages=" + p.length + " overset=" + over + " outside=" + outside + " images=" + doc.links.length + " badLinks=" + badLinks + " badFonts=" + badFonts + " hyperlinks=" + doc.hyperlinks.length);
 
-    doc.save(new File(Folder.desktop.fsName + "/" + DOC_NAME));
+    doc.save(target);
 
     var pdf = app.pdfExportPreferences;
     var prefs = {
